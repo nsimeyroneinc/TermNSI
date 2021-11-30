@@ -121,10 +121,21 @@ plugins:
   #- mkpdfs:
   #      company: The War Company Inc.
   #      author: Monsieur Silvestre
-  #- page-to-pdf : 
-  #    disableOnServe : False
-  #    scale : 1.0
-  #    margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
+  - page-to-pdf : 
+      disableOnServe: False
+      displayHeaderFooter: true
+      printBackground: true
+      scale : 1.0
+      margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
+      headerTemplate: '<header style="width:100%;heigth:20px;font-size:10px;font-weight:600;color:white;background:#138779;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
+                        <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
+                      </header>'
+      footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
+                        <span>M.Meyroneinc-Condy | CCBY | 2021</span>
+                        <span class="page" style="position:absolute;bottom:0;right:0;">
+                          <span class="pageNumber;right:20px;"></span>/<span class="totalPages;right:20px;"></span>
+                        </span>
+                      </footer>'
   #    headerTemplate : 
   #      title
   #      date
