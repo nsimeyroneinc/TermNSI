@@ -23,7 +23,7 @@ nav:
      # - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles_Corrige.md
       - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles.md
       - TP 14 - Les Files Enoncé-Corrigé : StructureDonnees/TD14_Files.md
-      #- TP 15 - Les Arbres Enoncé-Corrigé : StructureDonnees/TD15_Les_Arbres.md
+      - TP 15 - Les Arbres Enoncé-Corrigé : StructureDonnees/TD15_Les_Arbres.md
     #BAC
     - Epreuves pratiques : 
       - Déroulement : epreuve_pratique.md
@@ -32,8 +32,8 @@ nav:
     #Devoirs
     - Devoirs :
       - P.O.O : DM/DM_POO.md
-      #- DS 30/11/21 : Devoirs/DS _Listes_Piles_Files.md
-      #- EP 30/11/21 : Devoirs/DS_EP.md
+      - DS 30/11/21 : Devoirs/DS _Listes_Piles_Files.md
+      - EP 30/11/21 : Devoirs/DS_EP.md
 
     - Divers conseils : divers/conseil.md
     # Référencer vos autres pages ci-dessus...
