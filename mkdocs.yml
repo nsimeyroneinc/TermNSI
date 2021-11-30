@@ -121,10 +121,10 @@ plugins:
   #- mkpdfs:
   #      company: The War Company Inc.
   #      author: Monsieur Silvestre
-  - page-to-pdf : 
-      disableOnServe : False
-      scale : 1.0
-      margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
+  #- page-to-pdf : 
+  #    disableOnServe : False
+  #    scale : 1.0
+  #    margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
   #    headerTemplate : 
   #      title
   #      date
