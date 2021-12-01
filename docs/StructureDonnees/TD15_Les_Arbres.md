@@ -182,7 +182,8 @@ On rencontre très souvent des arbres binaires dits **complets** parce qu'aucun 
 
 
 **Taille d'un arbre complet de hauteur $h$ :**
-$$1 + 2 + 2^2 + 2^3 + \dots + 2^{h-1} = 2^{h} - 1$$
+
+$1 + 2 + 2^2 + 2^3 + \dots + 2^{h-1} = 2^{h} - 1$
 
 
 !!! abstract "**_preuve à connaitre_ :**"
@@ -201,7 +202,8 @@ La hauteur d'un arbre binaire est la profondeur maximale de ses noeuds. Cependan
 
 
 **Remarque :** On en déduit une inégalité classique sur l'encadrement de la taille $t$ d'un arbre binaire (non nécessairement complet) de hauteur $h$ :
-$$ h \leqslant t \leqslant 2^{h}-1$$
+
+$ h \leqslant t \leqslant 2^{h}-1$
 
 <blockquote style="background-color: #536872; border-left: 7px solid rgb(0 0 0);"> 
     <span style="font-size:30px; color:white;"> III. Implémentations d'un arbre binaire </span></blockquote>
@@ -291,8 +293,8 @@ Le but est d'obtenir l'interface ci-dessous.
 a = Arbre(4) # pour créer l'arbre dont le nœud a pour valeur 4,
              # et dont les sous-arbres gauche et droit sont None
     
-a.ajout_gauche(Arbre(3)) # pour donner la valeur 3 au nœud du sous-arbre gauche de a
-a.ajout_droit(Arbre(1)) # pour donner la valeur 1 au nœud du sous-arbre droit de a
+a.ajout_gauche(3) # pour donner la valeur 3 au nœud du sous-arbre gauche de a
+a.ajout_droit(1) # pour donner la valeur 1 au nœud du sous-arbre droit de a
 
 a.affiche_droit() # pour accéder au sous-arbre droit de a
 a.affiche_gauche() # pour accéder au sous-arbre gauche de a
@@ -344,7 +346,7 @@ class Arbre:
         if self==None:
             return 0
         else :
-            return 1+Arbre.taille(self.droit)+Arbre.taille(self.droit)
+            return 1+Arbre.taille(self.gauche)+Arbre.taille(self.droit)
     
     def hauteur(self):
         if self==None:
