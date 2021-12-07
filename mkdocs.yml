@@ -24,6 +24,10 @@ nav:
       - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles.md
       - TP 14 - Les Files Enoncé-Corrigé : StructureDonnees/TD14_Files.md
       - TP 15 - Les Arbres Enoncé-Corrigé : StructureDonnees/TD15_Les_Arbres.md
+    #- Thème 5 - Architecture matèrielle :
+      #- TD 16 - Protocole de routage : Reseaux/TD16_Routage.md
+      #- TD 16 - Protocole de routage : Reseaux/cours.md
+      #- TD 17 : Reseaux/02_Exercices.md
     #BAC
     - Epreuves pratiques : 
       - Déroulement : epreuve_pratique.md
@@ -128,7 +132,7 @@ plugins:
   #    displayHeaderFooter: true
   #    printBackground: true
   #    scale : 1.0
-  #    landscape : False
+  #   landscape : False
   #    margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
   #    headerTemplate: '<header style="width:100%;heigth:35px;font-size:10px;font-weight:600;color:white;background:#138779;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
   #                      <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
@@ -136,7 +140,7 @@ plugins:
   #    footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
   #                      <span>M.Meyroneinc-Condy | CCBY | 2021</span>
   #                      <span class="page" style="position:absolute;bottom:0;right:0;">
-  #                        <span class="pageNumber;"></span>/<span class="totalPages;"></span>
+  #                       <span class="pageNumber"></span>/<span class="totalPages"></span>
   #                      </span>
   #                    </footer>'
   #    headerTemplate : 

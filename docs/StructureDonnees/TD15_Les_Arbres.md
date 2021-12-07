@@ -203,7 +203,7 @@ La hauteur d'un arbre binaire est la profondeur maximale de ses noeuds. Cependan
 
 **Remarque :** On en déduit une inégalité classique sur l'encadrement de la taille $t$ d'un arbre binaire (non nécessairement complet) de hauteur $h$ :
 
-$ h \leqslant t \leqslant 2^{h}-1$
+$h \leqslant t \leqslant 2^{h}-1$
 
 <blockquote style="background-color: #536872; border-left: 7px solid rgb(0 0 0);"> 
     <span style="font-size:30px; color:white;"> III. Implémentations d'un arbre binaire </span></blockquote>
@@ -237,34 +237,63 @@ On choisit ici de représenter un arbre binaire par une liste de trois élément
     ```
 
 !!! example "**Question 2** :"
-    Complétez les 5 fonctions suivantes qui implémentent le type abstrait `Arbre binaire` avec cette représentation par des listes Python.
+    === "Enoncé"
+        Complétez les 5 fonctions suivantes qui implémentent le type abstrait `Arbre binaire` avec cette représentation par des listes Python.
 
 
-    ```python
-    # à vous de jouer !
+        ```python
+        # à vous de jouer !
 
-    def noeud(etiquette, arbre_gauche, arbre_droit):
-        """Crée et renvoie l'arbre binaire"""
-        pass
+        def noeud(etiquette, arbre_gauche, arbre_droit):
+            """Crée et renvoie l'arbre binaire"""
+            pass
 
-    def etiquette(arbre):
-        """Renvoie l'étiquette de l'arbre binaire arbre"""
-        pass
+        def etiquette(arbre):
+            """Renvoie l'étiquette de l'arbre binaire arbre"""
+            pass
 
-    def gauche(arbre):
-        """Renvoie le sous-arbre gauche de l'arbre binaire arbre"""
-        pass
+        def gauche(arbre):
+            """Renvoie le sous-arbre gauche de l'arbre binaire arbre"""
+            pass
 
-    def droit(arbre):
-        """Renvoie le sous-arbre droit de l'arbre binaire arbre"""
-        pass
+        def droit(arbre):
+            """Renvoie le sous-arbre droit de l'arbre binaire arbre"""
+            pass
 
-    def est_feuille(arbre):
-        """Renvoie True si et seulement si l'arbre binaire arbre est une feuille """
-        pass
+        def est_feuille(arbre):
+            """Renvoie True si et seulement si l'arbre binaire arbre est une feuille """
+            pass
 
-    ```
+        ```
+    === "solution"
 
+        ```python
+        # à vous de jouer !
+
+        def noeud(etiquette, arbre_gauche, arbre_droit):
+            """Crée et renvoie l'arbre binaire"""
+            return [etiquette,noeud_gauche,noeud_droit]
+
+        def etiquette(arbre):
+            """Renvoie l'étiquette de l'arbre binaire arbre"""
+            return arbre[0]
+
+        def gauche(arbre):
+            """Renvoie le sous-arbre gauche de l'arbre binaire arbre"""
+            return arbre[1]
+
+        def droit(arbre):
+            """Renvoie le sous-arbre droit de l'arbre binaire arbre"""
+            return arbre[2]
+
+        def est_feuille(arbre):
+            """Renvoie True si et seulement si l'arbre binaire arbre est une feuille """
+            if gauche(arbre)==[] and droit(arbre)==[]:
+                return True
+            else:
+                return False
+
+        ```
 !!! example "**Question 3** :"
 
     1. Créez l'arbre, noté `a1`, de la question 1 en utilisant la fonction `noeud`. Vérifiez que la représentation est bien celle donnée dans la question 1.
@@ -457,19 +486,31 @@ L'ordre des lettres parcourues est donc T-Y-O-P-H-N.
 > Un parcours en largeur d'abord n'est pas récursif.
 
 !!! example "**Exercice 1 :**"
-    Indiquez dans quel ordre les noeuds sont explorés dans le cas d'un parcours en largeur de l'arbre `A1` suivant.
+    === "Enoncé" 
+        Indiquez dans quel ordre les noeuds sont explorés dans le cas d'un parcours en largeur de l'arbre `A1` suivant.
 
-    ![ab2.png](data/ab2.png){.:center}
+        ![ab2.png](data/ab2.png){.:center}
+    === "Solution"
+        Dans le cas d'un parcours de cet AB en largeur d'abord, les noeuds sont visités dans l'ordre : 2 - 8 - 9 - 4 - 5 - 3.
+
 
 !!! example "**Exercice 2 :**"
-    Indiquez dans quel ordre les noeuds sont explorés dans le cas d'un parcours en largeur de l'arbre `A2` suivant.
+    === "Enoncé" 
+        Indiquez dans quel ordre les noeuds sont explorés dans le cas d'un parcours en largeur de l'arbre `A2` suivant.
 
-    ![ab10.png](data/ab10.png)
+        ![ab10.png](data/ab10.png)
+
+    === "Solution"
+        1 - 2 - 5 - 3 - 4 - 6 - 7 - 8
+
 
 !!! example "**Exercice 3 :**"  
-    Indiquez dans quel ordre les noeuds sont explorés dans le cas d'un parcours en largeur de l'arbre `A3` suivant.
+    === "Enoncé"
+        Indiquez dans quel ordre les noeuds sont explorés dans le cas d'un parcours en largeur de l'arbre `A3` suivant.
 
-    ![ab11.png](data/ab11.png)
+        ![ab11.png](data/ab11.png)
+    === "Solution"
+        11 - 15 - 12 - 29 - 23 - 21 - 31 - 111 - 31 - 3 - 5 - 7 - 43 - 3
 
 ### Algorithme de parcours en largeur
 
@@ -650,28 +691,49 @@ Le parcours **suffixe** est aussi un parcours en profondeur d'abord.
 L'ordre des lettres parcourues est donc P-Y-H-N-O-T.
 
 !!! example "Exercice n°4 :" 
-    Donner le rendu de chaque parcours :  
+    === "Enoncé" 
+        Donner le rendu de chaque parcours :  
 
-    1. Parcours en largeur  
-    2. Parcours préfixe  
-    3. Parcours infixe  
-    4. Parcours suffixe  
+        1. Parcours en largeur  
+        2. Parcours préfixe  
+        3. Parcours infixe  
+        4. Parcours suffixe  
 
-    ![exo_parcours.png](data/exo_parcours.png)
+        ![exo_parcours.png](data/exo_parcours.png)
+
+    === "Solution"
+
+        ![exo_parcours.png](data/exo_parcours.png)
+
+        1. largeur : 1 2 3 4 5 6 7 8 9
+        
+        2. préfixe : 1 2 4 5 7 8 3 6 9
+
+        3. infixe : 4 2 7 5 8 1 3 9 6
+
+        4. suffixe : 4 7 8 5 2 9 6 3 1
 
 !!! example "Exercice n°5 :" 
+    === "Enoncé" 
+        ![exo_2.png](data/exo_2.png)
 
-    ![exo_2.png](data/exo_2.png)
+        Donner le rendu de chaque parcours :
 
-    Donner le rendu de chaque parcours :
+        1. Parcours en largeur  
+        2. Parcours préfixe  
+        3. Parcours infixe  
+        4. Parcours suffixe  
+    === "Solution"
 
-    1. Parcours en largeur  
-    2. Parcours préfixe  
-    3. Parcours infixe  
-    4. Parcours suffixe  
+        ![exo_2.png](data/exo_2.png)
 
+        1. largeur : 9 8 7 6 2 5 1 4 3
 
+        2. préfixe : 9 8 6 2 1 7 5 4 3
 
+        3. infixe : 6 8 1 2 9 7 4 5 3
+
+        4. suffixe : 6 1 2 8 4 3 5 7 9
 
 ## Utilisation de l'implémentation : parcours  
 **Rappel de l'implémentation :**
@@ -819,6 +881,11 @@ Un **arbre binaire de recherche** est un arbre binaire dont les valeurs des nœu
 - l'étiquette d'un nœud est **supérieure ou égale** à celle de **chaque** nœud de son **sous-arbre gauche**.
 - l'étiquette d'un nœud est **strictement inférieure** à celle du **chaque** nœud de son **sous-arbre droit**.
 
+![schema](data/schema_abr.png){:.center}
+
+
+**Exemple :**  
+
 ![exABR.png](data/exABR.png)
 
 À noter que l'arbre 3 (qui est bien un ABR) est appelé **arbre filiforme**. 
@@ -828,19 +895,26 @@ L'arbre 5 n'est pas un ABR à cause de la feuille 9, qui fait partie du sous-arb
 **Remarque :** on pourrait aussi définir un ABR comme un arbre dont le parcours infixe est une suite croissante.
 
 !!! example "Exercice n°7 :" 
+    === "Enoncé"
+        On donne ci-dessous une liste de nombre aléatoire de 14 nombres entiers :  
 
-    On donne ci-dessous une liste de nombre aléatoire de 14 nombres entiers :  
+        |25 |60 |35 |10 |5 |20 |65 |45 |70 |40 |50 |55 |30 |15 |  
 
-    |25 |60 |35 |10 |5 |20 |65 |45 |70 |40 |50 |55 |30 |15 |  
-
-    Construire (dans l’ordre de la liste) l’arbre binaire de recherche associé.
+        Construire (dans l’ordre de la liste) l’arbre binaire de recherche associé.
+    === "Solution"
+        ![exABR.png](data/Exo_cours_01.png)
 
 !!! example "Exercice n°8 :"  
-    On donne ci-dessous une liste de nombre aléatoire de 11 nombres entiers :  
+    === "Enoncé"
+        On donne ci-dessous une liste de nombre aléatoire de 11 nombres entiers :  
 
-    |11 |15 |7 |18 |5 |9 |17 |8 |10 |31 |4 |  
+        |11 |15 |7 |18 |5 |9 |17 |8 |10 |31 |4 |  
 
-    Construire (dans l’ordre de la liste) l’arbre binaire de recherche associé.
+        Construire (dans l’ordre de la liste) l’arbre binaire de recherche associé.
+
+    === "Solution"
+        ![exABR.png](data/Exo_cours_02.png)
+
 
 <blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
     <span style="font-size:20px; color:black;"> Déterminer si un arbre est un ABR
@@ -853,7 +927,7 @@ Méthode : récupérer le parcours infixe dans une liste, et faire un test sur c
 
 
 ```python
-def est_ABR(arbre):
+def est_ABR(arbre,p):
     '''renvoie un booléen indiquant si arbre est un ABR'''
     # p est la liste qui contiendra le parcours. la fonction est à appeler par est_ABR(a, [])
     if arbre is None :
@@ -861,7 +935,7 @@ def est_ABR(arbre):
     est_ABR(arbre.gauche, p)
     p.append(arbre.v)
     est_ABR(arbre.droit, p)
-    return p == sorted(p) # on regarde si le parcours est égal au parcours trié (merci TomFox)
+    return p == sorted(p) # on regarde si le parcours est égal au parcours trié
 
 ```
 
@@ -936,50 +1010,109 @@ noeud est 1.
 
 
 !!! example ""Question 1"
-    Déterminer la taille et la hauteur de l’arbre binaire suivant :
+    === "Enoncé"
+        Déterminer la taille et la hauteur de l’arbre binaire suivant :
 
-![arbre01](data/arbre_sujet0_1.png){:.center}
+        ![arbre01](data/arbre_sujet0_1.png){:.center}
+
+    === "Solution"
+        Taille = 9 et hauteur = 4
 
 !!! example "Question 2"
-    On décide de numéroter en binaire les noeuds d’un arbre binaire de la façon suivante :
+    === "Enoncé"
+        On décide de numéroter en binaire les noeuds d’un arbre binaire de la façon suivante :
 
-    -  la racine correspond à 1 ;
-    - la numérotation pour un fils gauche s’obtient en ajoutant le chiffre 0 à droite au numéro de son
-    père ;
-    - la numérotation pour un fils droit s’obtient en ajoutant le chiffre 1 à droite au numéro de son
-    père ;
+        -  la racine correspond à 1 ;
+        - la numérotation pour un fils gauche s’obtient en ajoutant le chiffre 0 à droite au numéro de son
+        père ;
+        - la numérotation pour un fils droit s’obtient en ajoutant le chiffre 1 à droite au numéro de son
+        père ;
 
-    Par exemple, dans l’arbre ci-dessous, on a utilisé ce procédé pour numéroter les noeuds A; B; C; E et F
+        Par exemple, dans l’arbre ci-dessous, on a utilisé ce procédé pour numéroter les noeuds A; B; C; E et F
 
-    ![arbre01](data/arbre_sujet0_2.png){:.center}
+        ![arbre01](data/arbre_sujet0_2.png){:.center}
 
-    1. Dans l’exemple précédent, quel est le numéro en binaire associé au noeud G?
-    2. Quel est le noeud dont le numéro en binaire vaut 13 en décimal ?
-    3. En notant h la hauteur de l’arbre, sur combien de bits seront numérotés les noeuds les plus en bas ?
-    4. Justifier que pour tout arbre de hauteur h et de taille $n \geq$ 2, on a : 
-    $h \leq n \leq 2^h -1$
+        1. Dans l’exemple précédent, quel est le numéro en binaire associé au noeud G?
+        2. Quel est le noeud dont le numéro en binaire vaut 13 en décimal ?
+        3. En notant h la hauteur de l’arbre, sur combien de bits seront numérotés les noeuds les plus en bas ?
+        4. Justifier que pour tout arbre de hauteur h et de taille $n \geq$ 2, on a : 
+        $h \leq n \leq 2^h -1$
+    === "Solution 2.1" 
+        2.1 G : 1010          
+        
+        ![arbre01](data/sujet0_exo3_cor2.png){:.center}
 
+    === "Solution 2.2" 
+        2.2  Noeud I  
+    === "Solution 2.3" 
+        2.3 À chaque “étage”, on augmente le nombre de bits de 1 : si h = 1, nombre de bit = 1 ;  
+            si h = 2, nombre de bits = 2… pour une hauteur h le nombre de bits est de h   
+    === "Solution 2.4" 
+        2.4 Prenons un exemple avec h = 3 : nous avons 2 cas extrêmes : un arbre filiforme ou un arbre complet. Toutes les autres possibilités sont des cas intermédiaires.
+
+        
+        ![arbre01](data/sujet0_cor_Exo3.png){:.center}
+
+        Dans le cas de l’arbre filiforme nous avons, pour $h = 3$, $n = 3$ ($n$ : taille). Si on généralise pour un arbre de hauteur $h$, nous avons $n = h$  
+        Dans le cas d’un arbre complet, pour $h = 3$ nous avons $n = 7$, donc $n = 2^3 - 1 = 7$.  
+        Si on généralise pour un arbre de hauteur $h$, nous avons $n = 2^h - 1$  
+        Sachant qu’un arbre quelconque est un intermédiaire entre l’arbre filiforme et l’arbre complet, nous pouvons donc dire que :    
+            $ℎ \leq n \leq 2ĥ - 1$
 
 !!! example "Question 3"
-    Un arbre binaire est dit complet si tous les niveaux de l’arbre sont remplis.
+    === "Enoncé"
+        Un arbre binaire est dit complet si tous les niveaux de l’arbre sont remplis.
 
 
-    ![arbre01](data/arbre_sujet0_3.png){:.center}
+        ![arbre01](data/arbre_sujet0_3.png){:.center}
 
-    On décide de représenter un arbre binaire complet par un tableau de taille $n + 1$, où $n$ est la taille de l’arbre, de la façon suivante :
+        On décide de représenter un arbre binaire complet par un tableau de taille $n + 1$, où $n$ est la taille de l’arbre, de la façon suivante :
 
-    - La racine a pour indice 1 ;  
-    - Le fils gauche du noeud d’indice $i$ a pour indice $2 \times i$ ;  
-    — Le fils droit du noeud d’indice $i$ a pour indice $2 \times i + 1$ ;  
-    — On place la taille $n$ de l’arbre dans la case d’indice 0.  
+        - La racine a pour indice 1 ;  
+        - Le fils gauche du noeud d’indice $i$ a pour indice $2 \times i$ ;  
+        - Le fils droit du noeud d’indice $i$ a pour indice $2 \times i + 1$ ;   
+        - On place la taille $n$ de l’arbre dans la case d’indice 0.
 
-    1. Déterminer le tableau qui représente l’arbre binaire complet de l’exemple précédent.
-    2. On considère le père du noeud d’indice $i$ avec $i \geq 2$. Quel est son indice dans le tableau ?
+
+        1) Déterminer le tableau qui représente l’arbre binaire complet de l’exemple précédent.  
+        2) On considère le père du noeud d’indice $i$ avec $i \geq 2$. Quel est son indice dans le tableau ?
+
+    === "Solution 3.1"
+        ![arbre01](data/sujet0_exo3_cor3.png){:.center}
+
+        [15, ‘A’, ‘B’, ‘C’, ‘D’, ‘E’, ‘F’, ‘G’, ‘H’, ‘I’, ‘J’, ‘K’, ‘L’, ‘M’, ‘N’, ‘O’]
+
+    === "Solution 3.2" 
+        Le père d’un fils d’indice $i$ a pour indice $i /2$ si i est pair et $(i −1)/2$ sinon.  
+        Sous python on peut dans ce cas utiliser la fonction $//$ .  
+        $a//b$ donne le quotient de la division euclidienne de a par b .
 
 !!! example "Question 4"
-    On se place dans le cas particulier d’un arbre binaire de recherche complet où les noeuds contiennent des entiers et pour lequel la valeur de chaque noeud est supérieure à celles desnoeuds de son fils gauche, et inférieure à celles des noeuds de son fils droit.  
+    === "Enoncé"
+        On se place dans le cas particulier d’un arbre binaire de recherche complet où les noeuds contiennent des entiers et pour lequel la valeur de chaque noeud est supérieure à celles des noeuds de son fils gauche, et inférieure à celles des noeuds de son fils droit.  
 
-    Écrire une fonction recherche ayant pour paramètres un arbre arbre et un élément element. Cette fonction renvoie True si element est dans l’arbre et False sinon. L’arbre sera représenté par un tableaucomme dans la question précédente.
+        Écrire une fonction recherche ayant pour paramètres un arbre arbre et un élément element. Cette fonction renvoie True si element est dans l’arbre et False sinon. L’arbre sera représenté par un tableau comme dans la question précédente.
+
+    === "Solution" 
+        On a par exemple un arbre de ce type :  
+
+        ![arbre01](data/sujet0_exo3_cor4.png){:.center}
+
+        ```python 
+        def recherche(arbre,element):
+            '''In : arbre et element entier
+            Out : true si element est dans la liste'''
+            taille = arbre[0]
+            i=1
+            while i<=taille:
+                if element==arbre[i]:
+                    return True
+                elif element>arbre[i]:
+                    i=2*i+1
+                else:
+                    i=2*i
+            return False
+        ```
 
 
 <blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
@@ -993,64 +1126,117 @@ entier :
 ![arbre01](data/arbre_sujet0_4.png){:.center}
 
 !!! example "Question 1"
-    a. Donner le nombre de feuilles de cet arbre et préciser leur valeur (étiquette).  
-    b. Donner le sous arbre-gauche du noeud 23.  
-    c. Donner la hauteur et la taille de l’arbre.  
-    d. Donner les valeurs entières possibles de val pour cet arbre binaire de recherche.  
+    === "Enoncé"
+        a. Donner le nombre de feuilles de cet arbre et préciser leur valeur (étiquette).  
+        b. Donner le sous arbre-gauche du noeud 23.  
+        c. Donner la hauteur et la taille de l’arbre.  
+        d. Donner les valeurs entières possibles de val pour cet arbre binaire de recherche.  
+    
+    === "solution 1.a"
+        4 feuilles : 12 ; val ; 21 ; 32
 
+    === "Solution 1.b"
+        ![arbre01](data/Exo02.png){:.center}
+
+    === "Solution 1.c"
+        hauteur = 4 ; taille = 9
+
+    === "Solution 1.d"
+        16 ou 17
+
+    
 On suppose, pour la suite de cet exercice, que val est égal à 16.
 !!! example "Question 2"
-    On rappelle qu’un parcours infixe depuis un noeud consiste, dans l’ordre, à faire un parcours infixe sur le sous arbre-gauche, afficher le noeud puis faire un parcours infixe sur le sous-arbre droit.
-    Dans le cas d’un parcours suffixe, on fait un parcours suffixe sur le sous-arbre gauche puis un parcours suffixe sur le sous-arbre droit, avant d’afficher le noeud.
+    === "Enoncé"
+        On rappelle qu’un parcours infixe depuis un noeud consiste, dans l’ordre, à faire un parcours infixe sur le sous arbre-gauche, afficher le noeud puis faire un parcours infixe sur le sous-arbre droit.
+        Dans le cas d’un parcours suffixe, on fait un parcours suffixe sur le sous-arbre gauche puis un parcours suffixe sur le sous-arbre droit, avant d’afficher le noeud.
 
-    a. Donner les valeurs d’affichage des noeuds dans le cas du parcours infixe de l’arbre.  
-    b. Donner les valeurs d’affichage des noeuds dans le cas du parcours suffixe de l’arbre.  
+        a. Donner les valeurs d’affichage des noeuds dans le cas du parcours infixe de l’arbre.  
+        b. Donner les valeurs d’affichage des noeuds dans le cas du parcours suffixe de l’arbre.  
 
-!!! example "Question 3" 
-    On considère la classe Noeud définie de la façon suivante en Python :
+    === "Solution 2"
 
-    ```python
-    class Noeud():
-        def __init__(self, v):
-            self.ag = None
-            self.ad = None
-            self.v = v
-    
-         def insere(self, v):
-            n = self
-            est_insere = False
-            while not est_insere :
-                if v == n.v:             
-                    est_insere = True       | bloc 1
-                 elif v < n.v:
-                    if n.ag != None:        -
-                        n = n.ag             |
-                    else:                    | bloc 2
-                        n.ag = Noeud(v)      |
-                        est_insere = True   -
-                  else:
-                     if n.ad != None:       -
-                        n = n.ad             |
-                     else:                   | bloc 3
-                        n.ad = Noeud(v)      |
-                        est_insere = True   -
-     
-         def insere_tout(self, vals):
+        ![arbre01](data/arbre_sujet0_4.png){:.center}
+
+        infixe : 12 – 13 – 15 – 16 – 18 – 19 – 21 – 23 – 32  
+
+        suffixe : 12 – 13 – 16 – 15 – 21 – 19 – 32 – 23 – 18
+
+
+On considère la classe Noeud définie de la façon suivante en Python :
+
+```python
+class Noeud():
+    def __init__(self, v):
+        self.ag = None
+        self.ad = None
+        self.v = v
+       
+    def insere(self, v):
+        n = self
+        est_insere = False
+        while not est_insere :
+            if v == n.v:             
+                est_insere = True       | bloc 1
+            elif v < n.v:
+                if n.ag != None:        -
+                    n = n.ag             |
+                else:                    | bloc 2
+                    n.ag = Noeud(v)      |
+                    est_insere = True   -
+            else:
+                if n.ad != None:       -
+                    n = n.ad            |
+                else:                   | bloc 3
+                    n.ad = Noeud(v)     |
+                    est_insere = True   -
+        
+        def insere_tout(self, vals):
             for v in vals:
                 self.insere(v)
-    ```            
-                
-    a. Représenter l’arbre construit suite à l’exécution de l’instruction suivante :  
-    ```python
-    racine = Noeud(18)
-    racine.insere_tout([12, 13, 15, 16, 19, 21, 32, 23])
-    ```
+```            
 
-    b. Ecrire les deux instructions permettant de construire l’arbre de la figure 1. On rappelle que le nombre val est égal à 16.  
-    c. On considère l’arbre tel qu’il est présenté sur la figure 1. Déterminer l’ordre d’exécution des blocs (repérés de 1 à 3) suite à l’application de la méthode insere(19) au noeud racine de cet arbre.  
+!!! example "Question 3" 
+    === "Enoncé"
+
+        a. Représenter l’arbre construit suite à l’exécution de l’instruction suivante :  
+        ```python
+        racine = Noeud(18)
+        racine.insere_tout([12, 13, 15, 16, 19, 21, 32, 23])
+        ```
+
+        b. Ecrire les deux instructions permettant de construire l’arbre de la figure 1. On rappelle que le nombre val est égal à 16.  
+        c. On considère l’arbre tel qu’il est présenté sur la figure 1. Déterminer l’ordre d’exécution des blocs (repérés de 1 à 3) suite à l’application de la méthode insere(19) au noeud racine de cet arbre.  
+
+    === "Solution 3.a"
+        ![arbre01](data/Exo02_2.png){:.center}
+
+    === "Solution 3.b"
+        ```python
+        racine = Noeud(18)
+        racine.insere_tout([15, 23, 13, 16, 12, 19, 21, 32])
+        ```     
+
+    === "Solution 3.c"
+        bloc 3 – bloc 2 – bloc 1
 
 !!! example "Question 4"
-    Ecrire une méthode recherche(self, v) qui prend en argument un entier v et renvoie la valeur True si cet entier est une étiquette de l’arbre, False sinon.
+    === "Enoncé" 
+        Ecrire une méthode recherche(self, v) qui prend en argument un entier v et renvoie la valeur True si cet entier est une étiquette de l’arbre, False sinon.
+
+    === "Solution"
+        ```python
+        def recherche (self,v):
+            n = self
+            while n is not None:
+                if v < n.v:
+                    n = n.ag
+                elif v > n.v:
+                    n = n.ad
+                else:
+                    return True
+            return False
+        ```
 
 
 <blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
@@ -1106,53 +1292,116 @@ un prénom différent.
 
 
 !!! example "Question 1"
-    (a) On considère l’arbre de compétition B suivant :
+    === "Enoncé"
+        (a) On considère l’arbre de compétition B suivant :
 
-    ![arbre01](data/arbre_sujet0_9.png){:.center}
+        ![arbre01](data/arbre_sujet0_9.png){:.center}
 
-    Indiquer la racine de cet arbre puis donner l’ensemble des valeurs des feuilles de cet arbre.
+        Indiquer la racine de cet arbre puis donner l’ensemble des valeurs des feuilles de cet arbre.
 
-    (b) Proposer une fonction Python vainqueur prenant pour argument un arbre de compétition arb ayant au moins un joueur. Cette fonction doit renvoyer la chaîne de caractères constituée du nom du vainqueur du tournoi.  
-    Exemple : vainqueur(B) vaut "Lea"  
-    
-    (c) Proposer une fonction Python finale prenant pour argument un arbre de compétition arb ayant au moins deux joueurs. Cette fonction doit renvoyer le tableau des deux chaînes de caractères qui sont les deux compétiteurs finalistes.
+        (b) Proposer une fonction Python vainqueur prenant pour argument un arbre de compétition arb ayant au moins un joueur. Cette fonction doit renvoyer la chaîne de caractères constituée du nom du vainqueur du tournoi.  
+        Exemple : vainqueur(B) vaut "Lea"  
+        
+        (c) Proposer une fonction Python finale prenant pour argument un arbre de compétition arb ayant au moins deux joueurs. Cette fonction doit renvoyer le tableau des deux chaînes de caractères qui sont les deux compétiteurs finalistes.
 
-    Exemple : finale(B) vaut ["Lea", "Louis"]
+        Exemple : finale(B) vaut ["Lea", "Louis"]
+
+    === "Solution 1.(a)"
+        racine => “Lea”  
+        feuilles => “Marc”, “Lea”, “Claire”, “Theo”, “Marie”, “Louis”, “Anne” et “Kevin”
+
+    === "Solution 1.(b)"
+        ```python
+        def vainqueur(arb):
+            return racine(arb)
+        ```
+    === "Solution  1.(c)"
+        ```python
+        def finale(arb):
+            f1 = gauche(arb)
+            f2 = droit(arb)
+            return [racine(f1), racine(f2)]
+        ```
 
 !!! example "Question 2"
-    (a) Proposer une fonction Python occurrences ayant pour paramètre un arbre de compétition arb et le nom d’un joueur nom et qui renvoie le nombre d’occurrences (d’apparitions) du joueur nom dans l’arbre de compétition arb.  
-    Exemple : occurences(B, "Anne") vaut 2.  
+    === "Enoncé"
+        (a) Proposer une fonction Python occurrences ayant pour paramètre un arbre de compétition arb et le nom d’un joueur nom et qui renvoie le nombre d’occurrences (d’apparitions) du joueur nom dans l’arbre de compétition arb.  
+        Exemple : occurences(B, "Anne") vaut 2.  
 
-    (b) Proposer une fonction Python a_gagne prenant pour paramètres un arbre de compétition arb et le nom d’un joueur nom et qui renvoie le booléen True si le joueur nom a gagné au moins un match dans la compétition représenté par l’arbre de compétition arb.   
-    Exemple : a_gagne(B,"Louis") vaut True
+        (b) Proposer une fonction Python a_gagne prenant pour paramètres un arbre de compétition arb et le nom d’un joueur nom et qui renvoie le booléen True si le joueur nom a gagné au moins un match dans la compétition représenté par l’arbre de compétition arb.   
+        Exemple : a_gagne(B,"Louis") vaut True
+
+    === "Solution  2.(a)"
+        ```python
+        def occurrences(arb, nom):
+            if est_vide(arb):
+                return 0
+            elif racine(arb) == nom:
+                res = 1
+            else:
+                res = 0
+            return res + occurrences(gauche(arb), nom) + occurrences(droit(arb),nom)
+        ```
+
+    === "Solution 2.(b)"
+        ```python
+        def a_gagne(arb, nom):
+            return occurrences(arb,nom) > 1
+        ```
 
 !!! example "Question 3"
-    On souhaite programmer une fonction Python nombre_matchs qui prend pour arguments un arbre de compétition arb et le nom d’un joueur nom et qui renvoie le nombre de matchs joués par le joueur nom dans la compétition représentée par l’arbre de compétition arb  
-    Exemple : nombre_matchs(B,"Lea") doit valoir 3 et nombre_matchs(B,"Marc") doit valoir 1.
+    === "Enoncé"
+        On souhaite programmer une fonction Python nombre_matchs qui prend pour arguments un arbre de compétition arb et le nom d’un joueur nom et qui renvoie le nombre de matchs joués par le joueur nom dans la compétition représentée par l’arbre de compétition arb  
+        Exemple : nombre_matchs(B,"Lea") doit valoir 3 et nombre_matchs(B,"Marc") doit valoir 1.
 
-    (a) Expliquer pourquoi les instructions suivantes renvoient une valeur erronée. On pourra pour cela identifier le noeud de l’arbre qui provoque une erreur.  
+        (a) Expliquer pourquoi les instructions suivantes renvoient une valeur erronée. On pourra pour cela identifier le noeud de l’arbre qui provoque une erreur.  
 
-    ```python
-    1 def nombre_matchs (arb ,nom ):
-    2   """ arbre_competition , str -> int """
-    3   return occurrences (arb ,nom)
-    ```
+        ```python
+        1 def nombre_matchs (arb ,nom ):
+        2   """ arbre_competition , str -> int """
+        3   return occurrences (arb ,nom)
+        ```
 
-    (b) proposer une correction pour la fonction nombre_matchs
+        (b) proposer une correction pour la fonction nombre_matchs
+
+    === "Solution 3.(a)"
+        Les instructions proposées renvoient une valeur erronée dans le cas où le paramètre nom correspond au vainqueur du tournoi. En effet, si on considère l’arbre proposé à la question 1a, occurrences(arb, “Lea”) renvoie 4 alors que Lea a joué seulement 3 matchs.
+
+    === "Solution 3.(b)"
+        ```python
+        def nombre_matchs(arb, nom):
+            if vainqueur(arb)==nom :
+                return occurrences(arb, nom) - 1
+            else :
+                return occurrences(arb, nom)
+        ```
 
 !!! example "Question 4"
-    Recopier et compléter la fonction liste_joueurs qui prend pour argument un arbre de compétition arb et qui renvoie un tableau contenant les participants au tournoi, chaque nom ne devant figurer qu’une seule fois dans le tableau.  
-    L’opération + à la ligne 8 permet de concaténer deux tableaux.  
-    Exemple : Si L1 = [4, 6, 2] et L2 = [3, 5, 1], l’instruction L1 + L2 va renvoyer le tableau [4, 6, 2, 3, 5, 1]
+    === "Enoncé"
+        Recopier et compléter la fonction liste_joueurs qui prend pour argument un arbre de compétition arb et qui renvoie un tableau contenant les participants au tournoi, chaque nom ne devant figurer qu’une seule fois dans le tableau.  
+        L’opération + à la ligne 8 permet de concaténer deux tableaux.  
+        Exemple : Si L1 = [4, 6, 2] et L2 = [3, 5, 1], l’instruction L1 + L2 va renvoyer le tableau [4, 6, 2, 3, 5, 1]
 
-    ```python
-    1 def liste_joueurs ( arb ):
-    2   """ arbre_competition -> tableau """
-    3   if est_vide (arb ):
-    4       return ...
-    5   elif ... and ... :
-    6       return [ racine (arb )]
-    7   else :
-    8       return ...+ liste_joueurs ( droit (arb ))"
-    ```
+        ```python
+        1 def liste_joueurs ( arb ):
+        2   """ arbre_competition -> tableau """
+        3   if est_vide (arb ):
+        4       return ...
+        5   elif ... and ... :
+        6       return [ racine (arb )]
+        7   else :
+        8       return ...+ liste_joueurs ( droit (arb ))"
+        ```
 
+    === "Solution " 
+        ```python
+        def liste_joueur(arb):
+            if est_vide (arb):
+                return []
+            elif est_vide(gauche(arb)) and est_vide(droit(arb)) :
+                return [racine(arb)]
+            else :
+                return liste_joueurs(gauche(arb)) + liste_joueurs(droit(arb))
+        ```
+
+        

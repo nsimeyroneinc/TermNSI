@@ -2,9 +2,7 @@ Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire af
 Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
 
 !!! info 
-    **Thème en cours** : Listes - Piles et Files
-
-    **Prochain thème** : Les arbres et algorithmes
+    **Thème en cours** : Les arbres et algorithmes
 
 
 ## Notions à l'épreuve écrite de Mars 2022 : 
@@ -13,9 +11,8 @@ Les notebooks sont corrigés et les cellules peuvent être copiées pour être t
 
 🗹 Structure de données abstraites( file) : interface et implémentation  
 🗹 Programmation orientée objet  
-🗹 Structures linéaires : Listes, Piles, Files
-
-□ Arbres
+🗹 Structures linéaires : Listes, Piles, Files  
+🗹 Arbres
 
 ### &#10145; Thème : Base de données  
 
@@ -27,7 +24,6 @@ Les notebooks sont corrigés et les cellules peuvent être copiées pour être t
 
 □ Gestion des processus et des ressources par un système d’exploitation  
 □ Protocoles de routage  
-
 □ Composants intégrés d’un système sur puce
 
 ### &#10145; Thème : Langage de programmation(LP)  
@@ -40,7 +36,7 @@ Les notebooks sont corrigés et les cellules peuvent être copiées pour être t
 
 ### &#10145; Thème : Algorithmique(A)
 
-□ Algorithmes sur les arbres binaires et sur les arbres binaires de recherche.
+🗹 Algorithmes sur les arbres binaires et sur les arbres binaires de recherche.
 
 □ Méthode « diviser pour régner »
 	
