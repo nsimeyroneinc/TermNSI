@@ -1057,7 +1057,7 @@ noeud est 1.
         Dans le cas d’un arbre complet, pour $h = 3$ nous avons $n = 7$, donc $n = 2^3 - 1 = 7$.  
         Si on généralise pour un arbre de hauteur $h$, nous avons $n = 2^h - 1$  
         Sachant qu’un arbre quelconque est un intermédiaire entre l’arbre filiforme et l’arbre complet, nous pouvons donc dire que :    
-            $ℎ \leq n \leq 2ĥ - 1$
+            $ℎ \leq n \leq 2^ĥ - 1$
 
 !!! example "Question 3"
     === "Enoncé"
