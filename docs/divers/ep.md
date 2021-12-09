@@ -195,7 +195,7 @@
         
 
     === "Correction" 
-        {{ correction(True,
+
         "
         ```python linenums='1'
         def tri(tab):
@@ -214,8 +214,6 @@
             return tab
 
         ```
-        "
-        ) }}
 
 
 
@@ -227,8 +225,7 @@
         Les seules opérations autorisées sont l’addition et la soustraction. 
 
     === "Correction" 
-        {{ correction(True,
-        "
+
         Énoncé peu clair, on ne sait pas si ```n1``` et ```n2``` sont entiers naturels ou relatifs. Nous décidons qu'ils sont relatifs et donc qu'ils peuvent être négatifs, auquel cas on utilise le fait que $5 \\times (-6)= - (5 \\times 6)$.
         ```python linenums='1'
         def multiplication(n1, n2):
@@ -242,8 +239,7 @@
             return resultat
         ```
 
-        "
-        ) }}
+
 
 
 
@@ -325,8 +321,7 @@
         assert moyenne([1,2]) == 1.5
         ```
     === "Correction" 
-        {{ correction(True,
-        "
+
         ```python linenums='1'
         def moyenne(tab):
             '''
@@ -341,8 +336,7 @@
                 somme += elt
             return somme / len(tab)
         ```
-        "
-        ) }}
+
 
 
 
