@@ -2,10 +2,13 @@ Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire af
 Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
 
 !!! info 
-    **Thème en cours** : Les arbres et algorithmes
+    **Thème en cours** : Protocoles de routage  
+
+    **Devoir - Mardi 04/02/2022** : Rattrapage Piles et Files
 
 
-## Notions à l'épreuve écrite de Mars 2022 : 
+
+## Notions à l'épreuve écrite de Mars 2022 : 
 
 ### &#10145; Thème : Structure de données  
 
