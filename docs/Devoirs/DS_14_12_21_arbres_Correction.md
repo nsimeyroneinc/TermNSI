@@ -149,26 +149,59 @@ Les nœuds ont été nommés dans l'ordre de leur insertion dans l'arbre ci-dess
 
 
 !!! example "Question 1"
-    On insère la valeur 25 dans l'arbre, dans un nouveau nœud nommé nœud11.  
-    Recopier l'arbre binaire de recherche étudié et placer la valeur 25 sur cet arbre en coloriant en rouge le chemin parcouru.  
-    Préciser sous quel nœud la valeur 25 sera insérée et si elle est insérée en fils gauche ou en fils droit, et expliquer toutes les étapes de la décision.
+    === "Enoncé"
+        On insère la valeur 25 dans l'arbre, dans un nouveau nœud nommé nœud11.  
+        Recopier l'arbre binaire de recherche étudié et placer la valeur 25 sur cet arbre en coloriant en rouge le chemin parcouru.  
+        Préciser sous quel nœud la valeur 25 sera insérée et si elle est insérée en fils gauche ou en fils droit, et expliquer toutes les étapes de la décision.
+
+    === "Solution"
+        ![arbre](data/DS_14_12_21_correction.png){:.center}  
+
+        On désire insérer le noeud11 (valeur 25).  
+        
+        - On part de la racine (noeud00 de valeur 26), 25 est plus petit que 26, on considère donc le sous-arbre gauche et on se retrouve au niveau du noeud01  valeur 3).  
+        - 25 est plus grand que 3, on considère donc le sous-arbre droit au noeud01 et on se retrouve au niveau du noeud03 (valeur 15).  
+        - 25 est plus grand que 15, on considère donc le sous-arbre droit au noeud03 et on se retrouve au niveau du noeud05 (valeur 19).  
+        - 25 est plus grand que 19, on considère donc le sous-arbre droit du noeud05, ce sous-arbre droit est vide et on insère donc le noeud11 à cet  mplacement.  
+        Le noeud11 est donc inséré sous le noeud5 en fils droit.
 
 !!! example "Question 2"
-    Préciser toutes les valeurs entières que l’on peut stocker dans le nœud fils gauche du nœud04 (vide pour l'instant), en respectant les règles sur les arbres binaires de recherche ?
+    === "Enoncé"
+        Préciser toutes les valeurs entières que l’on peut stocker dans le nœud fils gauche du nœud04 (vide pour l'instant), en respectant les règles sur les arbres binaires de recherche ?
+
+    === "Solution"
+        Il est possible de stocker toutes les valeurs comprises entre 26 et 29, c’est à dire : 27 et 28
 
 !!! example "Question 3"
-    Voici un algorithme récursif permettant de parcourir et d'afficher les valeurs de l'arbre :
+    === "Enoncé"
+        Voici un algorithme récursif permettant de parcourir et d'afficher les valeurs de l'arbre :
 
-    ```python
-    Parcours(A) # A est un arbre binaire de recherche
-    Afficher(A.valeur)
-    Parcours(A.fils_gauche)
-    Parcours(A.fils_droit)
-    ```
+        ```python
+        Parcours(A) # A est un arbre binaire de recherche
+            Afficher(A.valeur)
+            Parcours(A.fils_gauche)
+            Parcours(A.fils_droit)
+        ```
 
-    3.a. Écrire la liste de toutes les valeurs dans l'ordre où elles seront affichées.  
-    3.b. Choisir le type de parcours d'arbres binaires de recherche réalisé parmi les propositions suivantes : Préfixe, Suffixe ou Infixe
+        3.a. Écrire la liste de toutes les valeurs dans l'ordre où elles seront affichées.  
+        3.b. Choisir le type de parcours d'arbres binaires de recherche réalisé parmi les propositions suivantes : Préfixe, Suffixe ou Infixe
 
+    === "Solution" 
+        ![arbre](data/DS_14_12_21_Arbre2.png){:.center}   
+
+        3.a)  26 - 3 - 1 - 15 - 13 - 19 - 25 - 42 - 29 - 32 - 30 - 37
+
+
+        3.b)  C’est un parcours préfixe
 
 !!! example "Question 4"
-    En vous inspirant de l’algorithme précédent, écrire un algorithme Parcours2 permettant de parcourir et d'afficher les valeurs de l'arbre A dans l'ordre croissant.
+    === "Enoncé"
+        En vous inspirant de l’algorithme précédent, écrire un algorithme Parcours2 permettant de parcourir et d'afficher les valeurs de l'arbre A dans l'ordre croissant.
+
+    === "Solution" 
+        ```python
+        Parcours2(A)
+            Parcours2(A.fils_gauche)
+            Afficher(A.valeur)
+            Parcours2(A.fils_droit)
+        ```

@@ -13,9 +13,10 @@ docs_dir: docs
 # Menu de navigation
 nav: 
     - Accueil : index.md
-    - Les dictionnaires : StructureDonnees/TP07_Dictionnaires_Corrige.md
+    
     #Structure de données
-    - Thème n°1 - Structure de données :  
+    - T1 - Structure de données :  
+      - Les dictionnaires : StructureDonnees/TP07_Dictionnaires_Corrige.md
       - TP 11 - Les Listes : TD11_Les_Listes.md
       - TP 11 - Les Listes Corrigé : TD11_Corrige.md
      # - TP 12 - Liste Chainée : TD12_ListeChainee.md
@@ -24,18 +25,16 @@ nav:
       - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles.md
       - TP 14 - Les Files Enoncé-Corrigé : StructureDonnees/TD14_Files.md
       - TP 15 - Les Arbres Enoncé-Corrigé : StructureDonnees/TD15_Les_Arbres.md
-    - Thème n°2 - Bases de données :  
+    - T2 - Bases de données :  
       - TP 17 - Les JO Londres 2012 : BasesDonnees/TP17_JO.md
       - TD 18 - Sujet BAC 2021 : BasesDonnees/TD18_Revision_SQL_BAC.md
-    #- Thème 5 - Architecture matèrielle :
-    #  - TD 16 - Protocole de routage : Reseaux/TD16_Routage.md
-    #  - TD 16 - Protocole de routage : Reseaux/cours.md
-    #  - TD 17 : Reseaux/02_Exercices.md
+    - T3 - Architecture matèrielle :
+      - TD 19 - Protocole de routage : Reseaux/TD19_Routage.md
+      #- TD 16 - Protocole de routage : Reseaux/cours.md
+      #- TD 17 : Reseaux/02_Exercices.md
     - Retour 1ère :
       - TD : Revision1ere/TD_Glouton.md
       
-
-    
     #Devoirs
     - Devoirs :
       - P.O.O : DM/DM_POO.md
@@ -49,6 +48,7 @@ nav:
     - Epreuves pratiques : 
       - Déroulement : epreuve_pratique.md
       - Sujets : divers/EpreuvePratique.md
+
     - Divers conseils : divers/conseil.md
     # Référencer vos autres pages ci-dessus...
     
@@ -138,13 +138,13 @@ plugins:
   #      company: The War Company Inc.
   #      author: Monsieur Silvestre
   #- page-to-pdf : 
-  #    disableOnServe: True
+  #    disableOnServe: False
   #    displayHeaderFooter: true
   #    printBackground: True
   #    scale : 1.0
   #    landscape : False
   #    margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
-  #    headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#138779;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
+  #    headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
   #                      <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
   #                    </header>'
   #    footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
@@ -153,7 +153,7 @@ plugins:
   #                       <span class="pageNumber"></span>/<span class="totalPages"></span>
   #                      </span>
   #                    </footer>'
-  #    headerTemplate : 
+  #   headerTemplate : 
   #      title
   #      date
   #      pageNumber
