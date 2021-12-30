@@ -1,4 +1,5 @@
-Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire afin de retrouver les divers TP & TD travaillés en claase. <br>
+Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire afin de retrouver les divers TP & TD travaillés en claase.  
+
 Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
 
 !!! info 
@@ -7,8 +8,8 @@ Les notebooks sont corrigés et les cellules peuvent être copiées pour être t
     **Devoir - Mardi 04/02/2022** : Rattrapage Piles et Files
 
 !!! info  "Epreuve BAC 2022"
-    - Les épreuves écrites auront lieu  Les lundi 13 mars, mardi 14 mars et mercredi 16 mars 2022.  
-    - Les épreuves pratiques auront lieu du lundi 31 mars au vendredi 25 mars 2022
+    - Les **épreuves écrites** auront lieu du lundi 13 mars au mercredi 16 mars 2022.  
+    - Les **épreuves pratiques** auront lieu du lundi 21 mars au vendredi 25 mars 2022
 
 ## Notions à l'épreuve écrite de Mars 2022 : 
 
