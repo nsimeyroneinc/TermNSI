@@ -28,10 +28,12 @@ nav:
     - T2 - Bases de données :  
       - TP 17 - Les JO Londres 2012 : BasesDonnees/TP17_JO.md
       - TD 18 - Sujet BAC 2021 : BasesDonnees/TD18_Revision_SQL_BAC.md
-    - T3 - Architecture matèrielle :
+    - T3 - Archi. matèrielle :
       - TD 19 - Protocole de routage : Reseaux/TD19_Routage.md
       #- TD 16 - Protocole de routage : Reseaux/cours.md
       #- TD 17 : Reseaux/02_Exercices.md
+    #- T5 Algo. : 
+     # - TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
     - Retour 1ère :
       - TD : Revision1ere/TD_Glouton.md
       

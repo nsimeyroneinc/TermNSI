@@ -5,10 +5,6 @@
             <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°19 : Protocoles de routage</th>
             <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">Thème 3 : Architecture, OS et réseaux  </th>
         </tr>
-          <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:15pt;width:70%;">COURS et EXERCICES</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%"></th>
-        </tr>
     </thead>
 </table>
 
@@ -19,15 +15,16 @@
     <span style="font-size:30px; color:white;"> I. Résumé des épisodes précédents </span></blockquote>
 
 
-### Notion d'adressage
+### &#9193;  Notion d'adressage
 
 Deux types d'adresses existent :
-!!! abstract "Adresse MAC"
+
+!!! savoir "Adresse MAC"
     Une adresse matérielle, ou **adresse MAC**, parfois nommée adresse physique, est un identifiant physique stocké dans une carte réseau ou une interface réseau similaire (Wifi par exemple). À moins qu’elle n’ait été modifiée par l’utilisateur, elle est unique au monde.  
     Elle constitue la couche inférieure de la couche de liaison, c'est-à-dire la couche deux du modèle OSI. Elle est constituée de six octets, il existe donc potentiellement $2^{48}$ (environ 281 000 milliards) d'adresses MAC possibles.
 
 
-!!! abstract "Adresse IP"
+!!! savoir "Adresse IP"
     Une **adresse IP (Internet Protocol)** est un numéro d'identification qui est attribué de façon permanente ou provisoire à chaque périphérique relié à un réseau informatique qui utilise l'Internet Protocol. L'adresse IP est à la base du système d'acheminement (le routage) des paquets de données sur Internet.
 
 **Notions essentielles :**
@@ -51,7 +48,7 @@ Ces questions trouveront des réponses grâce à **table de routage** du routeur
     <span style="font-size:30px; color:white;"> II. Tables de routage </span></blockquote>
 
 
-![](data/Diagramme.png)
+![](data/Diagramme1.png){:.center}
 
 
 Les tables de routage sont des informations stockées dans le routeur permettant d'aiguiller intelligemment les données qui lui sont transmises.
@@ -75,7 +72,7 @@ Par exemple, la table de routage du routeur R1 pourrait être :
 
 
 
-#### Comment sont construites les tables de routage ?  
+#### &#9193; Comment sont construites les tables de routage ?  
 
 - Soit à la main par l'administrateur réseau, quand le réseau est petit : on parle alors de table **statique**.
 - Soit de manière **dynamique** : les réseaux s'envoient eux-mêmes des informations permettant de mettre à jour leurs tables de routages respectives. Des algorithmes de détermination de meilleur chemin sont alors utilisés : nous allons en découvrir deux, le protocole RIP et le protocole OSPF.
@@ -84,7 +81,7 @@ Par exemple, la table de routage du routeur R1 pourrait être :
     <span style="font-size:30px; color:white;"> III. Le protocole RIP </span></blockquote>
 
 
-!!! abstract " RIP"
+!!! savoir "**A connaitre RIP**"
     Le Routing Information Protocol est basé sur l'échange (toutes les 30 secondes) des tables de routage de chaque routeur.
 
 Au début, chaque routeur ne connaît que les réseaux auquel il est directement connecté, associé à la distance 1.
@@ -111,7 +108,7 @@ Ensuite, chaque routeur reçoit périodiquement la table des réseaux auquel il 
     <span style="font-size:30px; color:white;"> IV. Le protocole OSPF </span></blockquote>
 
 
-!!! vocabulaire "OSPF"
+!!! voc "**OSPF**"
     OSPF : *Open Shortest Path First*
 
 Un inconvénient majeur du protocole RIP précédent est la non-prise en compte de la bande passante reliant les routeurs.
@@ -134,7 +131,7 @@ Dans le protocole OSPF, les tables de routage vont prendre en considération la 
 
 Dans une première phase d'initialisation, chaque routeur va acquérir (par succession de messages envoyés et reçus) la connaissance **totale** du réseau (différence fondamentale avec RIP) et de la qualité technique de la liaison entre chaque routeur.
 
-#### 4.1 Les différents types de liaison et leur coût
+#### &#9193; Les différents types de liaison et leur coût
 On peut, approximativement, classer les types de liaison suivant ce tableau de débits **théoriques** :
 
 
@@ -158,7 +155,7 @@ L'idée du protocole OSPF est de pondérer chaque trajet entre routeurs (comptan
 
 Par exemple, si le débit _d_ est exprimé en bits/s, on peut calculer le coût de chaque liaison par la formule :
 
-!!! abstract "A connaitre" 
+!!! savoir "A connaitre" 
     $\text{coût} = \dfrac{10^8}{d}$
 
 
@@ -167,27 +164,27 @@ Cette formule de calcul peut être différente suivant les exercices, et sera no
 
 Avec cette convention, un route entre deux routeurs reliés en Fast Ethernet (100 Mbits/s) aura a un poids de 1, une liaison satellite de 20 Mbits/s aura un poids de 5, etc.
 
-### 4.2 Exemple
+### &#9193; Exemple
 
 Reprenons le réseau suivant :
 
-![image](data/Diagramme.png){:.center}
+![image](data/Diagramme1.png){:.center}
 
 et simplifions-le en ne gardant que les liens entre routeurs, en indiquant leur débit :
 
 
-![image](data/OSPF1.png){:.center}
+![image](data/OSPF1c.png){:.center}
 
 Notre réseau est devenu un **graphe**. Nous allons pondérer ses arêtes avec la fonction coût introduite précédemment. L'unité étant le Mbit/s, l'arête entre R1 et R3 aura un poids de 100/20=5.
 
 Le graphe pondéré est donc :
 
 
-![image](data/OSPF2.png){:.center}
+![image](data/OSPF2c.png){:.center}
 
 Le chemin le plus rapide pour aller de l'ordinateur au serveur est donc R1-R2-R4, et non plus R1-R3 comme l'aurait indiqué le protocole RIP.
 
-### 4.3 Trouver le plus court chemin dans un graphe pondéré
+### &#9193; Trouver le plus court chemin dans un graphe pondéré
 L'exemple précédent était très simple et de solution intuitive. Dans le cas d'un graphe pondéré complexe, existe-t-il un algorithme de détermination du plus court chemin d'un point à un autre ?
 
 La réponse est **oui**, depuis la découverte en 1959 par Edsger Dijkstra de l'algorithme qui porte son nom, **l'algorithme de Dijkstra**.
@@ -198,7 +195,7 @@ Pour le comprendre, vous pouvez regarder la vidéo d'un célèbre YouTuber :
 <a href="https://www.youtube.com/watch?v=rHylCtXtdNs">
 
 
-![image](data/Dijstra.png){:.center}</a>
+![image](data/Dijstrac.png){:.center}</a>
 
 Cet algorithme, ici exécuté de manière manuelle, est bien sûr programmable. Et c'est donc grâce à lui que chaque routeur calcule la route la plus rapide pour acheminer les données qu'il reçoit.
 
@@ -206,7 +203,7 @@ Cet algorithme, ici exécuté de manière manuelle, est bien sûr programmable. 
 
 
 
-![image](data/yt.png){:.center}
+![image](data/ytc.png){:.center}
 
 Donner le plus court chemin pour aller de A à H.
 
@@ -233,22 +230,16 @@ Le protocole RIP permet de construire les tables de routage des différents rout
 
  ![table](data_sujet_0/sujet0_table3.png){:.center}
 
-!!! example "Question 1"
-    === "Enoncé"
-        1. Le routeur A doit transmettre un message au routeur G, en effectuant un nombre minimal de sauts. Déterminer le trajet parcouru.  
-        2. Déterminer une table de routage possible pour le routeur G obtenu à l’aide du protocole RIP.
-
-[comment]:  <> (=== "Solution")
-[comment]:  <> (Il y a deux trajets possible ACFG et ACEG. La distance est de 3.)
+!!! fabquestion "Question 1"
+    1. Le routeur A doit transmettre un message au routeur G, en effectuant un nombre minimal de sauts. Déterminer le trajet parcouru.  
+    2. Déterminer une table de routage possible pour le routeur G obtenu à l’aide du protocole RIP.
 
 
 
-!!! example "Question 2"
-    === "Enoncé"
-        Le routeur C tombe en panne. Reconstruire la table de routage du routeur A en suivant le protocole RIP.
+!!! fabquestion "Question 2"
+    Le routeur C tombe en panne. Reconstruire la table de routage du routeur A en suivant le protocole RIP.
 
-[comment]:  <> (=== "Solution")
-[comment]:  <> ( ![table](data_sujet_0/sujet0_Ex5_Q2_cor.png){:.center})
+
 
 ### &#10145; Le protocole OSPF  
 
@@ -267,30 +258,16 @@ On rappelle que 1 Gb/s = 1 000 Mb/s = $10^9$ bits/s.
 
 
 
-!!! example "Question 3"
-    === "Enoncé"
-        1. Vérifier que le coût de la liaison entre les routeurs A et B est 0,01.
-        2. La liaison entre le routeur B et D a un coût de 5. Quel est le débit de cette liaison ?
-
-[comment]:  <> (=== "Solution 3.1")
-[comment]:  <> ( A -> B : 10 Gb/s soit un coût : $\dfrac{10^8}{10 \times 10^9}=0.01$)
-[comment]:  <> (=== "Solution 3.2")
-[comment]:  <> ($\dfrac{10^8}{d}=5 \rightarrow d=\dfrac{10^8}{5} = 2 \times 10^7$ b/s soit 20 Mb/s)
-
-
-!!! example "Question 4"
-    === "Enoncé"
-        Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la somme des coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement utilisé.
+!!! fabquestion "Question 3"
+    1. Vérifier que le coût de la liaison entre les routeurs A et B est 0,01.
+    2. La liaison entre le routeur B et D a un coût de 5. Quel est le débit de cette liaison ?
 
 
 
-[comment]:  <> (=== "Solution")
-[comment]:  <> ( ![table](data_sujet_0/sujet0_Ex5_Q41_cor.png){:.center})
-[comment]:  <> ( ![table](data_sujet_0/sujet0_Ex5_Q42_cor.png){:.center})
-[comment]:  <> ( ![table](data_sujet_0/sujet0_Ex5_Q43_cor.png){:.center})
-[comment]:  <> (Le parcourt avec un coût minimal pour aller de A à G est donc ADEG dont le coût est 1,011.)
 
-[comment]:  <> (_[Correction](data_sujet_0/corr_tab.png) du tableau de l'algorithme de Dijkstra_)
+!!! fabquestion "Question 4"
+    Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la somme des coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement utilisé.
+
 
 
 
@@ -321,59 +298,47 @@ On donne également des extraits de la table de routage des routeurs R1 à R5 da
 |R5|54.37.122.0/24|218.32.15.1|218.32.15.2|
 
 
-!!! example "Question 1" 
-    === "Enoncé" 
-        Un paquet part du réseau local L1 à destination du réseau local L2.  
+!!! fabquestion "Question 1"  
+    Un paquet part du réseau local L1 à destination du réseau local L2.  
 
-        a. En utilisant l’extrait de la table de routage de R1, vers quel routeur R1 envoie-t-il ce paquet : R2 ou R3 ? Justifier.  
-        b. A l’aide des extraits de tables de routage ci-dessus, nommer les routeurs traversés par ce paquet, lorsqu’il va du réseau L1 au réseau L2.
-
-[comment]:  <> (=== "Solution 1.a")
-[comment]:  <> ( L’extrait de la table de routage de R1 montre que pour atteindre le réseau L2 (57.37.122.0/24) les paquets doivent être envoyés via l’interface 86.154.10.56. Cette interface fait partie du réseau 86.154.10.0/24. Le routeur R2 fait aussi partie de ce réseau. On peut donc affirmer que depuis R1, les paquets seront dirigés vers R2.)
-
-[comment]:  <> (=== "Solution 1.b")
-[comment]:  <> ( L1 -> R1 -> R2 -> R6 -> L2)
+    a. En utilisant l’extrait de la table de routage de R1, vers quel routeur R1 envoie-t-il ce paquet : R2 ou R3 ? Justifier.  
+    b. A l’aide des extraits de tables de routage ci-dessus, nommer les routeurs traversés par ce paquet, lorsqu’il va du réseau L1 au réseau L2.
 
 
-!!! example "Question 2"
-    === "Enoncé" 
-        La liaison entre R1 et R2 est rompue.  
+
+
+!!! fabquestion "Question 2"
+    La liaison entre R1 et R2 est rompue.  
         
-        a. Sachant que ce réseau utilise le protocole RIP (distance en nombre de sauts), donner l’un des deux chemins possibles que pourra suivre un paquet allant de L1 vers L2.  
-        b. Dans les extraits de tables de routage ci-dessus, pour le chemin de la question 2.a, quelle(s) ligne(s) sera (seront) modifiée(s) ?
-[comment]:  <> (=== "Solution 2.a")
-[comment]:  <> ( L1 -> R1 -> R3 -> R4 -> R6 -> L2)
+    a. Sachant que ce réseau utilise le protocole RIP (distance en nombre de sauts), donner l’un des deux chemins possibles que pourra suivre un paquet allant de L1 vers L2.  
+    b. Dans les extraits de tables de routage ci-dessus, pour le chemin de la question 2.a, quelle(s) ligne(s) sera (seront) modifiée(s) ?
 
-[comment]:  <> (=== "Solution 2.b")
-[comment]:  <> ( Vu le chemin choisi à la question 2a, seule la ligne R1 sera modifiée (réseau 112.44.65.0 à la place du réseau 86.154.10.0).)
 
-!!! example "Question 3"
-    === "Enoncé"
-        On a rétabli la liaison entre R1 et R2.  
-        Par ailleurs, pour tenir compte du débit des liaisons, on décide d’utiliser le protocole OSPF (distance liée au coût minimal des liaisons) pour effectuer le routage. Le coût des liaisons entre les routeurs est donné par le tableau suivant : 
+!!! fabquestion "Question 3"
 
-        |Liaison |R1-R2 |R1-R3 |R2-R3 |R2-R4 |R2-R5 |R2-R6 |R3-R4 |R4-R5 |R4-R6 |R5-R6|
-        |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-        |Coût | 100|100|?|1|10|10|10|1|10|1|
+    On a rétabli la liaison entre R1 et R2.  
+    Par ailleurs, pour tenir compte du débit des liaisons, on décide d’utiliser le protocole OSPF (distance liée au coût minimal des liaisons) pour effectuer le routage. Le coût des liaisons entre les routeurs est donné par le tableau suivant : 
 
-        a. Le coût $C$ d'une liaison est donné ici par la formule ଽ  
 
-        $C=\dfrac{10^9}{BP}$
+    |Liaison |R1-R2 |R1-R3 |R2-R3 |R2-R4 |R2-R5 |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    |Coût | 100|100|?|1|10|
+
+    |Liaison |R2-R6 |R3-R4 |R4-R5 |R4-R6 |R5-R6|
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    |Coût |10|10|1|10|1|
+
+    a. Le coût $C$ d'une liaison est donné ici par la formule ଽ  
+
+    $C=\dfrac{10^9}{BP}$
     
-        où $BP$ est la bande passante de la connexion en bps (bit par seconde).  
-        Sachant que la bande passante de la liaison R2-R3 est de 10 Mbps, calculer le coût correspondant.  
-        b. Déterminer le chemin parcouru par un paquet partant du réseau L1 et arrivant au réseau L2, en utilisant le protocole OSPF.  
-        c. Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modifié pour un paquet à destination de L2, avec la métrique OSPF.
+    où $BP$ est la bande passante de la connexion en bps (bit par seconde).  
+    Sachant que la bande passante de la liaison R2-R3 est de 10 Mbps, calculer le coût correspondant.  
+    b. Déterminer le chemin parcouru par un paquet partant du réseau L1 et arrivant au réseau L2, en utilisant le protocole OSPF.  
+    c. Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modifié pour un paquet à destination de L2, avec la métrique OSPF.
 
 
-[comment]:  <> (=== "Solution 2.b")
-[comment]:  <> ( $C = \dfrac{10^9}{10^7} = 100$)
 
-[comment]:  <> (=== "Solution 2.b")
-[comment]:  <> (La route avec le coût minimum (103) est la suivante : L1 -> R1 -> R2 -> R4 -> R5 -> R6 -> L2)
-
-[comment]:  <> (=== "Solution 2.b")
-[comment]:  <> (Les tables de routage R2 et R4 seront modifiées.)
 
 <blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
     <span style="font-size:20px; color:black;">Sujet n°3
@@ -381,13 +346,13 @@ On donne également des extraits de la table de routage des routeurs R1 à R5 da
 
 Cet exercice porte sur les réseaux et les protocoles de routage.
 
-![image](data_sujet_1/sujet2_Ex5_Enonce.png){:.center}
+![image](data_sujet_2/sujet2_Ex3_Enonce.png){:.center}
 
 La figure 1 ci-dessus représente le schéma d’un réseau d’entreprise. Il y figure deux réseaux locaux L1 et L2. Ces deux réseaux locaux sont interconnectés par les routeurs R2, R3, R4 et R5. Le réseau local L1 est constitué des PC portables P1 et P2 connectés à la passerelle R1 par le switch Sw1. Les serveurs S1 et S2 sont connectés à la passerelle R6 par le switch Sw2.  
 Le tableau 1 suivant indique les adresses IPv4 des machines constituants le réseau de l’entreprise.  
 
 |Nom|Type|Adresse IPv4|
-|:---:|:---:|---:|
+|:--|:--|:--|
 |R1|routeur (passerelle)|Interface 1 : 192.168.1.1/24  
 |||Interface 2 : 10.1.1.2/24|
 |R2|routeur|Interface 1 : 10.1.1.1/24
@@ -415,54 +380,41 @@ La notation X1.X2.X3.X4/n signifie que les n premiers bits de poids forts de l�
 Toutes les adresses des machines connectées à un réseau local ont la même partie réseau.  
 L’adresse IP dont tous les bits de la partie « machine » sont à 0 est appelée « adresse du réseau ». L’adresse IP dont tous les bits de la partie « machine » sont à 1 est appelée « adresse de diffusion ».
 
-!!! example "Question 1"
-    === "Enoncé" 
-        a. Quelles sont les adresses des réseaux locaux L1 et L2 ?  
-        b. Donner la plus petite et la plus grande adresse IP valides pouvant être attribuées à un ordinateur portable ou un serveur sur chacun des réseaux L1 et L2 sachant que l’adresse du réseau et l’adresse de diffusion ne peuvent pas être attribuées à une machine.  
-        c. Combien de machines peut-on connecter au maximum à chacun des réseaux locaux L1 et L2 ? On donne ci-dessous les valeurs de quelques puissances de 2 ?
+!!! fabquestion "Question 1" 
+    **a.** Quelles sont les adresses des réseaux locaux L1 et L2 ?  
+    **b.** Donner la plus petite et la plus grande adresse IP valides pouvant être attribuées à un ordinateur portable ou un serveur sur chacun des réseaux L1 et L2 sachant que l’adresse du réseau et l’adresse de diffusion ne peuvent pas être attribuées à une machine.  
+    **c.** Combien de machines peut-on connecter au maximum à chacun des réseaux locaux L1 et L2 ? On donne ci-dessous les valeurs de quelques puissances de 2 ?
 
-        |$2^6$|$2^7$|$2^8$|$2^9$|$2^{10}$|$2^{11}$|$2^{12}$|$2^{13}$|$2^{14}$|$2^{15}$|$2^{16}$|$2^{17}$|
-        |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-        |64|128|256|512|1024|2048|4096|8192|16384 |32768| 65536 |131072|
+|$2^6$|$2^7$|$2^8$|$2^9$|$2^{10}$|$2^{11}$|
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|64|128|256|512|1024|2048|
 
-[comment]:  <> (=== "Solution 1.a")
-[comment]:  <> (L1 : 192.168.1.0/24    L2 : 172.16.0.0/16)
-
-[comment]:  <> (=== "Solution 1.b")
-[comment]:  <> (réseau L1 : plus “petite : 192.168.1.1 ; plus “grande” : 192.168.1.254   réseau L2 : plus “petite” : 172.16.0.1 ; plus “grande” : 172.16.255.254)
-
-[comment]:  <> (=== "Solution 1.c")
-[comment]:  <> (réseau L1 : 256 - 2 = 254 adresses réseau L2 : $256^2 - 2 = 2^{16} - 2 = 65534$ adresses)
-
-!!! example "Question 2"
-    === "Enoncé"
-        a. Expliquer l’utilité d’avoir plusieurs chemins possibles reliant les réseaux L1 et L2.  
-        b. Quel est le chemin le plus court en nombre de sauts pour relier R1 et R6 ? Donner le nombre de sauts de ce chemin et préciser les routeurs utilisés.  
-        c. La bande passante d’une liaison Ether (quantité d’information qui peut être transmise en bits/s) est de 107 bits/s et celle d’une liaison FastEther est de 108 bits/s. Le coût d’une liaison est défini par 10଼ ⁄d, où d est sa bande passante en bits/s.
-
-        |Liaison |R1-R2 |R2-R5 |R5-R6 |R2-R3|R3-R4|R4-R5|R3-R5|
-        |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-        |Type |Ether |Ether |Ether |FastEther |FastEther |FastEther |Ether|
-
-        Quel est le chemin reliant R1 et R6 qui a le plus petit coût ? Donner le coût de ce chemin et préciser les routeurs utilisés.
+|$2^{12}$|$2^{13}$|$2^{14}$|$2^{15}$|$2^{16}$|$2^{17}$|
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|8192|16384 |32768| 65536 |131072|
 
 
-[comment]:  <> (=== "Solution 2.a")
-[comment]:  <> (Il est utile d’avoir plusieurs chemins possibles en cas de panne (routeur ou connexion entre routeurs) ou encore en cas de trafic réseau trop important au niveau d’un routeur.)
+!!! fabquestion "Question 2"
+    **a.** Expliquer l’utilité d’avoir plusieurs chemins possibles reliant les réseaux L1 et L2.  
+    **b.** Quel est le chemin le plus court en nombre de sauts pour relier R1 et R6 ? Donner le nombre de sauts de ce chemin et préciser les routeurs utilisés.  
+    **c.** La bande passante d’une liaison Ether (quantité d’information qui peut être transmise en bits/s) est de 107 bits/s et celle d’une liaison FastEther est de 108 bits/s. Le coût d’une liaison est défini par 10଼ ⁄d, où d est sa bande passante en bits/s.
 
-[comment]:  <> (=== "Solution 2.b")
-[comment]:  <> (Pour relier R1 à R6 il est possible d’effectuer seulement 2 sauts : R1 -> R2 -> R5 -> R6)
+    |Liaison |R1-R2 |R2-R5 |R5-R6 |R2-R3|R3-R4|
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    |Type |Ether |Ether |Ether |FastEther |FastEther |
 
-[comment]:  <> (=== "Solution 3.c")
-[comment]:  <> (LiaisonR1-R2R2-R5R5-R6R2-R3R3-R4R4-R5R3-R5 coût10101011110 Le chemin reliant R1 à R6 ayant le plus petit coût est R1 -> R2 -> R3 -> R4 -> R5 -> R6 avec un coût de : 10 (R1-R2) + 1 (R2-R3) + 1 (R3-R4) + 1 (R4-R5) + 10 (R5-R6) = 23)
+    |Liaison |R4-R5|R3-R5|
+    |:---:|:---:|:---:|
+    |Type | FastEther |Ether|
 
 
-!!! example "Question 3"
-    === "Enoncé"
+
+    Quel est le chemin reliant R1 et R6 qui a le plus petit coût ? Donner le coût de ce chemin et préciser les routeurs utilisés.
+
+
+!!! fabquestion "Question 3"
+
         Dans l’annexe A figurent les tables de routages des routeurs R1, R2, R5 et R6 au démarrage du réseau. Indiquer sur votre copie ce qui doit figurer dans les lignes laissées vides des tables de routage des routeurs R5 et R6 pour que les échanges entre les ordinateurs des réseaux L1 et L2 se fassent en empruntant le chemin le plus court en nombre de sauts.
-
-[comment]:  <> (=== "Solution 3")
-[comment]:  <> (Il est utile d’avoir plusieurs chemins possibles en cas de panne (routeur ou connexion entre routeurs) ou encore en cas de trafic réseau trop important au niveau d’un routeur.)
 
 
 !!! info "Annexe"
