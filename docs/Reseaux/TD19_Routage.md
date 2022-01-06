@@ -391,13 +391,13 @@ L’adresse IP dont tous les bits de la partie « machine » sont à 0 est appel
 
 |$2^{12}$|$2^{13}$|$2^{14}$|$2^{15}$|$2^{16}$|$2^{17}$|
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|8192|16384 |32768| 65536 |131072|
+| 4096 |8192|16384 |32768| 65536 |131072|
 
 
 !!! fabquestion "Question 2"
     **a.** Expliquer l’utilité d’avoir plusieurs chemins possibles reliant les réseaux L1 et L2.  
     **b.** Quel est le chemin le plus court en nombre de sauts pour relier R1 et R6 ? Donner le nombre de sauts de ce chemin et préciser les routeurs utilisés.  
-    **c.** La bande passante d’une liaison Ether (quantité d’information qui peut être transmise en bits/s) est de 107 bits/s et celle d’une liaison FastEther est de 108 bits/s. Le coût d’une liaison est défini par 10଼ ⁄d, où d est sa bande passante en bits/s.
+    **c.** La bande passante d’une liaison Ether (quantité d’information qui peut être transmise en bits/s) est de $10^7$ bits/s et celle d’une liaison FastEther est de $10^8$ bits/s. Le coût d’une liaison est défini par $\dfrac{10^8}{d}$, où d est sa bande passante en bits/s.
 
     |Liaison |R1-R2 |R2-R5 |R5-R6 |R2-R3|R3-R4|
     |:---:|:---:|:---:|:---:|:---:|:---:|

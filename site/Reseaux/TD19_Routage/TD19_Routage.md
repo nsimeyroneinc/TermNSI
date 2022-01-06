@@ -399,13 +399,13 @@ L’adresse IP dont tous les bits de la partie « machine » sont à 0 est appel
     **b.** Quel est le chemin le plus court en nombre de sauts pour relier R1 et R6 ? Donner le nombre de sauts de ce chemin et préciser les routeurs utilisés.  
     **c.** La bande passante d’une liaison Ether (quantité d’information qui peut être transmise en bits/s) est de 107 bits/s et celle d’une liaison FastEther est de 108 bits/s. Le coût d’une liaison est défini par 10଼ ⁄d, où d est sa bande passante en bits/s.
 
-|Liaison |R1-R2 |R2-R5 |R5-R6 |R2-R3|R3-R4|
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|Type |Ether |Ether |Ether |FastEther |FastEther |
+    |Liaison |R1-R2 |R2-R5 |R5-R6 |R2-R3|R3-R4|
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    |Type |Ether |Ether |Ether |FastEther |FastEther |
 
-|Liaison |R4-R5|R3-R5|
-|:---:|:---:|:---:|
-|Type | FastEther |Ether|
+    |Liaison |R4-R5|R3-R5|
+    |:---:|:---:|:---:|
+    |Type | FastEther |Ether|
 
 
 

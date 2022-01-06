@@ -231,3 +231,182 @@ background-color: rgb(77, 146, 77);
   -webkit-mask-image: var(--md-admonition-icon--exo);
           mask-image: var(--md-admonition-icon--exo);
 }
+
+
+
+
+
+:root {
+  /* colors */
+  --yellow: #ffcc33ff;
+  --green: #809966ff;
+  --blue: #006699ff;
+  --red: #cc6666ff;
+  --gray: #666666ff;
+  --lightyellow: #fffaebff;
+  --lightgreen: #f5f7f3ff;
+  --lightblue: #ebf8ffff;
+  --lightred: #faf0f0ff;
+  --lightgray: #f5f5f5ff;
+
+  /* icons go here */
+  --md-admonition-icon--ugli-defi: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2M6 9h12v2H6m8 3H6v-2h8m4-4H6V6h12"/></svg>');
+  --md-admonition-icon--ugli-prop: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-.5 0-1 .19-1.41.59l-8 8c-.79.78-.79 2.04 0 2.82l8 8c.78.79 2.04.79 2.82 0l8-8c.79-.78.79-2.04 0-2.82l-8-8C13 2.19 12.5 2 12 2m-1 5h2v6h-2V7m0 8h2v2h-2v-2z"/></svg>');
+  --md-admonition-icon--ugli-exo:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c-.34.34-.67.67-.68 1-.03.32.31.65.63.96.48.5.95.95.93 1.44-.02.49-.53 1-1.04 1.5l-4.13 4.14L15 14.66l4.25-4.24-.96-.96-1.42 1.41-3.75-3.75 3.84-3.83c.39-.39 1.04-.39 1.41 0l2.34 2.34c.39.37.39 1.02 0 1.41M3 17.25l9.56-9.57 3.75 3.75L6.75 21H3v-3.75z"/></svg>');
+  --md-admonition-icon--ugli-note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 12h7v1.5h-7m0-4h7V11h-7m0 3.5h7V16h-7m8-12H3a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 15h-9V6h9"/></svg>');
+
+}
+
+/* ugli-defi */
+.md-typeset .admonition.ugli-defi,
+.md-typeset details.ugli-defi {
+
+  border-color: var(--blue);
+}
+
+.md-typeset .ugli-defi > .admonition-title,
+.md-typeset .ugli-defi > summary {
+  background-color: var(--blue);
+  color: var(--lightblue); /* text color */
+  border-color: var(--blue);
+}
+
+.md-typeset .ugli-defi > .admonition-title::before,
+.md-typeset .ugli-defi > summary::before {
+  background-color: var(--lightblue); /* icon color */
+  -webkit-mask-image: var(--md-admonition-icon--ugli-defi);
+
+}
+
+/* ugli-prop */
+.md-typeset .admonition.ugli-prop,
+.md-typeset details.ugli-prop {
+  border-color: var(--red);
+}
+
+.md-typeset .ugli-prop > .admonition-title,
+.md-typeset .ugli-prop > summary {
+  background-color: var(--red);
+  color: var(--lightred);
+  border-color: var(--red);
+}
+
+.md-typeset .ugli-prop > .admonition-title::before,
+.md-typeset .ugli-prop > summary::before {
+  background-color: var(--lightred);
+  -webkit-mask-image: var(--md-admonition-icon--ugli-prop);
+
+}
+
+/* ugli-exo */
+
+.md-typeset .admonition.ugli-exo,
+.md-typeset details.ugli-exo {
+
+  border-color: var(--yellow);
+}
+
+.md-typeset .ugli-exo > .admonition-title,
+.md-typeset .ugli-exo > summary {
+  background-color: var(--yellow);
+  color: #000000; /* text color */
+  border-color: var(--yellow);
+}
+
+.md-typeset .ugli-exo > .admonition-title::before,
+.md-typeset .ugli-exo > summary::before {
+  background-color: #000000; /* icon color */
+  -webkit-mask-image: var(--md-admonition-icon--ugli-exo);
+
+}
+
+/* ugli-note */
+
+.md-typeset .admonition.ugli-note,
+.md-typeset details.ugli-note {
+
+  border-color: var(--green);
+}
+
+.md-typeset .ugli-note > .admonition-title,
+.md-typeset .ugli-note > summary {
+  background-color: var(--green);
+  color: var(--lightgreen); /* text color */
+  border-color: var(--green);
+}
+
+.md-typeset .ugli-note > .admonition-title::before,
+.md-typeset .ugli-note > summary::before {
+  background-color: var(--lightgreen); /* icon color */
+  -webkit-mask-image: var(--md-admonition-icon--ugli-note);
+
+}
+
+[data-md-color-scheme="youtube"] {
+  --md-primary-fg-color: var(--blue);
+}
+
+.md-typeset .admonition {
+  font-size: .8rem;
+}
+
+.md-typeset details {
+  font-size: .8rem;
+}
+
+/*
+table.blueTable {
+  border: 1px solid #006699;
+  background-color: #EEEEEE;
+  width: 50%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+
+table.blueTable tbody td {
+  font-size: 16px;
+}
+
+table.blueTable tr:nth-child(even) {
+  background: #D0E4F5;
+}
+
+table.blueTable tfoot td {
+  font-size: 14px;
+}
+
+table.blueTable tfoot .links {
+  text-align: right;
+}
+
+table.blueTable tfoot .links a {
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+em {
+  color: var(--red);
+}
+
+
+python blue : 006699
+python yellow : FFCC33
+python gray : 666666
+
+
+
+Green : rgb(0, 200, 83)
+Blue : rgb(68, 138, 255)
+Red : rgb(255, 82, 82)
+Orange : rgb(255, 145, 0)
+Violet : rgb(124, 77, 255)
+Gray : rgb(158, 158, 158)
+*/

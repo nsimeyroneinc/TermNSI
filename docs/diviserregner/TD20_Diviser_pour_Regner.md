@@ -250,7 +250,7 @@ nécessaires est de l'ordre de $10^{12}$.
 
 On suppose qu'on dispose d'une image carrée de côté $n$ pixels, où $n$ est une puissance de 2.
 
-<center><img src="img/turing.png" width="50%"></center>
+<center><img src="data/turing.png" width="50%"></center>
 
 Pour l'exemple voic une photo (colorisée) carrée d'[Alan Turing](https://fr.wikipedia.org/wiki/Alan_Turing){width 50%} de côté 512 pixels.
 
