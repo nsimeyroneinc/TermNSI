@@ -5,11 +5,11 @@
 
 /*Ajout de Sébastien HOARO pour avoir une taille de police normale dans les admonotions  */
 .md-typeset .admonition {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .md-typeset details {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 /*Ajout de Gilles LASSUS pour centrer les images en Markdown avec l'extension attr_list : ![monimage](data/image.png){: .center width=50%} */
@@ -17,10 +17,6 @@
 .center {
   display: block;
   margin: 0 auto;
-}
-
-:root {
-font-size: 1rem;
 }
 
 :root {
