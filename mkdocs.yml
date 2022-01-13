@@ -32,10 +32,11 @@ nav:
       - TD 19 - Protocole de routage : Reseaux/TD19_Routage.md
       #- TD 16 - Protocole de routage : Reseaux/cours.md
       #- TD 17 : Reseaux/02_Exercices.md
-    #- T5 Algo. : 
-     # - TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
-    - Retour 1ère :
-      - TD : Revision1ere/TD_Glouton.md
+    - T5 Algo. : 
+      - TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
+      #- TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
+    #- Retour 1ère :
+    #  - TD : Revision1ere/TD_Glouton.md
       
     #Devoirs
     - Devoirs :
@@ -45,6 +46,7 @@ nav:
       #- Révision : StructureDonnees/Revision_Arbres.md
       - DS 14/12/21 : Devoirs/DS_14_12_21_arbres.md
       - DS 14/12/21 - Correction : Devoirs/DS_14_12_21_arbres_Correction.md
+      - DS 03/01/22 - Correction : Devoirs/DS_03_01_22_correction.md
 
     #BAC 
     - E.P 💻: 

@@ -241,8 +241,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Revision1ere/TD_Glouton/" class="md-tabs__link">
-        Retour 1ère
+      <a href="../../diviserregner/TD20_Diviser_pour_Regner/" class="md-tabs__link">
+        T5 Algo.
       </a>
     </li>
   
@@ -600,14 +600,14 @@
       
       
         <label class="md-nav__link" for="__nav_5">
-          Retour 1ère
+          T5 Algo.
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Retour 1ère" data-md-level="1">
+      <nav class="md-nav" aria-label="T5 Algo." data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Retour 1ère
+          T5 Algo.
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -617,8 +617,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Revision1ere/TD_Glouton/" class="md-nav__link">
-        TD
+      <a href="../../diviserregner/TD20_Diviser_pour_Regner/" class="md-nav__link">
+        TD 20
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../diviserregner/TD20_Diviser_pour_Regner_Correction/" class="md-nav__link">
+        TD 20 correction
       </a>
     </li>
   
@@ -723,6 +737,20 @@
     <li class="md-nav__item">
       <a href="../DS_14_12_21_arbres_Correction/" class="md-nav__link">
         DS 14/12/21 - Correction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DS_03_01_22_correction/" class="md-nav__link">
+        DS 03/01/22 - Correction
       </a>
     </li>
   
@@ -984,13 +1012,17 @@ On donne ci-dessous les résultats attendus pour certaines instructions.  </p>
 
 <p>On cherche à obtenir un mélange d'une liste comportant un nombre pair d'éléments.<br />
 Dans cet exercice, on notera N le nombre d'éléments de la liste à mélanger.  </p>
-<p>La méthode de mélange utilisée dans cette partie est inspirée d’un mélange de jeux de cartes :
-- On sépare la liste en deux piles :
-    - à gauche, la première pile contient les N/2 premiers éléments de la liste ;
-    - à droite, la deuxième pile contient les N/2 derniers éléments de la liste.
-- On crée une liste vide.
-- On prend alors le sommet de la pile de gauche et on le met en début de liste.
-- On prend ensuite le sommet de la pile de droite que l’on ajoute à la liste et ainsi de suite jusqu’à ce que les piles soient vides. </p>
+<p>La méthode de mélange utilisée dans cette partie est inspirée d’un mélange de jeux de cartes :  </p>
+<ul>
+<li>On sépare la liste en deux piles :<ul>
+<li>à gauche, la première pile contient les N/2 premiers éléments de la liste ;</li>
+<li>à droite, la deuxième pile contient les N/2 derniers éléments de la liste.</li>
+</ul>
+</li>
+<li>On crée une liste vide.</li>
+<li>On prend alors le sommet de la pile de gauche et on le met en début de liste.</li>
+<li>On prend ensuite le sommet de la pile de droite que l’on ajoute à la liste et ainsi de suite jusqu’à ce que les piles soient vides. </li>
+</ul>
 <p>Par exemple, si on applique cette méthode de mélange à la liste <code>['V','D','R','3','7','10']</code>, on obtient pour le partage de la liste en 2 piles :</p>
 <p><img alt="arbre" class="center" src="../data/Pile_Exo.png" width="60%" /></p>
 <p>La nouvelle liste à la fin du mélange sera donc <code>['R','10','D','7','V','3']</code></p>

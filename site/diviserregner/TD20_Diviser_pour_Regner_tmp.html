@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TD20_Diviser_pour_Regner.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<table style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr>
+            <th colspan="2;" width="100%" ; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            Th&#xE8;me 5 : Algorithmique
+            </th>
+        </tr>
+        <tr>
+            <th width="20%" ; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:50pt;">
+            20
+            </th>
+            <th width="80%" ; style="text-align:center;border:none;font-size:25pt;">TD : Diviser pour r&#xE9;gner</th>
+        </tr>
+</table>
+<p><img src="file:///media/michael/TRAVAIL/2.NSI/siteGithub/TermNSI/docs/diviserregner/data/split.svg" alt="">{:.center width=45%}</p>
+<h2 id="i-le-principe">I. Le principe</h2>
+<p>!!! savoir &quot;Diviser pour régner&quot;
+La stratégie « diviser pour régner » consiste à</p>
+<pre><code>1. **Diviser :** Décomposer un problème en un ou plusieurs *sous-problèmes* de même nature mais plus petits.
+
+2. **Régner :** Résoudre les sous-problèmes, généralement de manière récursive, jusqu'à ce qu'on arrive aux *cas d'arrêt* :
+des sous-problèmes que l'on sait résoudre immédiatement.
+
+3. **Combiner :** Construire la solution au problème initial à partir des solutions des sous-problèmes.
+</code></pre>
+<h2 id="ii-diviser-pour-r%C3%A9gner--palindromes">II. Diviser pour régner : Palindromes</h2>
+<p>!!! exo &quot;Palindromes&quot;
+Une chaîne est un palindrome si elle peut se lire de la même manière dans les deux sens, de gauche à droite et de droite à gauche. Par exemple :</p>
+<pre><code>- &quot;ressasser, &quot;radar&quot;, &quot;12321&quot; sont des palindromes ;  
+- &quot;nsi&quot;, &quot;toto&quot; n’en sont pas.  
+</code></pre>
+<p>On se propose d’écrire une fonction récursive <code>est_palindrome(ch)</code> qui renvoie Vrai si la chaine <code>ch</code> passée en argument est un palindrome et Faux sinon.</p>
+<h3 id="partie-a">Partie A</h3>
+<p>Une première version utilisant le slicing<br>
+On considère la chaîne suivante.</p>
+<pre class="hljs"><code><div>ch = <span class="hljs-string">"ressasser"</span>
+</div></code></pre>
+<p>!!! fabquestion &quot;Question 1.&quot;
+Quels slices permettent d’accéder :</p>
+<pre><code>- au premier caractère de ch ?  
+- au dernier caractère de ch ?  
+- à une chaîne privée du premier et du dernier caractères de ch.  
+</code></pre>
+<p>!!! fabquestion &quot;Question 2.&quot;
+En utilisant les slices, complétez la fonction suivante.</p>
+<pre><code>```python
+def est_palindrome(ch):    
+    if len(ch) &lt;= 1:
+        return ...
+    else:
+        return ...
+```
+</code></pre>
+<p>!!! fabquestion &quot;Question 3.&quot;
+Au moyen du mot clé assert, écrivez un bon jeu de tests pour cette fonction. Vérifiez que les tests passent avec succès.</p>
+<p>!!! fabquestion &quot;Question 4.&quot;
+Expliquez pourquoi cet algorithme est un exemple de la méthode diviser pour régner.</p>
+<p>!!! fabquestion &quot;Question 5.&quot;
+Utiliser Python tutor, exécutez en mode pas à pas le déroulement des appels récursifs de cette fonction pour la chaîne &quot;ressasser&quot;.<br>
+Si la chaîne de départ est un palindrome de longueur n, combien de comparaisons sont effectuées ? En déduite le coût en temps de cet algorithme (sa complexité) dans le pire des cas.</p>
+<p>!!! fabquestion &quot;Question 6.&quot;
+Le slicing a un coût en mémoire caché. En effet, chaque appel ch[1:-1] induit la création d’une nouvelle chaîne qu’il faut stocker en mémoire. On peut le voir facilement avec Python tutor.<br>
+Dans le pire cas, pour une chaîne de longueur n au départ, combien de chaînes doivent être créées pour répondre au problème ?</p>
+<h3 id="partie-b">Partie B</h3>
+<h4 id="une-deuxi%C3%A8me-version-am%C3%A9lior%C3%A9e">Une deuxième version améliorée</h4>
+<p>En réalité, on peut se passer de la création de toutes ces chaînes intermédiaires en utilisant et en faisant varier (comme pour la recherche dichotomique) les indices g (pour gauche) et d (pour droite) des caractères restants.<br>
+Voici une fonction palindrome(ch, g, d) qui renvoie True si la chaine ch[g..d] (c’est-à-dire la chaîne ch limitée à ses caractères entre les positions g et d) est un palindrome et False sinon.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">palindrome</span><span class="hljs-params">(ch, g, d)</span>:</span>
+    <span class="hljs-keyword">if</span> d - g &lt; <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> ch[g] == ch[d] <span class="hljs-keyword">and</span> palindrome(ch, g+<span class="hljs-number">1</span>, d<span class="hljs-number">-1</span>)
+</div></code></pre>
+<p>!!! fabquestion &quot;Question 7.&quot;
+Quel appel à cette fonction faut-il faire pour tester si mot est un palindrome ?</p>
+<pre><code>```python
+ mot = &quot;ressasser&quot;
+ # à compléter par le bon appel :
+```
+</code></pre>
+<p>Pour éviter cette écriture un peu lourde, il suffit de créer une autre fonction <code>est_palindrome2(ch)</code> qui est chargée de lancer le premier appel à la fonction récursive palindrome.<br>
+Complétez le code de la fonction <code>est_palindrome2(ch)</code>.</p>
+<p>!!! fabquestion &quot;Question 8.&quot;</p>
+<pre><code>```python
+def est_palindrome2(ch):
+# à compléter
+pass
+```
+</code></pre>
+<p>La fonction est_palindrome2 est appelée une <strong>fonction d’interface</strong> qui permet d’ajouter des arguments à une fonction sans que l’utilisateur ait à s’en préoccuper.</p>
+<p>!!! fabquestion &quot;Question 9.&quot;
+Vérifiez avec Python tutor qu’avec cette version, il n’y a qu’une chaîne ch à mémoriser (celle de départ). On obtient un algorithme avec un coût mémoire inférieur à la première version.</p>
+<h2 id="iii-le-tri-fusion">III. Le tri fusion</h2>
+<h3 id="principe">Principe</h3>
+<p><img src="file:///media/michael/TRAVAIL/2.NSI/siteGithub/TermNSI/docs/diviserregner/data/Merge-sort-example.gif" alt="merge_sort">{align=right width=33%} Voici un deuxième exemple d'application de cette stratégie : le <em>tri
+fusion</em>. On doit cet algorithme à
+<a href="https://fr.wikipedia.org/wiki/John_von_Neumann">John Von Neumann</a>.</p>
+<p>On dispose d'une liste d'entiers que l'on veut trier dans l'ordre croissant.</p>
+<ol>
+<li>
+<p>On scinde cette liste en deux listes de longueurs « à peu près égales ».</p>
+</li>
+<li>
+<p>On trie ces listes en utilisant... le tri fusion. (on tri donc le manière récursive)</p>
+</li>
+<li>
+<p>On <em>fusionne</em> les deux listes triées par ordre croissant pour ne plus en obtenir qu'une.</p>
+</li>
+</ol>
+<p>!!! example &quot;Un exemple&quot;</p>
+<pre><code>![](data/tri_fusion_exemple.png){.:center}
+</code></pre>
+<div align="center">
+</div><iframe width="560" height="315" src="https://www.youtube.com/embed/XaqR3G_NVoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<i> Une chor&#xE9;graphie du tri fusion </i>
+
+<h2 id="code-correspondant">Code correspondant</h2>
+<p>Voici comment coder le tri fusion :</p>
+<p>On a tout d'abord besoin d'une fonction <code>scinde</code> qui renvoie la première moitié et la deuxième moitié de la liste qu'on
+lui passe en argument.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">scinde</span><span class="hljs-params">(lst: list)</span> -&gt; tuple:</span>
+    <span class="hljs-keyword">return</span> lst[:len(lst) // <span class="hljs-number">2</span>], lst[len(lst) // <span class="hljs-number">2</span>:]
+</div></code></pre>
+<p>Ensuite, on a besoin d'une fonction <code>fusion</code> qui, étant donnée deux listes triées, les fusionne.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fusion</span><span class="hljs-params">(lst1: list, lst2: list)</span> -&gt; list:</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> lst1 <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> lst2: <span class="hljs-comment"># si l'une des listes est vide</span>
+        <span class="hljs-keyword">return</span> lst1 <span class="hljs-keyword">or</span> lst2 <span class="hljs-comment"># alors on renvoie l'autre</span>
+    <span class="hljs-keyword">else</span>:
+        a, b = lst1[<span class="hljs-number">0</span>], lst2[<span class="hljs-number">0</span>]
+        <span class="hljs-keyword">if</span> a &lt; b : <span class="hljs-comment"># sinon on compare leurs premiers éléments</span>
+            <span class="hljs-keyword">return</span> [a] + fusion(lst1[<span class="hljs-number">1</span>:], lst2) <span class="hljs-comment"># on place le plus petit en tête et on fusionne le reste</span>
+        <span class="hljs-keyword">elif</span> b &gt; a:
+            <span class="hljs-keyword">return</span> [b] + fusion(lst1, lst2[<span class="hljs-number">1</span>:])
+        <span class="hljs-keyword">else</span> : <span class="hljs-comment"># dans le cas où les 2 éléments sont égaux on peut les placer tous les deux</span>
+            <span class="hljs-keyword">return</span> [a, b]+ fusion(lst1[<span class="hljs-number">1</span>:], lst2[<span class="hljs-number">1</span>:])
+</div></code></pre>
+<p>Enfin, la fonction <code>tri_fusion</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tri_fusion</span><span class="hljs-params">(lst: list)</span> -&gt; list:</span>
+    <span class="hljs-keyword">if</span> len(lst) &lt; <span class="hljs-number">2</span>: <span class="hljs-comment"># cas d'arrêt</span>
+        <span class="hljs-keyword">return</span> lst
+    lst1, lst2 = scinde(lst) <span class="hljs-comment"># sinon on scinde</span>
+    <span class="hljs-keyword">return</span> fusion(tri_fusion(lst1), tri_fusion(lst2)) <span class="hljs-comment"># et on fusionne les sous-listes triées</span>
+</div></code></pre>
+<h3 id="complexit%C3%A9-du-tri-fusion">Complexité du tri fusion</h3>
+<p>➡  La partie “diviser” est de complexité constante.</p>
+<p>Pour pouvoir majorer le nombre maximum d’itérations, si le tableau contient P valeurs, et si on a un entier $n$ tel que $P \leq 2^n$ , alors puisque qu’à chaque itération, on sélectionne une moitié de ce qui reste :</p>
+<ul>
+<li>au bout d’une itération, une moitié de tableau aura au plus $\dfrac{2^n}{2} = 2^{n−1}$ éléments,</li>
+<li>un quart aura au plus $2^{n−2}$</li>
+<li>et au bout de $k$ itérations, la taille de ce qui reste à étudier est de taille au plus $2^{n−k}$.</li>
+<li>En particulier, si l’on fait $n$ itérations, il reste au plus $2^{n−n} = 1$ valeur du tableau à examiner. On est sûr de s’arrêter cette fois-ci</li>
+</ul>
+<p>On a donc montré que si l’entier $n$ vérifie $P \leq 2^n$ , alors l’algorithme va effectuer au plus $n$ itérations.
+La plus petite valeur est obtenue pour $n = log_2 P$.<br>
+Ainsi, la complexité de la fonction est de l’ordre du logarithme  de la longueur de la liste ($O(log_2(n))$).<br>
+$log_2(n)$.</p>
+<p><strong>Exemple</strong><br>
+Pour un tableau de taille n = 64 il faut :</p>
+<p>64/2=32,32/2=16,16/2=8,8/2=4,4/2=2,2/2=1 :</p>
+<p>6 étapes.</p>
+<p>$2^6=64$.</p>
+<p>Comme toujours quand on peut séparer le tableau en deux, la méthode diviser pour régner permet de ne réaliser que $log_2 n$ étapes. Mais…</p>
+<p>➡ Complexité fusion</p>
+<p>La partie fusion utilise une boucle qui parcourt plusieurs tableaux en même temps.</p>
+<p>On réalise à chaque étape la même chose :</p>
+<ul>
+<li>lire deux valeurs,</li>
+<li>comparer,</li>
+<li>ranger la plus petite.</li>
+</ul>
+<p>La complexité est linéaire.</p>
+<p>Notons $n$ la taille de la liste à trier et considérons comme seule <em>opération élémentaire</em> le fait d'accéder à un élément d'une liste.</p>
+<p>!!! ugli-defi &quot;Complexité du tri fusion&quot;
+Le nombre d'opérations élémentaires nécessaires pour trier une liste de taille $n$ par la méthode du tri fusion est
+de l'ordre de $n\times\log_2 n$.</p>
+<h2 id="application--exercices-de-lepreuve-pratique">Application : Exercices de l'Epreuve Pratique</h2>
+<p>!!! ugli-exo &quot;Sujet 23 - Exercice 2&quot;
+La fonction fusion prend deux listes <code>L1, L2</code> d’entiers triées par ordre croissant et les fusionne en une liste triée L12 qu’elle renvoie.
+Le code Python de la fonction est</p>
+<pre><code>```python
+def fusion(L1,L2):
+    n1 = len(L1)
+    n2 = len(L2)
+    L12 = [0]*(n1+n2)
+    i1 = 0
+    i2 = 0
+    i = 0
+    while i1 &lt; n1 and ... :
+        if L1[i1] &lt; L2[i2]:
+            L12[i] = ...
+            i1 = ...
+        else:
+            L12[i] = L2[i2]
+            i2 = ...
+        i += 1
+    while i1 &lt; n1:
+        L12[i] = ...
+        i1 = i1 + 1
+        i = ...
+    while i2 &lt; n2:
+        L12[i] = ...
+        i2 = i2 + 1
+        i = ...
+    return L12
+```
+
+Compléter le code.  
+
+Exemple :  
+```python
+&gt;&gt;&gt; fusion([1,6,10],[0,7,8,9])
+[0, 1, 6, 7, 8, 9, 10]
+```
+</code></pre>
+<h2 id="recherche-dichotomique">Recherche dichotomique</h2>
+<p>!!! ugli-exo &quot;EX : Recherche dichotomique&quot;</p>
+<pre><code>=== &quot;Enoncé&quot;
+
+    1. Expliquer pourquoi la recherche dichotomique d'un élément dans une liste d'entiers triés dans l'ordre 
+    croissant peut être vue comme un exemple de stratégie « diviser pour régner ».
+
+    2. Programmer la recherche dichotomique de manière récursive.
+
+=== &quot;Solution&quot;
+
+    Pour savoir si un élément appartient à la liste, on regarde celui qui est «à peu près au milieu». Si c'est le bon
+    c'est terminé, sinon on fait de même avec la sous-liste des éléments précédents et avec celle des éléments suivants.
+    ```python
+    def rech_dicho(lst, elt):
+        n = len(lst)
+        if n &lt; 2:
+            return elt in lst
+        elif lst[n // 2] == elt:
+            return True
+        else:
+            return rech_dicho(lst[:n // 2], elt) if lst[n // 2] &gt; elt else rech_dicho(lst[n // 2 + 1:], elt)
+    ```
+</code></pre>
+<blockquote style="background-color: #87A96B border-left: 7px solid rgb(0 0 0);"> 
+<span style="font-size:30px; color:white;"> V. Exercices BAC </span></blockquote>
+<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
+    <span style="font-size:20px; color:black;">Sujet n&#xB0;1 : France 2021
+</span></blockquote>
+<p><em>Cet exercice porte sur l’algorithme de tri fusion, qui s’appuie sur la méthode dite de « diviser pour
+régner ».</em>
+!!! fabquestion &quot;Question 1&quot;
+a. Quel est l’ordre de grandeur du coût, en nombre de comparaisons, de l’algorithme de tri fusion pour une liste de longueur ?<br>
+b. Citer le nom d’un autre algorithme de tri. Donner l’ordre de grandeur de son coût, en nombre de comparaisons, pour une liste de longueur .<br>
+Comparer ce coût à celui du tri fusion. Aucune justification n’est attendue.</p>
+<p>L’algorithme de tri fusion utilise deux fonctions moitie_gauche et moitie_droite qui prennent en argument une liste L et renvoient respectivement :</p>
+<ul>
+<li>la sous-liste de L formée des éléments d’indice strictement inférieur à len(L)//2 ;</li>
+<li>la sous-liste de L formée des éléments d’indice supérieur ou égal à len(L)//2.</li>
+</ul>
+<p>On rappelle que la syntaxe a//b désigne la division entière de a par b.</p>
+<p>Par exemple,</p>
+<pre class="hljs"><code><div><span class="hljs-meta">&gt;&gt;&gt; </span>L = [<span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">0</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>moitie_gauche(L)
+[<span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>moitie_droite(L)
+[<span class="hljs-number">7</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">0</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>M = [<span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">11</span>, <span class="hljs-number">7</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>moitie_gauche(M)
+[<span class="hljs-number">4</span>, <span class="hljs-number">1</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>moitie_droite(M)
+[<span class="hljs-number">11</span>, <span class="hljs-number">7</span>]
+</div></code></pre>
+<p>L’algorithme utilise aussi une fonction fusion qui prend en argument deux listes triées L1 et L2 et renvoie une liste L triée et composée des éléments de L1 et L2.<br>
+On donne ci-dessous le code python d’une fonction récursive tri_fusion qui prend en argument une liste L et renvoie une nouvelle liste triée formée des éléments de L.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tri_fusion</span><span class="hljs-params">(L)</span>:</span>
+	n = len(L)
+	<span class="hljs-keyword">if</span> n&lt;=<span class="hljs-number">1</span> :
+		<span class="hljs-keyword">return</span> L
+	print(L)
+	mg = moitie_gauche(L)
+	md = moitie_droite(L)
+	L1 = tri_fusion(mg)
+	L2 = tri_fusion(md)
+	<span class="hljs-keyword">return</span> fusion(L1, L2)
+</div></code></pre>
+<p>!!! fabquestion &quot;Question 2&quot;
+Donner la liste des affichages produits par l’appel suivant.<br>
+<code>python 	tri_fusion([7, 4, 2, 1, 8, 5, 6, 3]) 	</code></p>
+<p>On s’intéresse désormais à différentes fonctions appelées par tri_fusion, à savoir moitie_droite et fusion.</p>
+<p>!!! fabquestion &quot;Question 3&quot;
+Écrire la fonction moitie_droite.</p>
+<p>!!! fabquestion &quot;Question 4&quot;
+On donne ci-dessous une version incomplète de la fonction fusion.<br>
+```py linenums=&quot;1&quot;
+def fusion(L1, L2):
+L = []
+n1 = len(L1)
+n2 = len(L2)
+i1 = 0
+i2 = 0
+while i1 &lt; n1 or i2 &lt; n2 :
+if i1 &gt;= n1:
+L.append(L2[i2])
+i2 = i2 + 1
+elif i2 &gt;= n2:
+L.append(L1[i1])
+i1 = i1 + 1
+else:
+e1 = L1[i1]
+e2 = L2[i2]</p>
+<pre><code>	return L
+```
+Dans cette fonction, les entiers i1 et i2 représentent respectivement les indices des éléments des listes L1 et L2 que l’on souhaite comparer :  
+
+- Si aucun des deux indices n’est valide, la boucle while est interrompue ;  
+- Si i1 n’est plus un indice valide, on va ajouter à L les éléments de L2 à partir de l’indice i2 ;  
+- Si i2 n’est plus un indice valide, on va ajouter à L les éléments de L1 à partir de l’indice i1 ;  
+- Sinon, le plus petit élément non encore traité est ajouté à L et on décale l’indice correspondant.  
+
+Écrire sur la copie les instructions manquantes des lignes 17 à 22 permettant d’insérer dans la liste L les éléments des listes L1 et L2 par ordre croissant. 
+</code></pre>
+<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
+    <span style="font-size:20px; color:black;">Sujet n&#xB0;2 : BAC Polyn&#xE9;sie 2021
+</span></blockquote>
+<p><em>Cet exercice traite principalement du thème « algorithmique, langages et programmation ». Le but est de comparer le tri par insertion (l'un des algorithmes étudiés en 1ère NSI pour trier un tableau) avec le tri fusion (un algorithme qui applique le principe
+de « diviser pour régner »).</em></p>
+<h2 id="partie-a--manipulation-dune-liste-en-python">Partie A : Manipulation d’une liste en Python</h2>
+<p>!! fabquestion &quot;Question A.1&quot;
+Donner les affichages obtenus après l’exécution du code Python suivant.
+<code>python 	notes = [8, 7, 18, 14, 12, 9, 17, 3] 	notes[3] = 16 	print(len(notes)) 	print(notes) 	</code></p>
+<p>`!!! fabquestion &quot;Question A.2&quot;
+Écrire un code Python permettant d'afficher les éléments d'indice 2 à 4 de la liste notes.</p>
+<h2 id="partie-b--tri-par-insertion">Partie B : Tri par insertion</h2>
+<p>Le tri par insertion est un algorithme efficace qui s'inspire de la façon dont on peut trier une poignée de cartes. On commence avec une seule carte dans la main gauche (les autres cartes sont en tas sur la table) puis on pioche la carte suivante et on l'insère au bon endroit dans la main gauche.</p>
+<p>!!! fabquestion &quot;Question B.1&quot;
+Voici une implémentation en Python de cet algorithme. Recopier et compléter les lignes 6 et 7 surlignées (uniquement celles-ci).
+<code>py linenums=&quot;1&quot; 	def tri_insertion(liste): 		&quot;&quot;&quot; trie par insertion la liste en paramètre &quot;&quot;&quot; 		for indice_courant in range(1,len(liste)): 			element_a_inserer = liste[indice_courant] 			i = indice_courant - 1 			while i &gt;= 0 and liste[i] &gt; ................................ : 				liste[...........] = liste[...........] 				i = i - 1 				liste[i + 1] = element_a_inserer 	</code></p>
+<p>On a écrit dans la console les instructions suivantes :</p>
+<pre class="hljs"><code><div>notes = [<span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">18</span>, <span class="hljs-number">14</span>, <span class="hljs-number">12</span>, <span class="hljs-number">9</span>, <span class="hljs-number">17</span>, <span class="hljs-number">3</span>]
+tri_insertion(notes)
+print(notes)
+</div></code></pre>
+<p>On a obtenu l'affichage suivant :</p>
+<pre class="hljs"><code><div>[<span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">12</span>, <span class="hljs-number">14</span>, <span class="hljs-number">17</span>, <span class="hljs-number">18</span>]
+</div></code></pre>
+<p>On s'interroge sur ce qui s’est passé lors de l’exécution de tri_insertion(notes).</p>
+<p>!!! fabquestion &quot;Question B.2&quot;
+Donner le contenu de la liste notes après le premier passage dans la boucle for.</p>
+<p>!!! fabquestion &quot;Question B.3&quot;
+Donner le contenu de la liste notes après le troisième passage dans la boucle for.</p>
+<h2 id="partie-c--tri-fusion">Partie C : Tri fusion</h2>
+<p>L'algorithme de tri fusion suit le principe de « diviser pour régner ».</p>
+<p>(1) Si le tableau à trier n’a qu’un élément, il est déjà trié.<br>
+(2) Sinon, séparer le tableau en deux parties à peu près égales.<br>
+(3) Trier les deux parties avec l’algorithme de tri fusion.<br>
+(4) Fusionner les deux tableaux triés en un seul tableau.</p>
+<p>source : Wikipedia</p>
+<p>!!! fabquestion &quot;Question C.1&quot;
+Cet algorithme est-il itératif ou récursif ? Justifier en une phrase.</p>
+<p>!!! fabquestion &quot;Question C.2&quot;&quot;
+Expliquer en trois lignes comment faire pour rassembler dans une main deux tas déjà triés de cartes, la carte en haut d'un tas étant la plus petite de ce même tas ;<br>
+la deuxième carte d'un tas n'étant visible qu'après avoir retiré la première carte de ce tas.</p>
+<p>À la fin du procédé, les cartes en main doivent être triées par ordre croissant.<br>
+Une fonction fusionner a été implémentée en Python en s'inspirant du procédé de la question précédente.<br>
+Elle prend quatre arguments : la liste qui est en train d'être triée, l'indice où commence la sous-liste de gauche à fusionner, l'indice où termine cette sousliste, et l'indice où se termine la sous-liste de droite.</p>
+<p>!!! fabquestion &quot;Question C.3&quot;
+Voici une implémentation de l’algorithme de tri fusion. Recopier et compléter les lignes 8, 9 et 10 surlignées (uniquement celles-ci).</p>
+<pre><code>```py linenums=&quot;1&quot;
+from math import floor
+
+def tri_fusion (liste, i_debut, i_fin):
+	&quot;&quot;&quot; trie par fusion la liste en paramètre depuis  i_debut jusqu’à i_fin &quot;&quot;&quot;
+	if i_debut &lt; i_fin:
+		i_partage = floor((i_debut + i_fin) / 2)
+		tri_fusion(liste, i_debut, ..............................)
+		tri_fusion(liste, ..................................., i_fin)
+		fusionner(liste, ........................., ........................., ......................)
+
+```
+Remarque : la fonction floor renvoie la partie entière du nombre passé en paramètre. 
+</code></pre>
+<p>!!! fabquestion &quot;Question C.4&quot;
+Expliquer le rôle de la première ligne du code de la question 3.</p>
+<h2 id="partie-d--comparaison-du-tri-par-insertion-et-du-tri-fusion">Partie D : Comparaison du tri par insertion et du tri fusion</h2>
+<p>Voici une illustration des étapes d’un tri effectué sur la liste <code>[3, 41, 52, 26, 38, 57, 9, 49]</code>.</p>
+<p>figure a mettre</p>
+<p>!!! fabquestion &quot;Question D.1&quot;
+Quel algorithme a été utilisé : le tri par insertion ou le tri fusion ? Justifier.</p>
+<p>!!! fabquestion &quot;Question D.2&quot;
+Identifier le tri qui a une complexité, dans le pire des cas, en O(n2) et identifier le tri qui a une complexité, dans le pire des cas, en O(n log2 n).<br>
+Remarque : n représente la longueur de la liste à trier.</p>
+<p>!!! fabquestion  &quot;Question D.3&quot;
+Justifier brièvement ces deux complexités.</p>
+<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
+    <span style="font-size:20px; color:black;">Sujet n&#xB0;3 : FRANCE CANDIDAT LIBRE SUJET 1
+</span></blockquote>
+<p><em>Cet exercice traite de manipulation de tableaux, de récursivité et du paradigme « diviser pour régner ».</em></p>
+<p>Dans un tableau Python d'entiers tab, on dit que le couple d’indices (݅,݆) forme une inversion lorsque ݅ &lt; ݆ et tab[i] &gt; tab[j]. On donne ci-dessous quelques exemples.</p>
+<ul>
+<li>Dans le tableau [1, 5, 3, 7], le couple d’indices (1,2) forme une inversion car 5&gt; 3.<br>
+Par contre, le couple (1,3) ne forme pas d'inversion car 5&lt;7. Il n’y a qu’une inversion dans ce tableau.</li>
+<li>Il y a trois inversions dans le tableau [1, 6, 2, 7, 3], à savoir les couples d'indices (1, 2), (1, 4) et (3, 4).</li>
+<li>On peut compter six inversions dans le tableau [7, 6, 5, 3] : les couples d'indices (0, 1), (0, 2), (0, 3), (1, 2), (1, 3) et (2, 3).</li>
+</ul>
+<p>On se propose dans cet exercice de déterminer le nombre d’inversions dans un tableau quelconque.</p>
+<p>Questions préliminaires</p>
+<p>!!! fabquestion &quot;Question 1&quot;
+Expliquer pourquoi le couple (1, 3) est une inversion dans le tableau [4, 8, 3, 7].</p>
+<p>!!! fabquestion &quot;Question2&quot;
+Justifier que le couple (2, 3) n’en est pas une.</p>
+<h1 id="partie-a--m%C3%A9thode-it%C3%A9rative">Partie A : Méthode itérative</h1>
+<p>Le but de cette partie est d’écrire une fonction itérative nombre_inversion qui renvoie le nombre d’inversions dans un tableau. Pour cela, on commence par écrire une fonction fonction1 qui sera ensuite utilisée pour écrire la fonction nombre_inversion.</p>
+<p>!!! fabquestion  &quot;Question A.1&quot;	
+On donne la fonction suivante.
+<code>python 	def fonction1(tab, i): 		nb_elem = len(tab) 		cpt = 0 		for j in range(i+1, nb_elem): 			if tab[j] &lt; tab[i]: 				cpt += 1 		return cpt 	</code></p>
+<pre><code>a. Indiquer ce que renvoie la fonction1(tab, i) dans les cas suivants.  
+
+- Cas n°1 : tab = [1, 5, 3, 7] et i = 0.  
+- Cas n°2 : tab = [1, 5, 3, 7] et i = 1.  
+- Cas n°3 : tab = [1, 5, 2, 6, 4] et i = 1.  
+
+b. Expliquer ce que permet de déterminer cette fonction. 
+</code></pre>
+<p>!!! fabquestion &quot;Question A.2&quot;
+En utilisant la fonction précédente, écrire une fonction nombre_inversion(tab) qui prend en argument un tableau et renvoie le nombre d’inversions dans ce tableau.<br>
+On donne ci-dessous les résultats attendus pour certains appels.
+<code> 	&gt;&gt;&gt; nombre_inversions([1, 5, 7]) 	0 	&gt;&gt;&gt; nombre_inversions([1, 6, 2, 7, 3]) 	3 	&gt;&gt;&gt; nombre_inversions([7, 6, 5, 3]) 	6 	</code></p>
+<p>!!! fabquestion &quot;Question A.3&quot;
+Quelle est l’ordre de grandeur de la complexité en temps de l'algorithme obtenu ?<br>
+Aucune justification n'est attendue.</p>
+<h1 id="partie-b--m%C3%A9thode-r%C3%A9cursive">Partie B : Méthode récursive</h1>
+<p>Le but de cette partie est de concevoir une version récursive de la fonction nombre_inversion.<br>
+On définit pour cela des fonctions auxiliaires.</p>
+<p>!!! fabquestion &quot;Question B.1&quot;
+Donner le nom d’un algorithme de tri ayant une complexité meilleure que quadratique.<br>
+Dans la suite de cet exercice, on suppose qu’on dispose d'une fonction tri(tab) qui prend en argument un tableau et renvoie un tableau contenant les mêmes éléments rangés dans l'ordre croissant.</p>
+<p>!!! fabquestion &quot;Question B.2&quot;
+Écrire une fonction moitie_gauche(tab) qui prend en argument un tableau tab et renvoie un nouveau tableau contenant la moitié gauche de tab. Si le nombre d'éléments de tab est impair, l'élément du centre se trouve dans cette partie gauche.<br>
+On donne ci-dessous les résultats attendus pour certains appels.<br>
+<code>python  	&gt;&gt;&gt; moitie_gauche([]) 	[] 	&gt;&gt;&gt; moitie_gauche([4, 8, 3]) 	[4, 8] 	&gt;&gt;&gt; moitie_gauche ([4, 8, 3, 7]) 	[4, 8] 	</code></p>
+<p>Dans la suite, on suppose qu’on dispose de la fonction moitie_droite(tab) qui renvoie la moitié droite sans l’élément du milieu.</p>
+<p>!!! fabquestion &quot;Question B.3&quot;
+On suppose qu’une fonction nb_inv_tab(tab1, tab2)a été écrite. Cette fonction renvoie le nombre d’inversions du tableau obtenu en mettant bout à bout les tableaux tab1 et tab2, à condition que tab1 et tab2 soient triés dans l’ordre croissant.<br>
+On donne ci-dessous deux exemples d’appel de cette fonction :
+<code>python  	&gt;&gt;&gt; nb_inv_tab([3, 7, 9], [2, 10]) 	3 	&gt;&gt;&gt; nb_inv_tab([7, 9, 13], [7, 10, 14]) 	3 	</code></p>
+<p>En utilisant la fonction nb_inv_tab et les questions précédentes, écrire une fonction récursive nb_inversions_rec(tab) qui permet de calculer le nombre d'inversions dans un tableau. *
+Cette fonction renverra le même nombre que nombre_inversions(tab) de la partie A. On procédera de la façon suivante :</p>
+<ul>
+<li>Séparer le tableau en deux tableaux de tailles égales (à une unité près).</li>
+<li>Appeler récursivement la fonction nb_inversions_rec pour compter le nombre d’inversions dans chacun des deux tableaux.</li>
+<li>Trier les deux tableaux (on rappelle qu'une fonction de tri est déjà définie).</li>
+<li>Ajouter au nombre d'inversions précédemment comptées le nombre renvoyé par la fonction nb_inv_tab avec pour arguments les deux tableaux triés.</li>
+</ul>
+
+</body>
+</html>

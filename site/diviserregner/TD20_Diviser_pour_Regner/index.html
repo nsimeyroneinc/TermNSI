@@ -19,7 +19,7 @@
     
     
       
-        <title>TD20 Diviser pour Regner - Site NSI Terminale Lycée Murat ISSOIRE</title>
+        <title>TD n°20 - Diviser pour régner - Site NSI Terminale Lycée Murat ISSOIRE</title>
       
     
     
@@ -64,6 +64,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#iii-les-tris-tri-par-selection-et-tri-par-insertion-tri-fusion" class="md-skip">
+          Aller au contenu
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TD20 Diviser pour Regner
+              TD n°20 - Diviser pour régner
             
           </span>
         </div>
@@ -235,14 +240,16 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Revision1ere/TD_Glouton/" class="md-tabs__link">
-        Retour 1ère
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        T5 Algo.
       </a>
     </li>
   
@@ -589,25 +596,27 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
       
         <label class="md-nav__link" for="__nav_5">
-          Retour 1ère
+          T5 Algo.
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Retour 1ère" data-md-level="1">
+      <nav class="md-nav" aria-label="T5 Algo." data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Retour 1ère
+          T5 Algo.
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -615,10 +624,34 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TD 20
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../../Revision1ere/TD_Glouton/" class="md-nav__link">
-        TD
+      <a href="../TD20_Diviser_pour_Regner_Correction/" class="md-nav__link">
+        TD 20 correction
       </a>
     </li>
   
@@ -729,6 +762,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_03_01_22_correction/" class="md-nav__link">
+        DS 03/01/22 - Correction
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -830,93 +877,183 @@
 
                 
 
-  <h1>TD20 Diviser pour Regner</h1>
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr>
+            <th colspan=2; width="100%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            Thème 5 : Algorithmique
+            </th>
+        </tr>
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:50pt;">
+            20
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">TD : Diviser pour régner</th>
+        </tr>
+</table>
 
-<p><img alt="" src="../data/split.svg" /></p>
-<h2 id="le-principe">Le principe<a class="headerlink" href="#le-principe" title="Permanent link">⚓︎</a></h2>
+<p><img alt="" class="center" src="../data/split.svg" width="45%" /></p>
+<h2 id="i-le-principe">I. Le principe<a class="headerlink" href="#i-le-principe" title="Permanent link">⚓︎</a></h2>
+<div class="admonition savoir">
+<p class="admonition-title">Diviser pour régner</p>
 <p>La stratégie « diviser pour régner » consiste à</p>
 <ol>
 <li>
-<p>Décomposer un problème en un ou plusieurs <em>sous-problèmes</em> de même nature mais plus petits.</p>
+<p><strong>Diviser :</strong> Décomposer un problème en un ou plusieurs <em>sous-problèmes</em> de même nature mais plus petits.</p>
 </li>
 <li>
-<p>Résoudre les sous-problèmes, généralement de manière récursive, jusqu'à ce qu'on arrive aux <em>cas d'arrêt</em> :
-   des sous-problèmes que l'on sait résoudre immédiatement.</p>
+<p><strong>Régner :</strong> Résoudre les sous-problèmes, généralement de manière récursive, jusqu'à ce qu'on arrive aux <em>cas d'arrêt</em> :
+des sous-problèmes que l'on sait résoudre immédiatement.</p>
 </li>
 <li>
-<p>Construire la solution au problème initial à partir des solutions des sous-problèmes.</p>
+<p><strong>Combiner :</strong> Construire la solution au problème initial à partir des solutions des sous-problèmes.</p>
 </li>
 </ol>
-<h2 id="le-formidable-exemple-des-tours-de-hanoi">Le formidable exemple des tours de Hanoï<a class="headerlink" href="#le-formidable-exemple-des-tours-de-hanoi" title="Permanent link">⚓︎</a></h2>
-<p>On dispose de <span class="arithmatex">\(n\)</span> palets empilés du plus grand au plus petit sur une tige numéro 1, on veut déplacer cette tour sur
-la tige numéro 3 en se servant de la tige numéro 2 comme intermédiaire, sachant que :</p>
+</div>
+<h2 id="ii-diviser-pour-regner-palindromes">II. Diviser pour régner : Palindromes<a class="headerlink" href="#ii-diviser-pour-regner-palindromes" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Palindromes</p>
+<p>Une chaîne est un palindrome si elle peut se lire de la même manière dans les deux sens, de gauche à droite et de droite à gauche. Par exemple :  </p>
 <ul>
-<li>on ne peut déplacer qu'un palet à la fois;</li>
-<li>on ne peut mettre un palet que sur une tige vide ou sur un palet plus gros.</li>
+<li>"ressasser, "radar", "12321" sont des palindromes ;  </li>
+<li>"nsi", "toto" n’en sont pas.  </li>
 </ul>
-<p>Appelons <code class="highlight"><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">T1</span><span class="p">,</span><span class="n">T2</span><span class="p">,</span><span class="n">T3</span><span class="p">)</span></code>la succession des mouvements nécessaires pour résoudre ce problème.</p>
-<ul>
-<li><code class="highlight"><span class="n">hanoi</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T1</span><span class="p">,</span><span class="n">T2</span><span class="p">,</span><span class="n">T3</span><span class="p">)</span></code> est évident : il suffit de ne rien faire.</li>
-<li><code class="highlight"><span class="n">hanoi</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">T1</span><span class="p">,</span><span class="n">T2</span><span class="p">,</span><span class="n">T3</span><span class="p">)</span></code> est simple : déplacer le palet de la tige numéro 1 à la tige numéro 3.</li>
-<li>
-<p>Si l'on connait <code class="highlight"><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></code> alors pour effectuer <code class="highlight"><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code> on peut :</p>
-<ul>
-<li>déplacer la tour de taille <span class="arithmatex">\(n - 1\)</span> de la tige numéro 1 à la tige numéro 2 en utilisant la tige numéro 3 comme intermédiaire, autrement 
-dit appliquer <code class="highlight"><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">T1</span><span class="p">,</span><span class="n">T3</span><span class="p">,</span><span class="n">T2</span><span class="p">)</span></code>;</li>
-<li>déplacer le gros palet de la tige numéro 1 à la tige numéro 3;</li>
-<li>déplacer la tour de taille n - 1 de la tige numéro 2 à la tige numéro 3 en utilisant la tige numéro 1
-        comme intermédiaire, autrement dit appliquer <code class="highlight"><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">T2</span><span class="p">,</span><span class="n">T1</span><span class="p">,</span><span class="n">T3</span><span class="p">)</span></code>.
-La méthode est illustrée ci-dessous </li>
-</ul>
-</li>
-</ul>
-<div align="center"><img src="img/hanoi.png" width="50%"></div>
-
-<p>Ce qui se traduit par l'algorithme suivant :</p>
-<div class="highlight"><pre><span></span><code>fonction hanoi(n : entier naturel, T1 : pile, T2 : pile, T3 : pile) 
-
-    # hanoi(nb_palets, départ, intermédiaire, destination)
-
-    si n = 0 alors
-        ne rien déplacer
-    sinon
-        hanoi(n - 1, T1, T3, T2)
-        déplace palet de T1 vers T3
-        hanoi(n - 1, T2, T1, T3)
-    finSi
+</div>
+<p>On se propose d’écrire une fonction récursive <code>est_palindrome(ch)</code> qui renvoie Vrai si la chaine <code>ch</code> passée en argument est un palindrome et Faux sinon.</p>
+<h3 id="partie-a">Partie A<a class="headerlink" href="#partie-a" title="Permanent link">⚓︎</a></h3>
+<p>Une première version utilisant le slicing<br />
+On considère la chaîne suivante.  </p>
+<div class="highlight"><pre><span></span><code><span class="n">ch</span> <span class="o">=</span> <span class="s2">&quot;ressasser&quot;</span>
 </code></pre></div>
-<p>Formidable, non ?</p>
-<div class="admonition ugli-exo">
-<p class="admonition-title">EX : Codage</p>
-<p>Coder la fonction <code class="highlight"><span class="n">hanoi</span></code> en python :</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">depart</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">inter</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dest</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Affiche la liste des mouvements pour deplacer une tour de </span>
-<span class="sd">hauteur n de la tige depart vers la tige dest en utilisant </span>
-<span class="sd">la tige inter.</span>
-<span class="sd">Cette fonction n&#39;utilise que des print, aucune liste ou </span>
-<span class="sd">quoi que ce soit d&#39;autre.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-</code></pre></div>
-<p>Comme expliqué dans la <code class="highlight"><span class="n">docstring</span></code>, la fonction ne fait rien de concret, elle se contente d'afficher les 
-déplacements de palets d'une tige à l'autre.</p>
-<p>Tester cette fonction : <code class="highlight"><span class="n">hanoi</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B, &#39;</span><span class="n">C</span><span class="s1">&#39;)</span></code> doit afficher :</p>
-<div class="highlight"><pre><span></span><code>Déplacer un palet de A vers C
-Déplacer un palet de A vers B
-Déplacer un palet de C vers B
-Déplacer un palet de A vers C
-Déplacer un palet de B vers A
-Déplacer un palet de B vers C
-Déplacer un palet de A vers C
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 1.</p>
+<p>Quels slices permettent d’accéder :  </p>
+<ul>
+<li>au premier caractère de ch ?  </li>
+<li>au dernier caractère de ch ?  </li>
+<li>à une chaîne privée du premier et du dernier caractères de ch.  </li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 2.</p>
+<p>En utilisant les slices, complétez la fonction suivante.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">est_palindrome</span><span class="p">(</span><span class="n">ch</span><span class="p">):</span>    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">...</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">...</span>
 </code></pre></div>
 </div>
-<div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Tower_of_Hanoi_4.gif" width="50%"><br>
-<i>Déroulement de l'algorithme avec une tour de 4 palets</i></div>
-
-<h2 id="le-tri-fusion">Le tri fusion<a class="headerlink" href="#le-tri-fusion" title="Permanent link">⚓︎</a></h2>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 3.</p>
+<p>Au moyen du mot clé assert, écrivez un bon jeu de tests pour cette fonction. Vérifiez que les tests passent avec succès.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 4.</p>
+<p>Expliquez pourquoi cet algorithme est un exemple de la méthode diviser pour régner.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 5.</p>
+<p>Utiliser Python tutor, exécutez en mode pas à pas le déroulement des appels récursifs de cette fonction pour la chaîne "ressasser".<br />
+Si la chaîne de départ est un palindrome de longueur n, combien de comparaisons sont effectuées ? En déduite le coût en temps de cet algorithme (sa complexité) dans le pire des cas.  </p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 6.</p>
+<p>Le slicing a un coût en mémoire caché. En effet, chaque appel ch[1:-1] induit la création d’une nouvelle chaîne qu’il faut stocker en mémoire. On peut le voir facilement avec Python tutor.<br />
+Dans le pire cas, pour une chaîne de longueur n au départ, combien de chaînes doivent être créées pour répondre au problème ?</p>
+</div>
+<h3 id="partie-b">Partie B<a class="headerlink" href="#partie-b" title="Permanent link">⚓︎</a></h3>
+<h4 id="une-deuxieme-version-amelioree">Une deuxième version améliorée<a class="headerlink" href="#une-deuxieme-version-amelioree" title="Permanent link">⚓︎</a></h4>
+<p>En réalité, on peut se passer de la création de toutes ces chaînes intermédiaires en utilisant et en faisant varier (comme pour la recherche dichotomique) les indices g (pour gauche) et d (pour droite) des caractères restants.<br />
+Voici une fonction palindrome(ch, g, d) qui renvoie True si la chaine ch[g..d] (c’est-à-dire la chaîne ch limitée à ses caractères entre les positions g et d) est un palindrome et False sinon.  </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">palindrome</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">-</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ch</span><span class="p">[</span><span class="n">g</span><span class="p">]</span> <span class="o">==</span> <span class="n">ch</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="ow">and</span> <span class="n">palindrome</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">g</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 7.</p>
+<p>Quel appel à cette fonction faut-il faire pour tester si mot est un palindrome ?  </p>
+<div class="highlight"><pre><span></span><code> <span class="n">mot</span> <span class="o">=</span> <span class="s2">&quot;ressasser&quot;</span>
+ <span class="c1"># à compléter par le bon appel :</span>
+</code></pre></div>
+</div>
+<p>Pour éviter cette écriture un peu lourde, il suffit de créer une autre fonction <code>est_palindrome2(ch)</code> qui est chargée de lancer le premier appel à la fonction récursive palindrome.<br />
+Complétez le code de la fonction <code>est_palindrome2(ch)</code>.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 8.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">est_palindrome2</span><span class="p">(</span><span class="n">ch</span><span class="p">):</span>
+<span class="c1"># à compléter</span>
+<span class="k">pass</span>
+</code></pre></div>
+</div>
+<p>La fonction est_palindrome2 est appelée une <strong>fonction d’interface</strong> qui permet d’ajouter des arguments à une fonction sans que l’utilisateur ait à s’en préoccuper.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 9.</p>
+<p>Vérifiez avec Python tutor qu’avec cette version, il n’y a qu’une chaîne ch à mémoriser (celle de départ). On obtient un algorithme avec un coût mémoire inférieur à la première version.</p>
+</div>
+<h1 id="iii-les-tris-tri-par-selection-et-tri-par-insertion-tri-fusion">III. Les tris : tri par sélection et tri par insertion - Tri fusion<a class="headerlink" href="#iii-les-tris-tri-par-selection-et-tri-par-insertion-tri-fusion" title="Permanent link">⚓︎</a></h1>
+<h2 id="tri-par-selection">Tri par sélection<a class="headerlink" href="#tri-par-selection" title="Permanent link">⚓︎</a></h2>
+<div class="admonition savoir">
+<p class="admonition-title">Tri par sélection</p>
+<p>Voici l’algorithme du tri par sélection écrit en français :  </p>
+<ul>
+<li>Rechercher le plus petit élément du tableau, et l’échanger avec l’élément d’indice 0 ;  </li>
+<li>Rechercher le second plus petit élément du tableau, et l’échanger avec l’élément d’indice 1 ;  </li>
+<li>Continuer de cette façon jusqu’à ce que le tableau soit entièrement trié  </li>
+</ul>
+<p>Le tri par sélection parcourt ainsi le tableau de la gauche vers la droite, en maintenant sur la gauche
+une partie déjà triée et à sa place définitive.</p>
+</div>
+<p><img alt="Selection.gif" src="../data/Selection.gif" /></p>
+<p><img alt="Selection.gif" src="../data/qrcodeselection.svg" /></p>
+<p><a href="http://lwh.free.fr/pages/algo/tri/tri_selection.html">Animation explicative du tri par sélection</a></p>
+<div class="admonition exo">
+<p class="admonition-title">Exercice</p>
+<p><strong>Question 1</strong><br />
+Appliquez l’algorithme de tri par sélection sur le tableau suivant. Vous écrirez l’état du tableau à l’issue de chaque itération.
+T = [8, 3, 11, 7, 9, 2]</p>
+<p><strong>Question 2.</strong><br />
+Déterminer la complexité de cette algorithme : Combien de comparaisons sont nécessaires pour trier par sélection un tableau de taille n dans le pire des cas ?</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice</p>
+<p><strong>Question 1.</strong><br />
+Écrivez une fonction <code>echange(T, i, j)</code> qui échange les éléments d’indices <code>T[i]</code> et <code>T[j]</code> dans le tableau <code>T</code>.  </p>
+<p><strong>Question 2.</strong><br />
+Écrivez une fonction <code>tri_par_selection(T)</code>, utilisant la fonction <code>echange</code>, qui trie par sélection le tableau <code>T</code> dans l’ordre croissant.</p>
+</div>
+<h2 id="tri-par-insertion-rappels">Tri par insertion (rappels)<a class="headerlink" href="#tri-par-insertion-rappels" title="Permanent link">⚓︎</a></h2>
+<div class="admonition savoir">
+<p class="admonition-title">Tri par insertion</p>
+<p><img alt="Insertion.gif" src="../data/Insertion.gif" /></p>
+<p>Voici l’algorithme du tri par insertion écrit en français :  </p>
+<ul>
+<li>Prendre le deuxième élément du tableau et l’insérer à sa place parmi les éléments qui le précède</li>
+<li>Prendre le troisième élément du tableau et l’insérer à sa place parmi les éléments qui le précède  </li>
+<li>Continuer de cette façon jusqu’à ce que le tableau soit entièrement trié.  </li>
+</ul>
+<p>Le tri par sélection parcourt donc également le tableau de la gauche vers la droite, en maintenant
+une partie déjà triée sur la gauche. Au lieu de chercher la plus petite valeur dans la partie de droite,
+le tri par insertion va insérer la première valeur non encore triée au bon endroit dans la partie de
+gauche déjà triée.</p>
+</div>
+<p><img alt="qrcode" src="../data/qrcodeinsertion.svg" /></p>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  :</p>
+<p><strong>Question 1.</strong><br />
+Appliquez l’algorithme de tri par insertion sur le tableau suivant. Vous écrirez l’état du tableau à l’issue de chaque itération.
+<code>T = [8, 3, 11, 7, 9, 2]</code></p>
+<p><strong>Question 2.</strong><br />
+Combien de comparaisons et d’échanges sont nécessaires pour trier par insertion un tableau de taille n dans le pire des cas ?</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice :</p>
+<p>Écrivez une fonction <code>tri_par_insertion(T)</code> qui trie par insertion le tableau <code>T</code> dans l’ordre croissant.</p>
+</div>
+<h2 id="tri-fusion">Tri fusion<a class="headerlink" href="#tri-fusion" title="Permanent link">⚓︎</a></h2>
 <h3 id="principe">Principe<a class="headerlink" href="#principe" title="Permanent link">⚓︎</a></h3>
-<p><img align="right" alt="merge_sort" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Merge-sort-example-300px.gif/220px-Merge-so
-rt-example-300px.gif" width="33%" /> Voici un deuxième exemple d'application de cette stratégie : le <em>tri
+<p><img align="right" alt="merge_sort" src="../data/Merge-sort-example.gif" width="33%" /> Voici un deuxième exemple d'application de cette stratégie : le <em>tri
 fusion</em>. On doit cet algorithme à
 <a href="https://fr.wikipedia.org/wiki/John_von_Neumann">John Von Neumann</a>.</p>
 <p>On dispose d'une liste d'entiers que l'on veut trier dans l'ordre croissant.</p>
@@ -925,67 +1062,155 @@ fusion</em>. On doit cet algorithme à
 <p>On scinde cette liste en deux listes de longueurs « à peu près égales ».</p>
 </li>
 <li>
-<p>On trie ces listes en utilisant... le tri fusion.</p>
+<p>On trie ces listes en utilisant... le tri fusion. (on tri donc le manière récursive)</p>
 </li>
 <li>
 <p>On <em>fusionne</em> les deux listes triées par ordre croissant pour ne plus en obtenir qu'une.</p>
 </li>
 </ol>
+<div class="admonition example">
+<p class="admonition-title">Un exemple</p>
+<p><img alt="" class=":center" src="../data/tri_fusion_exemple.png" /></p>
+</div>
 <div align="center">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XaqR3G_NVoo" title="YouTube video player" 
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XaqR3G_NVoo" title="YouTube video player"
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe><br>
 <i> Une chorégraphie du tri fusion </i>
 </div>
+
+<h2 id="code-correspondant">Code correspondant<a class="headerlink" href="#code-correspondant" title="Permanent link">⚓︎</a></h2>
 <p>Voici comment coder le tri fusion :</p>
 <p>On a tout d'abord besoin d'une fonction <code>scinde</code> qui renvoie la première moitié et la deuxième moitié de la liste qu'on
 lui passe en argument.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">scinde</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;prend une liste L et renvoie un couple de deux listes de taille identique (à l&#39;unité près) de sorte que leur réunion soit la liste L de départ &quot;&quot;&quot;</span>
+    <span class="n">lg</span><span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lg</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">L</span><span class="p">,</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">lg</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">lg</span> <span class="o">-</span> <span class="n">p</span>
+        <span class="n">L1</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">q</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lg</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">:</span>
+                <span class="n">L1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">L2</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">q</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">L1</span><span class="p">,</span> <span class="n">L2</span>
+</code></pre></div>
+<p><strong>Version aevc slice</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">scinde</span><span class="p">(</span><span class="n">lst</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">lst</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:]</span>
 </code></pre></div>
 <p>Ensuite, on a besoin d'une fonction <code>fusion</code> qui, étant donnée deux listes triées, les fusionne.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">lst1</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">lst2</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">lst1</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">lst2</span><span class="p">:</span> <span class="c1"># si l&#39;une des listes est vide</span>
-        <span class="k">return</span> <span class="n">lst1</span> <span class="ow">or</span> <span class="n">lst2</span> <span class="c1"># alors on renvoie l&#39;autre</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">lst1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lst2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="p">:</span> <span class="c1"># sinon on compare leurs premiers éléments</span>
-            <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">+</span> <span class="n">fusion</span><span class="p">(</span><span class="n">lst1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">lst2</span><span class="p">)</span> <span class="c1"># on place le plus petit en tête et on fusionne le reste</span>
-        <span class="k">elif</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">+</span> <span class="n">fusion</span><span class="p">(</span><span class="n">lst1</span><span class="p">,</span> <span class="n">lst2</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-        <span class="k">else</span> <span class="p">:</span> <span class="c1"># dans le cas où les 2 éléments sont égaux on peut les placer tous les deux</span>
-            <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span><span class="o">+</span> <span class="n">fusion</span><span class="p">(</span><span class="n">lst1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">lst2</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;réalise la fusion de deux listes triées, le résultat est une liste triée&#39;&#39;&#39;</span>
+    <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">i1</span><span class="p">,</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i1</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="ow">and</span> <span class="n">i2</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">L1</span><span class="p">[</span><span class="n">i1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">L2</span><span class="p">[</span><span class="n">i2</span><span class="p">]:</span>
+            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L1</span><span class="p">[</span><span class="n">i1</span><span class="p">]</span>
+            <span class="n">i1</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L2</span><span class="p">[</span><span class="n">i2</span><span class="p">]</span>
+            <span class="n">i2</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># ici on a vidé l&#39;une ou l&#39;autre des deux listes</span>
+    <span class="c1"># s&#39;il faut encore vider L1</span>
+    <span class="k">while</span> <span class="n">i1</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">:</span>
+        <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L1</span><span class="p">[</span><span class="n">i1</span><span class="p">]</span>
+        <span class="n">i1</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># s&#39;il faut encore vider L2</span>
+    <span class="k">while</span> <span class="n">i2</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">:</span>
+        <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L2</span><span class="p">[</span><span class="n">i2</span><span class="p">]</span>
+        <span class="n">i2</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">L</span>
 </code></pre></div>
 <p>Enfin, la fonction <code>tri_fusion</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tri_fusion</span><span class="p">(</span><span class="n">lst</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># cas d&#39;arrêt</span>
-        <span class="k">return</span> <span class="n">lst</span>
-    <span class="n">lst1</span><span class="p">,</span> <span class="n">lst2</span> <span class="o">=</span> <span class="n">scinde</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="c1"># sinon on scinde</span>
-    <span class="k">return</span> <span class="n">fusion</span><span class="p">(</span><span class="n">tri_fusion</span><span class="p">(</span><span class="n">lst1</span><span class="p">),</span> <span class="n">tri_fusion</span><span class="p">(</span><span class="n">lst2</span><span class="p">))</span> <span class="c1"># et on fusionne les sous-listes triées</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tri_fusion</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">L</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">L1</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="n">scinde</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fusion</span><span class="p">(</span><span class="n">tri_fusion</span><span class="p">(</span><span class="n">L1</span><span class="p">),</span> <span class="n">tri_fusion</span><span class="p">(</span><span class="n">L2</span><span class="p">))</span>
 </code></pre></div>
 <h3 id="complexite-du-tri-fusion">Complexité du tri fusion<a class="headerlink" href="#complexite-du-tri-fusion" title="Permanent link">⚓︎</a></h3>
-<p>Notons <span class="arithmatex">\(n\)</span> la taille de la liste à trier et considérons comme seule <em>opération élémentaire</em> le fait d'accéder à un élément 
-d'une liste.</p>
-<p>En classe de Première, nous avons étudié des algorithmes de tri dits « lents », car de complexité <em>quadratique</em> : pour une
-liste de taille <span class="arithmatex">\(n\)</span>, le nombre d'opérations élémentaires pour trier ce tableau est « de l'ordre de <span class="arithmatex">\(n^2\)</span> ».</p>
-<p>Ainsi, pour trier une liste de <span class="arithmatex">\(10^6\)</span> entiers avec le tri par sélection (par exemple), le nombre d'opérations élémentaires 
-nécessaires est de l'ordre de <span class="arithmatex">\(10^{12}\)</span>.</p>
+<p>&#x27A1;  La partie “diviser” est de complexité constante.</p>
+<p>Pour pouvoir majorer le nombre maximum d’itérations, si le tableau contient P valeurs, et si on a un entier <span class="arithmatex">\(n\)</span> tel que <span class="arithmatex">\(P \leq 2^n\)</span> , alors puisque qu’à chaque itération, on sélectionne une moitié de ce qui reste :  </p>
+<ul>
+<li>au bout d’une itération, une moitié de tableau aura au plus <span class="arithmatex">\(\dfrac{2^n}{2} = 2^{n−1}\)</span> éléments,  </li>
+<li>un quart aura au plus <span class="arithmatex">\(2^{n−2}\)</span>    </li>
+<li>et au bout de <span class="arithmatex">\(k\)</span> itérations, la taille de ce qui reste à étudier est de taille au plus <span class="arithmatex">\(2^{n−k}\)</span>.  </li>
+<li>En particulier, si l’on fait <span class="arithmatex">\(n\)</span> itérations, il reste au plus <span class="arithmatex">\(2^{n−n} = 1\)</span> valeur du tableau à examiner. On est sûr de s’arrêter cette fois-ci</li>
+</ul>
+<p>On a donc montré que si l’entier <span class="arithmatex">\(n\)</span> vérifie <span class="arithmatex">\(P \leq 2^n\)</span> , alors l’algorithme va effectuer au plus <span class="arithmatex">\(n\)</span> itérations.
+La plus petite valeur est obtenue pour <span class="arithmatex">\(n = log_2 P\)</span>.<br />
+Ainsi, la complexité de la fonction est de l’ordre du logarithme  de la longueur de la liste (<span class="arithmatex">\(O(log_2(n))\)</span>).<br />
+<span class="arithmatex">\(log_2(n)\)</span>.</p>
+<p><strong>Exemple</strong><br />
+Pour un tableau de taille n = 64 il faut :</p>
+<p>64/2=32,32/2=16,16/2=8,8/2=4,4/2=2,2/2=1 :</p>
+<p>6 étapes.</p>
+<p><span class="arithmatex">\(2^6=64\)</span>.</p>
+<p>Comme toujours quand on peut séparer le tableau en deux, la méthode diviser pour régner permet de ne réaliser que <span class="arithmatex">\(log_2 n\)</span> étapes. Mais…</p>
+<p>&#x27A1; Complexité fusion  </p>
+<p>La partie fusion utilise une boucle qui parcourt plusieurs tableaux en même temps.</p>
+<p>On réalise à chaque étape la même chose :  </p>
+<ul>
+<li>lire deux valeurs,  </li>
+<li>comparer,  </li>
+<li>ranger la plus petite.</li>
+</ul>
+<p>La complexité est linéaire.</p>
+<p>Notons <span class="arithmatex">\(n\)</span> la taille de la liste à trier et considérons comme seule <em>opération élémentaire</em> le fait d'accéder à un élément d'une liste.</p>
 <div class="admonition ugli-defi">
 <p class="admonition-title">Complexité du tri fusion</p>
-<p>Le nombre d'opérations élémentaires nécessaires pour trier une liste de taille <span class="arithmatex">\(n\)</span> par la méthode du tri fusion est 
-de l'ordre de <span class="arithmatex">\(n\times\ln n\)</span>.</p>
-<p><span class="arithmatex">\(\ln n\)</span> est le <em>logarithme néperien de <span class="arithmatex">\(n\)</span></em> mais peut être remplacé par le logarithme en base 2 ou 
-en base 10 sans changer les ordres de grandeur.</p>
+<p>Le nombre d'opérations élémentaires nécessaires pour trier une liste de taille <span class="arithmatex">\(n\)</span> par la méthode du tri fusion est
+de l'ordre de <span class="arithmatex">\(n\times\log_2 n\)</span>.</p>
 </div>
-<div class="admonition ugli-note">
-<p class="admonition-title">Exemple</p>
-<p>Pour trier une liste de <span class="arithmatex">\(10^6\)</span> entiers, il faudra de l'ordre de 6 millions d'opérations élémentaires.</p>
-</div>
+<h2 id="iv-application-exercices-de-lepreuve-pratique">IV. Application : Exercices de l'Epreuve Pratique<a class="headerlink" href="#iv-application-exercices-de-lepreuve-pratique" title="Permanent link">⚓︎</a></h2>
 <div class="admonition ugli-exo">
-<p class="admonition-title">EX : Vérification expérimentale</p>
-<p><a href="https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/26f3-15504">On peut vérifier ce résultat expérimentalement ici</a>.</p>
+<p class="admonition-title">Sujet 23 - Exercice 2</p>
+<p>La fonction fusion prend deux listes <code>L1, L2</code> d’entiers triées par ordre croissant et les fusionne en une liste triée L12 qu’elle renvoie.
+Le code Python de la fonction est  </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span><span class="n">L2</span><span class="p">):</span>
+    <span class="n">n1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span>
+    <span class="n">L12</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="p">)</span>
+    <span class="n">i1</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i1</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="ow">and</span> <span class="o">...</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">L1</span><span class="p">[</span><span class="n">i1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">L2</span><span class="p">[</span><span class="n">i2</span><span class="p">]:</span>
+            <span class="n">L12</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+            <span class="n">i1</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">L12</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L2</span><span class="p">[</span><span class="n">i2</span><span class="p">]</span>
+            <span class="n">i2</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i1</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">:</span>
+        <span class="n">L12</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="n">i1</span> <span class="o">=</span> <span class="n">i1</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">while</span> <span class="n">i2</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">:</span>
+        <span class="n">L12</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="n">i2</span> <span class="o">=</span> <span class="n">i2</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="n">L12</span>
+</code></pre></div>
+<p>Compléter le code.  </p>
+<p>Exemple :<br />
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">fusion</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</code></pre></div></p>
 </div>
+<h2 id="recherche-dichotomique">Recherche dichotomique<a class="headerlink" href="#recherche-dichotomique" title="Permanent link">⚓︎</a></h2>
 <div class="admonition ugli-exo">
 <p class="admonition-title">EX : Recherche dichotomique</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Enoncé</label><label for="__tabbed_1_2">Solution</label></div>
@@ -1017,77 +1242,336 @@ c'est terminé, sinon on fait de même avec la sous-liste des éléments précé
 </div>
 </div>
 </div>
-<div class="admonition ugli-exo">
-<p class="admonition-title">EX : Algorithme de Karatsuba</p>
-<p>Il s'agit d'un algorithme qui applique la stratégie « diviser pour régner » pour effectuer des multiplications de 
-manière efficace.</p>
-<ol>
-<li>Chercher sur Internet ce qu'est cet algorithme.</li>
-<li>Programmer cet algorithme en Python.</li>
-</ol>
+<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
+<span style="font-size:30px; color:white;"> V. Exercices BAC </span></blockquote>
+
+<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
+    <span style="font-size:20px; color:black;">Sujet n°1 : France 2021
+</span></blockquote>
+
+<p><em>Cet exercice porte sur l’algorithme de tri fusion, qui s’appuie sur la méthode dite de « diviser pour
+régner ».</em></p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 1</p>
+<p>a. Quel est l’ordre de grandeur du coût, en nombre de comparaisons, de l’algorithme de tri fusion pour une liste de longueur ?<br />
+b. Citer le nom d’un autre algorithme de tri. Donner l’ordre de grandeur de son coût, en nombre de comparaisons, pour une liste de longueur .<br />
+Comparer ce coût à celui du tri fusion. Aucune justification n’est attendue.  </p>
 </div>
-<details class="ugli-exo">
-<summary>Indices</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Indice : principe</label><label for="__tabbed_2_2">Indice de programmation 1</label><label for="__tabbed_2_3">Indice de programmation 2</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Si <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> s'écrivent <strong>au plus</strong> avec <span class="arithmatex">\(2n\)</span> bits, alors on peut les écrire
-<span class="arithmatex">\(\begin{cases}
-x &amp;= a\times 2^n + b\\
-y &amp;= c\times 2^n +d\\
-\end{cases}\)</span> , où <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(c\)</span> et <span class="arithmatex">\(d\)</span> s'écrivent <strong>au plus</strong> <span class="arithmatex">\(n\)</span> bits.</p>
-<p>Mais alors <span class="arithmatex">\(x\times y = ab2^{2n}+(ac + bd -(a-b)(c-d))2^n+bd\)</span>.</p>
-<p>Dans cette écriture, il y a 3 multiplications à faire avec des nombres s'écrivant avec <strong>au plus</strong> <span class="arithmatex">\(n\)</span> bits:</p>
+<p>L’algorithme de tri fusion utilise deux fonctions moitie_gauche et moitie_droite qui prennent en argument une liste L et renvoient respectivement : </p>
 <ul>
-<li><span class="arithmatex">\(ac\)</span></li>
-<li><span class="arithmatex">\(bd\)</span></li>
-<li><span class="arithmatex">\((a-b)(c-d)\)</span></li>
+<li>la sous-liste de L formée des éléments d’indice strictement inférieur à <code>len(L)//2</code> ;  </li>
+<li>la sous-liste de L formée des éléments d’indice supérieur ou égal à <code>len(L)//2</code>.  </li>
 </ul>
-<p>Le reste (additions et multiplication par <span class="arithmatex">\(2^{2n}\)</span> ou <span class="arithmatex">\(2^n\)</span> ne prend pas beaucoup de temps à faire (les additions 
-sont plus rapides que les multiplications et multiplier un nombre par <span class="arithmatex">\(2^n\)</span> revient à lui ajouter <span class="arithmatex">\(n\)</span> bits valant 0 à droite).</p>
-<p>La stratégie « diviser pour régner » vient du fait qu'on calcule ces 3 produits en appliquant de nouveau l'algorithme de Karatsuba.</p>
-</div>
-<div class="tabbed-block">
-<p>On peut déjà code une fonction <code class="highlight"><span class="n">size</span></code> qui
-- en entrée prend un <code class="highlight"><span class="nb">int</span></code> x;
-- renvoie le nombre de bits de l'écriture binaire de x.
-Pour ce faire il suffit de diviser x par 2 (avec <code class="highlight"><span class="o">//</span></code>) jusqu'à trouver 0. </p>
-</div>
-<div class="tabbed-block">
-<ul>
-<li>Pour multiplier <code class="highlight"><span class="n">x</span></code> par <span class="arithmatex">\(2^n\)</span> on peut utiliser l'opérateur <code class="highlight"><span class="o">&lt;&lt;</span></code> : <code class="highlight"><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">n</span></code>.</li>
-<li>Pour diviser, utiliser <code class="highlight"><span class="o">&gt;&gt;</span></code>.</li>
-<li>Ainsi on pourra écrire
-    <div class="highlight"><pre><span></span><code>    <span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">n</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">n</span><span class="p">)</span>
+<p>On rappelle que la syntaxe a//b désigne la division entière de a par b.  </p>
+<p>Par exemple,
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_gauche</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_droite</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">M</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_gauche</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_droite</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</code></pre></div></p>
+<p>L’algorithme utilise aussi une fonction fusion qui prend en argument deux listes triées L1 et L2 et renvoie une liste L triée et composée des éléments de L1 et L2.<br />
+On donne ci-dessous le code python d’une fonction récursive tri_fusion qui prend en argument une liste L et renvoie une nouvelle liste triée formée des éléments de L.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tri_fusion</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">1</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">L</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="n">mg</span> <span class="o">=</span> <span class="n">moitie_gauche</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="n">md</span> <span class="o">=</span> <span class="n">moitie_droite</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="n">L1</span> <span class="o">=</span> <span class="n">tri_fusion</span><span class="p">(</span><span class="n">mg</span><span class="p">)</span>
+    <span class="n">L2</span> <span class="o">=</span> <span class="n">tri_fusion</span><span class="p">(</span><span class="n">md</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fusion</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">)</span>
 </code></pre></div>
-    <em>Et caetera.</em></li>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 2</p>
+<p>Donner la liste des affichages produits par l’appel suivant.<br />
+<div class="highlight"><pre><span></span><code><span class="n">tri_fusion</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</code></pre></div></p>
+</div>
+<p>On s’intéresse désormais à différentes fonctions appelées par <code>tri_fusion</code>, à savoir moitie_droite et fusion.  </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 3</p>
+<p>Écrire la fonction <code>moitie_droite</code>.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 4</p>
+<p>On donne ci-dessous une version incomplète de la fonction fusion.<br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">n1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span>
+    <span class="n">i1</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i1</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="ow">or</span> <span class="n">i2</span> <span class="o">&lt;</span> <span class="n">n2</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">i1</span> <span class="o">&gt;=</span> <span class="n">n1</span><span class="p">:</span>
+            <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L2</span><span class="p">[</span><span class="n">i2</span><span class="p">])</span>
+            <span class="n">i2</span> <span class="o">=</span> <span class="n">i2</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">i2</span> <span class="o">&gt;=</span> <span class="n">n2</span><span class="p">:</span>
+            <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L1</span><span class="p">[</span><span class="n">i1</span><span class="p">])</span>
+            <span class="n">i1</span> <span class="o">=</span> <span class="n">i1</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">e1</span> <span class="o">=</span> <span class="n">L1</span><span class="p">[</span><span class="n">i1</span><span class="p">]</span>
+            <span class="n">e2</span> <span class="o">=</span> <span class="n">L2</span><span class="p">[</span><span class="n">i2</span><span class="p">]</span>
+
+
+
+    <span class="k">return</span> <span class="n">L</span>
+</code></pre></div>
+</td></tr></table>
+Dans cette fonction, les entiers i1 et i2 représentent respectivement les indices des éléments des listes L1 et L2 que l’on souhaite comparer :  </p>
+<ul>
+<li>Si aucun des deux indices n’est valide, la boucle while est interrompue ;  </li>
+<li>Si i1 n’est plus un indice valide, on va ajouter à L les éléments de L2 à partir de l’indice i2 ;  </li>
+<li>Si i2 n’est plus un indice valide, on va ajouter à L les éléments de L1 à partir de l’indice i1 ;  </li>
+<li>Sinon, le plus petit élément non encore traité est ajouté à L et on décale l’indice correspondant.  </li>
 </ul>
+<p>Écrire sur la copie les instructions manquantes des lignes 17 à 22 permettant d’insérer dans la liste L les éléments des listes L1 et L2 par ordre croissant. </p>
 </div>
+<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
+    <span style="font-size:20px; color:black;">Sujet n°2 : BAC Polynésie 2021
+</span></blockquote>
+
+<p><em>Cet exercice traite principalement du thème « algorithmique, langages et programmation ». Le but est de comparer le tri par insertion (l'un des algorithmes étudiés en 1ère NSI pour trier un tableau) avec le tri fusion (un algorithme qui applique le principe
+de « diviser pour régner »).</em></p>
+<h2 id="partie-a-manipulation-dune-liste-en-python">Partie A : Manipulation d’une liste en Python<a class="headerlink" href="#partie-a-manipulation-dune-liste-en-python" title="Permanent link">⚓︎</a></h2>
+<p>!! fabquestion "Question A.1"
+    Donner les affichages obtenus après l’exécution du code Python suivant. 
+    <div class="highlight"><pre><span></span><code><span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">notes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span>
+</code></pre></div></p>
+<p>`!!! fabquestion "Question A.2"
+    Écrire un code Python permettant d'afficher les éléments d'indice 2 à 4 de la liste notes.</p>
+<h2 id="partie-b-tri-par-insertion">Partie B : Tri par insertion<a class="headerlink" href="#partie-b-tri-par-insertion" title="Permanent link">⚓︎</a></h2>
+<p>Le tri par insertion est un algorithme efficace qui s'inspire de la façon dont on peut trier une poignée de cartes. On commence avec une seule carte dans la main gauche (les autres cartes sont en tas sur la table) puis on pioche la carte suivante et on l'insère au bon endroit dans la main gauche.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question B.1</p>
+<p>Voici une implémentation en Python de cet algorithme. Recopier et compléter les lignes 6 et 7 surlignées (uniquement celles-ci).
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tri_insertion</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; trie par insertion la liste en paramètre &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">indice_courant</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
+        <span class="n">element_a_inserer</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">indice_courant</span><span class="p">]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">indice_courant</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">................................</span> <span class="p">:</span>
+            <span class="n">liste</span><span class="p">[</span><span class="o">...........</span><span class="p">]</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="o">...........</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">liste</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">element_a_inserer</span>
+</code></pre></div>
+</td></tr></table></p>
 </div>
+<p>On a écrit dans la console les instructions suivantes :
+<div class="highlight"><pre><span></span><code><span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">tri_insertion</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span>
+</code></pre></div>
+On a obtenu l'affichage suivant : 
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
+</code></pre></div></p>
+<p>On s'interroge sur ce qui s’est passé lors de l’exécution de <code>tri_insertion(notes)</code>.  </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question B.2</p>
+<p>Donner le contenu de la liste notes après le premier passage dans la boucle for.</p>
 </div>
-</details>
-<h2 id="rotation-dune-image-carree-dun-quart-de-tour">Rotation d'une image carrée d'un quart de tour<a class="headerlink" href="#rotation-dune-image-carree-dun-quart-de-tour" title="Permanent link">⚓︎</a></h2>
-<p>On suppose qu'on dispose d'une image carrée de côté <span class="arithmatex">\(n\)</span> pixels, où <span class="arithmatex">\(n\)</span> est une puissance de 2.</p>
-<p><center><img src="data/turing.png" width="50%"></center></p>
-<p>Pour l'exemple voic une photo (colorisée) carrée d'<a 50_="50%" href="https://fr.wikipedia.org/wiki/Alan_Turing" width="width">Alan Turing</a> de côté 512 pixels.</p>
-<p>On aimerait faire subir un quart de tour à cette photo (dans le sens antihoraire) en utilisant une stratégie de type 
-«diviser pour régner». On va procéder ainsi :</p>
-<p><img align="right" alt="rotation_principe" src="../data/rotation_principe.svg" width="50%" /></p>
-<ol>
-<li>On partage l'image en 4 carrés de côté deux fois moindre.</li>
-<li>On fait tourner ces 4 carrés.</li>
-<li>On fait subir une <em>permutation circulaire</em> aux 4 carrés</li>
-</ol>
-<p>À l'étape 2, pour faire tourner les 4 carrés, on se retrouve avec le même problème mais avec des carrés de côté 2 fois plus petits.
-On répète donc le processus jusqu'à n'avoir plus que des carrés de côté 1 pixel (sur lesquels il n'y a pas besoin de 
-faire quoi que soit).</p>
-<p>Voici ce que cela donne</p>
-<p><center><img src="data/turing.gif" width="50%"></center></p>
-<div class="admonition ugli-exo">
-<p class="admonition-title">EX : Programmation de la rotation d'un quart de tour d'une image carrée</p>
-<p><a href="https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/ad82-15702">On peut la retrouver ici</a>.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question B.3</p>
+<p>Donner le contenu de la liste notes après le troisième passage dans la boucle for.</p>
 </div>
+<h2 id="partie-c-tri-fusion">Partie C : Tri fusion<a class="headerlink" href="#partie-c-tri-fusion" title="Permanent link">⚓︎</a></h2>
+<p>L'algorithme de tri fusion suit le principe de « diviser pour régner ».  </p>
+<p>(1) Si le tableau à trier n’a qu’un élément, il est déjà trié.<br />
+(2) Sinon, séparer le tableau en deux parties à peu près égales.<br />
+(3) Trier les deux parties avec l’algorithme de tri fusion.<br />
+(4) Fusionner les deux tableaux triés en un seul tableau. </p>
+<p>source : Wikipedia  </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question C.1</p>
+<p>Cet algorithme est-il itératif ou récursif ? Justifier en une phrase.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question C.2"</p>
+<p>Expliquer en trois lignes comment faire pour rassembler dans une main deux tas déjà triés de cartes, la carte en haut d'un tas étant la plus petite de ce même tas ;<br />
+la deuxième carte d'un tas n'étant visible qu'après avoir retiré la première carte de ce tas.</p>
+</div>
+<p>À la fin du procédé, les cartes en main doivent être triées par ordre croissant.<br />
+Une fonction fusionner a été implémentée en Python en s'inspirant du procédé de la question précédente.<br />
+Elle prend quatre arguments : la liste qui est en train d'être triée, l'indice où commence la sous-liste de gauche à fusionner, l'indice où termine cette sousliste, et l'indice où se termine la sous-liste de droite.  </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question C.3</p>
+<p>Voici une implémentation de l’algorithme de tri fusion. Recopier et compléter les lignes 8, 9 et 10 surlignées (uniquement celles-ci).</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span>
+
+<span class="k">def</span> <span class="nf">tri_fusion</span> <span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">i_debut</span><span class="p">,</span> <span class="n">i_fin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; trie par fusion la liste en paramètre depuis  i_debut jusqu’à i_fin &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">i_debut</span> <span class="o">&lt;</span> <span class="n">i_fin</span><span class="p">:</span>
+        <span class="n">i_partage</span> <span class="o">=</span> <span class="n">floor</span><span class="p">((</span><span class="n">i_debut</span> <span class="o">+</span> <span class="n">i_fin</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">tri_fusion</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">i_debut</span><span class="p">,</span> <span class="o">..............................</span><span class="p">)</span>
+        <span class="n">tri_fusion</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="o">...................................</span><span class="p">,</span> <span class="n">i_fin</span><span class="p">)</span>
+        <span class="n">fusionner</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="o">.........................</span><span class="p">,</span> <span class="o">.........................</span><span class="p">,</span> <span class="o">......................</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+Remarque : la fonction floor renvoie la partie entière du nombre passé en paramètre. </p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question C.4</p>
+<p>Expliquer le rôle de la première ligne du code de la question 3.</p>
+</div>
+<h2 id="partie-d-comparaison-du-tri-par-insertion-et-du-tri-fusion">Partie D : Comparaison du tri par insertion et du tri fusion<a class="headerlink" href="#partie-d-comparaison-du-tri-par-insertion-et-du-tri-fusion" title="Permanent link">⚓︎</a></h2>
+<p>Voici une illustration des étapes d’un tri effectué sur la liste <code>[3, 41, 52, 26, 38, 57, 9, 49]</code>.</p>
+<p><img alt="" src="../data/polynesie_tri.png" />[:.center}]</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question D.1</p>
+<p>Quel algorithme a été utilisé : le tri par insertion ou le tri fusion ? Justifier.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question D.2</p>
+<p>Identifier le tri qui a une complexité, dans le pire des cas, en <span class="arithmatex">\(O(n^2)\)</span> et identifier le tri qui a une complexité, dans le pire des cas, en <span class="arithmatex">\(O(n log2 n)\)</span>.<br />
+Remarque : <span class="arithmatex">\(n\)</span> représente la longueur de la liste à trier.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question D.3</p>
+<p>Justifier brièvement ces deux complexités. </p>
+</div>
+<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
+    <span style="font-size:20px; color:black;">Sujet n°3 : FRANCE CANDIDAT LIBRE SUJET 1
+</span></blockquote>
+
+<p><em>Cet exercice traite de manipulation de tableaux, de récursivité et du paradigme « diviser pour régner ».</em>  </p>
+<p>Dans un tableau Python d'entiers tab, on dit que le couple d’indices (݅,݆) forme une inversion lorsque ݅ &lt; ݆ et <code>tab[i] &gt; tab[j]</code>. On donne ci-dessous quelques exemples.  </p>
+<ul>
+<li>Dans le tableau [1, 5, 3, 7], le couple d’indices (1,2) forme une inversion car 5&gt; 3.<br />
+Par contre, le couple (1,3) ne forme pas d'inversion car 5&lt;7. Il n’y a qu’une inversion dans ce tableau.  </li>
+<li>Il y a trois inversions dans le tableau [1, 6, 2, 7, 3], à savoir les couples d'indices (1, 2), (1, 4) et (3, 4).  </li>
+<li>On peut compter six inversions dans le tableau [7, 6, 5, 3] : les couples d'indices (0, 1), (0, 2), (0, 3), (1, 2), (1, 3) et (2, 3).  </li>
+</ul>
+<p>On se propose dans cet exercice de déterminer le nombre d’inversions dans un tableau quelconque.  </p>
+<p>Questions préliminaires  </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 1</p>
+<p>Expliquer pourquoi le couple (1, 3) est une inversion dans le tableau [4, 8, 3, 7].</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question2</p>
+<p>Justifier que le couple (2, 3) n’en est pas une.</p>
+</div>
+<h1 id="partie-a-methode-iterative">Partie A : Méthode itérative<a class="headerlink" href="#partie-a-methode-iterative" title="Permanent link">⚓︎</a></h1>
+<p>Le but de cette partie est d’écrire une fonction itérative <code>nombre_inversion</code> qui renvoie le nombre d’inversions dans un tableau. Pour cela, on commence par écrire une fonction <code>fonction1</code> qui sera ensuite utilisée pour écrire la fonction <code>nombre_inversion</code>.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question A.1</p>
+<p>On donne la fonction suivante.
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fonction1</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="n">nb_elem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="n">cpt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_elem</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">cpt</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">cpt</span>
+</code></pre></div></p>
+<p>a. Indiquer ce que renvoie la <code>fonction1(tab, i)</code> dans les cas suivants.  </p>
+<ul>
+<li>Cas n°1 : tab = [1, 5, 3, 7] et i = 0.  </li>
+<li>Cas n°2 : tab = [1, 5, 3, 7] et i = 1.  </li>
+<li>Cas n°3 : tab = [1, 5, 2, 6, 4] et i = 1.  </li>
+</ul>
+<p>b. Expliquer ce que permet de déterminer cette fonction. </p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question A.2</p>
+<p>En utilisant la fonction précédente, écrire une fonction <code>nombre_inversion(tab)</code> qui prend en argument un tableau et renvoie le nombre d’inversions dans ce tableau.<br />
+On donne ci-dessous les résultats attendus pour certains appels.
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">nombre_inversions</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nombre_inversions</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nombre_inversions</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="mi">6</span>
+</code></pre></div></p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question A.3</p>
+<p>Quelle est l’ordre de grandeur de la complexité en temps de l'algorithme obtenu ?<br />
+Aucune justification n'est attendue.</p>
+</div>
+<h1 id="partie-b-methode-recursive">Partie B : Méthode récursive<a class="headerlink" href="#partie-b-methode-recursive" title="Permanent link">⚓︎</a></h1>
+<p>Le but de cette partie est de concevoir une version récursive de la fonction <code>nombre_inversion</code>.<br />
+On définit pour cela des fonctions auxiliaires.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question B.1</p>
+<p>Donner le nom d’un algorithme de tri ayant une complexité meilleure que quadratique.<br />
+Dans la suite de cet exercice, on suppose qu’on dispose d'une fonction <code>tri(tab)</code> qui prend en argument un tableau et renvoie un tableau contenant les mêmes éléments rangés dans l'ordre croissant.  </p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question B.2</p>
+<p>Écrire une fonction <code>moitie_gauche(tab)</code> qui prend en argument un tableau tab et renvoie un nouveau tableau contenant la moitié gauche de tab. Si le nombre d'éléments de tab est impair, l'élément du centre se trouve dans cette partie gauche.<br />
+On donne ci-dessous les résultats attendus pour certains appels.<br />
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_gauche</span><span class="p">([])</span>
+<span class="p">[]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_gauche</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_gauche</span> <span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</code></pre></div></p>
+</div>
+<p>Dans la suite, on suppose qu’on dispose de la fonction <code>moitie_droite(tab)</code> qui renvoie la moitié droite sans l’élément du milieu. </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question B.3</p>
+<p>On suppose qu’une fonction <code>nb_inv_tab(tab1, tab2)</code> a été écrite. Cette fonction renvoie le nombre d’inversions du tableau obtenu en mettant bout à bout les tableaux <code>tab1</code> et <code>tab2</code>, à condition que <code>tab1</code> et <code>tab2</code> soient triés dans l’ordre croissant.<br />
+On donne ci-dessous deux exemples d’appel de cette fonction :
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">nb_inv_tab</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nb_inv_tab</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+<span class="mi">3</span>
+</code></pre></div></p>
+</div>
+<p>En utilisant la fonction <code>nb_inv_tab</code> et les questions précédentes, écrire une fonction récursive <code>nb_inversions_rec(tab)</code> qui permet de calculer le nombre d'inversions dans un tableau.
+Cette fonction renverra le même nombre que <code>nombre_inversions(tab)</code> de la partie A. On procédera de la façon suivante :  </p>
+<ul>
+<li>Séparer le tableau en deux tableaux de tailles égales (à une unité près).</li>
+<li>Appeler récursivement la fonction <code>nb_inversions_rec</code> pour compter le nombre d’inversions dans chacun des deux tableaux.  </li>
+<li>Trier les deux tableaux (on rappelle qu'une fonction de tri est déjà définie).  </li>
+<li>Ajouter au nombre d'inversions précédemment comptées le nombre renvoyé par la fonction <code>nb_inv_tab</code> avec pour arguments les deux tableaux triés.  </li>
+</ul>
 
               
 
@@ -1146,6 +1630,41 @@ faire quoi que soit).</p>
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../../Reseaux/TD19_Routage/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TD 19 - Protocole de routage" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              TD 19 - Protocole de routage
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../TD20_Diviser_pour_Regner_Correction/" class="md-footer__link md-footer__link--next" aria-label="Suivant: TD 20 correction" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              TD 20 correction
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
