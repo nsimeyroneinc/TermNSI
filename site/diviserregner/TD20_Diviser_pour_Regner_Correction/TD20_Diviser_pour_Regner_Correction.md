@@ -1,12 +1,13 @@
 ---
-title: TD n°20 - Diviser pour régner
+title: TD n°20 - Diviser pour régner - correction
 date: 2021/2022
+authors: M Meyroneinc-Condy
 ---
 
 
-<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:1000px;">
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:750px;">
         <tr>
-            <th colspan=2; width="1000px"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            <th colspan=2; width="750px"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
             Thème 5 : Algorithmique
             </th>
         </tr>
@@ -467,7 +468,7 @@ _Cet exercice traite principalement du thème « algorithmique, langages et prog
 
 ## Partie A : Manipulation d’une liste en Python  
 
-!! fabquestion "Question A.1"
+!!! fabquestion "Question A.1"
 	=== "Enoncée"
         Donner les affichages obtenus après l’exécution du code Python suivant. 
 	    ```python
@@ -623,7 +624,7 @@ Elle prend quatre arguments : la liste qui est en train d'être triée, l'indice
 
 Voici une illustration des étapes d’un tri effectué sur la liste `[3, 41, 52, 26, 38, 57, 9, 49]`.
 
-figure a mettre
+![](data/polynesie_tri.png)[:.center}]
 
 !!! fabquestion "Question D.1"
     === "Enoncé"

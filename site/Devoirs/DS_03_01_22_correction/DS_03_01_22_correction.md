@@ -1,3 +1,8 @@
+---
+titre: Devoir sur les Piles et Files
+date: 03 janvier 2022
+---
+
 <table  style="background-color:  #F0F8FF; width:100%;color:black;">
     <thead>
         <tr>
@@ -59,7 +64,7 @@ class Pile:
 Seules les méthodes de la classe ci-dessus doivent être utilisées pour manipuler les objets
 Pile. 
 
-!!! example "1.a"
+!!! fabquestion "1.a"
     === "Enoncé"
         Écrire une suite d’instructions permettant de créer une instance de la classe Pile affectée à une variable `pile1` contenant les éléments 7, 5 et 2 insérés dans cet ordre.  
         Ainsi, à l’issue de ces instructions, l’instruction `pile1.afficher()` produit l’affichage : 7, 5, 2. 
@@ -71,7 +76,8 @@ Pile.
         pile1.empiler(2)
         ```
 
-!!! example "1.b"
+
+!!! fabquestion "1.b"
     === "Enoncé"
         Donner l’affichage produit après l’exécution des instructions suivantes.
         ```
@@ -81,6 +87,8 @@ Pile.
         pile1.afficher()
         ```
     === "Solution"
+        ![image](data/Ds.svg){:.center width=50%}  
+
         7, 5, 5, 2
 
 !!! example "2."

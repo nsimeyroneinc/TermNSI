@@ -19,7 +19,7 @@
     
     
       
-        <title>TD n°20 - Diviser pour régner - Site NSI Terminale Lycée Murat ISSOIRE</title>
+        <title>TD n°20 - Diviser pour régner - correction - Site NSI Terminale Lycée Murat ISSOIRE</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TD n°20 - Diviser pour régner
+              TD n°20 - Diviser pour régner - correction
             
           </span>
         </div>
@@ -230,7 +230,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Reseaux/TD19_Routage/" class="md-tabs__link">
+      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-tabs__link">
         T3 - Archi. matèrielle
       </a>
     </li>
@@ -240,13 +240,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../TD20_Diviser_pour_Regner/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         T5 Algo.
       </a>
     </li>
@@ -574,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Reseaux/TD19_Routage/" class="md-nav__link">
+      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-nav__link">
         TD 19 - Protocole de routage
       </a>
     </li>
@@ -594,12 +596,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -620,11 +624,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../TD20_Diviser_pour_Regner/" class="md-nav__link">
-        TD 20
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TD 20 correction
       </a>
+      
     </li>
   
 
@@ -849,9 +863,9 @@
 
                 
 
-<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:1000px;">
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:750px;">
         <tr>
-            <th colspan=2; width="1000px"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            <th colspan=2; width="750px"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
             Thème 5 : Algorithmique
             </th>
         </tr>
@@ -1315,18 +1329,26 @@ Dans cette fonction, les entiers i1 et i2 représentent respectivement les indic
 
 <p><em>Cet exercice traite principalement du thème « algorithmique, langages et programmation ». Le but est de comparer le tri par insertion (l'un des algorithmes étudiés en 1ère NSI pour trier un tableau) avec le tri fusion (un algorithme qui applique le principe de « diviser pour régner »).</em></p>
 <h2 id="partie-a-manipulation-dune-liste-en-python">Partie A : Manipulation d’une liste en Python<a class="headerlink" href="#partie-a-manipulation-dune-liste-en-python" title="Permanent link">⚓︎</a></h2>
-<p>!! fabquestion "Question A.1"
-    === "Enoncée"
-        Donner les affichages obtenus après l’exécution du code Python suivant. 
-        <div class="highlight"><pre><span></span><code><span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question A.1</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Enoncée</label><label for="__tabbed_6_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Donner les affichages obtenus après l’exécution du code Python suivant. 
+<div class="highlight"><pre><span></span><code><span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">notes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span>
-</code></pre></div>
-    === "Solution"
-        <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">8</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <p>`!!! fabquestion "Question A.2"
     === "Enoncé"
         Écrire un code Python permettant d'afficher les éléments d'indice 2 à 4 de la liste notes.</p>
@@ -1340,7 +1362,7 @@ Dans cette fonction, les entiers i1 et i2 représentent respectivement les indic
 <p>Le tri par insertion est un algorithme efficace qui s'inspire de la façon dont on peut trier une poignée de cartes. On commence avec une seule carte dans la main gauche (les autres cartes sont en tas sur la table) puis on pioche la carte suivante et on l'insère au bon endroit dans la main gauche.</p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question B.1</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Enoncé</label><label for="__tabbed_6_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Enoncé</label><label for="__tabbed_7_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Voici une implémentation en Python de cet algorithme. Recopier et compléter les lignes 6 et 7 surlignées (uniquement celles-ci).
@@ -1390,7 +1412,7 @@ On a obtenu l'affichage suivant :
 <p>On s'interroge sur ce qui s’est passé lors de l’exécution de tri_insertion(notes).  </p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question B.2</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Enoncé</label><label for="__tabbed_7_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Enoncé</label><label for="__tabbed_8_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Donner le contenu de la liste notes après le premier passage dans la boucle for.</p>
@@ -1404,7 +1426,7 @@ On a obtenu l'affichage suivant :
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question B.3</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Enoncé</label><label for="__tabbed_8_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Enoncé</label><label for="__tabbed_9_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Donner le contenu de la liste notes après le troisième passage dans la boucle for.</p>
@@ -1425,13 +1447,13 @@ On a obtenu l'affichage suivant :
 <p>source : Wikipedia  </p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question C.1</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Enoncé</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Enoncé</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
 </div>
 <p>Cet algorithme est-il itératif ou récursif ? Justifier en une phrase.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>récursif : à l’étape (3) l’algorithme de tri fusion s’appelle lui-même.</p>
@@ -1441,7 +1463,7 @@ On a obtenu l'affichage suivant :
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question C.2</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Enoncé</label><label for="__tabbed_11_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Enoncé</label><label for="__tabbed_12_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Expliquer en trois lignes comment faire pour rassembler dans une main deux tas déjà triés de cartes, la carte en haut d'un tas étant la plus petite de ce même tas ;<br />
@@ -1462,7 +1484,7 @@ Une fonction fusionner a été implémentée en Python en s'inspirant du procéd
 Elle prend quatre arguments : la liste qui est en train d'être triée, l'indice où commence la sous-liste de gauche à fusionner, l'indice où termine cette sousliste, et l'indice où se termine la sous-liste de droite.  </p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question C.3</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Enoncé</label><label for="__tabbed_12_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Enoncé</label><label for="__tabbed_13_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Voici une implémentation de l’algorithme de tri fusion. Recopier et compléter les lignes 8, 9 et 10 surlignées (uniquement celles-ci).</p>
@@ -1504,7 +1526,7 @@ Remarque : la fonction floor renvoie la partie entière du nombre passé en para
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question C.4</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Enoncé</label><label for="__tabbed_13_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Enoncé</label><label for="__tabbed_14_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Expliquer le rôle de la première ligne du code de la question 3.</p>
@@ -1517,10 +1539,10 @@ Remarque : la fonction floor renvoie la partie entière du nombre passé en para
 </div>
 <h2 id="partie-d-comparaison-du-tri-par-insertion-et-du-tri-fusion">Partie D : Comparaison du tri par insertion et du tri fusion<a class="headerlink" href="#partie-d-comparaison-du-tri-par-insertion-et-du-tri-fusion" title="Permanent link">⚓︎</a></h2>
 <p>Voici une illustration des étapes d’un tri effectué sur la liste <code>[3, 41, 52, 26, 38, 57, 9, 49]</code>.</p>
-<p>figure a mettre</p>
+<p><img alt="" src="../data/polynesie_tri.png" />[:.center}]</p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question D.1</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Enoncé</label><label for="__tabbed_14_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Enoncé</label><label for="__tabbed_15_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Quel algorithme a été utilisé : le tri par insertion ou le tri fusion ? Justifier.</p>
@@ -1533,7 +1555,7 @@ Remarque : la fonction floor renvoie la partie entière du nombre passé en para
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question D.2</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Enoncé</label><label for="__tabbed_15_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Enoncé</label><label for="__tabbed_16_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Identifier le tri qui a une complexité, dans le pire des cas, en O(n2) et identifier le tri qui a une complexité, dans le pire des cas, en O(n log2 n).<br />
@@ -1550,7 +1572,7 @@ Remarque : n représente la longueur de la liste à trier.</p>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question D.3</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Enoncé</label><label for="__tabbed_16_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Enoncé</label><label for="__tabbed_17_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Justifier brièvement ces deux complexités. </p>
@@ -1580,7 +1602,7 @@ Par contre, le couple (1,3) ne forme pas d'inversion car 5&lt;7. Il n’y a qu�
 <p>Questions préliminaires  </p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 1</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Enoncé</label><label for="__tabbed_17_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Enoncé</label><label for="__tabbed_18_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Expliquer pourquoi le couple (1, 3) est une inversion dans le tableau [4, 8, 3, 7].</p>
@@ -1594,7 +1616,7 @@ Nous avons 1 &lt; 3 alors que 8 &gt; 7, nous avons donc bien une inversion</p>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question2</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Enoncé</label><label for="__tabbed_18_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Enoncé</label><label for="__tabbed_19_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Justifier que le couple (2, 3) n’en est pas une.</p>
@@ -1610,7 +1632,7 @@ Nous avons 2 &lt; 3 et 3 &lt; 7, nous n’avons donc pas d’inversion</p>
 <p>Le but de cette partie est d’écrire une fonction itérative nombre_inversion qui renvoie le nombre d’inversions dans un tableau. Pour cela, on commence par écrire une fonction fonction1 qui sera ensuite utilisée pour écrire la fonction nombre_inversion.</p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question A.1</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Enoncé</label><label for="__tabbed_19_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Enoncé</label><label for="__tabbed_20_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On donne la fonction suivante.
@@ -1644,7 +1666,7 @@ Nous avons 2 &lt; 3 et 3 &lt; 7, nous n’avons donc pas d’inversion</p>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question A.2</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Enoncé</label><label for="__tabbed_20_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Enoncé</label><label for="__tabbed_21_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>En utilisant la fonction précédente, écrire une fonction nombre_inversion(tab) qui prend en argument un tableau et renvoie le nombre d’inversions dans ce tableau.<br />
@@ -1671,7 +1693,7 @@ On donne ci-dessous les résultats attendus pour certains appels.
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question A.3</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Enoncé</label><label for="__tabbed_21_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">Enoncé</label><label for="__tabbed_22_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Quelle est l’ordre de grandeur de la complexité en temps de l'algorithme obtenu ?<br />
@@ -1688,7 +1710,7 @@ Aucune justification n'est attendue.</p>
 On définit pour cela des fonctions auxiliaires.</p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question B.1</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">Enoncé</label><label for="__tabbed_22_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">Enoncé</label><label for="__tabbed_23_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Donner le nom d’un algorithme de tri ayant une complexité meilleure que quadratique.<br />
@@ -1702,7 +1724,7 @@ Dans la suite de cet exercice, on suppose qu’on dispose d'une fonction tri(tab
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question B.2</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">Enoncé</label><label for="__tabbed_23_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">Enoncé</label><label for="__tabbed_24_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Écrire une fonction moitie_gauche(tab) qui prend en argument un tableau tab et renvoie un nouveau tableau contenant la moitié gauche de tab. Si le nombre d'éléments de tab est impair, l'élément du centre se trouve dans cette partie gauche.<br />
@@ -1741,7 +1763,7 @@ On donne ci-dessous les résultats attendus pour certains appels.<br />
 <p>Dans la suite, on suppose qu’on dispose de la fonction moitie_droite(tab) qui renvoie la moitié droite sans l’élément du milieu. </p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question B.3</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">Enoncé</label><label for="__tabbed_24_2">Solution</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="25:2"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">Enoncé</label><label for="__tabbed_25_2">Solution</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>On suppose qu’une fonction nb_inv_tab(tab1, tab2)a été écrite. Cette fonction renvoie le nombre d’inversions du tableau obtenu en mettant bout à bout les tableaux tab1 et tab2, à condition que tab1 et tab2 soient triés dans l’ordre croissant.<br />
@@ -1846,6 +1868,41 @@ Cette fonction renverra le même nombre que nombre_inversions(tab) de la partie 
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../../Reseaux/TD19_Routage_Correction/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TD 19 - Protocole de routage" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              TD 19 - Protocole de routage
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../DM/DM_POO/" class="md-footer__link md-footer__link--next" aria-label="Suivant: P.O.O" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              P.O.O
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -13,7 +13,7 @@ docs_dir: docs
 # Menu de navigation
 nav: 
     - Accueil : index.md
-    
+    #- Test : Notebook.ipynb
     #Structure de données
     - T1 - Structure de données :  
       - Les dictionnaires : StructureDonnees/TP07_Dictionnaires_Corrige.md
@@ -29,12 +29,13 @@ nav:
       - TP 17 - Les JO Londres 2012 : BasesDonnees/TP17_JO.md
       - TD 18 - Sujet BAC 2021 : BasesDonnees/TD18_Revision_SQL_BAC.md
     - T3 - Archi. matèrielle :
-      - TD 19 - Protocole de routage : Reseaux/TD19_Routage.md
+      #- TD 19 - Protocole de routage : Reseaux/TD19_Routage.md
+      - TD 19 - Protocole de routage : Reseaux/TD19_Routage_Correction.md
       #- TD 16 - Protocole de routage : Reseaux/cours.md
       #- TD 17 : Reseaux/02_Exercices.md
     - T5 Algo. : 
-      - TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
-      #- TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
+      #- TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
+      - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
     #- Retour 1ère :
     #  - TD : Revision1ere/TD_Glouton.md
       
@@ -46,7 +47,7 @@ nav:
       #- Révision : StructureDonnees/Revision_Arbres.md
       - DS 14/12/21 : Devoirs/DS_14_12_21_arbres.md
       - DS 14/12/21 - Correction : Devoirs/DS_14_12_21_arbres_Correction.md
-      #- DS 03/01/22 - Correction : Devoirs/DS_03_01_22_correction.md
+      - DS 03/01/22 - Correction : Devoirs/DS_03_01_22_correction.md
 
     #BAC 
     - E.P 💻: 
@@ -138,20 +139,18 @@ plugins:
       kernel_name: python3
       execute: False
       include_source: True
-  #- mkpdfs:
-  #      company: The War Company Inc.
-  #      author: Monsieur Silvestre
+
   - page-to-pdf : 
       disableOnServe: False
-      displayHeaderFooter: true
+      displayHeaderFooter: True
       printBackground: True
       scale : 1.0
       landscape : False
-      margin: {'top': '0.5cm', 'bottom': '0.5cm', 'right': '0.5cm','left': '0.5cm'}
+      margin: {'top': '0.75cm', 'bottom': '0.75cm', 'right': '0.5cm','left': '0.5cm'}
       headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
                         <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
                       </header>'
-      footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#999999;margin:10px 20px;-webkit-print-color-adjust: exact">
+      footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#FFFF99;margin:10px 20px;-webkit-print-color-adjust: exact">
                         <span>M.Meyroneinc-Condy | CCBY | 2021</span>
                         <span class="page" style="position:absolute;bottom:0;right:0;">
                          <span class="pageNumber"></span>/<span class="totalPages"></span>
