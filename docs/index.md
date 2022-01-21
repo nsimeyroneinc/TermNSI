@@ -3,9 +3,9 @@ Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire af
 Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
 
 !!! info 
-    **Thème en cours** : Protocoles de routage  
+    **Thème en cours** : ![Exercices BAC : Thème programmation - Tableaux ](divers/Exercices_Bac.md)
 
-    **Devoir - Mardi 04/02/2022** : Rattrapage Piles et Files
+    
 
 !!! info  "Epreuve BAC 2022"
     - Les **épreuves écrites** auront lieu du lundi 13 mars au mercredi 16 mars 2022.  

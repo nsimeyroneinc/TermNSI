@@ -357,7 +357,7 @@ background-color: rgb(77, 146, 77);
 
 body {
   font-family: @@font_name@@;
-  font-size: 12pt;
+  font-size: 1.1rem;
 /*        background-color: @@bg_color@@; */
   color: @@fg_color@@;
 /*   counter-reset: h1 h2 h3;*/
