@@ -19,7 +19,7 @@
     
     
       
-        <title>Exercices Bac Correction - Site NSI Terminale Lycée Murat ISSOIRE</title>
+        <title>TD n°21 - Exercices BAC - Site NSI Terminale Lycée Murat ISSOIRE</title>
       
     
     
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercices Bac Correction
+              TD n°21 - Exercices BAC
             
           </span>
         </div>
@@ -849,7 +849,7 @@
             
           
           <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="Exercices_Bac_Correction.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+            <article class="md-content__inner md-typeset">
               
 
 
@@ -858,7 +858,7 @@
 
                 
 
-  <h1>Exercices Bac Correction</h1>
+  <h1>TD n°21 - Exercices BAC</h1>
 
 <table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
         <tr>
@@ -896,10 +896,27 @@ Par exemple, si un client veut acheter un pantalon à 30,50 euros, un tee-shirt 
 </code></pre></div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 1. (a)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Enoncé</label><label for="__tabbed_1_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Écrire une fonction Python total_hors_reduction ayant pour argument le tableau des prix des articles du panier d’un client et renvoyant le total des prix de ces articles. </p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">pa</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">pa</span>
+    <span class="k">return</span> <span class="n">total</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question  1. (b)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Enoncé</label><label for="__tabbed_2_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Le site de vente propose la promotion suivante comme offre de bienvenue : 20% de réduction sur le premier article de la liste, 30% de réduction sur le deuxième article de la liste (s’il y a au moins deux articles) et aucune réduction sur le reste des articles (s’il y en a).<br />
 Recopier sur la copie et compléter la fonction Python offre_bienvenue prenant en paramètre le tableau tab des prix des articles du panier d’un client et renvoyant le total à payer lorsqu’on leur applique l’offre de bienvenue.  </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -928,9 +945,29 @@ Recopier sur la copie et compléter la fonction Python offre_bienvenue prenant e
 </code></pre></div>
 </td></tr></table>
 </div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">offre_bienvenue</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">longueur</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">somme</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">0.8</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">tab</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">0.7</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">longueur</span><span class="p">):</span>
+            <span class="n">somme</span><span class="o">=</span><span class="n">somme</span><span class="o">+</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">somme</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <p>Pour toute la suite de l’exercice, on pourra utiliser la fonction total_hors_reduction même si la question 1 n’a pas été traitée.</p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 2.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Enoncé</label><label for="__tabbed_3_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Lors de la période des soldes, le site de vente propose les réductions suivantes :  </p>
 <ul>
 <li>si le panier contient 5 articles ou plus, une réduction globale de 50%,  </li>
@@ -941,32 +978,118 @@ Recopier sur la copie et compléter la fonction Python offre_bienvenue prenant e
 </ul>
 <p>Proposer une fonction Python prix_solde ayant pour argument le tableau tab des prix des articles du panier d’un client et renvoyant le total des prix de ces articles lorsqu’on leur applique la réduction des soldes.</p>
 </div>
-<p>!!! fabquestion "Question 3. (a)'
-    Écrire une fonction minimum qui prend en paramètre un tableau tab de nombres et renvoie la valeur minimum présente dans le tableau.</p>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">prix_solde</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">longueur</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="n">reduc</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">:</span>
+        <span class="n">reduc</span> <span class="o">=</span> <span class="mf">0.9</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">:</span>
+        <span class="n">reduc</span> <span class="o">=</span> <span class="mf">0.8</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">==</span> <span class="mi">3</span>  <span class="p">:</span>
+        <span class="n">reduc</span> <span class="o">=</span> <span class="mf">0.7</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">==</span> <span class="mi">4</span> <span class="p">:</span>
+        <span class="n">reduc</span> <span class="o">=</span> <span class="mf">0.6</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="p">:</span>
+        <span class="n">reduc</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="k">return</span> <span class="n">reduc</span><span class="o">*</span><span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="err">```</span>
+
+    <span class="n">autre</span> <span class="n">possibilité</span> <span class="n">plus</span> <span class="err">“</span><span class="n">courte</span><span class="err">”</span> <span class="p">:</span>
+<span class="err">```</span><span class="n">python</span>
+<span class="k">def</span> <span class="nf">prix_soldeb</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="nb">min</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)))</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 3. (a)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Enoncé</label><label for="__tabbed_4_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Écrire une fonction minimum qui prend en paramètre un tableau tab de nombres et renvoie la valeur minimum présente dans le tableau.</p>
+</div>
+<div class="tabbed-block">
+<p>Dans cette question nous partons du principe que tab n’est pas vide.<br />
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">mini</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">pa</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pa</span> <span class="o">&lt;</span> <span class="n">mini</span><span class="p">:</span>
+            <span class="n">mini</span> <span class="o">=</span> <span class="n">pa</span>
+    <span class="k">return</span> <span class="n">mini</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
+</div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 3. (b)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Enoncé</label><label for="__tabbed_5_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Pour ses bons clients, le site de vente propose une offre promotionnelle, à partir de 2 articles achetés, l’article le moins cher des articles commandés est  offert.<br />
 Écrire une fonction Python offre_bon_client ayant pour paramètre le tableau des prix des articles du panier d’un client et renvoyant le total à payer lorsqu’on leur applique l’offre bon client.</p>
 </div>
-<p><strong>Question 4.</strong><br />
-    Afin de diminuer le stock de ses articles dans ses entrepôts, l’entreprise imagine faire l’offre suivante à ses clients : en suivant l’ordre des articles dans le panier du client, elle considère les 3 premiers articles et offre le moins cher, puis les 3 suivants et offre le moins cher et ainsi de suite jusqu’à ce qu’il reste au plus 2 articles qui n’ont alors droit à aucune réduction.<br />
-<strong><em>Exemple :</em></strong> Si le panier du client contient un pantalon à 30,50 euros, un tee-shirt à 15 euros, une paire de chaussettes à 6 euros, une jupe à 20 euros, une paire de collants à 5 euros, une robe à 35 euros et un short à 10,50 euros, ce panier est représenté par le tableau suivant :<br />
-    <div class="highlight"><pre><span></span><code><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mf">30.5</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">35.0</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">]</span>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">offre_bon_client</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">longueur</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">-</span> <span class="n">minimum</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">total</span>
 </code></pre></div>
-    Pour le premier groupe (le pantalon à 30,50 euros, le tee-shirt à 15 euros, la paire de chaussettes à 6 euros), l’article le moins cher, la paire de chaussettes à 6 euros, est offert. Pour le second groupe (la jupe à 20 euros, la paire de collants à 5 euros, la robe à 35 euros), la paire de collants à 5 euros est offerte.<br />
-    Donc le total après promotion de déstockage est 111 euros.<br />
-    On constate que le prix après promotion de déstockage dépend de l’ordre dans lequel se présentent les articles dans le panier.</p>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Question 4.</strong><br />
+Afin de diminuer le stock de ses articles dans ses entrepôts, l’entreprise imagine faire l’offre suivante à ses clients : en suivant l’ordre des articles dans le panier du client, elle considère les 3 premiers articles et offre le moins cher, puis les 3 suivants et offre le moins cher et ainsi de suite jusqu’à ce qu’il reste au plus 2 articles qui n’ont alors droit à aucune réduction.<br />
+<strong><em>Exemple :</em></strong> Si le panier du client contient un pantalon à 30,50 euros, un tee-shirt à 15 euros, une paire de chaussettes à 6 euros, une jupe à 20 euros, une paire de collants à 5 euros, une robe à 35 euros et un short à 10,50 euros, ce panier est représenté par le tableau suivant :<br />
+ <div class="highlight"><pre><span></span><code><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mf">30.5</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">35.0</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">]</span>
+</code></pre></div>
+ Pour le premier groupe (le pantalon à 30,50 euros, le tee-shirt à 15 euros, la paire de chaussettes à 6 euros), l’article le moins cher, la paire de chaussettes à 6 euros, est offert. Pour le second groupe (la jupe à 20 euros, la paire de collants à 5 euros, la robe à 35 euros), la paire de collants à 5 euros est offerte.<br />
+ Donc le total après promotion de déstockage est 111 euros.<br />
+ On constate que le prix après promotion de déstockage dépend de l’ordre dans lequel se présentent les articles dans le panier.</p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 4.(a)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Enoncé</label><label for="__tabbed_6_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Proposer un panier contenant les mêmes articles que ceux de l’exemple mais ayant un prix après promotion de déstockage différent de 111 euros.</p>
+</div>
+<div class="tabbed-block">
+<p>plusieurs solutions possibles<br />
+[30.5, 20.0, 35.0, 15.0, 6.0, 5.0, 10.5] =&gt; total après promotion = 122 - 20 - 5 = 97</p>
+</div>
+</div>
+</div>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 4. (b)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Enoncé</label><label for="__tabbed_7_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Proposer un panier contenant les mêmes articles mais ayant le prix après promotion de déstockage le plus bas possible.</p>
+</div>
+<div class="tabbed-block">
+<p>[35, 30.5, 20.0, 15.0, 10.5, 6.0, 5.0] =&gt; total après promotion = 122 - 20 - 6 = 96</p>
+</div>
+</div>
+</div>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 4. (c)</p>
-<p>Une fois ses articles choisis, quel algorithme le client peut-il utiliser pour modifier son panier afin de s’assurer qu’il obtiendra le prix après promotion de déstockage le plus bas possible ? On ne demande pas d’écrire cet algorithme.</p>
+<p>=== "Enoncéé 
+    Une fois ses articles choisis, quel algorithme le client peut-il utiliser pour modifier son panier afin de s’assurer qu’il obtiendra le prix après promotion de déstockage le plus bas possible ? On ne demande pas d’écrire cet algorithme.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Pour avoir le prix après promotion de déstockage le plus bas possible, il faut trier le tableau dans l’ordre décroissant. On peut donc utiliser un algorithme de tri (tri par sélection, tri par insertion ou tri fusion)</p>
+</div>
+</div>
+</div>
 </div>
 <blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
     <span style="font-size:20px; color:black;">Sujet  2 : Programmation en Général
@@ -979,19 +1102,54 @@ Elle est obtenue en additionnant les éléments de la sous-séquence encadrée e
 <p><img alt="" src="../data/ExoBAC1.png" /></p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 1. a.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Enoncé</label><label for="__tabbed_9_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Quelle est la solution du problème si les éléments du tableau sont tous positifs ?</p>
+</div>
+<div class="tabbed-block">
+<p>Si les éléments du tableau sont tous positifs, il suffit d’additionner tous les éléments du tableau pour obtenir la somme maximale (la sous-séquence correspond à l’ensemble du tableau).</p>
+</div>
+</div>
+</div>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 1. b.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Enoncé</label><label for="__tabbed_10_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Quelle est la solution du problème si tous les éléments sont négatifs ?</p>
+</div>
+<div class="tabbed-block">
+<p>Si les éléments du tableau sont tous négatifs, il suffit de prendre l’élément le plus grand du tableau (la sous-séquence est réduite à un seul élément)</p>
+</div>
+</div>
+</div>
 </div>
 <p>Dans cette question, on examine toutes les sous-séquences possibles.</p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 2. a.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Enoncé</label><label for="__tabbed_11_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Écrire le code Python d'une fonction <code>somme_sous_sequence(lst, i, j)</code> qui prend en argument une liste et deux entiers <code>i, j</code> et renvoie la somme de la sous-séquence délimitée par les indices i et j (inclus).</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">somme_sous_sequence</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">lst</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">somme</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 2. b.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Enoncé</label><label for="__tabbed_12_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>La fonction <code>pgsp</code> ci-dessous permet de déterminer la plus grande des  sommes obtenues en additionnant les éléments de toutes les sous-séquences possibles du tableau lst.</p>
 <p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pgsp</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
@@ -1011,9 +1169,36 @@ Parmi les quatre choix suivants, quel est le nombre de comparaisons effectuées 
 <li>1055  </li>
 </ul>
 </div>
+<div class="tabbed-block">
+<p>Pour un tableau de 10 éléments, nous avons 55 comparaisons <span class="arithmatex">\((10+9+8+7+6+5+4+3+2+1=55)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 2. c.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Enoncé</label><label for="__tabbed_13_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Recopier et modifier la fonction pgsp pour qu'elle renvoie un tuple contenant la somme maximale et les indices qui délimitent la sous-séquence correspondant à cette somme maximale.</p>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p><code>python
+    def pgsp(lst):
+        n = len(lst)
+        somme_max = lst[0]
+        i_max = 0
+        j_max = 0
+        for i in range(n):
+            for j in range(i,n):
+                s = somme_sous_sequence(lst,i,j)
+                if s &gt; somme_max:
+                    somme_max = s
+                    i_max = i
+                    j_max = j
+        return (somme_max, i_max, j_max)</code></p>
 </div>
 <p><strong>Question 3.</strong><br />
 On considère dans cette question une approche plus élaborée. Son principe consiste, pour toutes les valeurs possibles de l’indice ݅, à déterminer la somme maximale ܵ(݅) des sous-séquences qui se terminent à l'indice ݅.<br />
@@ -1028,23 +1213,58 @@ En désignant par <code>lst[݅]</code> l’élément de lst d’indice ݅, on pe
 </ul>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 3. a.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Enoncé</label><label for="__tabbed_14_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Recopier et compléter le tableau ci-dessous avec les valeurs de ܵ<span class="arithmatex">\(S(݅i)\)</span> pour la liste considérée en exemple.</p>
 <p><img alt="" src="../data/ExoBAC1.png" /></p>
 </div>
+<div class="tabbed-block">
+<p><img alt="" src="data/Exo_BAC_Cor01.png" /></p>
+</div>
+</div>
+</div>
+</div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 3. b.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Enoncé</label><label for="__tabbed_15_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>La solution au problème étant la plus grande valeur des ܵ<span class="arithmatex">\(S(݅i)\)</span>, on demande de compléter la fonction <code>pgsp2</code> ci-dessous, de sorte que la variable sommes_max contienne la liste des valeurs ܵ<span class="arithmatex">\(S(݅i)\)</span>.  </p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pgsp2</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
     <span class="n">sommes_max</span> <span class="o">=</span> <span class="p">[</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
-         <span class="c1"># à compléter</span>
+        <span class="c1"># à compléter</span>
 
 <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">sommes_max</span><span class="p">)</span>
 </code></pre></div>
 </div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pgsp2</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="n">somme_max</span> <span class="o">=</span> <span class="p">[</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">somme_max</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">somme_max</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="n">somme_max</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">somme_max</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">somme_max</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question 3. c.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Enoncé</label><label for="__tabbed_16_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>En quoi la solution obtenue par cette approche est-elle plus avantageuse que celle de la question 2.b. ? </p>
+</div>
+<div class="tabbed-block">
+<p>Cette solution est plus avantageuse, car la complexité en temps de l’algorithme est en <span class="arithmatex">\(O(n)\)</span> alors que dans le cas précédent il était en <span class="arithmatex">\(O(n^2)\)</span>.</p>
+</div>
+</div>
+</div>
 </div>
 <blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
     <span style="font-size:20px; color:black;">Sujet  3 : Tableau - Parcours - Programmation en Général
@@ -1066,13 +1286,31 @@ La case en haut à gauche est repérée par <span class="arithmatex">\((0,0)\)</
 <p><img alt="" src="../data/ExoBAC3.png" /></p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question A.1.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:1"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Enoncé</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Le labyrinthe ci-dessous est censé être représenté par le tableau de tableaux lab2. <br />
 Cependant, dans ce tableau, un mur se trouve à la place du départ du labyrinthe.<br />
 Donner une instruction permettant de placer le départ au bon endroit dans lab2.</p>
+<p>```</p>
+</div>
+</div>
+</div>
 <p><img alt="" src="../data/ExoBAC4.png" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:1"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">lab2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question A.2.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Enoncé</label><label for="__tabbed_19_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Écrire une fonction <code>est_valide(i, j, n, m)</code> qui renvoie <code>True</code> si le couple <span class="arithmatex">\((i,j)\)</span> correspond à des coordonnées valides pour un labyrinthe de taille <span class="arithmatex">\((n,m)\)</span>, et <code>False</code> sinon.<br />
 On donne ci-dessous des exemples d'appels.  </p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">est_valide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -1081,20 +1319,63 @@ On donne ci-dessous des exemples d'appels.  </p>
 <span class="kc">False</span>
 </code></pre></div>
 </div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">est_valide</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span> <span class="ow">and</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question A.3.</p>
-<p>On suppose que le départ d'un labyrinthe est toujours indiqué, mais on ne fait aucune supposition sur son emplacement. Compléter la fonction depart(lab)ci-dessous de sorte qu'elle renvoie, sous la forme d'un tuple, les coordonnées du départ d'un labyrinthe (représenté par le paramètre lab). <br />
-Par exemple, l'appel depart(lab1) doit renvoyer le tuple (5, 0).  </p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">depart</span><span class="p">(</span><span class="n">lab</span><span class="p">)</span> <span class="p">:</span>
+<p>=== "Enoncé
+    On suppose que le départ d'un labyrinthe est toujours indiqué, mais on ne fait aucune supposition sur son emplacement. Compléter la fonction depart(lab)ci-dessous de sorte qu'elle renvoie, sous la forme d'un tuple, les coordonnées du départ d'un labyrinthe (représenté par le paramètre lab). <br />
+    Par exemple, l'appel depart(lab1) doit renvoyer le tuple (5, 0).  </p>
+<div class="highlight"><pre><span></span><code>```python
+def depart(lab) :
+    n = len(lab)
+    m = len(lab[0])
+    ...
+```
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:1"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">depart</span><span class="p">(</span><span class="n">lab</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lab</span><span class="p">)</span>
     <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lab</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="o">...</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">lab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
 </code></pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question A.4.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Enoncé</label><label for="__tabbed_21_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Écrire une fonction nb_cases_vides(lab) qui renvoie le nombre de cases vides d'un labyrinthe (comprenant donc l'arrivée et le départ).<br />
 Par exemple, l'appel nb_cases_vides(lab2) doit renvoyer la valeur 19.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">nb_cases_vides</span><span class="p">(</span><span class="n">lab</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lab</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lab</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">compt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">lab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">2</span> <span class="ow">or</span> <span class="n">lab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">3</span> <span class="ow">or</span> <span class="n">lab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">compt</span> <span class="o">=</span> <span class="n">compt</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">compt</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 </div>
 <p><strong>Partie B : Recherche d’une solution dans un labyrinthe</strong>  </p>
 <p>On suppose dans cette partie que les labyrinthes possèdent un unique chemin allant du départ à l’arrivée sans repasser par la même case. Dans la suite, c’est ce chemin que l’on appellera solution du labyrinthe.<br />
@@ -1103,11 +1384,20 @@ Lors d’un tel parcours, afin d’éviter de tourner en rond, on choisit de mar
 Pour cela, on remplace la valeur d'une case visitée dans le tableau représentant le labyrinthe par la valeur 4.  </p>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question B.1.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">Enoncé</label><label for="__tabbed_22_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>On dit que deux cases d'un labyrinthe sont voisines si elles ont un côté commun.<br />
 On considère une fonction <code>voisines(i, j, lab)</code> qui prend en arguments deux entiers ݅<span class="arithmatex">\(i\)</span> et ݆<span class="arithmatex">\(j\)</span> représentant les coordonnées d’une case et un tableau <code>lab</code> qui représente un labyrinthe.<br />
 Cette fonction renvoie la liste des coordonnées des cases voisines de la case de coordonnées <span class="arithmatex">\((i,j)\)</span> qui sont valides, non visitées et qui ne sont pas des murs. L'ordre des éléments de cette liste n'importe pas.<br />
 Ainsi, l'appel <code>voisines(1, 1, [[1, 1, 1], [4, 0, 0], [1, 0, 1]])</code> renvoie la liste <code>[(2, 1), (1, 2)]</code>.<br />
 Que renvoie l'appel <code>voisines(1, 2, [[1, 1, 4], [0, 0, 0], [1, 1, 0]])</code> ?</p>
+</div>
+<div class="tabbed-block">
+<p>L’appel de la fonction renvoie : [(2, 2), (1, 1)]</p>
+</div>
+</div>
+</div>
 </div>
 <p><strong>Question 2.</strong><br />
 On souhaite stocker la solution dans une liste chemin. Cette liste contiendra les coordonnées des cases de la solution, dans l'ordre. Pour cela, on procède de la façon suivante.  </p>
@@ -1126,27 +1416,58 @@ On souhaite stocker la solution dans une liste chemin. Cette liste contiendra le
 </ul>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question B.2. a.</p>
-<p>Le tableau de tableaux lab3 ci-dessous représente un labyrinthe.  </p>
-<div class="highlight"><pre><span></span><code><span class="n">lab3</span> <span class="o">=</span>  <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<p>=== "Enoncé
+    Le tableau de tableaux lab3 ci-dessous représente un labyrinthe.  </p>
+<div class="highlight"><pre><span></span><code>```python
+lab3 =  [[1, 1, 1, 1, 1, 1],
+        [2, 0, 0, 0, 0, 3],
+        [1, 0, 1, 0, 1, 1],
+        [1, 1, 1, 0, 0, 1]]
+```
+
+La suite d&#39;instructions ci-dessous simule le début des modifications subies par la liste chemin lorsque l&#39;on applique la méthode présentée.  
+```python
+# entrée: (1, 0), sortie (1, 5)
+chemin = [(1, 0)]
+chemin.append((1, 1))
+chemin.append((2, 1))
+chemin.pop()
+chemin.append((1, 2))
+chemin.append((1, 3))
+chemin.append((2, 3))
+```
+
+Compléter cette suite d&#39;instructions jusqu&#39;à ce que la liste chemin représente la solution.  
+Rappel : la méthode pop supprime le dernier élément d&#39;une liste et renvoie cet élément.
 </code></pre></div>
-<p>La suite d'instructions ci-dessous simule le début des modifications subies par la liste chemin lorsque l'on applique la méthode présentée.<br />
+<div class="tabbed-set tabbed-alternate" data-tabs="23:1"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1"># entrée: (1, 0), sortie (1, 5)</span>
 <span class="n">chemin</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
-<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">chemin</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-</code></pre></div></p>
-<p>Compléter cette suite d'instructions jusqu'à ce que la liste chemin représente la solution.<br />
-Rappel : la méthode pop supprime le dernier élément d'une liste et renvoie cet élément.</p>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="admonition fabquestion">
 <p class="admonition-title">Question B.2. b.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">Enoncé</label><label for="__tabbed_24_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Recopier et compléter la fonction solution(lab) donnée ci-dessous de sorte qu'elle renvoie le chemin solution du labyrinthe représenté par le paramètre lab.  </p>
 <p>On pourra pour cela utiliser la fonction voisines.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">lab</span><span class="p">):</span>
@@ -1156,7 +1477,32 @@ Rappel : la méthode pop supprime le dernier élément d'une liste et renvoie ce
     <span class="n">j</span> <span class="o">=</span> <span class="n">case</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="o">---</span>
 </code></pre></div>
-<p>Par exemple, l 'appel <code>solution(lab2)</code> doit renvoyer <code>[(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (6, 5)]</code>. </p>
+<p>Par exemple, l 'appel <code>solution(lab2)</code> doit renvoyer <code>[(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (6, 5)]</code>. *</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">lab</span><span class="p">):</span>
+    <span class="n">chemin</span> <span class="o">=</span> <span class="p">[</span><span class="n">depart</span><span class="p">(</span><span class="n">lab</span><span class="p">)]</span>
+    <span class="n">case</span> <span class="o">=</span> <span class="n">chemin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">case</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">case</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">lab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">lab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">4</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">voisines</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">lab</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="n">prochaine</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prochaine</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">prochaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">prochaine</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="n">chemin</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chemin</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">chemin</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">chemin</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">chemin</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 </div>
 
               
