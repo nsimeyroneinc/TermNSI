@@ -359,7 +359,7 @@ body {
   font-family: @@font_name@@;
   font-size: 1.1rem;
 /*        background-color: @@bg_color@@; */
-  color: @@fg_color@@;
+  /*color: @@fg_color@@;*/
 /*   counter-reset: h1 h2 h3;*/
 }
 /* 
