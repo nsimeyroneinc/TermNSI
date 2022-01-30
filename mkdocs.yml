@@ -37,6 +37,7 @@ nav:
       #- TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
       - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
       - TD 21 Exercices BAC : divers/Exercices_Bac.md
+      - TD 22 Exercices BAC 2 : divers/Exercice_Bac__2.md
     #- Retour 1ère :
     #  - TD : Revision1ere/TD_Glouton.md
       
@@ -73,12 +74,12 @@ theme:
     palette: # Palettes de couleurs jour/nuit, cf : https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
       - scheme: default # nom du thème clair
         primary: lime # couleur primaire des titres, des liens, ..., à prendre dans la liste
-        accent: indigo # couleur d'accentuation au survol des boutons, desliens, ..., à prendre dans la liste
+        accent: green # couleur d'accentuation au survol des boutons, desliens, ..., à prendre dans la liste
         toggle: # définition du bouton pour switcher de palette
           icon: material/weather-sunny # apparence
           name: Basculer en mode sombre # message
       - scheme: slate # nom du thème sombre
-        primary: lime
+        primary: green
         accent: indigo
         toggle:
           icon: material/weather-night
@@ -141,22 +142,22 @@ plugins:
       execute: False
       include_source: True
 
-  #- page-to-pdf : 
-  #    disableOnServe: False
-  #    displayHeaderFooter: True
-  #    printBackground: True
-  #    scale : 1.0
-  #    landscape : False
-  #    margin: {'top': '0.75cm', 'bottom': '0.75cm', 'right': '0.5cm','left': '0.5cm'}
-  #    headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
-  #                      <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
-  #                    </header>'
-  #    footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#3B444B;margin:10px 20px;-webkit-print-color-adjust: exact">
-  #                      <span>M.Meyroneinc-Condy | CCBY | 2021</span>
-  #                      <span class="page" style="position:absolute;bottom:0;right:0;">
-  #                       <span class="pageNumber"></span>/<span class="totalPages"></span>
-  #                      </span>
-  #                    </footer>'
+  - page-to-pdf : 
+      disableOnServe: False
+      displayHeaderFooter: True
+      printBackground: True
+      scale : 1.0
+      landscape : False
+      margin: {'top': '0.75cm', 'bottom': '0.75cm', 'right': '0.5cm','left': '0.5cm'}
+      headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
+                        <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
+                      </header>'
+      footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#3B444B;margin:10px 20px;-webkit-print-color-adjust: exact">
+                        <span>M.Meyroneinc-Condy | CCBY | 2021</span>
+                        <span class="page" style="position:absolute;bottom:0;right:0;">
+                         <span class="pageNumber"></span>/<span class="totalPages"></span>
+                        </span>
+                      </footer>'
   #   headerTemplate : 
   #      title
   #      date
