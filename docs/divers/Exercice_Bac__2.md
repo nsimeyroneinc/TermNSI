@@ -30,7 +30,7 @@ On appelle chemin une succession de cases allant de la case (0, 0) à la case $(
 On appelle somme d’un chemin la somme des entiers situés sur ce chemin.  
 Par exemple, pour le tableau T suivant :
 
-![](data/ExoBAC5.png)
+![](data/ExoBac5.png)
 
 - Un chemin est (0, 0), (0, 1), (0, 2), (1, 2), (2, 2), (2, 3) (en gras sur le tableau) ;  
 - La somme du chemin précédent est 14.  
@@ -163,7 +163,7 @@ Dans cet exercice, on étudie une méthode de chiffrement de chaînes de caract�
                 num2 = num2+26
                 nouvelle_lettre = self.alphabet[num2]
             return nouvelle_lettre
-        ```
+    ```
 
     On rappelle que la méthode str.find(lettre) renvoie l'indice (index) de la lettre dans la chaîne de caractères str 
     Représenter le résultat d’exécution du code Python suivant : 
@@ -219,7 +219,7 @@ L’objectif de cet exercice est de mettre en place une modélisation d’un jeu
 
 On décide de représenter un labyrinthe par un tableau carré de taille n, dans lequel les cases seront des 0 si l’on peut s’y déplacer et des 1 s’il s’agit d’un mur.   Voici un exemple de représentation d’un labyrinthe : 
 
-![](data/ExoBAC7.png)
+![](data/ExoBACc7.png)
 
 L’entrée du labyrinthe se situe à la première case du tableau (celle en haut à gauche) et la sortie du labyrinthe se trouve à la dernière case (celle en bas à droite).
 
