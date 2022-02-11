@@ -35,17 +35,17 @@ nav:
       #- TD 17 : Reseaux/02_Exercices.md
     - T5 Algo. : 
       #- TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
-      - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
-    - BAC 📝:
-      - TD 21 Exercices BAC : divers/Exercices_Bac.md
-      - TD 22 Exercices BAC 2 : divers/Exercice_Bac__2.md
+      #- TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
+    #- BAC 📝:
+      #- TD 21 Exercices BAC : divers/Exercices_Bac.md
+      #- TD 22 Exercices BAC 2 : divers/Exercice_Bac__2.md
       #- TD 22 Exercices BAC 2 : divers/Exercice_Bac_2_Correction.md
     #- Retour 1ère :
     #  - TD : Revision1ere/TD_Glouton.md
     #BAC 
-    - E.P 💻: 
-      - Déroulement : epreuve_pratique.md
-      - Sujets : divers/EpreuvePratique.md
+    #- E.P 💻: 
+      #- Déroulement : epreuve_pratique.md
+      #- Sujets : divers/EpreuvePratique.md
       #- EP 2022 : BAC/EP_2022.md
   
     #Devoirs
