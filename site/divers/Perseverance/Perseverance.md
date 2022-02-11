@@ -6,9 +6,8 @@ Lors de sa descente vers la planète Mars le 18/02/2021, le rover Perseverance d
 
 Vidéo du déploiement du parachute :
 
-<p align="center">
 <iframe width="790" height="444" src="https://www.youtube.com/embed/N3b-1-yrQYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
+
 
 Les zones blanches et rouge se décomposent comme ceci :
 

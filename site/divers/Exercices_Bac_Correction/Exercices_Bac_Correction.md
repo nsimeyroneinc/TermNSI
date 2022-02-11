@@ -302,7 +302,7 @@ En désignant par `lst[݅]` l’élément de lst d’indice ݅, on peut vérifie
         ![](data/ExoBAC1.png)
 
     === "Solution"
-        ![](data/Exo_BAC_Cor01.png)
+        ![](data/ExoBacCor1.png)
 
 
 
