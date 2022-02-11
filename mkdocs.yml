@@ -4,7 +4,7 @@
 site_name: Site NSI Terminale Lycée Murat ISSOIRE
 site_description: Cours et TD de l'année en cours
 site_author: "Michael Meyroneinc-condy" 
-copyright: 2022 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> 
+copyright: 2021 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> 
 site_url: 
 
 # Structure des dossiers :
@@ -14,7 +14,7 @@ docs_dir: docs
 nav: 
     - Accueil : index.md
     #- Test : Notebook.ipynb
-    #Struct. de données
+    #Structure de données
     - T1 - Structure de données :  
       - Les dictionnaires : StructureDonnees/TP07_Dictionnaires_Corrige.md
       - TP 11 - Les Listes : TD11_Les_Listes.md
@@ -33,21 +33,13 @@ nav:
       - TD 19 - Protocole de routage : Reseaux/TD19_Routage_Correction.md
       #- TD 16 - Protocole de routage : Reseaux/cours.md
       #- TD 17 : Reseaux/02_Exercices.md
-    #- T5 Algo. : 
+    - T5 Algo. : 
       #- TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
-      #- TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
-    - BAC 📝:
+      - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
       - TD 21 Exercices BAC : divers/Exercices_Bac.md
-      - TD 22 Exercices BAC 2 : divers/Exercice_Bac__2.md
-      #- TD 22 Exercices BAC 2 : divers/Exercice_Bac_2_Correction.md
     #- Retour 1ère :
     #  - TD : Revision1ere/TD_Glouton.md
-    #BAC 
-    #- E.P 💻: 
-      #- Déroulement : epreuve_pratique.md
-      #- Sujets : divers/EpreuvePratique.md
-      #- EP 2022 : BAC/EP_2022.md
-  
+      
     #Devoirs
     - Devoirs :
       - P.O.O : DM/DM_POO.md
@@ -57,13 +49,12 @@ nav:
       - DS 14/12/21 : Devoirs/DS_14_12_21_arbres.md
       - DS 14/12/21 - Correction : Devoirs/DS_14_12_21_arbres_Correction.md
       - DS 03/01/22 - Correction : Devoirs/DS_03_01_22_correction.md
-      - DS Routage : Devoirs/DS_25_01_22.md
-      - DS Routage Correction : Devoirs/DS_25_01_22_Routage_Correction.md
 
+    #BAC 
+    - E.P 💻: 
+      - Déroulement : epreuve_pratique.md
+      - Sujets : divers/EpreuvePratique.md
 
-    #- Divers :
-      #- TP Perseverance : divers/Perseverance.md
-      #- Epreuve GEIPI : divers/sujet0_geipi.pdf
     - Divers conseils : divers/conseil.md
     # Référencer vos autres pages ci-dessus...
     
@@ -71,6 +62,7 @@ nav:
 
 # Définition du thème https://squidfunk.github.io/mkdocs-material/creating-your-site/
 theme:
+
     name: material
     custom_dir: overrides
     font: false  # RGPD ; pas de fonte Google
@@ -86,8 +78,8 @@ theme:
           icon: material/weather-sunny # apparence
           name: Basculer en mode sombre # message
       - scheme: slate # nom du thème sombre
-        primary: brown
-        accent: brown
+        primary: lime
+        accent: indigo
         toggle:
           icon: material/weather-night
           name: Basculer en mode clair
@@ -97,9 +89,9 @@ theme:
         - navigation.tabs
         - navigation.expand
         - navigation.top
-        - navigation.sections
-        - navigation.indexes
-        - navigation.tracking
+        #- navigation.sections
+        #- navigation.indexes
+        #- navigation.tracking
         - toc.integrate
         - header.autohide
         - content.code.annotate

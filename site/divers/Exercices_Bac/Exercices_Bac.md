@@ -12,7 +12,7 @@ date: 2021/2022
         </tr>
         <tr >
             <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:50pt;">
-            21
+            20
             </th>
             <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">TD : Exercices Divers BAC - Programmation</th>
         </tr>
