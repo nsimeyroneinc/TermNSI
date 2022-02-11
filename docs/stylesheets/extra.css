@@ -5,11 +5,19 @@
 
 /*Ajout de Sébastien HOARO pour avoir une taille de police normale dans les admonotions  */
 .md-typeset .admonition {
+  font-size: 0.8rem;
+}
+
+
+.md-typeset details {
+  font-size: 0.8rem;
+}
+.md-typeset .collapsible {
   font-size: 0.9rem;
 }
 
-.md-typeset details {
-  font-size: 0.9rem;
+:root{
+  font-size:1.35rem;
 }
 
 /*Ajout de Gilles LASSUS pour centrer les images en Markdown avec l'extension attr_list : ![monimage](data/image.png){: .center width=50%} */
@@ -251,7 +259,7 @@ background-color: rgb(77, 146, 77);
   --md-admonition-icon--ugli-defi: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2M6 9h12v2H6m8 3H6v-2h8m4-4H6V6h12"/></svg>');
   --md-admonition-icon--ugli-prop: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-.5 0-1 .19-1.41.59l-8 8c-.79.78-.79 2.04 0 2.82l8 8c.78.79 2.04.79 2.82 0l8-8c.79-.78.79-2.04 0-2.82l-8-8C13 2.19 12.5 2 12 2m-1 5h2v6h-2V7m0 8h2v2h-2v-2z"/></svg>');
   --md-admonition-icon--ugli-exo:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c-.34.34-.67.67-.68 1-.03.32.31.65.63.96.48.5.95.95.93 1.44-.02.49-.53 1-1.04 1.5l-4.13 4.14L15 14.66l4.25-4.24-.96-.96-1.42 1.41-3.75-3.75 3.84-3.83c.39-.39 1.04-.39 1.41 0l2.34 2.34c.39.37.39 1.02 0 1.41M3 17.25l9.56-9.57 3.75 3.75L6.75 21H3v-3.75z"/></svg>');
-  --md-admonition-icon--ugli-note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 12h7v1.5h-7m0-4h7V11h-7m0 3.5h7V16h-7m8-12H3a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 15h-9V6h9"/></svg>');
+  --md-admonition-icon--solution:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 12h7v1.5h-7m0-4h7V11h-7m0 3.5h7V16h-7m8-12H3a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 15h-9V6h9"/></svg>');
 
 }
 
@@ -340,19 +348,32 @@ background-color: rgb(77, 146, 77);
 
 }
 
+/* solution */
+
+.md-typeset .admonition.solution,
+.md-typeset details.solution {
+
+  border-color: var(--green);
+}
+
+.md-typeset .solution > .admonition-title,
+.md-typeset .solution > summary {
+  background-color: var(--green);
+  color: var(--lightgreen); /* text color */
+  border-color: var(--green);
+}
+
+.md-typeset .solution > .admonition-title::before,
+.md-typeset .solution > summary::before {
+  background-color: var(--lightgreen); /* icon color */
+  -webkit-mask-image: var(--md-admonition-icon--solution);
+
+}
+
+
 [data-md-color-scheme="youtube"] {
   --md-primary-fg-color: var(--blue);
 }
-
-.md-typeset .admonition {
-  font-size: .9rem;
-}
-
-.md-typeset details {
-  font-size: .9rem;
-}
-
-
 
 
 body {

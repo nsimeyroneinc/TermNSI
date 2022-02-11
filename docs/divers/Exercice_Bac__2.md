@@ -6,10 +6,12 @@ date: 2021/2022
 
 <table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
         <tr>
-            <th colspan=2; width="100%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            <th style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
             Thème  : BAC
             </th>
         </tr>
+</table>
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
         <tr >
             <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:50pt;">
             22

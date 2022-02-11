@@ -55,6 +55,7 @@ L’objectif de cet exercice est de déterminer la somme maximale pour tous les 
     === "Enoncé"
         En listant tous les chemins possibles allant de (0, 0) à (2, 3) du tableau T, déterminer un chemin qui permet d’obtenir la somme maximale et la valeur de cette somme.
     === "Solution"
+        ![](data/ExoBacCor3.png)  
         avec le parcours 0,0 -> 1,0 -> 2,0 -> 2,1 -> 2,2 -> 2,3  
         on obtient la somme 4 + 2 + 3 + 1 + 5 + 1 = 16 qui est la somme maximale.
         
@@ -68,16 +69,23 @@ L’objectif de cet exercice est de déterminer la somme maximale pour tous les 
 
         2. Justifier que si $j$ est différent de 0, alors : `T’[0][j] = T[0][j] + T’[0][j-1]` 
     === "Solution 3.1"
-        ![](data/ExoBACCor1.png)
+        ![](data/ExoBacCor1.png)
 
     === "Solution 3.2"
-        La somme obtenue à la colonne j est égale à la somme obtenue à la colonne j-1 (à gauche de j) plus la valeur de la case 0,j (puisque l’on peut uniquement aller à droite) d’où `T'[0][j] = T[0][j] + T'[0][j-1]`
+        La somme obtenue à la colonne $j$ est égale à la somme obtenue à la colonne $j-1$ (à gauche de $j$) plus la valeur de la case $0,j$ (puisque l’on peut uniquement aller à droite) d’où `T'[0][j] = T[0][j] + T'[0][j-1]`
 
 !!! fabquestion "Question 4" 
     === "Enoncé"
         Justifier que si $i$ et $j$ sont différents de 0, alors : `T’[i][j] = T[i][j] + max(T’[i-1][j], T’[i][j-1])`.  
     === "Solution"
-        Quand on se trouve à la case (i,j), on vient soit de la case (i-1,j) (case située au-dessus de (i,j)), soit de la case (i, j-1) (case située à gauche de (i,j)).  Donc on doit ajouter à la valeur de la case `T[i][j]` soit la somme obtenue à la case (i-1,j), soit la somme obtenue à la case (i, j-1) (on prendra la somme maximum).  
+        Quand on se trouve à la case $(i,j)$, on vient :  
+
+        - soit de la case $(i-1,j)$ (case située au-dessus de $(i,j)$),  
+        - soit de la case $(i, j-1)$ (case située à gauche de $(i,j)$).   
+        Donc on doit ajouter à la valeur de la case `T[i][j]`  
+
+        - soit la somme obtenue à la case $(i-1,j)$,  
+        - soit la somme obtenue à la case $(i, j-1)$ (on prendra la somme maximum).   
         d’où : `T'[i][j] = T[i][j] + max(T'[i-1][j], T'[i][j-1])`
 
 !!! fabquestion "Question 5"
@@ -191,7 +199,7 @@ On s’intéresse dans cet exercice à un algorithme de mélange des éléments 
     === "Solution 3.b"
         Pour l’appel initial de la fonction nous avons ind = n-1. Pour le premier appel récursif nous avons ind = n-2. Pour le dernier appel récursif nous avons ind = 0, nous avons donc eu n-1 appels récursifs.
     === "Solution 3.c"
-        ![](data/ExoBACCor2.png)
+        ![](data/ExoBacCor2.png)
     === "Solution 3.d"
         ```python
         def melange(lst):
@@ -232,7 +240,7 @@ Dans cet exercice, on étudie une méthode de chiffrement de chaînes de caract�
                     num2 = num2+26
                     nouvelle_lettre = self.alphabet[num2]
                 return nouvelle_lettre
-            ```
+        ```
 
         On rappelle que la méthode str.find(lettre) renvoie l'indice (index) de la lettre dans la chaîne de caractères str 
         Représenter le résultat d’exécution du code Python suivant : 
@@ -264,8 +272,8 @@ Dans cet exercice, on étudie une méthode de chiffrement de chaînes de caract�
         ```python
         def cryptage(self,texte):
             c = ""
-            for l in texte:
-                c = c + self.decale(l)
+            for lettre in texte:
+                c = c + self.decale(lettre)
             return c
         ```
 
