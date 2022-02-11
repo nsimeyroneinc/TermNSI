@@ -15,6 +15,7 @@ jobs:
       - run: pip install mkdocs-material
       - run: pip install mkdocs-jupyter
       - run: pip install mkdocs-page-pdf
+      - run: pip install mkdocs-git-revision-date-plugin
       - run: mkdocs gh-deploy --force
  
       # Runs a set of commands using the runners shell
