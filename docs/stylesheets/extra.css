@@ -15,11 +15,11 @@
 .md-typeset .collapsible {
   font-size: 0.9rem;
 }
-
+/*
 :root{
   font-size:1.35rem;
 }
-
+*/
 /*Ajout de Gilles LASSUS pour centrer les images en Markdown avec l'extension attr_list : ![monimage](data/image.png){: .center width=50%} */
 /* source https://github.com/squidfunk/mkdocs-material/issues/748 */
 .center {
