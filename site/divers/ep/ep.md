@@ -957,7 +957,7 @@
         qui occupe une case située à l’intérieur du tableau s’obtient en ajoutant les valeurs des
         deux cases situées juste au-dessus, comme l’indique la figure suivante :
 
-        ![image](data/img9_2t.png){: .center width=60%}
+        
 
         Compléter la fonction `pascal` ci-après. Elle doit renvoyer une liste correspondant au
         triangle de Pascal de la ligne `1` à la ligne `n` où `n` est un nombre entier supérieur ou égal à
@@ -2093,7 +2093,7 @@
 
         Par exemple, l’arbre
 
-        ![image](data/img28_1.png){: .center width=40%}
+    
         
         est stocké dans
 
