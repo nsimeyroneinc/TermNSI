@@ -122,9 +122,10 @@ Pour toute la suite de l’exercice, on pourra utiliser la fonction total_hors_r
             if longueur >= 5 :
                 reduc = 0.5
             return reduc*total_hors_reduction(tab)
-            ```
+        ```
 
-            autre possibilité plus “courte” :
+            autre possibilité plus “courte” :  
+
         ```python
         def prix_soldeb(tab):
             return total_hors_reduction(tab)*(1-0.1*min(5,len(tab)))
@@ -157,6 +158,15 @@ Pour toute la suite de l’exercice, on pourra utiliser la fonction total_hors_r
                 total = total - minimum(tab)
             return total
         ```
+
+        ou  
+
+        ```python
+        def offre_bon_client(tab):
+            if len(tab) >= 2:
+                return total_hors_reduction(tab) - minimum(tab)
+            return total_hors_reduction(tab)
+        ```
 **Question 4.**  
 Afin de diminuer le stock de ses articles dans ses entrepôts, l’entreprise imagine faire l’offre suivante à ses clients : en suivant l’ordre des articles dans le panier du client, elle considère les 3 premiers articles et offre le moins cher, puis les 3 suivants et offre le moins cher et ainsi de suite jusqu’à ce qu’il reste au plus 2 articles qui n’ont alors droit à aucune réduction.  
 **_Exemple :_** Si le panier du client contient un pantalon à 30,50 euros, un tee-shirt à 15 euros, une paire de chaussettes à 6 euros, une jupe à 20 euros, une paire de collants à 5 euros, une robe à 35 euros et un short à 10,50 euros, ce panier est représenté par le tableau suivant :  
@@ -182,7 +192,7 @@ Afin de diminuer le stock de ses articles dans ses entrepôts, l’entreprise im
         [35, 30.5, 20.0, 15.0, 10.5, 6.0, 5.0] => total après promotion = 122 - 20 - 6 = 96
 
 !!! fabquestion "Question 4. (c)"
-    === "Enoncéé 
+    === "Enoncé"
         Une fois ses articles choisis, quel algorithme le client peut-il utiliser pour modifier son panier afin de s’assurer qu’il obtiendra le prix après promotion de déstockage le plus bas possible ? On ne demande pas d’écrire cet algorithme.
 
     === "Solution"
@@ -292,7 +302,7 @@ En désignant par `lst[݅]` l’élément de lst d’indice ݅, on peut vérifie
         ![](data/ExoBAC1.png)
 
     === "Solution"
-        ![](data/Exo_BAC_Cor01.png)
+        ![](data/ExoBacCor1.png)
 
 
 
