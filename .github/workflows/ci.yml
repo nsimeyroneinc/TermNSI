@@ -16,6 +16,7 @@ jobs:
       - run: pip install mkdocs-jupyter
       - run: pip install mkdocs-page-pdf
       - run: pip install nbconvert
+      - run: pip install pyppeteer
       - run: pip install mkdocs-git-revision-date-plugin
       - run: mkdocs gh-deploy --force
  
