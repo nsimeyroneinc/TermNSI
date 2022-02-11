@@ -61,8 +61,8 @@ nav:
       - DS Routage Correction : Devoirs/DS_25_01_22_Routage_Correction.md
 
 
-    #- Divers :
-      #- TP Perseverance : divers/Perseverance.md
+    - Divers :
+      - TP Perseverance : divers/Perseverance.md
       #- Epreuve GEIPI : divers/sujet0_geipi.pdf
     - Divers conseils : divers/conseil.md
     # Référencer vos autres pages ci-dessus...
