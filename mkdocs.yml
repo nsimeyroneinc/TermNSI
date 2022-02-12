@@ -13,9 +13,7 @@ docs_dir: docs
 # Menu de navigation
 nav: 
     - Accueil : index.md
-    #- Test : Notebook.ipynb
-    #Struct. de données
-    - T1 - Structure de données :  
+    - T1 - Struct. de données :  
       - Les dictionnaires : StructureDonnees/TP07_Dictionnaires_Corrige.md
       - TP 11 - Les Listes : TD11_Les_Listes.md
       - TP 11 - Les Listes Corrigé : TD11_Corrige.md
@@ -25,7 +23,7 @@ nav:
       - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles.md
       - TP 14 - Les Files Enoncé-Corrigé : StructureDonnees/TD14_Files.md
       - TP 15 - Les Arbres Enoncé-Corrigé : StructureDonnees/TD15_Les_Arbres.md
-    - T2 - Bases de données :  
+    - T2 - B. de données :  
       - TP 17 - Les JO Londres 2012 : BasesDonnees/TP17_JO.md
       - TD 18 - Sujet BAC 2021 : BasesDonnees/TD18_Revision_SQL_BAC.md
     - T3 - Archi. matèrielle :
@@ -40,15 +38,12 @@ nav:
       - TD 21 Exercices BAC : divers/Exercices_Bac.md
       - TD 22 Exercices BAC 2 : divers/Exercice_Bac__2.md
       #- TD 22 Exercices BAC 2 : divers/Exercice_Bac_2_Correction.md
-    #- Retour 1ère :
-    #  - TD : Revision1ere/TD_Glouton.md
-    #BAC 
+    - Retour 1ère :
+      - TD : Revision1ere/TD_Glouton.md
     - E.P 💻: 
       - Déroulement : epreuve_pratique.md
       - Sujets : divers/EpreuvePratique.md
-      #- EP 2022 : BAC/EP_2022.md
   
-    #Devoirs
     - Devoirs :
       - P.O.O : DM/DM_POO.md
       - DS 30/11/21 : Devoirs/DS _Listes_Piles_Files.md
@@ -62,9 +57,10 @@ nav:
 
 
     - Divers :
+      - Divers conseils : divers/conseil.md
       - TP Perseverance : divers/Perseverance.md
       - Epreuve GEIPI : divers/sujet0_geipi.pdf
-    - Divers conseils : divers/conseil.md
+    
     # Référencer vos autres pages ci-dessus...
     
 
@@ -80,7 +76,7 @@ theme:
 
     palette: # Palettes de couleurs jour/nuit, cf : https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
       - scheme: default # nom du thème clair
-        primary: lime # couleur primaire des titres, des liens, ..., à prendre dans la liste
+        primary: indigo # couleur primaire des titres, des liens, ..., à prendre dans la liste
         accent: indigo # couleur d'accentuation au survol des boutons, desliens, ..., à prendre dans la liste
         toggle: # définition du bouton pour switcher de palette
           icon: material/weather-sunny # apparence
@@ -101,8 +97,8 @@ theme:
         - navigation.indexes
         - navigation.tracking
         - toc.integrate
-        - header.autohide
-        - content.code.annotate
+        #- header.autohide
+        #- content.code.annotate
      
 
 
