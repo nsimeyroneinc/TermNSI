@@ -13,52 +13,6 @@ docs_dir: docs
 # Menu de navigation
 nav: 
     - Accueil : index.md
-    #- T1 - Struct. de données :  
-    #  - Les dictionnaires : StructureDonnees/TP07_Dictionnaires_Corrige.md
-    #  - TP 11 - Les Listes : TD11_Les_Listes.md
-    #  - TP 11 - Les Listes Corrigé : TD11_Corrige.md
-     # - TP 12 - Liste Chainée : TD12_ListeChainee.md
-    #  - TP 12 - Liste Chainée Enoncé-Corrigé : TD12_ListeChainee_Corrige.md
-     # - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles_Corrige.md
-    #  - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles.md
-    #  - TP 14 - Les Files Enoncé-Corrigé : StructureDonnees/TD14_Files.md
-    #  - TP 15 - Les Arbres Enoncé-Corrigé : StructureDonnees/TD15_Les_Arbres.md
-    #- T2 - B. de données :  
-    #  - TP 17 - Les JO Londres 2012 : BasesDonnees/TP17_JO.md
-    #  - TD 18 - Sujet BAC 2021 : BasesDonnees/TD18_Revision_SQL_BAC.md
-    #- T3 - Archi. matèrielle :
-      #- TD 19 - Protocole de routage : Reseaux/TD19_Routage.md
-    #  - TD 19 - Protocole de routage : Reseaux/TD19_Routage_Correction.md
-      #- TD 16 - Protocole de routage : Reseaux/cours.md
-      #- TD 17 : Reseaux/02_Exercices.md
-    #- T5 Algo. : 
-      #- TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
-    #  - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
-    #- BAC 📝:
-    #  - TD 21 Exercices BAC : divers/Exercices_Bac.md
-    #  - TD 22 Exercices BAC 2 : divers/Exercice_Bac__2.md
-      #- TD 22 Exercices BAC 2 : divers/Exercice_Bac_2_Correction.md
-    #- Retour 1ère :
-    #  - TD : Revision1ere/TD_Glouton.md
-    #- E.P 💻: 
-    #  - Déroulement : epreuve_pratique.md
-    #  - Sujets : divers/EpreuvePratique.md
-  
-    #- Devoirs :
-    #  - P.O.O : DM/DM_POO.md
-    #  - DS 30/11/21 : Devoirs/DS _Listes_Piles_Files.md
-    #  - EP 30/11/21 : Devoirs/DS_EP.md
-      #- Révision : StructureDonnees/Revision_Arbres.md
-    #  - DS 14/12/21 : Devoirs/DS_14_12_21_arbres.md
-    #  - DS 14/12/21 - Correction : Devoirs/DS_14_12_21_arbres_Correction.md
-    #  - DS 03/01/22 - Correction : Devoirs/DS_03_01_22_correction.md
-    #  - DS Routage : Devoirs/DS_25_01_22.md
-    #  - DS Routage Correction : Devoirs/DS_25_01_22_Routage_Correction.md
-
-
-    #- Divers :
-    #  - Divers conseils : divers/conseil.md
-    #  - Epreuve GEIPI : divers/sujet0_geipi.pdf
     
     # Référencer vos autres pages ci-dessus...
     
