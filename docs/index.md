@@ -3,7 +3,7 @@ Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire af
 Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
 
 !!! info 
-    **Thème en cours** : [Exercices BAC : Thème programmation - Tableaux ](divers/Exercices_Bac.md)
+    **Thème en cours** : Divers épreuves pratiques et divers sujets écrits
 
     
 
