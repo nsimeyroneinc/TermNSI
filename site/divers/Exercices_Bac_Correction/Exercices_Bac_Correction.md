@@ -12,7 +12,7 @@ date: 2021/2022
         </tr>
         <tr >
             <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:50pt;">
-            20
+            21
             </th>
             <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">TD : Exercices Divers BAC - Programmation</th>
         </tr>
@@ -292,7 +292,7 @@ En désignant par `lst[݅]` l’élément de lst d’indice ݅, on peut vérifie
         ![](data/ExoBAC1.png)
 
     === "Solution"
-        ![](data/Exo_BAC_Cor01.png)
+        ![](data/Exo_Bac_Cor01.png)
 
 
 

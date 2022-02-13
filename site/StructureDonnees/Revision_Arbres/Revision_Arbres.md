@@ -73,7 +73,7 @@
 !!! example "Exercice n°4 :"
     On considère le labyrinthe ci-dessous :  
 
-    ![labyrinthe](data/laby.png){:.center}
+    
 
     Construire un arbre binaire représentant ce labyrinthe dans lequel chaque case est représentée par un noeud. On partira du noeud noté (4, 0) et chaque noeud sera noté $(i , j)$ où $i$ et $j$ représentent respectivement la ligne et la colonne de la case correspondante.  
 
