@@ -38,7 +38,7 @@ nav:
       - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
     - BAC 📝:
       - TD 21 Exercices BAC : divers/Exercices_Bac.md
-      #- TD 22 Exercices BAC 2 : divers/Exercice_Bac__2.md
+      - TD 22 Exercices BAC 2 : divers/Exercice_Bac__2.md
       #- TD 22 Exercices BAC 2 : divers/Exercice_Bac_2_Correction.md
     #- Retour 1ère :
     #  - TD : Revision1ere/TD_Glouton.md
@@ -61,9 +61,9 @@ nav:
       #- DS Routage Correction : Devoirs/DS_25_01_22_Routage_Correction.md
 
 
-    #- Divers :
-      #- TP Perseverance : divers/Perseverance.md
-      #- Epreuve GEIPI : divers/sujet0_geipi.pdf
+    - Divers :
+    #  - TP Perseverance : divers/Perseverance.md
+      - Epreuve GEIPI : divers/sujet0_geipi.pdf
     - Divers conseils : divers/conseil.md
     # Référencer vos autres pages ci-dessus...
     
@@ -79,7 +79,7 @@ theme:
 
     palette: # Palettes de couleurs jour/nuit, cf : https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
       - scheme: default # nom du thème clair
-        primary: lime # couleur primaire des titres, des liens, ..., à prendre dans la liste
+        primary: indigo # couleur primaire des titres, des liens, ..., à prendre dans la liste
         accent: indigo # couleur d'accentuation au survol des boutons, desliens, ..., à prendre dans la liste
         toggle: # définition du bouton pour switcher de palette
           icon: material/weather-sunny # apparence
@@ -116,7 +116,7 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
     - admonition                    # Blocs colorés  !!! info "ma remarque"
     - toc: # Table des matières
         permalink: ⚓︎
-        toc_depth: 1
+        toc_depth: 3
     # extensions de python-markdown https://facelessuser.github.io/pymdown-extensions/
     - pymdownx.details              #   qui peuvent se plier/déplier.
     - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
