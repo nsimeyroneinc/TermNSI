@@ -381,17 +381,18 @@ body {
   font-size: 12px;
 /*        background-color: @@bg_color@@; */
   /*color: @@fg_color@@;*/
-/*   counter-reset: h1 h2 h3;*/
+   counter-reset: h1 h2 h3;
 }
-/* 
+
 h1 {
-  background-color: rgb(24, 141, 135);
-  color: white;
+  /* background-color: rgb(161, 161, 172);
+  color:white;*/
   font-family: @@font_name@@;
   font-size: 14pt;
 }
 h2 {
-  background-color: orange;
+  background-color: rgb(70, 70, 77);
+  color:white;
   font-family: @@font_name@@;
   font-size: 12pt;
 }
@@ -399,15 +400,15 @@ h3 {
     color: brown;
 }
 h1:before {
-  content: counter(h1) "  ";
+  content: "  ";
   counter-increment: h1;
 }
 h2:before {
-  content: counter(h1) "." counter(h2) "  ";
+  content: counter(h2) ".  ";
   counter-increment: h2;
 }
 h3:before {
-  content: counter(h1) "." counter(h2) "." counter(h3) "  ";
+  content: counter(h2) "." counter(h3) ".  ";
   counter-increment: h3;
 }
 h1 {

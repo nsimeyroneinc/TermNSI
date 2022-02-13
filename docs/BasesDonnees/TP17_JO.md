@@ -11,23 +11,24 @@
     </thead>
 </table>
 
+
 ![london-2012.jpg](data/JO.jpg){:.center}
 
 Nous allons travailler sur une base de données liée aux Jeux Olympiques de Londres qui ont eu lieu en 2012.
 
-# Partie 1 : Étude du schéma relationnel
+## Partie 1 : Étude du schéma relationnel
 Avec un ****éditeur de texte tout simple**** (type Notepad, Notepad++)
 
 - ouvrir le fichier [create_JO.sql](https://capytale2.ac-paris.fr/web/sites/default/files/2021-09-15-17-50-13//ttt_fleleu/create_jo.sql);
 - regarder les lignes qui définissent les différentes tables de la BDD et *sur une feuille de papier* ou sur un  *document numérique*, donner sous forme écrite son schéma relationnel en soulignant clés primaires (en trait plein) et clés étrangère (en pointillés).
 - Pour savoir ce qu'est une clé primaire ou étrangère, renseignez vous auprès du cours.
 
-# Partie 2 : Requêtes SQL
+## Partie 2 : Requêtes SQL
 
 Exécuter les bonnes requêtes SQL pour obtenir les données suivantes.
 
 
-## Requêtes sans jointures
+### Requêtes sans jointures
 
 !!! example "Q1."
      Afficher le nom et prénom des sportifs.
@@ -161,7 +162,7 @@ Exécuter les bonnes requêtes SQL pour obtenir les données suivantes.
 
 ```
 
-# Requêtes avec jointures
+### Requêtes avec jointures
 
 !!! example "Q17."
     Afficher la listes des noms et prénoms des sportifs européens.

@@ -21,9 +21,8 @@ date: 2021/2022
 </table>
 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet  4 :  la programmation en général et la récursivité en particulier.
-</span></blockquote>
+## Sujet  4 :  la programmation en général et la récursivité en particulier.
+
 
 
 On considère un tableau de nombres de $n$ lignes et $p$ colonnes.  
@@ -71,9 +70,8 @@ L’objectif de cet exercice est de déterminer la somme maximale pour tous les 
     3. Quel appel de fonction doit-on faire pour résoudre le problème initial ?  
 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet  5 :  la programmation en général et la récursivité en particulier.
-</span></blockquote>
+## Sujet  5 :  la programmation en général et la récursivité en particulier.
+
 
 __Cet exercice porte sur la programmation en général et la récursivité en particulier.__
 
@@ -136,9 +134,8 @@ On s’intéresse dans cet exercice à un algorithme de mélange des éléments 
     d. Proposer une version itérative du mélange de Fischer Yates. 
 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-<span style="font-size:20px; color:black;">Sujet  6 :  la programmation objet.
-</span></blockquote>
+## Sujet  6 :  la programmation objet.
+
 
 **Cryptage selon le « Code de César »**
 
@@ -213,9 +210,8 @@ Dans cet exercice, on étudie une méthode de chiffrement de chaînes de caract�
     Que va-t-il s’afficher ? **Expliquer** votre réponse. 
 
  
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-<span style="font-size:20px; color:black;">Sujet  7 : programmation Python, tuples et listes.
-</span></blockquote>
+## Sujet  7 : programmation Python, tuples et listes.
+
 
 L’objectif de cet exercice est de mettre en place une modélisation d’un jeu de labyrinthe en langage Python.  
 
@@ -279,10 +275,9 @@ def teste(cases, laby) :
 [Adaptation en TP : Lien vers TP Capytale](https://capytale2.ac-paris.fr/web/c-auth/list?returnto=/web/code/ebe5-84299)
 
  
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-<span style="font-size:20px; color:black;">Sujet  8 : structure de données (tableaux, dictionnaires) et langages
+## Sujet  8 : structure de données (tableaux, dictionnaires) et langages
 et programmation (spécification).
-</span></blockquote>
+
 
 **Objectif de l’exercice :**  
 
