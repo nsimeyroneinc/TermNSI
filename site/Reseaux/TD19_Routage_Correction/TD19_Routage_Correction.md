@@ -19,11 +19,10 @@ date:2021/2022
 
 ![image](data/banniere.png){:.center}
 
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> I. Résumé des épisodes précédents </span></blockquote>
+# Résumé des épisodes précédents
 
 
-### Notion d'adressage
+## Notion d'adressage
 
 Deux types d'adresses existent :
 !!! savoir "Adresse MAC"
@@ -51,8 +50,7 @@ Elle envoie donc dans le sous-réseau une trame ayant pour entête l'adresse MAC
 
 Ces questions trouveront des réponses grâce à **table de routage** du routeur.
 
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> II. Tables de routage </span></blockquote>
+## Tables de routage
 
 
 ![](data/Diagramme1.png){:.center}
@@ -79,13 +77,12 @@ Par exemple, la table de routage du routeur R1 pourrait être :
 
 
 
-#### Comment sont construites les tables de routage ?  
+### Comment sont construites les tables de routage ?  
 
 - Soit à la main par l'administrateur réseau, quand le réseau est petit : on parle alors de table **statique**.
 - Soit de manière **dynamique** : les réseaux s'envoient eux-mêmes des informations permettant de mettre à jour leurs tables de routages respectives. Des algorithmes de détermination de meilleur chemin sont alors utilisés : nous allons en découvrir deux, le protocole RIP et le protocole OSPF.
 
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> III. Le protocole RIP </span></blockquote>
+# Le protocole RIP 
 
 
 !!! savoir " RIP"
@@ -111,8 +108,7 @@ Ensuite, chaque routeur reçoit périodiquement la table des réseaux auquel il 
 - La _métrique_ utilisée (le nombre de sauts) ne tient pas compte de la qualité de la liaison, contrairement au protocole OSPF.    
 
 
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> IV. Le protocole OSPF </span></blockquote>
+# Le protocole OSPF
 
 
 !!! voc "OSPF"
@@ -138,7 +134,7 @@ Dans le protocole OSPF, les tables de routage vont prendre en considération la 
 
 Dans une première phase d'initialisation, chaque routeur va acquérir (par succession de messages envoyés et reçus) la connaissance **totale** du réseau (différence fondamentale avec RIP) et de la qualité technique de la liaison entre chaque routeur.
 
-#### 4.1 Les différents types de liaison et leur coût
+## Les différents types de liaison et leur coût
 On peut, approximativement, classer les types de liaison suivant ce tableau de débits **théoriques** :
 
 
@@ -171,7 +167,7 @@ Cette formule de calcul peut être différente suivant les exercices, et sera no
 
 Avec cette convention, un route entre deux routeurs reliés en Fast Ethernet (100 Mbits/s) aura a un poids de 1, une liaison satellite de 20 Mbits/s aura un poids de 5, etc.
 
-### 4.2 Exemple
+## Exemple
 
 Reprenons le réseau suivant :
 
@@ -191,7 +187,7 @@ Le graphe pondéré est donc :
 
 Le chemin le plus rapide pour aller de l'ordinateur au serveur est donc R1-R2-R4, et non plus R1-R3 comme l'aurait indiqué le protocole RIP.
 
-### 4.3 Trouver le plus court chemin dans un graphe pondéré
+## Trouver le plus court chemin dans un graphe pondéré
 L'exemple précédent était très simple et de solution intuitive. Dans le cas d'un graphe pondéré complexe, existe-t-il un algorithme de détermination du plus court chemin d'un point à un autre ?
 
 La réponse est **oui**, depuis la découverte en 1959 par Edsger Dijkstra de l'algorithme qui porte son nom, **l'algorithme de Dijkstra**.
@@ -214,13 +210,9 @@ Cet algorithme, ici exécuté de manière manuelle, est bien sûr programmable. 
 
 Donner le plus court chemin pour aller de A à H.
 
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-<span style="font-size:30px; color:white;"> V. Exercices BAC </span></blockquote>
+# Exercices BAC 
 
-
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet n°1 : sujet zéro
-</span></blockquote>
+## Sujet n°1 : sujet zéro 
 
  On considère un réseau composé de plusieurs routeurs reliés de la façon suivante :
 
@@ -243,7 +235,7 @@ Le protocole RIP permet de construire les tables de routage des différents rout
         2. Déterminer une table de routage possible pour le routeur G obtenu à l’aide du protocole RIP.
 
     === "Solution"
-        Il y a deux trajets possible ACFG et ACEG. La distance est de 3.
+        trjet possible ACFG 'Lecture des table de routage. La distance est de 3.
 
 
 
@@ -299,10 +291,7 @@ On rappelle que 1 Gb/s = 1 000 Mb/s = $10^9$ bits/s.
 
 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet n°2
-</span></blockquote>
-
+## Sujet n°2
 
 _Cet exercice porte sur les réseaux et les protocoles de routage._  
 
@@ -381,9 +370,7 @@ On donne également des extraits de la table de routage des routeurs R1 à R5 da
     === "Solution 2.b"
         Les tables de routage R2 et R4 seront modifiées.
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet n°3
-</span></blockquote>
+# Sujet n°3 
 
 Cet exercice porte sur les réseaux et les protocoles de routage.
 

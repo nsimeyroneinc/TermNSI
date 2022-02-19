@@ -19,9 +19,8 @@ date: 2021/2022
 </table>
 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet  1 : Tableaux et Programmation
-</span></blockquote>
+## Sujet  1 : Tableaux et Programmation
+
 
 
 On rappelle que len est une fonction qui prend un tableau en paramètre et renvoie sa longueur.  
@@ -108,9 +107,8 @@ Afin de diminuer le stock de ses articles dans ses entrepôts, l’entreprise im
     Une fois ses articles choisis, quel algorithme le client peut-il utiliser pour modifier son panier afin de s’assurer qu’il obtiendra le prix après promotion de déstockage le plus bas possible ? On ne demande pas d’écrire cet algorithme.
 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet  2 : Programmation en Général
-</span></blockquote>
+## Sujet  2 : Programmation en Général
+
 
 _Cet exercice porte sur la programmation en général._  
 
@@ -188,9 +186,7 @@ En désignant par `lst[݅]` l’élément de lst d’indice ݅, on peut vérifie
     En quoi la solution obtenue par cette approche est-elle plus avantageuse que celle de la question 2.b. ? 
 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet  3 : Tableau - Parcours - Programmation en Général
-</span></blockquote>
+## Sujet  3 : Tableau - Parcours - Programmation en Général
 
 _Cet exercice porte sur l’algorithmique et la programmation en Python. Il aborde les notions de tableaux de tableaux et d’algorithmes de parcours de tableaux._  
 

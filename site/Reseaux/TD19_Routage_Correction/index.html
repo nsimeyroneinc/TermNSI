@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#notion-dadressage" class="md-skip">
+        <a href="#resume-des-episodes-precedents" class="md-skip">
           Aller au contenu
         </a>
       
@@ -199,7 +199,7 @@
   
     <li class="md-tabs__item">
       <a href="../../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-tabs__link">
-        T1 - Structure de données
+        T1 - Struct. de données
       </a>
     </li>
   
@@ -411,14 +411,14 @@
       
       
         <label class="md-nav__link" for="__nav_2">
-          T1 - Structure de données
+          T1 - Struct. de données
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="T1 - Structure de données" data-md-level="1">
+      <nav class="md-nav" aria-label="T1 - Struct. de données" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          T1 - Structure de données
+          T1 - Struct. de données
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -626,6 +626,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           TD 19 - Protocole de routage
@@ -642,6 +644,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -657,30 +661,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#42-exemple" class="md-nav__link">
-    4.2 Exemple
+  <a href="#tables-de-routage" class="md-nav__link">
+    Tables de routage
+  </a>
+  
+    <nav class="md-nav" aria-label="Tables de routage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comment-sont-construites-les-tables-de-routage" class="md-nav__link">
+    Comment sont construites les tables de routage ?
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#43-trouver-le-plus-court-chemin-dans-un-graphe-pondere" class="md-nav__link">
-    4.3 Trouver le plus court chemin dans un graphe pondéré
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#le-protocole-rip" class="md-nav__link">
-    &#10145; Le protocole RIP
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#le-protocole-ospf" class="md-nav__link">
-    &#10145; Le protocole OSPF
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -806,7 +802,7 @@
   
     <li class="md-nav__item">
       <a href="../../divers/Exercice_Bac__2/" class="md-nav__link">
-        TD 22 Exercices BAC 2
+        TD 22 - Exercices BAC n°2
       </a>
     </li>
   
@@ -1095,7 +1091,7 @@
             
           
           <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="TD19_Routage_Correction.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
               
 
 
@@ -1103,8 +1099,6 @@
 
 
                 
-
-  <h1>TD 19 - Protocole de routage</h1>
 
 <table  style="background-color: #87A96B; width:100%;color:black;">
     <thead>
@@ -1120,10 +1114,8 @@
 </table>
 
 <p><img alt="image" class="center" src="../data/banniere.png" /></p>
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> I. Résumé des épisodes précédents </span></blockquote>
-
-<h3 id="notion-dadressage">Notion d'adressage<a class="headerlink" href="#notion-dadressage" title="Permanent link">⚓︎</a></h3>
+<h1 id="resume-des-episodes-precedents">Résumé des épisodes précédents<a class="headerlink" href="#resume-des-episodes-precedents" title="Permanent link">⚓︎</a></h1>
+<h2 id="notion-dadressage">Notion d'adressage<a class="headerlink" href="#notion-dadressage" title="Permanent link">⚓︎</a></h2>
 <p>Deux types d'adresses existent :</p>
 <div class="admonition savoir">
 <p class="admonition-title">Adresse MAC</p>
@@ -1152,9 +1144,7 @@ Lorsqu'une machine A, d'adresse IP_A veut discuter avec une machine B, d'adresse
 </li>
 </ul>
 <p>Ces questions trouveront des réponses grâce à <strong>table de routage</strong> du routeur.</p>
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> II. Tables de routage </span></blockquote>
-
+<h2 id="tables-de-routage">Tables de routage<a class="headerlink" href="#tables-de-routage" title="Permanent link">⚓︎</a></h2>
 <p><img alt="" class="center" src="../data/Diagramme1.png" /></p>
 <p>Les tables de routage sont des informations stockées dans le routeur permettant d'aiguiller intelligemment les données qui lui sont transmises.</p>
 <p>Dans le réseau ci-dessus, si l'ordinateur d'adresse <code>192.168.0.5</code> veut interroger le serveur <code>10.7.3.8</code> :  </p>
@@ -1195,14 +1185,12 @@ Lorsqu'une machine A, d'adresse IP_A veut discuter avec une machine B, d'adresse
 </tr>
 </tbody>
 </table>
-<h4 id="comment-sont-construites-les-tables-de-routage">Comment sont construites les tables de routage ?<a class="headerlink" href="#comment-sont-construites-les-tables-de-routage" title="Permanent link">⚓︎</a></h4>
+<h3 id="comment-sont-construites-les-tables-de-routage">Comment sont construites les tables de routage ?<a class="headerlink" href="#comment-sont-construites-les-tables-de-routage" title="Permanent link">⚓︎</a></h3>
 <ul>
 <li>Soit à la main par l'administrateur réseau, quand le réseau est petit : on parle alors de table <strong>statique</strong>.</li>
 <li>Soit de manière <strong>dynamique</strong> : les réseaux s'envoient eux-mêmes des informations permettant de mettre à jour leurs tables de routages respectives. Des algorithmes de détermination de meilleur chemin sont alors utilisés : nous allons en découvrir deux, le protocole RIP et le protocole OSPF.</li>
 </ul>
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> III. Le protocole RIP </span></blockquote>
-
+<h1 id="le-protocole-rip">Le protocole RIP<a class="headerlink" href="#le-protocole-rip" title="Permanent link">⚓︎</a></h1>
 <div class="admonition savoir">
 <p class="admonition-title"> RIP</p>
 <p>Le Routing Information Protocol est basé sur l'échange (toutes les 30 secondes) des tables de routage de chaque routeur.</p>
@@ -1229,9 +1217,7 @@ Lorsqu'une machine A, d'adresse IP_A veut discuter avec une machine B, d'adresse
 <p>La <em>métrique</em> utilisée (le nombre de sauts) ne tient pas compte de la qualité de la liaison, contrairement au protocole OSPF.    </p>
 </li>
 </ul>
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> IV. Le protocole OSPF </span></blockquote>
-
+<h1 id="le-protocole-ospf">Le protocole OSPF<a class="headerlink" href="#le-protocole-ospf" title="Permanent link">⚓︎</a></h1>
 <div class="admonition voc">
 <p class="admonition-title">OSPF</p>
 <p>OSPF : <em>Open Shortest Path First</em></p>
@@ -1242,7 +1228,7 @@ Lorsqu'une machine A, d'adresse IP_A veut discuter avec une machine B, d'adresse
 <p><em>En gris, le chemin RIP. En bleu, l'OSPF.</em></p>
 <p>Dans le protocole OSPF, les tables de routage vont prendre en considération la vitesse de communication entre les routeurs.</p>
 <p>Dans une première phase d'initialisation, chaque routeur va acquérir (par succession de messages envoyés et reçus) la connaissance <strong>totale</strong> du réseau (différence fondamentale avec RIP) et de la qualité technique de la liaison entre chaque routeur.</p>
-<h4 id="41-les-differents-types-de-liaison-et-leur-cout">4.1 Les différents types de liaison et leur coût<a class="headerlink" href="#41-les-differents-types-de-liaison-et-leur-cout" title="Permanent link">⚓︎</a></h4>
+<h2 id="les-differents-types-de-liaison-et-leur-cout">Les différents types de liaison et leur coût<a class="headerlink" href="#les-differents-types-de-liaison-et-leur-cout" title="Permanent link">⚓︎</a></h2>
 <p>On peut, approximativement, classer les types de liaison suivant ce tableau de débits <strong>théoriques</strong> :</p>
 <table>
 <thead>
@@ -1313,7 +1299,7 @@ Lorsqu'une machine A, d'adresse IP_A veut discuter avec une machine B, d'adresse
 </div>
 <p>Cette formule de calcul peut être différente suivant les exercices, et sera normalement redonnée. Néanmoins la valeur <em>d</em> sera toujours au dénominateur, pour assurer la proportionnalité inverse du débit.</p>
 <p>Avec cette convention, un route entre deux routeurs reliés en Fast Ethernet (100 Mbits/s) aura a un poids de 1, une liaison satellite de 20 Mbits/s aura un poids de 5, etc.</p>
-<h3 id="42-exemple">4.2 Exemple<a class="headerlink" href="#42-exemple" title="Permanent link">⚓︎</a></h3>
+<h2 id="exemple">Exemple<a class="headerlink" href="#exemple" title="Permanent link">⚓︎</a></h2>
 <p>Reprenons le réseau suivant :</p>
 <p><img alt="image" class="center" src="../data/Diagramme1.png" /></p>
 <p>et simplifions-le en ne gardant que les liens entre routeurs, en indiquant leur débit :</p>
@@ -1322,7 +1308,7 @@ Lorsqu'une machine A, d'adresse IP_A veut discuter avec une machine B, d'adresse
 <p>Le graphe pondéré est donc :</p>
 <p><img alt="image" class="center" src="../data/OSPF2c.png" /></p>
 <p>Le chemin le plus rapide pour aller de l'ordinateur au serveur est donc R1-R2-R4, et non plus R1-R3 comme l'aurait indiqué le protocole RIP.</p>
-<h3 id="43-trouver-le-plus-court-chemin-dans-un-graphe-pondere">4.3 Trouver le plus court chemin dans un graphe pondéré<a class="headerlink" href="#43-trouver-le-plus-court-chemin-dans-un-graphe-pondere" title="Permanent link">⚓︎</a></h3>
+<h2 id="trouver-le-plus-court-chemin-dans-un-graphe-pondere">Trouver le plus court chemin dans un graphe pondéré<a class="headerlink" href="#trouver-le-plus-court-chemin-dans-un-graphe-pondere" title="Permanent link">⚓︎</a></h2>
 <p>L'exemple précédent était très simple et de solution intuitive. Dans le cas d'un graphe pondéré complexe, existe-t-il un algorithme de détermination du plus court chemin d'un point à un autre ?</p>
 <p>La réponse est <strong>oui</strong>, depuis la découverte en 1959 par Edsger Dijkstra de l'algorithme qui porte son nom, <strong>l'algorithme de Dijkstra</strong>.</p>
 <p>Pour le comprendre, vous pouvez regarder la vidéo d'un célèbre YouTuber :</p>
@@ -1332,16 +1318,11 @@ Lorsqu'une machine A, d'adresse IP_A veut discuter avec une machine B, d'adresse
 <p><strong>Exemple</strong> d'application de l'algorithme de Dijkstra :</p>
 <p><img alt="image" class="center" src="../data/ytc.png" /></p>
 <p>Donner le plus court chemin pour aller de A à H.</p>
-<blockquote style="background-color: #87A96B; border-left: 7px solid rgb(0 0 0);"> 
-<span style="font-size:30px; color:white;"> V. Exercices BAC </span></blockquote>
-
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet n°1 : sujet zéro
-</span></blockquote>
-
+<h1 id="exercices-bac">Exercices BAC<a class="headerlink" href="#exercices-bac" title="Permanent link">⚓︎</a></h1>
+<h2 id="sujet-n1-sujet-zero">Sujet n°1 : sujet zéro<a class="headerlink" href="#sujet-n1-sujet-zero" title="Permanent link">⚓︎</a></h2>
 <p>On considère un réseau composé de plusieurs routeurs reliés de la façon suivante :</p>
 <p><img alt="routage" class="center" src="../data_sujet_0/sujet0_routage1.png" /></p>
-<h3 id="le-protocole-rip">&#10145; Le protocole RIP<a class="headerlink" href="#le-protocole-rip" title="Permanent link">⚓︎</a></h3>
+<h3 id="le-protocole-rip_1">&#10145; Le protocole RIP<a class="headerlink" href="#le-protocole-rip_1" title="Permanent link">⚓︎</a></h3>
 <p>Le protocole RIP permet de construire les tables de routage des différents routeurs, en indiquant pour chaque routeur la distance, en nombre de sauts, qui le sépare d’un autre routeur. Pour le réseau ci-dessus, on dispose des tables de routage suivantes :</p>
 <p><img alt="table" class="center" src="../data_sujet_0/sujet0_table1.png" /></p>
 <p><img alt="table" class="center" src="../data_sujet_0/sujet0_table2.png" /></p>
@@ -1357,7 +1338,7 @@ Lorsqu'une machine A, d'adresse IP_A veut discuter avec une machine B, d'adresse
 </ol>
 </div>
 <div class="tabbed-block">
-<p>Il y a deux trajets possible ACFG et ACEG. La distance est de 3.</p>
+<p>trjet possible ACFG 'Lecture des table de routage. La distance est de 3.</p>
 </div>
 </div>
 </div>
@@ -1375,7 +1356,7 @@ Lorsqu'une machine A, d'adresse IP_A veut discuter avec une machine B, d'adresse
 </div>
 </div>
 </div>
-<h3 id="le-protocole-ospf">&#10145; Le protocole OSPF<a class="headerlink" href="#le-protocole-ospf" title="Permanent link">⚓︎</a></h3>
+<h3 id="le-protocole-ospf_1">&#10145; Le protocole OSPF<a class="headerlink" href="#le-protocole-ospf_1" title="Permanent link">⚓︎</a></h3>
 <p>Contrairement au protocole RIP, l’objectif n’est plus de minimiser le nombre de routeurs traversés par un paquet. La notion de distance utilisée dans le protocole OSPF est uniquement liée aux coûts des liaisons.<br />
 L’objectif est alors de minimiser la somme des coûts des liaisons traversées.<br />
 Le coût d’une liaison est donné par la formule suivante :  </p>
@@ -1420,10 +1401,7 @@ On rappelle que 1 Gb/s = 1 000 Mb/s = <span class="arithmatex">\(10^9\)</span> b
 </div>
 </div>
 </div>
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet n°2
-</span></blockquote>
-
+<h2 id="sujet-n2">Sujet n°2<a class="headerlink" href="#sujet-n2" title="Permanent link">⚓︎</a></h2>
 <p><em>Cet exercice porte sur les réseaux et les protocoles de routage.</em>  </p>
 <p>On représente ci-dessous un réseau dans lequel R1, R2, R3, R4, R5 et R6 sont des routeurs. Le réseau local L1 est relié au routeur R1 et le réseau local L2 au routeur R6.</p>
 <p><img alt="image" class="center" src="../data_sujet_1/sujet1_Ex5_Enonce.png" /></p>
@@ -1569,10 +1547,7 @@ L1 -&gt; R1 -&gt; R2 -&gt; R4 -&gt; R5 -&gt; R6 -&gt; L2</p>
 </div>
 </div>
 </div>
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet n°3
-</span></blockquote>
-
+<h1 id="sujet-n3">Sujet n°3<a class="headerlink" href="#sujet-n3" title="Permanent link">⚓︎</a></h1>
 <p>Cet exercice porte sur les réseaux et les protocoles de routage.</p>
 <p><img alt="image" class="center" src="../data_sujet_2/sujet2_Ex3_Enonce.png" /></p>
 <p>La figure 1 ci-dessus représente le schéma d’un réseau d’entreprise. Il y figure deux réseaux locaux L1 et L2. Ces deux réseaux locaux sont interconnectés par les routeurs R2, R3, R4 et R5. Le réseau local L1 est constitué des PC portables P1 et P2 connectés à la passerelle R1 par le switch Sw1. Les serveurs S1 et S2 sont connectés à la passerelle R6 par le switch Sw2.<br />

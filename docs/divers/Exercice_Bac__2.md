@@ -1,5 +1,5 @@
 ---
-title: TD n°21 - Exercices BAC 2 
+title: TD n°22 - Exercices BAC n°2 
 date: 2021/2022
 ---
 
