@@ -235,7 +235,8 @@ Le protocole RIP permet de construire les tables de routage des différents rout
         2. Déterminer une table de routage possible pour le routeur G obtenu à l’aide du protocole RIP.
 
     === "Solution"
-        trjet possible ACFG 'Lecture des table de routage. La distance est de 3.
+        1. trajet possible ACFG 'Lecture des table de routage. La distance est de 3.  
+        2. ![](data_sujet_0/sujet0_Ex5_Q1_2_Cor )
 
 
 
@@ -244,7 +245,7 @@ Le protocole RIP permet de construire les tables de routage des différents rout
         Le routeur C tombe en panne. Reconstruire la table de routage du routeur A en suivant le protocole RIP.
 
     === "Solution"
-        ![table](data_sujet_0/sujet0_Ex5_Q2_cor.png){:.center}
+        ![table](data_sujet_0/sujet0_Ex5_Q2_Cor.png){:.center}
 
 ### &#10145; Le protocole OSPF  
 
