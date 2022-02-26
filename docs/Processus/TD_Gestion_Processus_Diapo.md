@@ -9,9 +9,9 @@ marp: true
 <style>
     :root {
     --color-background: #91A3B0 !important;
-	--color-foreground: white !important;
+	--color-foreground: black !important;
     --color-background-paginate : rgba(128,128,128,0.05);
-    --color-highlight-hover :  #aaf111 ;
+    --color-highlight-hover :  #FAF0E6 ;
     font-size: 1.75rem;
     border:10px;
     padding: 40px;
@@ -34,13 +34,22 @@ h3 {
     font-size: 1.75rem;
 }
 
-
+code 
+{
+  background: #778899;
+  color:white;
+}
 blockquote {
-  background: #C3B091;
-  border-left: 15px solid black;
-  margin: 1.5em 10px;
-  color: black;
-  padding: 0.5em 10px;
+  background: #ffedcc;
+  border-left: 15px solid #d1bf9d;
+  margin: 1.5em 15px;
+  padding: 0.5em 15px;
+}
+blockquote:before{
+  content: unset;
+}
+blockquote:after{
+  content: unset;
 }
 
 img[alt~="center"] {
@@ -49,7 +58,7 @@ img[alt~="center"] {
 }
 </style>
 
-<!-- backgroundColor: #A9A9A9 -->
+<!-- backgroundColor: #F2F3F4 -->
 
 # TD 23 - Cours : Gestion des processus
 
@@ -67,7 +76,7 @@ Les systèmes d'exploitations récents (GNU/Linux, macOS, iOS, Android, Windows.
 
 ---
 
-Ces programmes en cours d'exécution s'appellent des **processus**. Une des tâches du système d'exploitation est d'allouer à chacun des processus les ressources dont il a besoin en termes de mémoire, entrées-sorties ou temps d'accès au processeur, et de s'assurer que les processus ne se gênent pas les uns les autres.
+> Ces programmes en cours d'exécution s'appellent des **processus**. Une des tâches du système d'exploitation est d'allouer à chacun des processus les ressources dont il a besoin en termes de mémoire, entrées-sorties ou temps d'accès au processeur, et de s'assurer que les processus ne se gênent pas les uns les autres.
 
 Pourtant, on rappelle qu'un programme n'est qu'une suite d'instructions machine exécutées l'une après l'autre par le processeur et qu'un processeur n'est capable d'exécuter qu'une seule instruction à la fois.
 
@@ -131,7 +140,7 @@ Un processus peut créer un ou plusieurs processus, ce qui aboutit à une struct
 
 ### PID et PPID
 
-La commande précédente permet de voir que chaque processus est identifié par un numéro : son **PID** (pour *Process Identifier*). Ce numéro est donné à chaque processus par le système d'exploitation.
+> La commande précédente permet de voir que chaque processus est identifié par un numéro : son **PID** (pour *Process Identifier*). Ce numéro est donné à chaque processus par le système d'exploitation.
 
 On constate également que chaque processus possède un **PPID** (pour *Parent Process Identifier*), il s'agit du PID du processus parent, c'est-à-dire celui qui a déclenché la création du processus. En effet, un processus peut créer lui même un ou plusieurs autres processus, appelés *processus fils*.
 
@@ -158,50 +167,51 @@ la commande `f` permet de gérer les colonnes affichées.
 
 > Exercice
 
-    Dans un nouvel onglet ouvrir : [terminal linux en ligne](https://cocalc.com/auth/try)
+Dans un nouvel onglet ouvrir : [terminal linux en ligne](https://cocalc.com/auth/try)
 
-    - créer un premier terminal :  
-      - utiliser les commandes de l'année précédentes : `ls, cd, touch, cat`  
-      - pour déterminer le nom d'utilisateur : `whoami`  
-      - créer un fichier vide `test.py` : `touch test.py`  
-      - éditer le fichier `test.py` avec la commande : `nano test.py`
-
+- créer un premier terminal :  
+    - utiliser les commandes de l'année précédentes : `ls, cd, touch, cat`  
+    - pour déterminer le nom d'utilisateur : `whoami`  
+    - créer un fichier vide `test.py` : `touch test.py`  
+    - éditer le fichier `test.py` avec la commande : `nano test.py`
         - y écrire le code suivant : 
-         ```python
-         for a in range(100000):
+        ```python
+        for a in range(100000):
             print(a)
         ```
-
         - pour sortir de l'éditeur : Ctrl+X, puis Y, puis Enter pour confirmer le nom  
+    - lancer le programme avec : `python3 test.py`  
 
-      - lancer le programme avec : `python3 test.py`  
-      - créer un second fichier `p2.py` avec le code suivant :  
-      ```python
-      while True:
-        pass
-      ```
-      - le lancer  
-      - Il tourne sans fin. Pour l'arrêter : Ctrl+C  
-    - vérifier la présence dans le dossier des fichiers créés, avec `ls`  
-    - ouvrir un second terminal puis :  
-      - dans ce second terminal lancer python3 sans nom de fichier  
-      - dans le premier terminal taper `ps -ef`  
-      - repérer le PID du processus python3 et le tuer avec la commande kill -9 (voir syntaxe au dessus)  
+---
+- créer un second fichier `p2.py` avec le code suivant :  
+    ```python
+    while True:
+       pass
+    ```
+    - le lancer  
+    - Il tourne sans fin. Pour l'arrêter : Ctrl+C  
+- vérifier la présence dans le dossier des fichiers créés, avec `ls`  
+- ouvrir un second terminal puis :  
+    - dans ce second terminal lancer python3 sans nom de fichier  
+    - dans le premier terminal taper `ps -ef`  
+    - repérer le PID du processus python3 et le tuer avec la commande kill -9 (voir syntaxe au dessus)  
 
-    - ouvrir un troisième terminal 
-      - dans ce troisième terminal lancer la commande `top`  
-      - modifier l'affichage pour faire apparaître le PPID (taper f, puis sélectionner/ déplacer avec les  touches curseur. Revenir à l'affichage avec Esc)  
+---
+- ouvrir un troisième terminal 
+    - dans ce troisième terminal lancer la commande `top`  
+    - modifier l'affichage pour faire apparaître le PPID (taper f, puis sélectionner/ déplacer avec les  touches curseur. Revenir à l'affichage avec Esc)  
 
-    - Enfin   ouvrir des terminaux supplémentaires pour en avoir au moins 5 et lancer dans les terminaux :  
+- Enfin   ouvrir des terminaux supplémentaires pour en avoir au moins 5 et lancer dans les terminaux :  
 
-      - 1 aucun processus  
-      - 1 avec nano  
-      - 1 avec python3  
-      - 1 avec python3 lançant p2.py  
-      - 1 avec top  
+    - 1 aucun processus  
+    - 1 avec nano  
+    - 1 avec python3  
+    - 1 avec python3 lançant p2.py  
+    - 1 avec top  
 
-    - observer les processus et essayer de les tuer avec la commande kill à partir du premier terminal  
-    - recommencer en relançant les processus et tuer les processus avec le terminal lançant top(puis commande k)  
+
+- observer les processus et essayer de les tuer avec la commande kill à partir du premier terminal  
+- recommencer en relançant les processus et tuer les processus avec le terminal lançant top(puis commande k)  
 
 
 ---
@@ -236,16 +246,16 @@ for i in range(100):
     print("programme B en cours, itération", i)
     time.sleep(0.01)  # pour simuler un traitement avec des calculs
 ```
-
+---
 En ouvrant un Terminal, on peut lancer simultanément ces deux programmes avec la commande
 
 ```shell
 $ python progA.py & python progB.py &
 ```
 
----
-
 > Le caractère `&` qui suit une commande permet de lancer l'exécution en arrière plan et de rendre la main au terminal.
+
+---
 
 Le shell indique alors dans la console les *PID* des processus correspondant à l'exécution de ces deux programmes (ici 9154 et 9155) puis on constate grâce aux affichages que le système d'exploitation alloue le processeur aux deux programmes *à tour de rôle* :
 
@@ -379,6 +389,7 @@ Les processus se partagent souvent une ou plusieurs ressources, et cela peut pos
 
 Prenons l'exemple d'une variable (= ressource logicielle) partagée entre plusieurs processus. Plus précisément, considérons un programme de jeu multi-joueur dans lequel une variable `nb_pions` représente le nombre de pions disponibles pour tous les joueurs.
 
+---
 Une fonction `prendre_un_pion()` permet de prendre un pion dans le tas commun de pions disponibles, s'il reste au moins un pion évidemment.
 
 On va se mettre dans la situation où il ne reste plus qu'un pion dans le tas commun et on suppose que deux joueurs utilisent la fonction `prendre_un_pion()`, ce qui conduit à la création de deux processus `p1` et `p2`, chacun correspondant à un joueur.
@@ -387,6 +398,7 @@ On va se mettre dans la situation où il ne reste plus qu'un pion dans le tas co
 
 Avec Python, on peut utiliser le module `multiprocessing` pour créer des processus. Le programme Python `pions.py` suivant permet de réaliser la situation de jeu décrite :
 
+---
 ```python
 from multiprocessing import Process, Value
 import time
@@ -602,6 +614,7 @@ Ce phénomène d'*attente circulaire*, où chaque processus attend une ressource
 
 Considérons le script `interblocage.py` suivant dans lequel on a créé deux verrous `v1` et `v2` utilisés par deux fonctions `f1` et `f2` exécutées respectivement par deux processus `p1` et `p2`. Le processus `p1` essaie d'acquérir d'abord `v1` puis `v2` tandis que le processus `p2` essaie de les acquérir dans l'ordre inverse.
 
+---
 ```python
 from multiprocessing import Process, Lock
 import time
@@ -686,7 +699,7 @@ Chaque robot peut être tourné dans l’une des quatre directions cardinales �
 - D : tous les robots tournent vers leur droite (de 90°) en même temps  
 - A : les robots qui peuvent avancer d’une case, le font. Un robot peut avancer d’une case s’il n’y a pas d’obstacle sur cette case et si aucun robot ne s’apprête à aller sur cette case.
 
----
+
 Les cases du bord de la grille sont toutes couvertes d’obstacles fixes, à l’exception de l’une d’entre elles appelée « sortie ». Lorsqu’un robot est sur la case de sortie, tourné vers l’extérieur de la grille, il quitte le jeu et n’est plus soumis aux ordres donnés. Le but du jeu est de faire sortir tous les robots de la grille, en écrivant un mot dans l’alphabet A,G,D, appelé programme et que les robots interpréteront comme décrit ci-dessus.
 
 ---
