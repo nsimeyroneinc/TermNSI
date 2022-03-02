@@ -687,8 +687,10 @@ Aucune justification n’est demandée. Une réponse fausse ou une absence de r�
         d. kill  
 
 
-??? Tip "Solution"
-    
+??? tip "Solution"
+    1.b - 2.c - 3.b -4.d
+
+
 **Partie B**
 
 1) Un processeur choisit à chaque cycle d’exécution le processus qui doit être exécuté. Le tableau ci-dessous donne pour trois processus P1, P2, P3 :
@@ -707,11 +709,17 @@ Reproduire le tableau ci-dessous sur la copie et indiquer dans chacune des cases
 
 ![](data/c19e_4.png)
 
+??? tip
+    P3 - P3 - P2 - P1 - P1 - P1 - P2 - P2 - P3 - P3
+
 2) On suppose maintenant que les trois processus précédents s’exécutent et utilisent une ou plusieurs ressources parmi R1, R2 et R3.
 Parmi les scénarios suivants, lequel provoque un interblocage ? Justifier.
 
 ![](data/c19e_5.png){:.center width=350px}
 
+??? tip
+    Il s’agit du scénario 2 car nous nous retrouvons dans la situation où P1 possède R1 et attend R2 avant de pouvoir continuer et P3 possède R2 et attend R1 avant de pouvoir continuer.
+    
 **Partie C**  
 
 Dans cette partie, pour une meilleure lisibilité, des espaces sont placées dans les écritures

@@ -3,7 +3,7 @@ Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire af
 Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
 
 !!! info 
-    **Thème en cours** : Divers épreuves pratiques et divers sujets écrits
+    **Thème en cours** : [Gestion de processus](Processus/TD_Gestion_Processus.md)
 
     
 
@@ -32,7 +32,7 @@ Les notebooks sont corrigés et les cellules peuvent être copiées pour être t
 ### &#10145; Thème : Architectures matérielles, système d’exploitation et réseaux(ARSE)  
 
 □ Gestion des processus et des ressources par un système d’exploitation  
-□ Protocoles de routage  
+🗹 Protocoles de routage  
 □ Composants intégrés d’un système sur puce
 
 ### &#10145; Thème : Langage de programmation(LP)  
