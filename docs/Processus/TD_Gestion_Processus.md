@@ -753,30 +753,8 @@ opération doit-il réaliser pour déchiffrer son message ?
 
 
 
+
 ## Exercice 3
-
-La commande UNIX ps présente un cliché instantané des processus en cours d'exécution.  
-Avec l’option −eo pid, ppid, stat, command, cette commande affiche dans l’ordre l’identifiant du processus PID (process identifier), le PPID (parent process identifier), l’état STAT et le nom de la commande à l’origine du processus.  
-Les valeurs du champ STAT indique l’état des processus :  
-- R : processus en cours d’exécution  
-- S : processus endormi  
-
-Sur un ordinateur, on exécute la commande ps −eo pid,ppid,stat,command et on obtient un affichage dont on donne ci-dessous un extrait.
-
-![](data/exo.png){:.center width=350px} 
-
-À l'aide de cet affichage, répondre aux questions ci-dessous.  
-1. Quel est le nom de la première commande exécutée par le système d'exploitation lors du démarrage ?  
-2. Quels sont les identifiants des processus actifs sur cet ordinateur au moment de l’appel de la commande ps ? Justifier la réponse.  
-3. Depuis quelle application a-t-on exécuté la commande ps ?  
-Donner les autres commandes qui ont été exécutées à partir de cette application.  
-4. Expliquer l'ordre dans lequel les deux commandes python programme1.py et python programme2.py ont été exécutées. 
-5. Peut-on prédire que l'une des deux commandes python programme1.py et python programme2.py finira avant l’autre ?
-
-
-
-
-## Exercice 4
 
 d'après le sujet du bac NSI 2021
 
@@ -832,7 +810,7 @@ navigateur Web (chromium-browser) ?
 
 **Q.3.** Quel est l'identifiant du processus dont le temps d'exécution est le plus long ?
 
-## Exercice 5
+## Exercice 4
 
 Extrait sujet BAC 2021
 
