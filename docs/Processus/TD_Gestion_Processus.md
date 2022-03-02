@@ -1,7 +1,3 @@
----
-title: TD n°23 - gestion des processus 
-date: 2021/2022
----
 
 
 <table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
@@ -13,10 +9,10 @@ date: 2021/2022
 </table>
 <table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
         <tr >
-            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            <th width="25%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:30pt;">
             23
             </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:20pt;">Cours : Gestion des processus</th>
+            <th  width="75%"; style="text-align:center;border:none;font-size:20pt;">Cours : Gestion des processus</th>
         </tr>
 </table>
 
@@ -25,7 +21,7 @@ date: 2021/2022
 ![](data/BO_processus.png)
 
 
-## Introduction
+# Introduction
 
 Dans les années 1970 les ordinateurs personnels étaient incapables d'exécuter plusieurs tâches à la fois : il fallait attendre qu'un programme lancé se termine pour en exécuter un autre.
 
@@ -46,9 +42,9 @@ Pour rappel, voici les étapes d'exécution d'une instruction.
 
 
 
-## Processus
+# Processus
 
-### Qu'est-ce qu'un *processus* ?
+## Qu'est-ce qu'un *processus* ?
 
 Il ne faut pas confondre **programme** et **processus** :
 
@@ -66,7 +62,7 @@ Un processus est donc une *instance d'un programme* auquel est associé :
 Il n'est d'ailleurs pas rare qu'un même programme soit exécuté plusieurs fois sur une machine au même moment en occupant des espaces mémoires différents : par exemple deux documents ouverts avec un traitement de texte, ou trois consoles distinctes... qui correspondent à autant d'instances du même programme et donc à des processus différents. 
 
 
-### Observer les processus
+## Observer les processus
 
 Il est très facile de voir les différents processus s'exécutant sur une machine.
 
@@ -74,7 +70,7 @@ Sous GNU/Linux, on peut utiliser la commande `ps` (comme **p**roces**s**, la tra
 
 Par exemple, en exécutant dans un terminal la commande `ps -aef`, on peut visualiser tous les processus en cours sur notre ordinateur :
 
-### Création d'un processus
+## Création d'un processus
 
 Un processus peut être créé :
 
@@ -87,14 +83,14 @@ Sous GNU/Linux, un tout premier processus est créé au démarrage (c'est le pro
 Un processus peut créer un ou plusieurs processus, ce qui aboutit à une structure arborescente comme nous allons le voir maintenant.
 
 
-### PID et PPID
+## PID et PPID
 
 La commande précédente permet de voir que chaque processus est identifié par un numéro : son **PID** (pour *Process Identifier*). Ce numéro est donné à chaque processus par le système d'exploitation.
 
 On constate également que chaque processus possède un **PPID** (pour *Parent Process Identifier*), il s'agit du PID du processus parent, c'est-à-dire celui qui a déclenché la création du processus. En effet, un processus peut créer lui même un ou plusieurs autres processus, appelés *processus fils*.
 
 
-### Observation des processus⚓︎
+## Observation des processus⚓︎
 
 Sous Linux, on peut observer les processus et leur état en ligne de commande.
 
@@ -160,9 +156,9 @@ la commande `f` permet de gérer les colonnes affichées.
 
 
 
-## Gestion des processus et des ressources
+# Gestion des processus et des ressources
 
-### Exécution concurrente
+## Exécution concurrente
 
 Les systèmes d'exploitation modernes sont capable d'exécuter plusieurs processus "en même temps". En réalité ces processus ne sont pas toujours exécutés "en même temps" mais plutôt "à tour de rôle". On parle d'exécution *concurrente* car les processus sont en concurrence pour obtenir l'accès au processeur chargé de les exécuter.
 
@@ -202,7 +198,7 @@ Le shell indique alors dans la console les *PID* des processus correspondant à 
 
 ![](data/concurrence1.png)
 
-### Accès concurrents aux ressources
+## Accès concurrents aux ressources
 
 Une **ressource** est une entité dont a besoin un processus pour s'exécuter. Les ressources peuvent être matérielles (processeur, mémoire, périphériques d'entrée/sortie, ...) mais aussi logicielles (variables).
 
@@ -214,7 +210,7 @@ Les différents processus se partagent les ressources, on parle alors d'*accès 
 
 C'est le système d'exploitation qui est chargé de gérer les processus et les ressources qui leur sont nécessaires, en partageant leur accès au processeur. Nous allons voir comment tout de suite !
 
-### États d'un processus
+## États d'un processus
 
 Au cours de son existence, un processus peut se retrouver dans trois états :
 
@@ -238,7 +234,7 @@ Ainsi, l'état d'un processus au cours de sa vie varie entre les états *prêt*,
 Lorsqu'un processus est interrompu, il doit pouvoir reprendre à l'endroit même où il a été interrompu. Pour cela, le système d'exploitation conserve pour chaque processus créé une zone mémoire (appelée PCB, pour *Process Control Bloc*, ou bloc de contrôle du processus) dans laquelle sont stockées les informations sur le processus : son PIB, son état, la valeur des registres lors de sa dernière interruption, la zone mémoire allouée par le processus lors de son exécution, les ressources utilisées par le processus (fichiers ouverts, connexions réseaux en cours d'utilisation, etc.).
 
 
-### Ordonnancement 
+## Ordonnancement 
 
 C'est le système d'exploitation qui attribue aux processus leurs états *élu*, *prêt* et *bloqué*. Plus précisément, c'est l'**ordonnanceur** (un des composants du système d'exploitation) qui réalise cette tâche appelée *ordonnancement des processus*.
 
@@ -248,7 +244,7 @@ L'objectif de l'ordonnanceur est de choisir le processus à exécuter à l'insta
 
 Ce choix est à faire parmi tous les processus qui sont dans l'état *prêt*, mais lequel sera élu ? et pour combien de temps ? Des algorithmes d'ordonnancement sont utilisés et il en existe plusieurs selon la stratégie utilisée. On en présente quelques-uns ci-dessous.
 
-#### Ordonnancement First Come First Served (FCFS)
+### Ordonnancement First Come First Served (FCFS)
 
 **Principe** : Les processus sont ordonnancés selon leur ordre d'arrivée ("premier arrivé, premier servi" en français)
 
@@ -258,7 +254,7 @@ Ce choix est à faire parmi tous les processus qui sont dans l'état *prêt*, ma
 
 ![](data/ordo_fcfs.png){:.center}
 
-#### Ordonnancement Shortest Job First (SJF)
+### Ordonnancement Shortest Job First (SJF)
 
 **Principe** : Le processus dont le temps d'exécution est le plus court est ordonnancé en premier.
 
@@ -266,7 +262,7 @@ Ce choix est à faire parmi tous les processus qui sont dans l'état *prêt*, ma
 
 ![](data/ordo_sjf.png){:.center}
 
-#### Ordonnancement Shortest Remaining Time (SRT)
+### Ordonnancement Shortest Remaining Time (SRT)
 
 **Principe** : Le processus dont le temps d'exécution restant est le plus court parmi ceux qui restent à exécuter est ordonnancé en premier.
 
@@ -274,7 +270,7 @@ Ce choix est à faire parmi tous les processus qui sont dans l'état *prêt*, ma
 
 ![](data/ordo_srt.png){:.center}
 
-#### Ordonnancement temps-partagé (Round-Robin)
+### Ordonnancement temps-partagé (Round-Robin)
 
 **Principe** : C'est la politique du tourniquet : allocation du processeur par tranche (= quantum $q$) de temps.
 
@@ -284,7 +280,7 @@ Ce choix est à faire parmi tous les processus qui sont dans l'état *prêt*, ma
 
 Dans ce cas, s'il y a $n$ processus, chacun d'eux obtient le processeur au bout de $(n-1)\times q$ unités de temps au plus
 
-#### Ordonnancement à priorités statiques
+### Ordonnancement à priorités statiques
 
 **Principe** : Allocation du processeur selon des priorités *statiques* (= numéros affectés aux processus pour toute la vie de l'application)
 
@@ -293,13 +289,15 @@ Dans ce cas, s'il y a $n$ processus, chacun d'eux obtient le processeur au bout 
 ![](data/ordo_prio.png){:.center}
 
 
-## Problèmes liés à l'accès concurrent aux ressources
+<div style="page-break-after: always;"></div>
+
+# Problèmes liés à l'accès concurrent aux ressources
 
 Les processus se partagent souvent une ou plusieurs ressources, et cela peut poser des problèmes.
 
-### Problèmes de synchronisation : illustration avec Python
+## Problèmes de synchronisation : illustration avec Python
 
-#### Exemple d'une variable partagée
+### Exemple d'une variable partagée
 
 Prenons l'exemple d'une variable (= ressource logicielle) partagée entre plusieurs processus. Plus précisément, considérons un programme de jeu multi-joueur dans lequel une variable `nb_pions` représente le nombre de pions disponibles pour tous les joueurs.
 
@@ -412,7 +410,7 @@ Si on analyse la seconde exécution du programme qui donne le comportement souha
 
 Heureusement, on peut éviter le problème mis en évidence dans l'exemple précédent.
 
-#### Comment éviter les problèmes de synchronisation ?
+### Comment éviter les problèmes de synchronisation ?
 
 On va utiliser ce qu'on appelle un **verrou** : un verrou est objet partagé entre plusieurs processus mais qui garantit qu'un seul processus accède à une ressource à un instant donné.
 
@@ -485,7 +483,7 @@ Si vous analysez l'affichage précédent dans le terminal, on voit d'ailleurs qu
 Nous terminons en voyant que l'utilisation de verrous n'est pas sans risque car elle peut engendrer des problèmes d'interblocage.
 
 
-### Risque d'interblocage
+## Risque d'interblocage
 
 Les interblocages (*deadlock* en anglais) sont des situations de la vie quotidienne. L'exemple classique est celui du carrefour avec priorité à droite où chaque véhicule est bloqué car il doit laisser le passage au véhicule à sa droite.
 
@@ -555,7 +553,7 @@ Cependant, ce problème a lieu ici car les deux processus essaie d'acquérir les
 
 De manière générale, dans des problèmes complexes les situations d'interblocage sont difficiles à détecter et il se peut très bien que le programme se comporte bien pendant toute une phase de tests mais bloque lors d'une exécution ultérieure puisque l'on ne peut pas prévoir l'ordonnancement des processus.
 
-### Simulation d'interblocage⚓︎  
+## Simulation d'interblocage⚓︎  
 
 Robosomes créé par Alain BUSSER , Sébastien HOARAU (Voir ici : [Robosomes - IREM de la réunion](https://irem.univ-reunion.fr/spip.php?article1128)
 
@@ -593,7 +591,7 @@ Voici quelques exemples :
 
 [Interblocage 8](https://irem.univ-reunion.fr/IMG/html/jeu8.html)
 
-## Et pour les systèmes multiprocesseurs ?
+# Et pour les systèmes multiprocesseurs ?
 
 Les ordinateurs actuels possèdent généralement plusieurs processeurs, ce qui permet à plusieurs processus d'être exécutés parallèlement : un par processeur. Ce parallélisme permet bien évidemment une plus grande puissance de calcul.
 
@@ -604,7 +602,9 @@ Pour répartir les différents processus entre les différents processeurs, on d
 
 L'ordonnancement des processus des systèmes d'exploitation actuels est bien plus complexe que les quelques algorithmes évoqués dans ce cours, et cela dépasse largement le cadre du programme de NSI. Si vous souhaitez en savoir plus, voici néanmoins une vidéo intéressante (en français) sur l'ordonnancement du noyau Linux : [https://www.youtube.com/watch?v=uCGe5WWd1OI&t=195s&ab_channel=Vitonimal](https://www.youtube.com/watch?v=uCGe5WWd1OI&t=195s&ab_channel=Vitonimal).
 
-## Bilan
+<div style="page-break-after: always;"></div>
+
+# Bilan
 
 - Un programme en cours d'exécution s'appelle un *processus*. Les systèmes d'exploitation récents permettent d'exécuter plusieurs processus simultanément.
 - En réalité, ces processus sont exécutés *à tour de rôle* par le système d'exploitation qui est chargé d'allouer à chacun d'eux les ressources dont il a besoin en termes de mémoire, entrées-sorties ou temps d'accès au processeur, et de s'assurer que les processus ne se gênent pas les uns les autres.
@@ -613,7 +613,9 @@ L'ordonnancement des processus des systèmes d'exploitation actuels est bien plu
 - Les processus se partagent les différentes ressources, on parle d'*accès concurrent* aux ressources. Ce partage des ressources n'est pas sans risque et peut conduire à des problèmes de synchronisation. Ces problèmes peuvent être évités en utilisant un *verrou*, qui permet à un processus de ne pas être interrompu dans sa section critique par un autre processus demandant le même verrou.
 - L'utilisation de plusieurs verrous peut entraîner des *interblocages*, c'est-à-dire des situations où chaque processus attend une ressource détenue par un autre, conduisant à une attente cyclique infinie. L'ordre d'acquisition des verrous est important mais pas toujours évident à écrire dans le cas de problèmes complexes.
 
+<div style="page-break-after: always;"></div>
 
+# Exercices
 
 ## Exercice 1 : Algorithmes d'ordonnancement
 
@@ -635,9 +637,9 @@ Soient les différents processus suivants :
 
 On définit les métriques suivantes :
 
-- le **temps de séjour (ou d'exécution)** (ou de rotation) d'un processus : c'est la différence entre la date de fin d'exécution et la date d'arrivée : $$T_{\text{sej}} = \text{date fin d'exécution} - \text{date d'arrivée}$$
-- le **temps d'attente** d'un processus : c'est la différence entre le temps de séjour et la durée du processus : $$T_{\text{att}} = T_{\text{sej}} - \text{durée du processus}$$
-- le **rendement** d'un processus : c'est le quotient entre la durée du processus et le temps de séjour : $$\text{rendement} = \dfrac{\text{durée du processus}}{T_{\text{sej}}}$$
+- le **temps de séjour (ou d'exécution)** (ou de rotation) d'un processus : c'est la différence entre la date de fin d'exécution et la date d'arrivée : $T_{\text{sej}} = \text{date fin d'exécution} - \text{date d'arrivée}$
+- le **temps d'attente** d'un processus : c'est la différence entre le temps de séjour et la durée du processus : $T_{\text{att}} = T_{\text{sej}} - \text{durée du processus}$
+- le **rendement** d'un processus : c'est le quotient entre la durée du processus et le temps de séjour : $\text{rendement} = \dfrac{\text{durée du processus}}{T_{\text{sej}}}$
 
 **Q2** : Pour chacun des trois algorithmes, calculez le temps de séjour, le temps d'attente et le rendement de chaque processus.
 
@@ -704,7 +706,7 @@ Reproduire le tableau ci-dessous sur la copie et indiquer dans chacune des cases
 2) On suppose maintenant que les trois processus précédents s’exécutent et utilisent une ou plusieurs ressources parmi R1, R2 et R3.
 Parmi les scénarios suivants, lequel provoque un interblocage ? Justifier.
 
-![](data/c19e_5.png)
+![](data/c19e_5.png){:.center width=350px}
 
 **Partie C**  
 
@@ -734,7 +736,7 @@ ces caractères. On fournit pour cela la table ci-dessous qui associe à l’éc
 d’un octet le caractère correspondant (figure 2). Exemple de lecture : le caractère
 correspondant à l’octet codé 4A en hexadécimal est la lettre J.
 
-![](data/tableasciiBAC.png){:.center}
+![](data/tableasciiBAC.png){:.center width=350px}
 
 Pour chiffrer le message d’Alice, on réalise l’opération XOR bit à bit avec la clé suivante :  
 `k = 0b 1110 1110 1111 0000`  
@@ -834,7 +836,7 @@ Les valeurs du champ STAT indique l’état des processus :
 
 Sur un ordinateur, on exécute la commande ps −eo pid,ppid,stat,command et on obtient un affichage dont on donne ci-dessous un extrait. 
 
-![](data/extraitBAC.png)
+![](data/extraitBAC.png){:.center width=350px}
 
 À l'aide de cet affichage, répondre aux questions ci-dessous.
 

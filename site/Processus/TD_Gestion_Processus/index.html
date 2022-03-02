@@ -19,7 +19,7 @@
     
     
       
-        <title>TD n°23 - gestion des processus - Site NSI Terminale Lycée Murat ISSOIRE</title>
+        <title>TD Gestion Processus - Numériques et Sciences informatiques Terminale</title>
       
     
     
@@ -79,7 +79,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="Site NSI Terminale Lycée Murat ISSOIRE" class="md-header__button md-logo" aria-label="Site NSI Terminale Lycée Murat ISSOIRE" data-md-component="logo">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-header__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -92,13 +92,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Site NSI Terminale Lycée Murat ISSOIRE
+            Numériques et Sciences informatiques Terminale
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TD n°23 - gestion des processus
+              TD Gestion Processus
             
           </span>
         </div>
@@ -352,13 +352,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Site NSI Terminale Lycée Murat ISSOIRE" class="md-nav__button md-logo" aria-label="Site NSI Terminale Lycée Murat ISSOIRE" data-md-component="logo">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-nav__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Site NSI Terminale Lycée Murat ISSOIRE
+    Numériques et Sciences informatiques Terminale
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1035,8 +1035,6 @@
 
                 
 
-  <h1>TD n°23 - gestion des processus</h1>
-
 <table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
         <tr>
             <th style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
@@ -1046,16 +1044,16 @@
 </table>
 <table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
         <tr >
-            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            <th width="25%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:30pt;">
             23
             </th>
-            <th  width="80%"; style="text-align:center;border:none;font-size:20pt;">Cours : Gestion des processus</th>
+            <th  width="75%"; style="text-align:center;border:none;font-size:20pt;">Cours : Gestion des processus</th>
         </tr>
 </table>
 
 <p><img alt="" src="../data/en_tete_prog.png" /></p>
 <p><img alt="" src="../data/BO_processus.png" /></p>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">⚓︎</a></h2>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">⚓︎</a></h1>
 <p>Dans les années 1970 les ordinateurs personnels étaient incapables d'exécuter plusieurs tâches à la fois : il fallait attendre qu'un programme lancé se termine pour en exécuter un autre.</p>
 <p>Les systèmes d'exploitations récents (GNU/Linux, macOS, iOS, Android, Windows...) permettent d'exécuter des tâches "simultanément". En effet, la plupart du temps, lorsque l'on utilise un ordinateur, plusieurs programmes sont exécutés "en même temps" : par exemple, on peut très bien ouvrir simultanément un navigateur Web, un traitement de texte, un IDE Python, un logiciel de musique (sans parler de tous les programmes exécutés en arrière-plan) ...</p>
 <p>Ces programmes en cours d'exécution s'appellent des <strong>processus</strong>. Une des tâches du système d'exploitation est d'allouer à chacun des processus les ressources dont il a besoin en termes de mémoire, entrées-sorties ou temps d'accès au processeur, et de s'assurer que les processus ne se gênent pas les uns les autres.</p>
@@ -1068,8 +1066,8 @@
 <li>l'instruction est exécutée</li>
 </ul>
 <p>Comment est-il alors possible que plusieurs programmes soient exécutés en même temps ? </p>
-<h2 id="processus">Processus<a class="headerlink" href="#processus" title="Permanent link">⚓︎</a></h2>
-<h3 id="quest-ce-quun-processus">Qu'est-ce qu'un <em>processus</em> ?<a class="headerlink" href="#quest-ce-quun-processus" title="Permanent link">⚓︎</a></h3>
+<h1 id="processus">Processus<a class="headerlink" href="#processus" title="Permanent link">⚓︎</a></h1>
+<h2 id="quest-ce-quun-processus">Qu'est-ce qu'un <em>processus</em> ?<a class="headerlink" href="#quest-ce-quun-processus" title="Permanent link">⚓︎</a></h2>
 <p>Il ne faut pas confondre <strong>programme</strong> et <strong>processus</strong> :</p>
 <ul>
 <li>Un <strong>programme</strong> est un fichier binaire (on dit aussi un <em>exécutable</em>) contenant des instructions machines que seul le processeur peut comprendre.</li>
@@ -1083,11 +1081,11 @@
 <li>des ressources : processeur, mémoire, périphériques d'entrée/sortie (voir paragraphe suivant)</li>
 </ul>
 <p>Il n'est d'ailleurs pas rare qu'un même programme soit exécuté plusieurs fois sur une machine au même moment en occupant des espaces mémoires différents : par exemple deux documents ouverts avec un traitement de texte, ou trois consoles distinctes... qui correspondent à autant d'instances du même programme et donc à des processus différents. </p>
-<h3 id="observer-les-processus">Observer les processus<a class="headerlink" href="#observer-les-processus" title="Permanent link">⚓︎</a></h3>
+<h2 id="observer-les-processus">Observer les processus<a class="headerlink" href="#observer-les-processus" title="Permanent link">⚓︎</a></h2>
 <p>Il est très facile de voir les différents processus s'exécutant sur une machine.</p>
 <p>Sous GNU/Linux, on peut utiliser la commande <code>ps</code> (comme <strong>p</strong>roces<strong>s</strong>, la traduction anglaise de <em>processus</em>) pour afficher les informations sur les processus (sous windows : talklist). En passant des options à cette commande on peut obtenir des choses intéressantes.</p>
 <p>Par exemple, en exécutant dans un terminal la commande <code>ps -aef</code>, on peut visualiser tous les processus en cours sur notre ordinateur :</p>
-<h3 id="creation-dun-processus">Création d'un processus<a class="headerlink" href="#creation-dun-processus" title="Permanent link">⚓︎</a></h3>
+<h2 id="creation-dun-processus">Création d'un processus<a class="headerlink" href="#creation-dun-processus" title="Permanent link">⚓︎</a></h2>
 <p>Un processus peut être créé :</p>
 <ul>
 <li>au démarrage du système</li>
@@ -1096,10 +1094,10 @@
 </ul>
 <p>Sous GNU/Linux, un tout premier processus est créé au démarrage (c'est le processus 0 ou encore <em>Swapper</em>). Ce processus crée un processus souvent appelé <em>init</em> qui est le fils du processus 0. Ensuite, à partir de <em>init</em>, les autres processus nécessaires au fonctionnement du système sont créés. Ces processus créent ensuite eux-mêmes d'autres processus, etc.</p>
 <p>Un processus peut créer un ou plusieurs processus, ce qui aboutit à une structure arborescente comme nous allons le voir maintenant.</p>
-<h3 id="pid-et-ppid">PID et PPID<a class="headerlink" href="#pid-et-ppid" title="Permanent link">⚓︎</a></h3>
+<h2 id="pid-et-ppid">PID et PPID<a class="headerlink" href="#pid-et-ppid" title="Permanent link">⚓︎</a></h2>
 <p>La commande précédente permet de voir que chaque processus est identifié par un numéro : son <strong>PID</strong> (pour <em>Process Identifier</em>). Ce numéro est donné à chaque processus par le système d'exploitation.</p>
 <p>On constate également que chaque processus possède un <strong>PPID</strong> (pour <em>Parent Process Identifier</em>), il s'agit du PID du processus parent, c'est-à-dire celui qui a déclenché la création du processus. En effet, un processus peut créer lui même un ou plusieurs autres processus, appelés <em>processus fils</em>.</p>
-<h3 id="observation-des-processus">Observation des processus⚓︎<a class="headerlink" href="#observation-des-processus" title="Permanent link">⚓︎</a></h3>
+<h2 id="observation-des-processus">Observation des processus⚓︎<a class="headerlink" href="#observation-des-processus" title="Permanent link">⚓︎</a></h2>
 <p>Sous Linux, on peut observer les processus et leur état en ligne de commande.</p>
 <p>Pour tester, cela on peut utiliser : <a href="https://cocalc.com/auth/try">terminal linux en ligne</a></p>
 <p>Voici quelques commandes utiles pour observer les processus :</p>
@@ -1179,8 +1177,8 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <li>recommencer en relançant les processus et tuer les processus avec le terminal lançant top(puis commande k)  </li>
 </ul>
 </div>
-<h2 id="gestion-des-processus-et-des-ressources">Gestion des processus et des ressources<a class="headerlink" href="#gestion-des-processus-et-des-ressources" title="Permanent link">⚓︎</a></h2>
-<h3 id="execution-concurrente">Exécution concurrente<a class="headerlink" href="#execution-concurrente" title="Permanent link">⚓︎</a></h3>
+<h1 id="gestion-des-processus-et-des-ressources">Gestion des processus et des ressources<a class="headerlink" href="#gestion-des-processus-et-des-ressources" title="Permanent link">⚓︎</a></h1>
+<h2 id="execution-concurrente">Exécution concurrente<a class="headerlink" href="#execution-concurrente" title="Permanent link">⚓︎</a></h2>
 <p>Les systèmes d'exploitation modernes sont capable d'exécuter plusieurs processus "en même temps". En réalité ces processus ne sont pas toujours exécutés "en même temps" mais plutôt "à tour de rôle". On parle d'exécution <em>concurrente</em> car les processus sont en concurrence pour obtenir l'accès au processeur chargé de les exécuter.</p>
 <blockquote>
 <p><strong>Remarque</strong> : Sur un système multiprocesseur, il est possible d'exécuter de manière parallèle plusieurs processus, autant qu'il y a de processeurs. Mais sur un même processeur, un seul processus ne peut être exécuté à la fois.</p>
@@ -1208,7 +1206,7 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 </blockquote>
 <p>Le shell indique alors dans la console les <em>PID</em> des processus correspondant à l'exécution de ces deux programmes (ici 9154 et 9155) puis on constate grâce aux affichages que le système d'exploitation alloue le processeur aux deux programmes <em>à tour de rôle</em> :</p>
 <p><img alt="" src="../data/concurrence1.png" /></p>
-<h3 id="acces-concurrents-aux-ressources">Accès concurrents aux ressources<a class="headerlink" href="#acces-concurrents-aux-ressources" title="Permanent link">⚓︎</a></h3>
+<h2 id="acces-concurrents-aux-ressources">Accès concurrents aux ressources<a class="headerlink" href="#acces-concurrents-aux-ressources" title="Permanent link">⚓︎</a></h2>
 <p>Une <strong>ressource</strong> est une entité dont a besoin un processus pour s'exécuter. Les ressources peuvent être matérielles (processeur, mémoire, périphériques d'entrée/sortie, ...) mais aussi logicielles (variables).</p>
 <p>Les différents processus se partagent les ressources, on parle alors d'<em>accès concurrents aux ressources</em>. Par exemple,</p>
 <ul>
@@ -1217,7 +1215,7 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <li>un navigateur et un logiciel de musique se partagent la ressource "carte son", ...</li>
 </ul>
 <p>C'est le système d'exploitation qui est chargé de gérer les processus et les ressources qui leur sont nécessaires, en partageant leur accès au processeur. Nous allons voir comment tout de suite !</p>
-<h3 id="etats-dun-processus">États d'un processus<a class="headerlink" href="#etats-dun-processus" title="Permanent link">⚓︎</a></h3>
+<h2 id="etats-dun-processus">États d'un processus<a class="headerlink" href="#etats-dun-processus" title="Permanent link">⚓︎</a></h2>
 <p>Au cours de son existence, un processus peut se retrouver dans trois états :</p>
 <ul>
 <li>état <strong>élu</strong> : lorsqu'il est en cours d'exécution, c'est-à-dire qu'il obtient l'accès au processeur</li>
@@ -1234,39 +1232,41 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <p>Ainsi, l'état d'un processus au cours de sa vie varie entre les états <em>prêt</em>, <em>élu</em> et <em>bloqué</em> comme le résume le schéma suivant :</p>
 <p><img alt="" class="center" src="../data/etats_processus.svg" width="350px" /></p>
 <p>Lorsqu'un processus est interrompu, il doit pouvoir reprendre à l'endroit même où il a été interrompu. Pour cela, le système d'exploitation conserve pour chaque processus créé une zone mémoire (appelée PCB, pour <em>Process Control Bloc</em>, ou bloc de contrôle du processus) dans laquelle sont stockées les informations sur le processus : son PIB, son état, la valeur des registres lors de sa dernière interruption, la zone mémoire allouée par le processus lors de son exécution, les ressources utilisées par le processus (fichiers ouverts, connexions réseaux en cours d'utilisation, etc.).</p>
-<h3 id="ordonnancement">Ordonnancement<a class="headerlink" href="#ordonnancement" title="Permanent link">⚓︎</a></h3>
+<h2 id="ordonnancement">Ordonnancement<a class="headerlink" href="#ordonnancement" title="Permanent link">⚓︎</a></h2>
 <p>C'est le système d'exploitation qui attribue aux processus leurs états <em>élu</em>, <em>prêt</em> et <em>bloqué</em>. Plus précisément, c'est l'<strong>ordonnanceur</strong> (un des composants du système d'exploitation) qui réalise cette tâche appelée <em>ordonnancement des processus</em>.</p>
 <p>L'objectif de l'ordonnanceur est de choisir le processus à exécuter à l'instant <span class="arithmatex">\(t\)</span> (le processus <em>élu</em>) et déterminer le temps durant lequel le processeur lui sera alloué.</p>
 <p><img alt="" class="center" src="../data/ordonnancement.svg" /></p>
 <p>Ce choix est à faire parmi tous les processus qui sont dans l'état <em>prêt</em>, mais lequel sera élu ? et pour combien de temps ? Des algorithmes d'ordonnancement sont utilisés et il en existe plusieurs selon la stratégie utilisée. On en présente quelques-uns ci-dessous.</p>
-<h4 id="ordonnancement-first-come-first-served-fcfs">Ordonnancement First Come First Served (FCFS)<a class="headerlink" href="#ordonnancement-first-come-first-served-fcfs" title="Permanent link">⚓︎</a></h4>
+<h3 id="ordonnancement-first-come-first-served-fcfs">Ordonnancement First Come First Served (FCFS)<a class="headerlink" href="#ordonnancement-first-come-first-served-fcfs" title="Permanent link">⚓︎</a></h3>
 <p><strong>Principe</strong> : Les processus sont ordonnancés selon leur ordre d'arrivée ("premier arrivé, premier servi" en français)</p>
 <p><strong>Exemple</strong> : Les processus <span class="arithmatex">\(P_1(53)\)</span>, <span class="arithmatex">\(P_2(17)\)</span>, <span class="arithmatex">\(P_3(68)\)</span> et <span class="arithmatex">\(P_4(24)\)</span> arrivent dans cet ordre à <span class="arithmatex">\(t=0\)</span> :</p>
 <blockquote>
 <p>Cela signifie que <span class="arithmatex">\(P_1\)</span>, <span class="arithmatex">\(P_2\)</span>, <span class="arithmatex">\(P_3\)</span> et <span class="arithmatex">\(P_4\)</span> ont besoin de respectivement 53, 17, 68 et 24 unités de temps pour s'exécuter.</p>
 </blockquote>
 <p><img alt="" class="center" src="../data/ordo_fcfs.png" /></p>
-<h4 id="ordonnancement-shortest-job-first-sjf">Ordonnancement Shortest Job First (SJF)<a class="headerlink" href="#ordonnancement-shortest-job-first-sjf" title="Permanent link">⚓︎</a></h4>
+<h3 id="ordonnancement-shortest-job-first-sjf">Ordonnancement Shortest Job First (SJF)<a class="headerlink" href="#ordonnancement-shortest-job-first-sjf" title="Permanent link">⚓︎</a></h3>
 <p><strong>Principe</strong> : Le processus dont le temps d'exécution est le plus court est ordonnancé en premier.</p>
 <p><strong>Exemple</strong> : <span class="arithmatex">\(P_1\)</span>, <span class="arithmatex">\(P_2\)</span>, <span class="arithmatex">\(P_3\)</span> et <span class="arithmatex">\(P_4\)</span> arrivent à <span class="arithmatex">\(t=0\)</span> :</p>
 <p><img alt="" class="center" src="../data/ordo_sjf.png" /></p>
-<h4 id="ordonnancement-shortest-remaining-time-srt">Ordonnancement Shortest Remaining Time (SRT)<a class="headerlink" href="#ordonnancement-shortest-remaining-time-srt" title="Permanent link">⚓︎</a></h4>
+<h3 id="ordonnancement-shortest-remaining-time-srt">Ordonnancement Shortest Remaining Time (SRT)<a class="headerlink" href="#ordonnancement-shortest-remaining-time-srt" title="Permanent link">⚓︎</a></h3>
 <p><strong>Principe</strong> : Le processus dont le temps d'exécution restant est le plus court parmi ceux qui restent à exécuter est ordonnancé en premier.</p>
 <p><strong>Exemple</strong> : <span class="arithmatex">\(P_3\)</span> et <span class="arithmatex">\(P_4\)</span> arrivent à <span class="arithmatex">\(t=0\)</span> ; <span class="arithmatex">\(P_2\)</span> à <span class="arithmatex">\(t=20\)</span> ; <span class="arithmatex">\(P_1\)</span> à <span class="arithmatex">\(t=50\)</span> :</p>
 <p><img alt="" class="center" src="../data/ordo_srt.png" /></p>
-<h4 id="ordonnancement-temps-partage-round-robin">Ordonnancement temps-partagé (Round-Robin)<a class="headerlink" href="#ordonnancement-temps-partage-round-robin" title="Permanent link">⚓︎</a></h4>
+<h3 id="ordonnancement-temps-partage-round-robin">Ordonnancement temps-partagé (Round-Robin)<a class="headerlink" href="#ordonnancement-temps-partage-round-robin" title="Permanent link">⚓︎</a></h3>
 <p><strong>Principe</strong> : C'est la politique du tourniquet : allocation du processeur par tranche (= quantum <span class="arithmatex">\(q\)</span>) de temps.</p>
 <p><strong>Exemple</strong> : quantum <span class="arithmatex">\(q = 20\)</span> et <span class="arithmatex">\(n = 4\)</span> processus</p>
 <p><img alt="" class="center" src="../data/ordo_rr.png" /></p>
 <p>Dans ce cas, s'il y a <span class="arithmatex">\(n\)</span> processus, chacun d'eux obtient le processeur au bout de <span class="arithmatex">\((n-1)\times q\)</span> unités de temps au plus</p>
-<h4 id="ordonnancement-a-priorites-statiques">Ordonnancement à priorités statiques<a class="headerlink" href="#ordonnancement-a-priorites-statiques" title="Permanent link">⚓︎</a></h4>
+<h3 id="ordonnancement-a-priorites-statiques">Ordonnancement à priorités statiques<a class="headerlink" href="#ordonnancement-a-priorites-statiques" title="Permanent link">⚓︎</a></h3>
 <p><strong>Principe</strong> : Allocation du processeur selon des priorités <em>statiques</em> (= numéros affectés aux processus pour toute la vie de l'application)</p>
 <p><strong>Exemple</strong> : priorités <span class="arithmatex">\((P_1, P_2, P_3, P_4) = (3, 2, 0, 1)\)</span> où la priorité la plus forte est 0 (attention, dans certains systèmes c'est l'inverse : 0 est alors la priorité la plus faible)</p>
 <p><img alt="" class="center" src="../data/ordo_prio.png" /></p>
-<h2 id="problemes-lies-a-lacces-concurrent-aux-ressources">Problèmes liés à l'accès concurrent aux ressources<a class="headerlink" href="#problemes-lies-a-lacces-concurrent-aux-ressources" title="Permanent link">⚓︎</a></h2>
+<div style="page-break-after: always;"></div>
+
+<h1 id="problemes-lies-a-lacces-concurrent-aux-ressources">Problèmes liés à l'accès concurrent aux ressources<a class="headerlink" href="#problemes-lies-a-lacces-concurrent-aux-ressources" title="Permanent link">⚓︎</a></h1>
 <p>Les processus se partagent souvent une ou plusieurs ressources, et cela peut poser des problèmes.</p>
-<h3 id="problemes-de-synchronisation-illustration-avec-python">Problèmes de synchronisation : illustration avec Python<a class="headerlink" href="#problemes-de-synchronisation-illustration-avec-python" title="Permanent link">⚓︎</a></h3>
-<h4 id="exemple-dune-variable-partagee">Exemple d'une variable partagée<a class="headerlink" href="#exemple-dune-variable-partagee" title="Permanent link">⚓︎</a></h4>
+<h2 id="problemes-de-synchronisation-illustration-avec-python">Problèmes de synchronisation : illustration avec Python<a class="headerlink" href="#problemes-de-synchronisation-illustration-avec-python" title="Permanent link">⚓︎</a></h2>
+<h3 id="exemple-dune-variable-partagee">Exemple d'une variable partagée<a class="headerlink" href="#exemple-dune-variable-partagee" title="Permanent link">⚓︎</a></h3>
 <p>Prenons l'exemple d'une variable (= ressource logicielle) partagée entre plusieurs processus. Plus précisément, considérons un programme de jeu multi-joueur dans lequel une variable <code>nb_pions</code> représente le nombre de pions disponibles pour tous les joueurs.</p>
 <p>Une fonction <code>prendre_un_pion()</code> permet de prendre un pion dans le tas commun de pions disponibles, s'il reste au moins un pion évidemment.</p>
 <p>On va se mettre dans la situation où il ne reste plus qu'un pion dans le tas commun et on suppose que deux joueurs utilisent la fonction <code>prendre_un_pion()</code>, ce qui conduit à la création de deux processus <code>p1</code> et <code>p2</code>, chacun correspondant à un joueur.</p>
@@ -1365,7 +1365,7 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 </blockquote>
 <p>Si on analyse la seconde exécution du programme qui donne le comportement souhaité, on constate que <code>p1</code> a eu suffisamment de temps pour décrémenter le nombre de pions (qui vaut désormais 0) <em>avant</em> que <code>p2</code> ne fasse le test <code>nombre.value &gt;= 1</code> et se rende compte que cette condition est fausse. Dans ce cas, seul le premier joueur a pas pu piocher un pion.</p>
 <p>Heureusement, on peut éviter le problème mis en évidence dans l'exemple précédent.</p>
-<h4 id="comment-eviter-les-problemes-de-synchronisation">Comment éviter les problèmes de synchronisation ?<a class="headerlink" href="#comment-eviter-les-problemes-de-synchronisation" title="Permanent link">⚓︎</a></h4>
+<h3 id="comment-eviter-les-problemes-de-synchronisation">Comment éviter les problèmes de synchronisation ?<a class="headerlink" href="#comment-eviter-les-problemes-de-synchronisation" title="Permanent link">⚓︎</a></h3>
 <p>On va utiliser ce qu'on appelle un <strong>verrou</strong> : un verrou est objet partagé entre plusieurs processus mais qui garantit qu'un seul processus accède à une ressource à un instant donné.</p>
 <p>Concrètement, un verrou peut être acquis par les différents processus, et le premier à faire la demande acquiert le verrou. Si le verrou est détenu par un autre processus, alors tout autre processus souhaitant l'obtenir est bloqué jusqu'à ce qu'il soit libéré.</p>
 <p>Le module <code>multiprocessing</code> de Python propose un objet <code>Lock()</code> correpondant à un verrou. Deux méthodes sont utilisées :</p>
@@ -1421,7 +1421,7 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 </code></pre></div>
 <p>Si vous analysez l'affichage précédent dans le terminal, on voit d'ailleurs que <code>p1</code> est entré en section critique (affichage "processus 1 : étape A") mais est interrompu, puis c'est <code>p2</code> qui a la main (affichage "début processus 2") mais il va se retrouver bloquer à l'instruction <code>v.acquire()</code> puisque c'est <code>p1</code> qui détient le verrou. Lorsque <code>p1</code> reprendra la main, il pourra exécuter ses instructions jusqu'à <code>v.release()</code> sans être interrompu par <code>p2</code> (alors <code>nb_pions</code> sera décrémenté d'une unité). Lorsque <code>p1</code> libère le verrou, <code>p2</code> pourra alors l'obtenir, exécuter sa section critique et constater que la condition <code>nombre.value &gt;= 1</code> est fausse : le deuxième joueur ne pourra alors pas prendre de pion.</p>
 <p>Nous terminons en voyant que l'utilisation de verrous n'est pas sans risque car elle peut engendrer des problèmes d'interblocage.</p>
-<h3 id="risque-dinterblocage">Risque d'interblocage<a class="headerlink" href="#risque-dinterblocage" title="Permanent link">⚓︎</a></h3>
+<h2 id="risque-dinterblocage">Risque d'interblocage<a class="headerlink" href="#risque-dinterblocage" title="Permanent link">⚓︎</a></h2>
 <p>Les interblocages (<em>deadlock</em> en anglais) sont des situations de la vie quotidienne. L'exemple classique est celui du carrefour avec priorité à droite où chaque véhicule est bloqué car il doit laisser le passage au véhicule à sa droite.</p>
 <p><img alt="" class="center" src="../data/carrefour.png" /></p>
 <p>En informatique l'<strong>interblocage</strong> peut également se produire lorsque plusieurs processus concurrents s'attendent mutuellement. Ce scénario peut se produire lorsque plusieurs ressources sont partagées par plusieurs processus et l'un d'entre eux possède indéfiniment une ressource nécessaire pour un autre.</p>
@@ -1477,7 +1477,7 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <p>Il n'y a alors pas d'autres choix que d'interrompre les processus en interblocage, par exemple avec la commande <code>kill</code>.</p>
 <p>Cependant, ce problème a lieu ici car les deux processus essaie d'acquérir les verrous dans l'ordre contraire. Si l'ordre d'acquisition est le même pour les processus, le problème n'a plus lieu (n'hésitez pas à tester !).</p>
 <p>De manière générale, dans des problèmes complexes les situations d'interblocage sont difficiles à détecter et il se peut très bien que le programme se comporte bien pendant toute une phase de tests mais bloque lors d'une exécution ultérieure puisque l'on ne peut pas prévoir l'ordonnancement des processus.</p>
-<h3 id="simulation-dinterblocage">Simulation d'interblocage⚓︎<a class="headerlink" href="#simulation-dinterblocage" title="Permanent link">⚓︎</a></h3>
+<h2 id="simulation-dinterblocage">Simulation d'interblocage⚓︎<a class="headerlink" href="#simulation-dinterblocage" title="Permanent link">⚓︎</a></h2>
 <p>Robosomes créé par Alain BUSSER , Sébastien HOARAU (Voir ici : <a href="https://irem.univ-reunion.fr/spip.php?article1128">Robosomes - IREM de la réunion</a></p>
 <p><img alt="" class="center" src="../data/jeu1logo-2.png" /></p>
 <p>Le jeu robosomes se joue à un seul joueur sur une grille rectangulaire. Chaque case peut être</p>
@@ -1502,7 +1502,7 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <p><a href="https://irem.univ-reunion.fr/IMG/html/jeu4.html">Interblocage 4</a></p>
 <p><a href="https://irem.univ-reunion.fr/IMG/html/jeu5.html">Interblocage perpétuel ou pas</a></p>
 <p><a href="https://irem.univ-reunion.fr/IMG/html/jeu8.html">Interblocage 8</a></p>
-<h2 id="et-pour-les-systemes-multiprocesseurs">Et pour les systèmes multiprocesseurs ?<a class="headerlink" href="#et-pour-les-systemes-multiprocesseurs" title="Permanent link">⚓︎</a></h2>
+<h1 id="et-pour-les-systemes-multiprocesseurs">Et pour les systèmes multiprocesseurs ?<a class="headerlink" href="#et-pour-les-systemes-multiprocesseurs" title="Permanent link">⚓︎</a></h1>
 <p>Les ordinateurs actuels possèdent généralement plusieurs processeurs, ce qui permet à plusieurs processus d'être exécutés parallèlement : un par processeur. Ce parallélisme permet bien évidemment une plus grande puissance de calcul.</p>
 <p>Pour répartir les différents processus entre les différents processeurs, on distingue deux approches :</p>
 <ul>
@@ -1510,7 +1510,9 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <li>l'approche <em>globale</em> : un ordonnanceur global est chargé de déterminer la répartition des processus entre les différents processeurs</li>
 </ul>
 <p>L'ordonnancement des processus des systèmes d'exploitation actuels est bien plus complexe que les quelques algorithmes évoqués dans ce cours, et cela dépasse largement le cadre du programme de NSI. Si vous souhaitez en savoir plus, voici néanmoins une vidéo intéressante (en français) sur l'ordonnancement du noyau Linux : <a href="https://www.youtube.com/watch?v=uCGe5WWd1OI&amp;t=195s&amp;ab_channel=Vitonimal">https://www.youtube.com/watch?v=uCGe5WWd1OI&amp;t=195s&amp;ab_channel=Vitonimal</a>.</p>
-<h2 id="bilan">Bilan<a class="headerlink" href="#bilan" title="Permanent link">⚓︎</a></h2>
+<div style="page-break-after: always;"></div>
+
+<h1 id="bilan">Bilan<a class="headerlink" href="#bilan" title="Permanent link">⚓︎</a></h1>
 <ul>
 <li>Un programme en cours d'exécution s'appelle un <em>processus</em>. Les systèmes d'exploitation récents permettent d'exécuter plusieurs processus simultanément.</li>
 <li>En réalité, ces processus sont exécutés <em>à tour de rôle</em> par le système d'exploitation qui est chargé d'allouer à chacun d'eux les ressources dont il a besoin en termes de mémoire, entrées-sorties ou temps d'accès au processeur, et de s'assurer que les processus ne se gênent pas les uns les autres.</li>
@@ -1519,6 +1521,9 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <li>Les processus se partagent les différentes ressources, on parle d'<em>accès concurrent</em> aux ressources. Ce partage des ressources n'est pas sans risque et peut conduire à des problèmes de synchronisation. Ces problèmes peuvent être évités en utilisant un <em>verrou</em>, qui permet à un processus de ne pas être interrompu dans sa section critique par un autre processus demandant le même verrou.</li>
 <li>L'utilisation de plusieurs verrous peut entraîner des <em>interblocages</em>, c'est-à-dire des situations où chaque processus attend une ressource détenue par un autre, conduisant à une attente cyclique infinie. L'ordre d'acquisition des verrous est important mais pas toujours évident à écrire dans le cas de problèmes complexes.</li>
 </ul>
+<div style="page-break-after: always;"></div>
+
+<h1 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h1>
 <h2 id="exercice-1-algorithmes-dordonnancement">Exercice 1 : Algorithmes d'ordonnancement<a class="headerlink" href="#exercice-1-algorithmes-dordonnancement" title="Permanent link">⚓︎</a></h2>
 <p>Soient les différents processus suivants :</p>
 <table>
@@ -1562,9 +1567,9 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <h3 id="performances-des-algorithmes-dordonnancement">Performances des algorithmes d'ordonnancement<a class="headerlink" href="#performances-des-algorithmes-dordonnancement" title="Permanent link">⚓︎</a></h3>
 <p>On définit les métriques suivantes :</p>
 <ul>
-<li>le <strong>temps de séjour (ou d'exécution)</strong> (ou de rotation) d'un processus : c'est la différence entre la date de fin d'exécution et la date d'arrivée : <span class="arithmatex">\(<span class="arithmatex">\(T_{\text{sej}} = \text{date fin d'exécution} - \text{date d'arrivée}\)</span>\)</span></li>
-<li>le <strong>temps d'attente</strong> d'un processus : c'est la différence entre le temps de séjour et la durée du processus : <span class="arithmatex">\(<span class="arithmatex">\(T_{\text{att}} = T_{\text{sej}} - \text{durée du processus}\)</span>\)</span></li>
-<li>le <strong>rendement</strong> d'un processus : c'est le quotient entre la durée du processus et le temps de séjour : <span class="arithmatex">\(<span class="arithmatex">\(\text{rendement} = \dfrac{\text{durée du processus}}{T_{\text{sej}}}\)</span>\)</span></li>
+<li>le <strong>temps de séjour (ou d'exécution)</strong> (ou de rotation) d'un processus : c'est la différence entre la date de fin d'exécution et la date d'arrivée : <span class="arithmatex">\(T_{\text{sej}} = \text{date fin d'exécution} - \text{date d'arrivée}\)</span></li>
+<li>le <strong>temps d'attente</strong> d'un processus : c'est la différence entre le temps de séjour et la durée du processus : <span class="arithmatex">\(T_{\text{att}} = T_{\text{sej}} - \text{durée du processus}\)</span></li>
+<li>le <strong>rendement</strong> d'un processus : c'est le quotient entre la durée du processus et le temps de séjour : <span class="arithmatex">\(\text{rendement} = \dfrac{\text{durée du processus}}{T_{\text{sej}}}\)</span></li>
 </ul>
 <p><strong>Q2</strong> : Pour chacun des trois algorithmes, calculez le temps de séjour, le temps d'attente et le rendement de chaque processus.</p>
 <p><strong>Q3</strong> : Quel vous semble être le <em>meilleur</em> des trois algorithmes dans notre exemple ? Expliquer.</p>
@@ -1617,7 +1622,7 @@ Aucune justification n’est demandée. Une réponse fausse ou une absence de r�
 <p><img alt="" src="../data/c19e_4.png" /></p>
 <p>2) On suppose maintenant que les trois processus précédents s’exécutent et utilisent une ou plusieurs ressources parmi R1, R2 et R3.
 Parmi les scénarios suivants, lequel provoque un interblocage ? Justifier.</p>
-<p><img alt="" src="../data/c19e_5.png" /></p>
+<p><img alt="" class="center" src="../data/c19e_5.png" width="350px" /></p>
 <p><strong>Partie C</strong>  </p>
 <p>Dans cette partie, pour une meilleure lisibilité, des espaces sont placées dans les écritures
 binaires des nombres. Il ne faut pas les prendre en compte dans les calculs.<br />
@@ -1664,7 +1669,7 @@ effectuée, Alice obtient le message suivant :  </p>
 ces caractères. On fournit pour cela la table ci-dessous qui associe à l’écriture hexadécimale
 d’un octet le caractère correspondant (figure 2). Exemple de lecture : le caractère
 correspondant à l’octet codé 4A en hexadécimal est la lettre J.</p>
-<p><img alt="" class="center" src="../data/tableasciiBAC.png" /></p>
+<p><img alt="" class="center" src="../data/tableasciiBAC.png" width="350px" /></p>
 <p>Pour chiffrer le message d’Alice, on réalise l’opération XOR bit à bit avec la clé suivante :<br />
 <code>k = 0b 1110 1110 1111 0000</code>  </p>
 <p>Donner l’écriture binaire du message obtenu.</p>
@@ -1727,7 +1732,7 @@ Avec l’option −eo pid,ppid,stat,command, cette commande affiche dans l’ord
 - R : processus en cours d’exécution<br />
 - S : processus endormi  </p>
 <p>Sur un ordinateur, on exécute la commande ps −eo pid,ppid,stat,command et on obtient un affichage dont on donne ci-dessous un extrait. </p>
-<p><img alt="" src="../data/extraitBAC.png" /></p>
+<p><img alt="" class="center" src="../data/extraitBAC.png" width="350px" /></p>
 <p>À l'aide de cet affichage, répondre aux questions ci-dessous.</p>
 <p><strong>Q.1.</strong> Quel est le nom de la première commande exécutée par le système d'exploitation lors
 du démarrage ?</p>

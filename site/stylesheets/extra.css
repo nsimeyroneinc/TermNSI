@@ -384,7 +384,7 @@ body {
 }
 
 h1 {
-  background-color: rgba(21, 20, 26, 0.767);
+  background-color: #87A96B;
   color:white;
   font-family: @@font_name@@;
   font-size: 12pt;
@@ -399,15 +399,15 @@ h3 {
     color: brown;
 }
 h1:before {
-  content: "  ";
+  content: counter(h1) ".    ";
   counter-increment: h1;
 }
 h2:before {
-  content: counter(h2) ".  ";
+  content:  counter(h1) "." counter(h2) ".  ";
   counter-increment: h2;
 }
 h3:before {
-  content: counter(h2) "." counter(h3) ".  ";
+  content:  counter(h1) "." counter(h2) "." counter(h3) ".  ";
   counter-increment: h3;
 }
 h1 {

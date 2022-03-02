@@ -399,7 +399,7 @@ h3 {
     color: brown;
 }
 h1:before {
-  content: counter(h1) ".  ";
+  content: counter(h1) ".    ";
   counter-increment: h1;
 }
 h2:before {

@@ -19,7 +19,7 @@
     
     
       
-        <title>TD n°23 - gestion des processus - Site NSI Terminale Lycée Murat ISSOIRE</title>
+        <title>TD n°23 - gestion des processus - Numériques et Sciences informatiques Terminale</title>
       
     
     
@@ -79,7 +79,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="Site NSI Terminale Lycée Murat ISSOIRE" class="md-header__button md-logo" aria-label="Site NSI Terminale Lycée Murat ISSOIRE" data-md-component="logo">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-header__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -92,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Site NSI Terminale Lycée Murat ISSOIRE
+            Numériques et Sciences informatiques Terminale
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -352,13 +352,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Site NSI Terminale Lycée Murat ISSOIRE" class="md-nav__button md-logo" aria-label="Site NSI Terminale Lycée Murat ISSOIRE" data-md-component="logo">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-nav__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Site NSI Terminale Lycée Murat ISSOIRE
+    Numériques et Sciences informatiques Terminale
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1038,9 +1038,9 @@
 <style>
     :root {
     --color-background: #91A3B0 !important;
-    --color-foreground: white !important;
+    --color-foreground: black !important;
     --color-background-paginate : rgba(128,128,128,0.05);
-    --color-highlight-hover :  #aaf111 ;
+    --color-highlight-hover :  #FAF0E6 ;
     font-size: 1.75rem;
     border:10px;
     padding: 40px;
@@ -1063,13 +1063,22 @@ h3 {
     font-size: 1.75rem;
 }
 
-
+code 
+{
+  background: #778899;
+  color:white;
+}
 blockquote {
-  background: #C3B091;
-  border-left: 15px solid black;
-  margin: 1.5em 10px;
-  color: black;
-  padding: 0.5em 10px;
+  background: #ffedcc;
+  border-left: 15px solid #d1bf9d;
+  margin: 1.5em 15px;
+  padding: 0.5em 15px;
+}
+blockquote:before{
+  content: unset;
+}
+blockquote:after{
+  content: unset;
 }
 
 img[alt~="center"] {
@@ -1078,7 +1087,7 @@ img[alt~="center"] {
 }
 </style>
 
-<!-- backgroundColor: #A9A9A9 -->
+<!-- backgroundColor: #F2F3F4 -->
 
 <h1 id="td-23-cours-gestion-des-processus">TD 23 - Cours : Gestion des processus<a class="headerlink" href="#td-23-cours-gestion-des-processus" title="Permanent link">⚓︎</a></h1>
 <p><img alt="center" src="../data/en_tete_prog.png" /></p>
@@ -1088,7 +1097,9 @@ img[alt~="center"] {
 <p>Dans les années 1970 les ordinateurs personnels étaient incapables d'exécuter plusieurs tâches à la fois : il fallait attendre qu'un programme lancé se termine pour en exécuter un autre.</p>
 <p>Les systèmes d'exploitations récents (GNU/Linux, macOS, iOS, Android, Windows...) permettent d'exécuter des tâches "simultanément". En effet, la plupart du temps, lorsque l'on utilise un ordinateur, plusieurs programmes sont exécutés "en même temps" : par exemple, on peut très bien ouvrir simultanément un navigateur Web, un traitement de texte, un IDE Python, un logiciel de musique (sans parler de tous les programmes exécutés en arrière-plan) ...</p>
 <hr />
+<blockquote>
 <p>Ces programmes en cours d'exécution s'appellent des <strong>processus</strong>. Une des tâches du système d'exploitation est d'allouer à chacun des processus les ressources dont il a besoin en termes de mémoire, entrées-sorties ou temps d'accès au processeur, et de s'assurer que les processus ne se gênent pas les uns les autres.</p>
+</blockquote>
 <p>Pourtant, on rappelle qu'un programme n'est qu'une suite d'instructions machine exécutées l'une après l'autre par le processeur et qu'un processeur n'est capable d'exécuter qu'une seule instruction à la fois.</p>
 <p>Pour rappel, voici les étapes d'exécution d'une instruction.</p>
 <ul>
@@ -1132,7 +1143,9 @@ img[alt~="center"] {
 <p>Un processus peut créer un ou plusieurs processus, ce qui aboutit à une structure arborescente comme nous allons le voir maintenant.</p>
 <hr />
 <h3 id="pid-et-ppid">PID et PPID<a class="headerlink" href="#pid-et-ppid" title="Permanent link">⚓︎</a></h3>
+<blockquote>
 <p>La commande précédente permet de voir que chaque processus est identifié par un numéro : son <strong>PID</strong> (pour <em>Process Identifier</em>). Ce numéro est donné à chaque processus par le système d'exploitation.</p>
+</blockquote>
 <p>On constate également que chaque processus possède un <strong>PPID</strong> (pour <em>Parent Process Identifier</em>), il s'agit du PID du processus parent, c'est-à-dire celui qui a déclenché la création du processus. En effet, un processus peut créer lui même un ou plusieurs autres processus, appelés <em>processus fils</em>.</p>
 <hr />
 <h3 id="observation-des-processus">Observation des processus⚓︎<a class="headerlink" href="#observation-des-processus" title="Permanent link">⚓︎</a></h3>
@@ -1156,51 +1169,66 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <blockquote>
 <p>Exercice</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>Dans un nouvel onglet ouvrir : [terminal linux en ligne](https://cocalc.com/auth/try)
-
-- créer un premier terminal :  
-  - utiliser les commandes de l&#39;année précédentes : `ls, cd, touch, cat`  
-  - pour déterminer le nom d&#39;utilisateur : `whoami`  
-  - créer un fichier vide `test.py` : `touch test.py`  
-  - éditer le fichier `test.py` avec la commande : `nano test.py`
-
-    - y écrire le code suivant : 
-     ```python
-     for a in range(100000):
-        print(a)
-    ```
-
-    - pour sortir de l&#39;éditeur : Ctrl+X, puis Y, puis Enter pour confirmer le nom
-
-  - lancer le programme avec : `python3 test.py`  
-  - créer un second fichier `p2.py` avec le code suivant :  
-  ```python
-  while True:
-    pass
-  ```
-  - le lancer  
-  - Il tourne sans fin. Pour l&#39;arrêter : Ctrl+C  
-- vérifier la présence dans le dossier des fichiers créés, avec `ls`  
-- ouvrir un second terminal puis :  
-  - dans ce second terminal lancer python3 sans nom de fichier  
-  - dans le premier terminal taper `ps -ef`  
-  - repérer le PID du processus python3 et le tuer avec la commande kill -9 (voir syntaxe au dessus)
-
-- ouvrir un troisième terminal 
-  - dans ce troisième terminal lancer la commande `top`  
-  - modifier l&#39;affichage pour faire apparaître le PPID (taper f, puis sélectionner/ déplacer avec les  touches curseur. Revenir à l&#39;affichage avec Esc)
-
-- Enfin   ouvrir des terminaux supplémentaires pour en avoir au moins 5 et lancer dans les terminaux :
-
-  - 1 aucun processus  
-  - 1 avec nano  
-  - 1 avec python3  
-  - 1 avec python3 lançant p2.py  
-  - 1 avec top
-
-- observer les processus et essayer de les tuer avec la commande kill à partir du premier terminal  
-- recommencer en relançant les processus et tuer les processus avec le terminal lançant top(puis commande k)
-</code></pre></div>
+<p>Dans un nouvel onglet ouvrir : <a href="https://cocalc.com/auth/try">terminal linux en ligne</a></p>
+<ul>
+<li>créer un premier terminal :  <ul>
+<li>utiliser les commandes de l'année précédentes : <code>ls, cd, touch, cat</code>  </li>
+<li>pour déterminer le nom d'utilisateur : <code>whoami</code>  </li>
+<li>créer un fichier vide <code>test.py</code> : <code>touch test.py</code>  </li>
+<li>éditer le fichier <code>test.py</code> avec la commande : <code>nano test.py</code><ul>
+<li>y écrire le code suivant : 
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div></li>
+<li>pour sortir de l'éditeur : Ctrl+X, puis Y, puis Enter pour confirmer le nom  </li>
+</ul>
+</li>
+<li>lancer le programme avec : <code>python3 test.py</code>  </li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>créer un second fichier <code>p2.py</code> avec le code suivant :<br />
+    <div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+   <span class="k">pass</span>
+</code></pre></div><ul>
+<li>le lancer  </li>
+<li>Il tourne sans fin. Pour l'arrêter : Ctrl+C  </li>
+</ul>
+</li>
+<li>vérifier la présence dans le dossier des fichiers créés, avec <code>ls</code>  </li>
+<li>ouvrir un second terminal puis :  <ul>
+<li>dans ce second terminal lancer python3 sans nom de fichier  </li>
+<li>dans le premier terminal taper <code>ps -ef</code>  </li>
+<li>repérer le PID du processus python3 et le tuer avec la commande kill -9 (voir syntaxe au dessus)  </li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>ouvrir un troisième terminal </p>
+<ul>
+<li>dans ce troisième terminal lancer la commande <code>top</code>  </li>
+<li>modifier l'affichage pour faire apparaître le PPID (taper f, puis sélectionner/ déplacer avec les  touches curseur. Revenir à l'affichage avec Esc)  </li>
+</ul>
+</li>
+<li>
+<p>Enfin   ouvrir des terminaux supplémentaires pour en avoir au moins 5 et lancer dans les terminaux :  </p>
+<ul>
+<li>1 aucun processus  </li>
+<li>1 avec nano  </li>
+<li>1 avec python3  </li>
+<li>1 avec python3 lançant p2.py  </li>
+<li>1 avec top  </li>
+</ul>
+</li>
+<li>
+<p>observer les processus et essayer de les tuer avec la commande kill à partir du premier terminal  </p>
+</li>
+<li>recommencer en relançant les processus et tuer les processus avec le terminal lançant top(puis commande k)  </li>
+</ul>
 <hr />
 <h2 id="gestion-des-processus-et-des-ressources">Gestion des processus et des ressources<a class="headerlink" href="#gestion-des-processus-et-des-ressources" title="Permanent link">⚓︎</a></h2>
 <h3 id="execution-concurrente">Exécution concurrente<a class="headerlink" href="#execution-concurrente" title="Permanent link">⚓︎</a></h3>
@@ -1218,19 +1246,19 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># pour simuler un traitement avec des calculs</span>
 </code></pre></div>
 <p><strong><code>progB.py</code></strong></p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<h2 id="import-time-for-i-in-range100-printprogramme-b-en-cours-iteration-i-timesleep001-pour-simuler-un-traitement-avec-des-calculs"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;programme B en cours, itération&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># pour simuler un traitement avec des calculs</span>
-</code></pre></div>
+</code></pre></div><a class="headerlink" href="#import-time-for-i-in-range100-printprogramme-b-en-cours-iteration-i-timesleep001-pour-simuler-un-traitement-avec-des-calculs" title="Permanent link">⚓︎</a></h2>
 <p>En ouvrant un Terminal, on peut lancer simultanément ces deux programmes avec la commande</p>
 <div class="highlight"><pre><span></span><code>$ python progA.py <span class="p">&amp;</span> python progB.py <span class="p">&amp;</span>
 </code></pre></div>
-<hr />
 <blockquote>
 <p>Le caractère <code>&amp;</code> qui suit une commande permet de lancer l'exécution en arrière plan et de rendre la main au terminal.</p>
 </blockquote>
+<hr />
 <p>Le shell indique alors dans la console les <em>PID</em> des processus correspondant à l'exécution de ces deux programmes (ici 9154 et 9155) puis on constate grâce aux affichages que le système d'exploitation alloue le processeur aux deux programmes <em>à tour de rôle</em> :</p>
 <p><img alt="center" src="../data/concurrence1.png" /></p>
 <hr />
@@ -1306,10 +1334,12 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <h3 id="problemes-de-synchronisation-illustration-avec-python">Problèmes de synchronisation : illustration avec Python<a class="headerlink" href="#problemes-de-synchronisation-illustration-avec-python" title="Permanent link">⚓︎</a></h3>
 <h4 id="exemple-dune-variable-partagee">Exemple d'une variable partagée<a class="headerlink" href="#exemple-dune-variable-partagee" title="Permanent link">⚓︎</a></h4>
 <p>Prenons l'exemple d'une variable (= ressource logicielle) partagée entre plusieurs processus. Plus précisément, considérons un programme de jeu multi-joueur dans lequel une variable <code>nb_pions</code> représente le nombre de pions disponibles pour tous les joueurs.</p>
+<hr />
 <p>Une fonction <code>prendre_un_pion()</code> permet de prendre un pion dans le tas commun de pions disponibles, s'il reste au moins un pion évidemment.</p>
 <p>On va se mettre dans la situation où il ne reste plus qu'un pion dans le tas commun et on suppose que deux joueurs utilisent la fonction <code>prendre_un_pion()</code>, ce qui conduit à la création de deux processus <code>p1</code> et <code>p2</code>, chacun correspondant à un joueur.</p>
 <hr />
 <p>Avec Python, on peut utiliser le module <code>multiprocessing</code> pour créer des processus. Le programme Python <code>pions.py</code> suivant permet de réaliser la situation de jeu décrite :</p>
+<hr />
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Value</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -1484,6 +1514,7 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <p>Ce phénomène d'<em>attente circulaire</em>, où chaque processus attend une ressource détenue par un autre processus, peut être provoquée par l'utilisation de <em>plusieurs</em> verrous.</p>
 <hr />
 <p>Considérons le script <code>interblocage.py</code> suivant dans lequel on a créé deux verrous <code>v1</code> et <code>v2</code> utilisés par deux fonctions <code>f1</code> et <code>f2</code> exécutées respectivement par deux processus <code>p1</code> et <code>p2</code>. Le processus <code>p1</code> essaie d'acquérir d'abord <code>v1</code> puis <code>v2</code> tandis que le processus <code>p2</code> essaie de les acquérir dans l'ordre inverse.</p>
+<hr />
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Lock</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -1554,7 +1585,6 @@ la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
 <li>D : tous les robots tournent vers leur droite (de 90°) en même temps  </li>
 <li>A : les robots qui peuvent avancer d’une case, le font. Un robot peut avancer d’une case s’il n’y a pas d’obstacle sur cette case et si aucun robot ne s’apprête à aller sur cette case.</li>
 </ul>
-<hr />
 <p>Les cases du bord de la grille sont toutes couvertes d’obstacles fixes, à l’exception de l’une d’entre elles appelée « sortie ». Lorsqu’un robot est sur la case de sortie, tourné vers l’extérieur de la grille, il quitte le jeu et n’est plus soumis aux ordres donnés. Le but du jeu est de faire sortir tous les robots de la grille, en écrivant un mot dans l’alphabet A,G,D, appelé programme et que les robots interpréteront comme décrit ci-dessus.</p>
 <hr />
 <p>Voici quelques exemples :</p>
