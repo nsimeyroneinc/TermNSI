@@ -709,7 +709,7 @@ Reproduire le tableau ci-dessous sur la copie et indiquer dans chacune des cases
 
 ![](data/c19e_4.png)
 
-??? tip
+??? tip "Correction"
     P3 - P3 - P2 - P1 - P1 - P1 - P2 - P2 - P3 - P3
 
 2) On suppose maintenant que les trois processus précédents s’exécutent et utilisent une ou plusieurs ressources parmi R1, R2 et R3.
@@ -717,7 +717,7 @@ Parmi les scénarios suivants, lequel provoque un interblocage ? Justifier.
 
 ![](data/c19e_5.png){:.center width=350px}
 
-??? tip
+??? tip "Correction"
     Il s’agit du scénario 2 car nous nous retrouvons dans la situation où P1 possède R1 et attend R2 avant de pouvoir continuer et P3 possède R2 et attend R1 avant de pouvoir continuer.
     
 **Partie C**  
@@ -755,15 +755,32 @@ Pour chiffrer le message d’Alice, on réalise l’opération XOR bit à bit av
 
 Donner l’écriture binaire du message obtenu.
 
+??? tip "Correction"
+    0100 0110 => 46 en hexa => caractère F  
+    0110 0011 => 63 en hexa => caractère c  
+    donc cF
+
 **Q2.**  
 **a.** Dresser la table de vérité de l’expression booléenne suivante : 
 
 `(a XOR b) XOR b`
 
+??? tip "Correction"
+    0b 1000 1101 1011 0110
+
+    |a    |b    |(a xor b) xor b|
+    |:---:|:---:|:---:|
+    |0  |0  |0  |
+    |0  |1  |0  |
+    |1  |0  |1  |
+    |1  |1  |1  |
+
 **b.** Bob connaît la chaîne de caractères utilisée par Alice pour chiffrer le message. Quelle
 opération doit-il réaliser pour déchiffrer son message ?
 
+??? tip "Correction"  
 
+    On peut remarquer que (a xor b) xor b permet de retrouver a, donc si a correspond au message non chiffré et a xor b correspond au message chiffré, un (a xor b) xor b permet donc de retrouver le message non chiffré. Si on appelle m le message non chiffré, m’ le message chiffré et k la clé de chiffrement, un m’ xor k permettra de retrouver m
 
 ## Exercice 3
 
