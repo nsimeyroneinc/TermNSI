@@ -3,7 +3,7 @@ Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire af
 Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
 
 !!! info 
-    **Thème en cours** : [Gestion de processus](Processus/TD_Gestion_Processus.md)
+    **Thème en cours** : [Sujet BAC - Candidat Libre Juin 2021](BAC/Sujet_Libre_2_2021.md)
 
     
 
