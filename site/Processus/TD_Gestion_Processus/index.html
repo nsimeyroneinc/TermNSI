@@ -19,7 +19,7 @@
     
     
       
-        <title>TD Gestion Processus - Numériques et Sciences informatiques Terminale</title>
+        <title>TD 23 - Gestion des Processus - Numériques et Sciences informatiques Terminale</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TD Gestion Processus
+              TD 23 - Gestion des Processus
             
           </span>
         </div>
@@ -224,13 +224,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-tabs__link">
+      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-tabs__link md-tabs__link--active">
         T3 - Archi. matèrielle
       </a>
     </li>
@@ -584,15 +586,23 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
+        
+          
+        
+          
+        
+          
         
           
         
@@ -618,6 +628,58 @@
     <li class="md-nav__item">
       <a href="../../Reseaux/TD19_Routage_Correction/" class="md-nav__link">
         TD 19 - Protocole de routage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TD 23 - Gestion des Processus
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD_Gestion_Processus%20copy/" class="md-nav__link">
+        TD - Gestion des Processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crypto/crypto/" class="md-nav__link">
+        TD crypto
       </a>
     </li>
   
@@ -702,6 +764,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6">
@@ -738,6 +802,20 @@
     <li class="md-nav__item">
       <a href="../../divers/Exercice_Bac__2/" class="md-nav__link">
         TD 22 - Exercices BAC n°2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/Sujet_Libre_2_2021/" class="md-nav__link">
+        Sujet Candidat Libre 2
       </a>
     </li>
   
@@ -1682,18 +1760,13 @@ opération doit-il réaliser pour déchiffrer son message ?</p>
 <p>d'après le sujet du bac NSI 2021</p>
 <p><em>Cet exercice porte sur les systèmes d’exploitation : gestion des processus et des ressources.</em>  <br />
 <em>Les parties A et B peuvent être traitées indépendamment</em></p>
-<p><strong>Partie A</strong>  </p>
-<p><strong>Q.1)</strong> La commande ps suivie éventuellement de diverses options permet de lister les processus actifs ou en attente sur une machine.
-Sur une machine équipée du système d’exploitation GNU/Linux, la commande “ps -aef” permet d’obtenir la sortie suivante (extrait) :</p>
-<p><img alt="" src="../data/c19e_1.png" /></p>
-<p><strong>a)</strong> Quelle est la particularité de l’utilisateur “root” ?</p>
-<p><strong>b)</strong> Quel est le processus parent du processus ayant pour PID 3383</p>
+<p><strong>Partie A :</strong>  </p>
 <p>Dans un bureau d’architectes, on dispose de certaines ressources qui ne peuvent être utilisées simultanément par plus d’un processus, comme l’imprimante, la table traçante, le modem. Chaque programme, lorsqu’il s’exécute, demande l’allocation des ressources qui lui sont nécessaires. Lorsqu’il a fini de s’exécuter, il libère ses ressources.</p>
 <p><img alt="" src="../data/c19e_2.png" /></p>
-<p><strong>Q.2</strong> On appelle p1, p2 et p3 les processus associés respectivement aux programmes 1, 2 et 3.</p>
-<p><strong>a)</strong> Justifier qu'une situation d'interblocage peut se produire.</p>
-<p><strong>b)</strong> Modifier l'ordre des instructions du programme 3 pour qu'une telle situation ne puisse pas se produire.</p>
-<p><strong>Q.3</strong> Supposons que le processus p1 demande la table traçante alors qu'elle est en cours
+<p>On appelle p1, p2 et p3 les processus associés respectivement aux programmes 1, 2 et 3.</p>
+<p><strong>Q.1.</strong> Justifier qu'une situation d'interblocage peut se produire.</p>
+<p><strong>Q.2.</strong> Modifier l'ordre des instructions du programme 3 pour qu'une telle situation ne puisse pas se produire.</p>
+<p><strong>Q.3.</strong> Supposons que le processus p1 demande la table traçante alors qu'elle est en cours
 d'utilisation par le processus p3. Parmi les états suivants, quel sera l'état du processus p1
 tant que la table traçante n'est pas disponible :<br />
 a) élu<br />
@@ -1800,6 +1873,41 @@ Donner les autres commandes qui ont été exécutées à partir de cette applica
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../../Reseaux/TD19_Routage_Correction/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TD 19 - Protocole de routage" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              TD 19 - Protocole de routage
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../TD_Gestion_Processus%20copy/" class="md-footer__link md-footer__link--next" aria-label="Suivant: TD - Gestion des Processus" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              TD - Gestion des Processus
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -768,13 +768,13 @@ Dans un bureau d’architectes, on dispose de certaines ressources qui ne peuven
 
 ![](data/c19e_2.png)
 
-**Q.2** On appelle p1, p2 et p3 les processus associés respectivement aux programmes 1, 2 et 3.
+On appelle p1, p2 et p3 les processus associés respectivement aux programmes 1, 2 et 3.
 
-**a)** Justifier qu'une situation d'interblocage peut se produire.
+**Q.1.** Justifier qu'une situation d'interblocage peut se produire.
 
-**b)** Modifier l'ordre des instructions du programme 3 pour qu'une telle situation ne puisse pas se produire.
+**Q.2.** Modifier l'ordre des instructions du programme 3 pour qu'une telle situation ne puisse pas se produire.
 
-**Q.3** Supposons que le processus p1 demande la table traçante alors qu'elle est en cours
+**Q.3.** Supposons que le processus p1 demande la table traçante alors qu'elle est en cours
 d'utilisation par le processus p3. Parmi les états suivants, quel sera l'état du processus p1
 tant que la table traçante n'est pas disponible :  
 a) élu  

@@ -374,7 +374,7 @@ Dans ce cas, s'il y a $n$ processus, chacun d'eux obtient le processeur au bout 
 
 **Exemple** : priorités $(P_1, P_2, P_3, P_4) = (3, 2, 0, 1)$ où la priorité la plus forte est 0 (attention, dans certains systèmes c'est l'inverse : 0 est alors la priorité la plus faible)
 
-![w:650px center](data/ordo_prio.png){:.center}
+![w:650px center](data/ordo_prio.png)
 
 
 ---

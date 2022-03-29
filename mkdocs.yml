@@ -36,10 +36,10 @@ nav:
       - TD 19 - Protocole de routage : Reseaux/TD19_Routage_Correction.md
       - TD 23 - Gestion des Processus: Processus/TD_Gestion_Processus.md
       #- TD - Gestion des Processus: Processus/Gestion_Processus_Cours.md
-      #- TD - Gestion des Processus: Processus/TD_Gestion_Processus copy.md
+      - TD - Gestion des Processus: Processus/TD_Gestion_Processus copy.md
       #- TD 16 - Protocole de routage : Reseaux/cours.md
       #- TD 17 : Reseaux/02_Exercices.md
-    
+      - TD crypto : crypto/crypto.md
     - T5 Algo. : 
       #- TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
       - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
@@ -47,6 +47,8 @@ nav:
     - BAC 📝:
       - TD 21 Exercices BAC : divers/Exercices_Bac.md
       - TD 22 - Exercices BAC n°2 : divers/Exercice_Bac__2.md
+      - Sujet Candidat Libre 2: BAC/Sujet_Libre_2_2021.md
+
       #- TD 22 Exercices BAC 2 : divers/Exercice_Bac_2_Correction.md
     #- Retour 1ère :
     #  - TD : Revision1ere/TD_Glouton.md
@@ -54,6 +56,7 @@ nav:
     
     - E.P 💻: 
       - Déroulement : epreuve_pratique.md
+      - Consigne : divers/Consigne_EP.md
       - Sujets : divers/EpreuvePratique.md
       #- EP 2022 : BAC/EP_2022.md
   
@@ -147,10 +150,11 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
         emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.arithmatex:  # Formules en LaTeX 
         generic: true
-    
+
 
 
 plugins:
+
   - search # Inclure une barre de recherche
   - mkdocs-jupyter: # Convertir les fichiers .ipynb et .py en pages du site https://github.com/danielfrg/mkdocs-jupyter
       kernel_name: python3
@@ -166,14 +170,13 @@ plugins:
       landscape : False
       margin: {'top': '0.75cm', 'bottom': '0.75cm', 'right': '0.5cm','left': '0.5cm'}
       headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
-                        <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
+                       <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
                       </header>'
       footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#3B444B;margin:10px 20px;-webkit-print-color-adjust: exact">
                         <span>M.Meyroneinc-Condy | CCBY | 2021</span>
                         <span class="page" style="position:absolute;bottom:0;right:0;">
                          <span class="pageNumber"></span>/<span class="totalPages"></span>
-                        </span>
-                      </footer>'
+                        </span>'
   #   headerTemplate : 
   #      title
   #      date
