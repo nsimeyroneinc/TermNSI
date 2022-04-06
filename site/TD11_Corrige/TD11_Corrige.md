@@ -1,15 +1,26 @@
-<table  style="background-color: #5D8AA8; width:100%;color:white;">
-    <thead>
+---
+title : TD - Les Listes - Corrigé
+---
+
+<table  class="blueTable">
         <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°11 : Structures de données - Listes</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">Thème 1 : Structures de données</th>
+            <th>
+            Thème 1 : Structure de Données
+            </th>
         </tr>
-          <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:15pt;width:70%;">CORRIGE</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">COURS et EXERCICES</th>
-        </tr>
-    </thead>
 </table>
+
+<table  class="blueTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            07
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Les Listes - Corrigé</th>
+        </tr>
+</table>
+<br>
+
+
 
 !!! progNSI "&#x1F4D8; Le Programme en N.S.I en Terminale"
     Notre objet d’étude aujourd’hui est la structure de données linéaire liste.
@@ -24,9 +35,7 @@
         </ul>
 
 
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;"> I. La structure de donnée</span>
-</blockquote>
+## La structure de donnée
 
 Vous connaissez déjà la structure de liste puisque vous l’avez largement utilisée dans les programmes Python que vous avez pu écrire précédemment. Vous avez créé des listes, ajouté des éléments, accédé à sa longueur, accédé à un élément, etc.
 
@@ -36,9 +45,8 @@ Vous connaissez déjà la structure de liste puisque vous l’avez largement uti
     de méthodes d’accès typiques des listes. Nous nous intéressons ici à ce que les informaticiens appellent vraiment des listes.
 
 
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;"> II. Qu’est-ce qu’une liste ?
-    </span></blockquote>
+## Qu’est-ce qu’une liste ?
+  
 
 Intuitivement. Une liste est une collection finie d’éléments qui se suivent. C’est donc une structure de données linéaire.
 
@@ -52,10 +60,8 @@ Une liste peut contenir un nombre quelconque d’éléments y compris nul (la li
     </ul>
     sa taille n'est donc pas fixe.
 
-
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;">  III. Un peu d'histoire pour commencer
-    </span></blockquote>
+## Un peu d'histoire pour commencer
+  
     
 <img src="../images/mccarthy.jpg">
 
@@ -70,9 +76,8 @@ Les listes du langage LISP sont composées de deux parties :
 
 On pouvait alors construire une liste à partir d'un premier élément (sa tête) et d'une liste (sa queue).
 
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;"> IV. Obtenir une définition formelle
-    </span></blockquote>
+## Obtenir une définition formelle
+
 
 Prenons une liste comme par exemple $L_1=[5,3,8]$. C’est une liste à trois éléments (ou de longueur trois) dont le premier est 5, le deuxième 3, et le dernier 8.  
 Une façon de décrire cette liste consiste à dire que
@@ -111,10 +116,8 @@ Une liste d’éléments d’un ensemble E est
 Les listes peuvent donc être vues comme __`des structures de données récursives`__
 
 
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;">  V. L'interface minimale du type abstrait <strong><em>Liste</em></strong>
-    </span></blockquote>
-
+## L'interface minimale du type abstrait **_Liste_**
+   
 Le type abstrait `Liste` peut alors être défini par l'*interface* suivante contenant **5 opérations primitives** :
 
 * **Des constructeurs** :
@@ -140,9 +143,7 @@ Dans ce cas,
 On sait depuis les travaux de Mac Carthy sur le langage LISP, qu'avec ces 5 opérations on peut reconstruire toutes les opérations sur les listes (accéder à un élément, modifier un élément, ajouter/supprimer un élément, calculer la longueur, tester l'appartenance, etc.)
 </blockquote>
 
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;"> VI. Liste vs tableaux
-    </span></blockquote>
+## Liste vs tableaux
 
 ### &#9999; Qu’est ce qui différencie les listes des tableaux ?
 
@@ -162,9 +163,9 @@ Accéder à un élèment par son indice est lent (il faut suivre tous les liens)
 
 
 
-##  &#9999; Insertion d'un élèment :
+###  &#9999; Insertion d'un élèment :
 
-### Dans un tableau  
+#### Dans un tableau  
 
 **Tableau de taille 4 :**  
 Pour nsérer un élèment il faut recréer un tableau  de taille supérieure
@@ -175,7 +176,7 @@ Pour nsérer un élèment il faut recréer un tableau  de taille supérieure
 
 <img src="../images/tableauTaille5.png">
 
-### Dans une liste :  
+#### Dans une liste :  
 Pour insérer un élèment, c'est facile !  
 
 <img src="../images/ListeInsertion.png">
@@ -191,9 +192,8 @@ C'est beaucoup plus rapide que pour les tableaux.
 
 <img src="../images/ListeInsertion02.png">
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">  Activité 1 : Utiliser une interface</span>
-    </blockquote>
+## Activité 1 : Utiliser une interface
+
 
 On rappelle que le type abstrait `Liste` peut être défini par l'*interface* suivante contenant 5 opérations primitives :
 
@@ -237,10 +237,9 @@ L4=construit(5, L3)
 
 
 
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> VII. Implémentations possibles</span></blockquote>
+#### Implémentations possibles
 
-## &#9999; VII.1. Une implémentation avec des couples en Python
+#### &#9999; Une implémentation avec des couples en Python
 
 Cette première implémentation est basée sur des paires (couples) qui comportent chacune un élément et la suite de la liste, qui elle-même peut être une paire... Elle réutilise le type `tuple` de Python.
 
@@ -248,8 +247,7 @@ Cette première implémentation est basée sur des paires (couples) qui comporte
 > On définit ainsi notre structure de données de manière **_récursive_** pour respecter la philosophie du langage LISP.
 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">   Activité 2 : Écriture de quelques opérations dérivées</span></blockquote>  
+##  Activité 2 : Écriture de quelques opérations dérivées
     
 On considère toujours la même interface (que dans l’activité 1) pour le type abstrait de données Liste.
 Voici une implémentation utilisant des couples, à compléter :
@@ -332,7 +330,7 @@ construit(5, construit(3, construit(8, listevide())))
 nécessite la construction 3 paires intermédiaires qui sont construites de la plus imbriquée
 (liste vide) à la moins imbriquée. On peut visualiser facilement cela avec Python tutor.
 
-## &#9999; Partie A : Utilisation des opérations
+#### &#9999; Partie A : Utilisation des opérations
 Question 1 : Utilisez cette implémentation pour vérifier vos réponses à l’activité 1.
 
 
@@ -357,7 +355,7 @@ print(L4)
     (5, (-2, (0, None)))
 
 
-## &#9999; Partie B : Ecriture d’opérations dérivées
+#### &#9999; Partie B : Ecriture d’opérations dérivées
 On a vu dans le cours qu’il est possible de construire toutes les opérations à partir des 5 opérations
 primivites données ci-dessus.
 Par exemple, pour obtenir le dernier élément d’une liste, on peut implémenter l’opération dernier(L)
@@ -465,16 +463,14 @@ lire(L1,5)
 
 
 
-## &#9999; VII.2. Une implémentation avec le type list de Python
+#### &#9999; Une implémentation avec le type list de Python
 Il est possible d’implémenter les 5 opérations définissant le type abstrait Liste en utilisant le type pré-
 défini list de Python. Les fonctions sont très ressemblantes à celles utilisant les couples.  
 Cela fait l’objet des activités 3 et 4 qui proposent deux implémentations différentes : 
 - la première avec copie des listes intermédiaires (comme l’implémentation avec les couples) 
 - la seconde avec modification de la liste en place.
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">  Activité 3 : Une implémentation avec le type list de Python</span>
-    </blockquote> 
+## Activité 3 : Une implémentation avec le type list de Python 
     
 On veut maintenant implémenter le type abstrait Liste en utilisant le type list de Python.  
 **Question 1 :** Utilisez la documentation officielle pour compléter l’implémentation du type Liste avec

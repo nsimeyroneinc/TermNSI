@@ -17,7 +17,7 @@ nav:
 
     #Struct. de données
     - T1 - Struct. de données :  
-      - Les dictionnaires : StructureDonnees/TP07_Dictionnaires_Corrige.md
+      - TD 7 - Les dictionnaires : StructureDonnees/TP07_Dictionnaires_Corrige.md
       - TP 11 - Les Listes : TD11_Les_Listes.md
       - TP 11 - Les Listes Corrigé : TD11_Corrige.md
      # - TP 12 - Liste Chainée : TD12_ListeChainee.md
@@ -43,11 +43,16 @@ nav:
     - T5 Algo. : 
       #- TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
       - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
+      - TD Graphe : Graphe/TD_Graphe.md
+      - TD Graphe - Exercices : Graphe/TD_Graphe_Exercices.md
+      - TD Graphe - Parcours : Graphe/TD_Graphe_Parcours.md
     
     - BAC 📝:
       - TD 21 Exercices BAC : divers/Exercices_Bac.md
       - TD 22 - Exercices BAC n°2 : divers/Exercice_Bac__2.md
       - Sujet Candidat Libre 2: BAC/Sujet_Libre_2_2021.md
+      - Sujet Candidat Libre 2: BAC/Sujet_Libre_2_2021_cor.md
+      - Sujet Polynésie 2 : BAC/NSI-2021-polynesie-2-sujet-officiel.pdf
 
       #- TD 22 Exercices BAC 2 : divers/Exercice_Bac_2_Correction.md
     #- Retour 1ère :
@@ -106,12 +111,12 @@ theme:
     features:
         - navigation.instant
         - navigation.tabs
-        - navigation.expand
+        #- navigation.expand
         - navigation.top
         - navigation.sections
         - navigation.indexes
         - navigation.tracking
-        - toc.integrate
+        #- toc.integrate
         - header.autohide
         - content.code.annotate
      

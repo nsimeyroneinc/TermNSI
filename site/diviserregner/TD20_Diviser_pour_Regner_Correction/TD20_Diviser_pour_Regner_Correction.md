@@ -1,28 +1,33 @@
 ---
-title: TD n°20 - Diviser pour régner - correction
+title: TD n°20 - Diviser pour régner
 date: 2021/2022
 authors: M Meyroneinc-Condy
 ---
 
-
-<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:750px;">
+<table  class="blueTable">
         <tr>
-            <th colspan=2; width="750px"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            <th>
             Thème 5 : Algorithmique
             </th>
         </tr>
+</table>
+<br>
+<table  class="blueTable">
         <tr >
-            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:50pt;">
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
             20
             </th>
-            <th style="text-align:center;border:none;font-size:25pt;">TD : Diviser pour régner</th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Diviser pour régner</th>
         </tr>
 </table>
+<br>
+
+
 
 
 ![](data/split.svg){:.center width=45%}
 
-## I. Le principe
+## Le principe
 
 !!! savoir "Diviser pour régner"
     La stratégie « diviser pour régner » consiste à
@@ -34,7 +39,7 @@ authors: M Meyroneinc-Condy
 
     3. **Combiner :** Construire la solution au problème initial à partir des solutions des sous-problèmes.
 
-## II. Diviser pour régner : Palindromes
+## Diviser pour régner : Palindromes
 
 !!! exo "Palindromes"
     Une chaîne est un palindrome si elle peut se lire de la même manière dans les deux sens, de gauche à droite et de droite à gauche. Par exemple :  
@@ -124,7 +129,7 @@ La fonction est_palindrome2 est appelée une **fonction d’interface** qui perm
 !!! fabquestion "Question 9."
     Vérifiez avec Python tutor qu’avec cette version, il n’y a qu’une chaîne ch à mémoriser (celle de départ). On obtient un algorithme avec un coût mémoire inférieur à la première version.
 
-## III. Le tri fusion
+## Le tri fusion
 
 ### Principe
 
@@ -154,7 +159,7 @@ allowfullscreen></iframe><br>
 <i> Une chorégraphie du tri fusion </i>
 </div>
 
-## Code correspondant
+### Code correspondant
 
 Voici comment coder le tri fusion :
 
@@ -305,13 +310,9 @@ Notons $n$ la taille de la liste à trier et considérons comme seule *opératio
         ```
 
 
-<blockquote style="background-color: #87A96B border-left: 7px solid rgb(0 0 0);"> 
-<span style="font-size:30px; color:white;"> V. Exercices BAC </span></blockquote>
+## Exercices BAC 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet n°1 : France 2021
-</span></blockquote>
-
+!!! ugli-exo "Sujet n°1 : France 2021"
 
 _Cet exercice porte sur l’algorithme de tri fusion, qui s’appuie sur la méthode dite de « diviser pour
 régner »._
@@ -458,15 +459,13 @@ On s’intéresse désormais à différentes fonctions appelées par tri_fusion,
         ```
 
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet n°2 : BAC Polynésie 2021
-</span></blockquote>
+!!! ugli-exo "Sujet n°2 : BAC Polynésie 2021"
 
 
 
 _Cet exercice traite principalement du thème « algorithmique, langages et programmation ». Le but est de comparer le tri par insertion (l'un des algorithmes étudiés en 1ère NSI pour trier un tableau) avec le tri fusion (un algorithme qui applique le principe de « diviser pour régner »)._
 
-## Partie A : Manipulation d’une liste en Python  
+### Partie A : Manipulation d’une liste en Python  
 
 !!! fabquestion "Question A.1"
 	=== "Enoncée"
@@ -493,7 +492,7 @@ _Cet exercice traite principalement du thème « algorithmique, langages et prog
             print(notes[i])
         ```
 
-## Partie B : Tri par insertion  
+### Partie B : Tri par insertion  
 
 Le tri par insertion est un algorithme efficace qui s'inspire de la façon dont on peut trier une poignée de cartes. On commence avec une seule carte dans la main gauche (les autres cartes sont en tas sur la table) puis on pioche la carte suivante et on l'insère au bon endroit dans la main gauche.
 
@@ -552,7 +551,7 @@ On s'interroge sur ce qui s’est passé lors de l’exécution de tri_insertion
         >>> [7, 8, 14, 18, 12, 9, 17, 3]
         ```
 
-## Partie C : Tri fusion
+### Partie C : Tri fusion
 
 L'algorithme de tri fusion suit le principe de « diviser pour régner ».  
 
@@ -620,7 +619,7 @@ Elle prend quatre arguments : la liste qui est en train d'être triée, l'indice
     === "Solution"
         permet d’importer la fonction floor() du module math utilisée à la ligne 7
 
-## Partie D : Comparaison du tri par insertion et du tri fusion
+### Partie D : Comparaison du tri par insertion et du tri fusion
 
 Voici une illustration des étapes d’un tri effectué sur la liste `[3, 41, 52, 26, 38, 57, 9, 49]`.
 
@@ -649,9 +648,8 @@ Voici une illustration des étapes d’un tri effectué sur la liste `[3, 41, 52
         - Le tri par insertion utilise 2 boucles imbriquées, soit dans le pire des cas ~ $1/2n(n+1)$ opérations.  
         - Le tri par fusion, divise la liste à trier par 2 pour chaque itérations, soit ~ $log_2 n$ opérations.
 
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">Sujet n°3 : FRANCE CANDIDAT LIBRE SUJET 1
-</span></blockquote>
+!!! ugli-exo "Sujet n°3 : FRANCE CANDIDAT LIBRE SUJET 1"
+
 
 
 _Cet exercice traite de manipulation de tableaux, de récursivité et du paradigme « diviser pour régner »._  
@@ -682,7 +680,7 @@ Questions préliminaires
         À l’indice 2 du tableau on trouve 3, à l’indice 3 on trouve 7.  
         Nous avons 2 < 3 et 3 < 7, nous n’avons donc pas d’inversion
 
-# Partie A : Méthode itérative
+### Partie A : Méthode itérative
 
 Le but de cette partie est d’écrire une fonction itérative nombre_inversion qui renvoie le nombre d’inversions dans un tableau. Pour cela, on commence par écrire une fonction fonction1 qui sera ensuite utilisée pour écrire la fonction nombre_inversion.
 
@@ -745,7 +743,7 @@ Le but de cette partie est d’écrire une fonction itérative nombre_inversion 
     === "Solution"
         L’ordre de grandeur de la complexité en temps de l’algorithme est $O(n^2)$
 
-# Partie B : Méthode récursive
+### Partie B : Méthode récursive
 
 Le but de cette partie est de concevoir une version récursive de la fonction nombre_inversion.  
 On définit pour cela des fonctions auxiliaires.

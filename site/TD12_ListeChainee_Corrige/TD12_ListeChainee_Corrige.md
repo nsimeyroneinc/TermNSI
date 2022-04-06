@@ -1,15 +1,26 @@
-<table  style="background-color: #5D8AA8; width:100%;color:white;">
-    <thead>
+---
+title : TD - Implémentation d'une *liste* par une liste chaînée
+---
+
+<table  class="blueTable">
         <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°12 : Implémentation d'une *liste* par une liste chaînée</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">Thème 1 : Structures de données</th>
+            <th>
+            Thème 1 : Structure de Données
+            </th>
         </tr>
-          <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:15pt;width:70%;">CORRIGE</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">EXERCICES</th>
-        </tr>
-    </thead>
 </table>
+<br>
+<table  class="blueTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            12
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Implémentation d'une *liste* par une liste chaînée</th>
+        </tr>
+</table>
+<br>
+
+
 
 
 On propose dans cette activité d'implémenter le type abstrait *liste* par ce qu'on appelle une liste chaînée. Nous utiliserons le paradigme objet.
@@ -33,7 +44,7 @@ Chaque cellule contient deux informations :
 
 Dans l'exemple proposé, le premier élément est 12, le second est 14, ..., le dernier est 22 car le lien vers la cellule suivante pointe vers `None` qui marque la fin de la liste.
 
-# &#x27A1; La classe `Cellule`
+## &#x27A1; La classe `Cellule`
 Commençons par créer une cellule en utilisant la programmation objet. On doit donc créer une classe `Cellule` possédant deux attributs : 
  
 - *valeur* qui est la valeur de la cellule  
@@ -83,9 +94,9 @@ On peut visualiser la construction de la chaîne avec [Python tutor](http://www.
 
 > **Remarque** : Pour le moment on a utilisé le terme *chaine* et non le terme *liste* car la classe `Cellule` ne permet pas de représenter une liste vide, qui serait une liste sans aucune cellule... On peut voir une *chaine* comme une liste non vide, c'est-à-dire comportant au moins une cellule.
 
-# &#x27A1; Eciture de quelques fonctions
+## &#x27A1; Eciture de quelques fonctions
 
-## Longueur d'une chaine
+### Longueur d'une chaine
 
 Pour déterminer la longueur d'une chaine, il suffit de parcourir chaque cellule, jusqu'à trouver une cellule dont l'attribut `suivante` pointe vers `None`. Si la chaine vaut `None` au départ, elle représente une liste vide qui a pour longueur 0.
 
@@ -142,7 +153,7 @@ assert longueur(None)==0
 print("longueur :", longueur(chaine))
 ```
 
-## Eléments d'une chaine
+### Eléments d'une chaine
 
 Il peut être intéressant de pouvoir afficher ou renvoyer tous les éléments d'une chaine. Cela permet notamment de vérifier des choses.
 
@@ -230,7 +241,7 @@ import doctest
 doctest.testmod() # verbose = True pour plus de détails
 ```
 
-## Accès au i-ème élément d'une chaine
+### Accès au i-ème élément d'une chaine
 
 On souhaite maintenant écrire une fonction `ieme_element(chaine, i)` permettant de renvoyer le `i`-ème élément de la `chaine`. **Préconditions** : `chaine` est non vide (au moins une cellule) et `i` est compris entre 0 et `longueur(chaine)-1`.
 
@@ -272,7 +283,7 @@ On souhaite maintenant écrire une fonction `ieme_element(chaine, i)` permettant
 ieme_element(chaine,2)
 ```
 
-# &#x27A1; La classe `ListeChainee`
+## &#x27A1; La classe `ListeChainee`
 
 La classe `Cellule` ne permet pas d'implémenter à elle seule le type abstrait *liste* car rien n'est prévu pour représenter une liste vide. On va utiliser cette classe pour créer une classe `ListeChainee` qui implémente ce type abstrait. Il suffira de faire pointer la liste vers le premier élément de la chaîne (de cellules) ou vers `None` pour la liste vide.
 
@@ -285,15 +296,15 @@ Les opérations à implémenter dans la classe `ListeChainee` sont :
 - accès à la queue de la liste : `reste(self)`
 
 
-## Attributs
+### Attributs
 
 On choisit de définir un seul attribut `tete`, qui peut être soit une référence vers la première `Cellule` d'une chaîne (de cellules), soit la valeur particulière `None` pour représenter une liste vide. On définit ainsi une *liste chaînée*.
 
-## Méthodes
+### Méthodes
 
 On veut implémenter les 5 opérations primitives d'une liste (données en début de document).
 
-## Implémentation
+### Implémentation
 
 - La méthode d'initialisation `__init__` crée une liste vide en initialisant l'attribut `tete` à `None`.
 - La méthode `ajouter_en_tete` permet d'ajouter un élement en première position.
@@ -361,7 +372,7 @@ print("le deuxième élément est :", L.reste().premier()) # le 2ème est le pre
 print("le troisième élément est :", L.reste().reste().premier()) # le 3ème est le premier du reste du reste
 ```
 
-## Ajout de quelques méthodes
+### Ajout de quelques méthodes
 
 On souhaite maintenant utiliser les fonctions `longueur`, `liste_elements` et `ieme_element` pour définir trois nouvelles méthodes à notre classe `ListeChainee`.
 
@@ -447,7 +458,7 @@ print("troisième élément :", L1.lire(2))
 print("quatrième élément :", L1.lire(3))
 ```
 
-## Utilisation de méthodes spéciales
+### Utilisation de méthodes spéciales
 
 On peut utiliser les méthodes spéciales `__len__` et `__getitem__` à la place des méthodes `taille` et `lire` afin d'utiliser la syntaxe habituelle de Python en écrivant :
 - `len(L)` pour obtenir la longueur d'une liste `L` au lieu de `L.taille()`
@@ -567,7 +578,7 @@ print(len(L1))
 print(L1[2])
 ```
 
-## Supprimer en tête et ajouter en queue
+### Supprimer en tête et ajouter en queue
 
 Nous terminons par l'écriture de deux méthodes qui peuvent se révéler utiles (pour la suite de l'année). Il s'agit des méthodes :
 
@@ -746,18 +757,18 @@ print(L)
     14 -> 8 -> 7 -> 19 -> 22 -> 5
 
 
-# &#x27A1; Création d'un module `listechainee`
+## &#x27A1; Création d'un module `listechainee`
 
 Créez un module *listechainee.py* qui peut être importé dans un autre programme Python et qui permet de manipuler la classe `ListeChainee` ainsi créée (avec toutes les méthodes). *Attention à ne rien oublier, la classe `ListeChainee` fait appel à des fonctions et classe externes.* 
 
-# &#x27A1; Bilan
+## &#x27A1; Bilan
 
 !!! abstract "**BILAN**"
     - On a implémenté une classe `ListeChainee` qui implémente le type abstrait *liste* avec des listes chaînées qui sont des chaînes de plusieurs cellules de la classe `Cellule`. Chaque cellule possède une valeur et une référence vers la cellule suivante. Les objets de la classe `ListeChainee` pointent vers la première cellule d'une chaîne, ou vers `None` pour désigner une liste vide.
     - L'intérêt d'une liste chaînée, par rapport à une implémentation avec un tableau dynamique (`list` Python), se trouve dans les opérations d'ajout et suppression en début de liste (ajout, suppression) qui sont moins coûteuses car ne nécessitent pas de décaler tous les éléments qui suivent.
     - La création du module `listechainee` permet de manipuler des listes (implémentées par des listes chaînées) en important la classe `ListeChainee` du module. Une fois importée, cette classe masque totalement l'implémentation avec des cellules formant des listes chaînées. Néanmoins, le savoir permet de privilégier certaines opérations moins coûteuses qu'avec une implémentation avec des tableaux redimensionnables (`list` Python).
 
-# &#x27A1; Pour aller plus loin
+## &#x27A1; Pour aller plus loin
 
 On pourrait programmer pour notre classe `ListeChainee`, les autres opérations disponibles pour le type prédéfini `list` de Python. Par exemple :
 

@@ -1,18 +1,24 @@
-<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+---
+title : France Septembre 2021
+---
+
+<table  class="greenTable">
         <tr>
-            <th style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
-            Thème  : Sujet écrit BAC
+            <th>
+            Thème  : Epreuve Ecrite BAC
             </th>
         </tr>
 </table>
-<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+<br>
+<table  class="greenTable">
         <tr >
-            <th width="25%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:30pt;">
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
             BAC
             </th>
-            <th  width="75%"; style="text-align:center;border:none;font-size:20pt;">Candidat Libre Juin 2021 - Sujet 2</th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">France Septembre 2021</th>
         </tr>
 </table>
+<br>
 
 
 <div align="center">Durée de l’épreuve : 3 heures 30</div>
@@ -21,7 +27,7 @@
 <div align="center">L’usage de la calculatrice n’est pas autorisé.  </div>
 
 Dès que ce sujet vous est remis, assurez-vous qu’il est complet.  
-Ce sujet comporte 13 pages numérotées de 1/13 à 13/13.  
+
 Le candidat traite au choix 3 exercices parmi les 5 exercices proposés.  
 Chaque exercice est noté sur 4 points.
 
@@ -44,7 +50,7 @@ _Les parties A et B sont indépendantes._
 !!! fabquestion "Q.2."
     On considère le schéma réseau de l’entreprise Lambda :   
     
-    ![](data/sujet_2_2021_Ex01.png){:center width=450px}  
+    ![](data/sujet_2_2021_Ex01.png){:.center width=450px}  
     
     Parmi les quatre propositions suivantes (Routeur, Commutateur (Switch), Contrôleur WIFI et Serveur), préciser celle qui correspond à :  
     a) L’élément A  
@@ -53,14 +59,14 @@ _Les parties A et B sont indépendantes._
 !!! fabquestion "Q.3."
     En reprenant le schéma de la question 2. et le tableau d’adressage du réseau de l'entreprise Lambda, recopier sur votre copie et compléter la ligne du tableau du poste 3 :  
 
-    ![](data/Sujet_2_2021_Ex01_Q3.png){:center}
+    ![](data/Sujet_2_2021_Ex01_Q3.png){:.center}
 
 
 **Partie B**  
 
 L’extrait de la table de routage d’un routeur R1 est donné ci-dessous :  
 
-![](data/Sujet_2_2021_Exd1_B1.png){:center}
+![](data/Sujet_2_2021_Exd1_B1.png){:.center}
 
 !!! fabquestion "Q.1."
     Indiquer sur votre copie les adresses IP du(des) réseau(x) directement connectés à ce routeur.
@@ -76,11 +82,11 @@ L’extrait de la table de routage d’un routeur R1 est donné ci-dessous :
 !!! fabquestion "Q.3."
     On considère un réseau selon le schéma ci-dessous.  
 
-    ![](data/Sujet_0_2021_Ex1_B3.png){:center}
+    ![](data/Sujet_0_2021_Ex1_B3.png){:.center}
     
-    Recopier sur votre copie et compléter la table de routage simplifiée du Routeur1 (R1) (cidessous) en prenant comme métrique le nombre de routeurs à « traverser » avant d’atteindre le réseau de la machine destinataire.
+    Recopier sur votre copie et compléter la table de routage simplifiée du Routeur1 (R1) (ci-dessous) en prenant comme métrique le nombre de routeurs à « traverser » avant d’atteindre le réseau de la machine destinataire.
 
-    ![](data/Sujet_2_2021_Ex1_B3_table.png){:center}
+    ![](data/Sujet_2_2021_Ex1_B3_table.png){:.center}
 
 
 
@@ -104,6 +110,7 @@ liaisonsJoueur1 = [ ["Toulouse","Muret"],  ["Toulouse","Montauban"], ["Gaillac",
 ```
 **Remarque :** Seules les liaisons directes existent, par exemple `["Toulouse","Muret"]` ou `["Muret","Toulouse"]`.  
 Par contre, le tableau `["Toulouse","Mazamet"]` n'existe pas, puisque la ligne Toulouse-Mazamet passe par Castres.  
+
 - Dictionnaire associé à un joueur : On code la liste des villes et des trajets possédée par un joueur en utilisant un **dictionnaire de tableaux**. Chaque **clef de ce dictionnaire** est une ville de départ, et chaque **valeur** est un **tableau** contenant les villes d'arrivée possibles en fonction des liaisons possédées par le joueur.   
 Le dictionnaire de tableaux du joueur 1 est donné ci-dessous : 
 
@@ -126,8 +133,8 @@ DictJoueur1 = {
 
 !!! fabquestion "Q.2."
     Cette question concerne le joueur n°2 (Rappel : les liaisons possédées par le joueur n°2 sont représentées par un rectangle blanc dans l’**annexe 2 de l’exercice 2**).  
-    a) Donner le tableau liaisonsJoueur2, des liaisons possédées par le joueur n°2.  
-    b) Recopier et compléter le dictionnaire suivant, associé au joueur n°2 :  
+    **2.a)** Donner le tableau liaisonsJoueur2, des liaisons possédées par le joueur n°2.  
+    **2.b)** Recopier et compléter le dictionnaire suivant, associé au joueur n°2 :  
     ```python
     DictJoueur2 = { "Toulouse":["Castres","Castelnaudary"],
        ...
@@ -156,9 +163,9 @@ DictJoueur1 = {
         return Dict
     ```
     
-    a) Écrire sur votre copie un assert dans la fonction `construireDict` qui permet de vérifier que la `listeLiaisons` n’est pas vide.  
-    b) Sur votre copie, donner le résultat de cette fonction ayant comme argument la variable `liaisonsJoueur1` donnée dans l’énoncé et expliquer en quoi cette fonction ne répond que partiellement à la demande.  
-    c) La fonction `construireDict`, définie ci-dessus, est donc partiellement inexacte.  
+    **3.a)** Écrire sur votre copie un assert dans la fonction `construireDict` qui permet de vérifier que la `listeLiaisons` n’est pas vide.  
+    **3.b)** Sur votre copie, donner le résultat de cette fonction ayant comme argument la variable `liaisonsJoueur1` donnée dans l’énoncé et expliquer en quoi cette fonction ne répond que partiellement à la demande.  
+    **3.c)** La fonction `construireDict`, définie ci-dessus, est donc partiellement inexacte.  
     Compléter la fonction `construireDict` pour qu’elle génère bien l’ensemble du dictionnaire de tableaux correspondant à la liste de liaisons données en argument. À l’aide des numéros de lignes, on précisera où est inséré ce code.
 
 
@@ -214,6 +221,7 @@ _Principaux thèmes abordés : structure de données (programmation objet) et la
 Une entreprise fabrique des yaourts qui peuvent être soit nature (sans arôme), soit aromatisés (fraise, abricot ou vanille).  
 
 Pour pouvoir traiter informatiquement les spécificités de ce produit, on va donc créer une classe Yaourt qui possèdera un certain nombre d’attributs :  
+
 - Son genre : nature ou aromatisé  
 - Son arôme : fraise, abricot, vanille ou aucun  
 - Sa date de durabilité minimale (DDM) exprimée par un entier compris entre 1 et 365 (on ne gère pas les années bissextiles). Par exemple, si la DDM est égale à 15, la date de durabilité minimale est le 15 janvier.  

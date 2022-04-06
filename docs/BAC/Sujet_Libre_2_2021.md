@@ -1,18 +1,24 @@
-<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+---
+title : France Septembre 2021
+---
+
+<table  class="greenTable">
         <tr>
-            <th style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
-            Thème  : Sujet écrit BAC
+            <th>
+            Thème  : Epreuve Ecrite BAC
             </th>
         </tr>
 </table>
-<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+<br>
+<table  class="greenTable">
         <tr >
-            <th width="25%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:30pt;">
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
             BAC
             </th>
-            <th  width="75%"; style="text-align:center;border:none;font-size:20pt;">Candidat Libre Juin 2021 - Sujet 2</th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">France Septembre 2021</th>
         </tr>
 </table>
+<br>
 
 
 <div align="center">Durée de l’épreuve : 3 heures 30</div>
@@ -21,7 +27,7 @@
 <div align="center">L’usage de la calculatrice n’est pas autorisé.  </div>
 
 Dès que ce sujet vous est remis, assurez-vous qu’il est complet.  
-Ce sujet comporte 13 pages numérotées de 1/13 à 13/13.  
+
 Le candidat traite au choix 3 exercices parmi les 5 exercices proposés.  
 Chaque exercice est noté sur 4 points.
 

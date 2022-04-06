@@ -19,7 +19,7 @@
     
     
       
-        <title>TP 11 - Les Listes Corrigé - Numériques et Sciences informatiques Terminale</title>
+        <title>TD - Les Listes - Corrigé - Numériques et Sciences informatiques Terminale</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quest-ce-qui-differencie-les-listes-des-tableaux" class="md-skip">
+        <a href="#la-structure-de-donnee" class="md-skip">
           Aller au contenu
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TP 11 - Les Listes Corrigé
+              TD - Les Listes - Corrigé
             
           </span>
         </div>
@@ -350,9 +350,7 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Numériques et Sciences informatiques Terminale" class="md-nav__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
       
@@ -431,7 +429,7 @@
   
     <li class="md-nav__item">
       <a href="../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-nav__link">
-        Les dictionnaires
+        TD 7 - Les dictionnaires
       </a>
     </li>
   
@@ -488,30 +486,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quest-ce-qui-differencie-les-listes-des-tableaux" class="md-nav__link">
-    &#9999; Qu’est ce qui différencie les listes des tableaux ?
+  <a href="#la-structure-de-donnee" class="md-nav__link">
+    La structure de donnée
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#insertion-dun-element" class="md-nav__link">
-    &#9999; Insertion d'un élèment :
+  <a href="#quest-ce-quune-liste" class="md-nav__link">
+    Qu’est-ce qu’une liste ?
   </a>
   
-    <nav class="md-nav" aria-label="&#9999; Insertion d'un élèment :">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-peu-dhistoire-pour-commencer" class="md-nav__link">
+    Un peu d'histoire pour commencer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtenir-une-definition-formelle" class="md-nav__link">
+    Obtenir une définition formelle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linterface-minimale-du-type-abstrait-liste" class="md-nav__link">
+    L'interface minimale du type abstrait Liste
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liste-vs-tableaux" class="md-nav__link">
+    Liste vs tableaux
+  </a>
+  
+    <nav class="md-nav" aria-label="Liste vs tableaux">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dans-un-tableau" class="md-nav__link">
-    Dans un tableau
+  <a href="#quest-ce-qui-differencie-les-listes-des-tableaux" class="md-nav__link">
+    &#9999; Qu’est ce qui différencie les listes des tableaux ?
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dans-une-liste" class="md-nav__link">
-    Dans une liste :
+  <a href="#insertion-dun-element" class="md-nav__link">
+    &#9999; Insertion d'un élèment :
   </a>
   
 </li>
@@ -522,29 +548,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vii1-une-implementation-avec-des-couples-en-python" class="md-nav__link">
-    &#9999; VII.1. Une implémentation avec des couples en Python
+  <a href="#activite-1-utiliser-une-interface" class="md-nav__link">
+    Activité 1 : Utiliser une interface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#partie-a-utilisation-des-operations" class="md-nav__link">
-    &#9999; Partie A : Utilisation des opérations
+  <a href="#activite-2-ecriture-de-quelques-operations-derivees" class="md-nav__link">
+    Activité 2 : Écriture de quelques opérations dérivées
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#partie-b-ecriture-doperations-derivees" class="md-nav__link">
-    &#9999; Partie B : Ecriture d’opérations dérivées
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vii2-une-implementation-avec-le-type-list-de-python" class="md-nav__link">
-    &#9999; VII.2. Une implémentation avec le type list de Python
+  <a href="#activite-3-une-implementation-avec-le-type-list-de-python" class="md-nav__link">
+    Activité 3 : Une implémentation avec le type list de Python
   </a>
   
 </li>
@@ -617,7 +636,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -685,7 +704,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -785,10 +804,16 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
+        
+          
+        
+          
+        
+          
         
           
         
@@ -820,6 +845,48 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Graphe/TD_Graphe/" class="md-nav__link">
+        TD Graphe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Graphe/TD_Graphe_Exercices/" class="md-nav__link">
+        TD Graphe - Exercices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Graphe/TD_Graphe_Parcours/" class="md-nav__link">
+        TD Graphe - Parcours
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -837,10 +904,12 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
+        
+          
         
           
         
@@ -904,6 +973,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BAC/Sujet_Libre_2_2021_cor/" class="md-nav__link">
+        Sujet Candidat Libre 2
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -921,10 +1004,12 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       
       
+        
+          
         
           
         
@@ -964,6 +1049,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../divers/Consigne_EP/" class="md-nav__link">
+        Consigne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../divers/EpreuvePratique/" class="md-nav__link">
         Sujets
       </a>
@@ -989,7 +1088,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       
       
@@ -1121,7 +1220,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
@@ -1184,6 +1283,113 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#la-structure-de-donnee" class="md-nav__link">
+    La structure de donnée
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quest-ce-quune-liste" class="md-nav__link">
+    Qu’est-ce qu’une liste ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-peu-dhistoire-pour-commencer" class="md-nav__link">
+    Un peu d'histoire pour commencer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtenir-une-definition-formelle" class="md-nav__link">
+    Obtenir une définition formelle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linterface-minimale-du-type-abstrait-liste" class="md-nav__link">
+    L'interface minimale du type abstrait Liste
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liste-vs-tableaux" class="md-nav__link">
+    Liste vs tableaux
+  </a>
+  
+    <nav class="md-nav" aria-label="Liste vs tableaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quest-ce-qui-differencie-les-listes-des-tableaux" class="md-nav__link">
+    &#9999; Qu’est ce qui différencie les listes des tableaux ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertion-dun-element" class="md-nav__link">
+    &#9999; Insertion d'un élèment :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activite-1-utiliser-une-interface" class="md-nav__link">
+    Activité 1 : Utiliser une interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activite-2-ecriture-de-quelques-operations-derivees" class="md-nav__link">
+    Activité 2 : Écriture de quelques opérations dérivées
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activite-3-une-implementation-avec-le-type-list-de-python" class="md-nav__link">
+    Activité 3 : Une implémentation avec le type list de Python
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="TD11_Corrige.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
@@ -1197,19 +1403,23 @@
 
   <h1>TP 11 - Les Listes Corrigé</h1>
 
-<table  style="background-color: #5D8AA8; width:100%;color:white;">
-    <thead>
+<table  class="blueTable">
         <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:20pt;width:70%;">TD n°11 : Structures de données - Listes</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">Thème 1 : Structures de données</th>
+            <th>
+            Thème 1 : Structure de Données
+            </th>
         </tr>
-          <tr>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:15pt;width:70%;">CORRIGE</th>
-            <th style="text-align:center;border:solid;border-width:1px;font-size:12pt;width:30%">COURS et EXERCICES</th>
-        </tr>
-    </thead>
 </table>
 
+<table  class="blueTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            07
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Les Listes - Corrigé</th>
+        </tr>
+</table>
+<p><br></p>
 <div class="admonition prognsi">
 <p class="admonition-title">&#x1F4D8; Le Programme en N.S.I en Terminale</p>
 <p>Notre objet d’étude aujourd’hui est la structure de données linéaire liste.
@@ -1222,20 +1432,14 @@ Les objectifs de ce travail sont :</p>
     <li> de comprendre que ce qui est appelé \textbf{List} en Python n’est pas une liste au sens commun du terme. </li>
     </ul></p>
 </div>
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;"> I. La structure de donnée</span>
-</blockquote>
-
+<h2 id="la-structure-de-donnee">La structure de donnée<a class="headerlink" href="#la-structure-de-donnee" title="Permanent link">⚓︎</a></h2>
 <p>Vous connaissez déjà la structure de liste puisque vous l’avez largement utilisée dans les programmes Python que vous avez pu écrire précédemment. Vous avez créé des listes, ajouté des éléments, accédé à sa longueur, accédé à un élément, etc.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Liste Python</p>
 <p>Python abuse du terme liste qu’il utilise pour ce qui sont des tableaux dynamiques munis
 de méthodes d’accès typiques des listes. Nous nous intéressons ici à ce que les informaticiens appellent vraiment des listes.</p>
 </div>
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;"> II. Qu’est-ce qu’une liste ?
-    </span></blockquote>
-
+<h2 id="quest-ce-quune-liste">Qu’est-ce qu’une liste ?<a class="headerlink" href="#quest-ce-quune-liste" title="Permanent link">⚓︎</a></h2>
 <p>Intuitivement. Une liste est une collection finie d’éléments qui se suivent. C’est donc une structure de données linéaire.</p>
 <p>Une liste peut contenir un nombre quelconque d’éléments y compris nul (la liste vide).</p>
 <div class="admonition abstract">
@@ -1247,10 +1451,7 @@ de méthodes d’accès typiques des listes. Nous nous intéressons ici à ce qu
 </ul>
 sa taille n'est donc pas fixe.</p>
 </div>
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;">  III. Un peu d'histoire pour commencer
-    </span></blockquote>
-
+<h2 id="un-peu-dhistoire-pour-commencer">Un peu d'histoire pour commencer<a class="headerlink" href="#un-peu-dhistoire-pour-commencer" title="Permanent link">⚓︎</a></h2>
 <p><img src="../images/mccarthy.jpg"></p>
 <p>Le langage LISP, inventé par John Mac Carthy (photo) en 1958, est un des premiers à utiliser la notion de <em>liste</em> (LISP vient de l'anglais <em>list processing</em> signifiant « traitement de listes »).</p>
 <p>Les listes du langage LISP sont composées de deux parties :</p>
@@ -1259,10 +1460,7 @@ sa taille n'est donc pas fixe.</p>
 <li>une <strong>queue</strong> correspondant au <code>reste</code> de la liste</li>
 </ul>
 <p>On pouvait alors construire une liste à partir d'un premier élément (sa tête) et d'une liste (sa queue).</p>
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;"> IV. Obtenir une définition formelle
-    </span></blockquote>
-
+<h2 id="obtenir-une-definition-formelle">Obtenir une définition formelle<a class="headerlink" href="#obtenir-une-definition-formelle" title="Permanent link">⚓︎</a></h2>
 <p>Prenons une liste comme par exemple <span class="arithmatex">\(L_1=[5,3,8]\)</span>. C’est une liste à trois éléments (ou de longueur trois) dont le premier est 5, le deuxième 3, et le dernier 8.<br />
 Une façon de décrire cette liste consiste à dire que</p>
 <ul>
@@ -1290,10 +1488,7 @@ Une façon de décrire cette liste consiste à dire que</p>
 * soit la liste vide
 * soit un couple <span class="arithmatex">\((e,L)\)</span> constitué d’un élément <span class="arithmatex">\(e \in E\)</span> et d’une liste <span class="arithmatex">\(L\)</span> d’éléments de E.</p>
 <p>Les listes peuvent donc être vues comme <strong><code>des structures de données récursives</code></strong></p>
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;">  V. L'interface minimale du type abstrait <strong><em>Liste</em></strong>
-    </span></blockquote>
-
+<h2 id="linterface-minimale-du-type-abstrait-liste">L'interface minimale du type abstrait <strong><em>Liste</em></strong><a class="headerlink" href="#linterface-minimale-du-type-abstrait-liste" title="Permanent link">⚓︎</a></h2>
 <p>Le type abstrait <code>Liste</code> peut alors être défini par l'<em>interface</em> suivante contenant <strong>5 opérations primitives</strong> :</p>
 <ul>
 <li><strong>Des constructeurs</strong> :</li>
@@ -1316,10 +1511,7 @@ Une façon de décrire cette liste consiste à dire que</p>
 On sait depuis les travaux de Mac Carthy sur le langage LISP, qu'avec ces 5 opérations on peut reconstruire toutes les opérations sur les listes (accéder à un élément, modifier un élément, ajouter/supprimer un élément, calculer la longueur, tester l'appartenance, etc.)
 </blockquote>
 
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-   <span style="font-size:30px; color:white;"> VI. Liste vs tableaux
-    </span></blockquote>
-
+<h2 id="liste-vs-tableaux">Liste vs tableaux<a class="headerlink" href="#liste-vs-tableaux" title="Permanent link">⚓︎</a></h2>
 <h3 id="quest-ce-qui-differencie-les-listes-des-tableaux">&#9999; Qu’est ce qui différencie les listes des tableaux ?<a class="headerlink" href="#quest-ce-qui-differencie-les-listes-des-tableaux" title="Permanent link">⚓︎</a></h3>
 <p><strong>Tableau</strong><br />
 Sa taille est fixe, les élèments se suivent en méroire.<br />
@@ -1330,14 +1522,14 @@ Les élèments ne se suivent pas forcément en mémoire.<br />
 La queue de la liste pointe vers une autre liste.<br />
 Accéder à un élèment par son indice est lent (il faut suivre tous les liens)  </p>
 <p><img src="../images/ListeN.png"></p>
-<h2 id="insertion-dun-element">&#9999; Insertion d'un élèment :<a class="headerlink" href="#insertion-dun-element" title="Permanent link">⚓︎</a></h2>
-<h3 id="dans-un-tableau">Dans un tableau<a class="headerlink" href="#dans-un-tableau" title="Permanent link">⚓︎</a></h3>
+<h3 id="insertion-dun-element">&#9999; Insertion d'un élèment :<a class="headerlink" href="#insertion-dun-element" title="Permanent link">⚓︎</a></h3>
+<h4 id="dans-un-tableau">Dans un tableau<a class="headerlink" href="#dans-un-tableau" title="Permanent link">⚓︎</a></h4>
 <p><strong>Tableau de taille 4 :</strong><br />
 Pour nsérer un élèment il faut recréer un tableau  de taille supérieure</p>
 <p><img src="../images/TableauInsertion.png"></p>
 <p><strong>Nouveau Tableau de taille 5 :</strong>   </p>
 <p><img src="../images/tableauTaille5.png"></p>
-<h3 id="dans-une-liste">Dans une liste :<a class="headerlink" href="#dans-une-liste" title="Permanent link">⚓︎</a></h3>
+<h4 id="dans-une-liste">Dans une liste :<a class="headerlink" href="#dans-une-liste" title="Permanent link">⚓︎</a></h4>
 <p>Pour insérer un élèment, c'est facile !  </p>
 <p><img src="../images/ListeInsertion.png"></p>
 <p><strong>Liste</strong><br />
@@ -1347,10 +1539,7 @@ Pour nsérer un élèment il faut recréer un tableau  de taille supérieure</p>
 <p><img src="../images/ListeInsertion01.png"></p>
 <p>C'est beaucoup plus rapide que pour les tableaux.  </p>
 <p><img src="../images/ListeInsertion02.png"></p>
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">  Activité 1 : Utiliser une interface</span>
-    </blockquote>
-
+<h2 id="activite-1-utiliser-une-interface">Activité 1 : Utiliser une interface<a class="headerlink" href="#activite-1-utiliser-une-interface" title="Permanent link">⚓︎</a></h2>
 <p>On rappelle que le type abstrait <code>Liste</code> peut être défini par l'<em>interface</em> suivante contenant 5 opérations primitives :</p>
 <ul>
 <li><strong>Des constructeurs :</strong></li>
@@ -1384,17 +1573,13 @@ L4=construit(5, L3)
 <li>construire, à partir de <code>maliste1</code>, une liste <code>maliste3</code> contenant uniquement les nombres 4 et 7. </li>
 <li>construire, uniquement à partir des listes et variables précédentes, une liste <code>maliste4</code> contenant les nombres 5, 2, 1, 4, 7 (on veut insérer 1 entre 2 et 4 dans liste de départ).</li>
 </ul>
-<blockquote style="background-color: #5D8AA8; border-left: 7px solid rgb(0 0 0);"> 
-    <span style="font-size:30px; color:white;"> VII. Implémentations possibles</span></blockquote>
-
-<h2 id="vii1-une-implementation-avec-des-couples-en-python">&#9999; VII.1. Une implémentation avec des couples en Python<a class="headerlink" href="#vii1-une-implementation-avec-des-couples-en-python" title="Permanent link">⚓︎</a></h2>
+<h4 id="implementations-possibles">Implémentations possibles<a class="headerlink" href="#implementations-possibles" title="Permanent link">⚓︎</a></h4>
+<h4 id="une-implementation-avec-des-couples-en-python">&#9999; Une implémentation avec des couples en Python<a class="headerlink" href="#une-implementation-avec-des-couples-en-python" title="Permanent link">⚓︎</a></h4>
 <p>Cette première implémentation est basée sur des paires (couples) qui comportent chacune un élément et la suite de la liste, qui elle-même peut être une paire... Elle réutilise le type <code>tuple</code> de Python.</p>
 <blockquote>
 <p>On définit ainsi notre structure de données de manière <strong><em>récursive</em></strong> pour respecter la philosophie du langage LISP.</p>
 </blockquote>
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">   Activité 2 : Écriture de quelques opérations dérivées</span></blockquote>
-
+<h2 id="activite-2-ecriture-de-quelques-operations-derivees">Activité 2 : Écriture de quelques opérations dérivées<a class="headerlink" href="#activite-2-ecriture-de-quelques-operations-derivees" title="Permanent link">⚓︎</a></h2>
 <p>On considère toujours la même interface (que dans l’activité 1) pour le type abstrait de données Liste.
 Voici une implémentation utilisant des couples, à compléter :</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">listevide</span><span class="p">():</span>
@@ -1436,7 +1621,7 @@ l’instruction</p>
 </code></pre></div>
 <p>nécessite la construction 3 paires intermédiaires qui sont construites de la plus imbriquée
 (liste vide) à la moins imbriquée. On peut visualiser facilement cela avec Python tutor.</p>
-<h2 id="partie-a-utilisation-des-operations">&#9999; Partie A : Utilisation des opérations<a class="headerlink" href="#partie-a-utilisation-des-operations" title="Permanent link">⚓︎</a></h2>
+<h4 id="partie-a-utilisation-des-operations">&#9999; Partie A : Utilisation des opérations<a class="headerlink" href="#partie-a-utilisation-des-operations" title="Permanent link">⚓︎</a></h4>
 <p>Question 1 : Utilisez cette implémentation pour vérifier vos réponses à l’activité 1.</p>
 <div class="highlight"><pre><span></span><code><span class="n">L1</span><span class="o">=</span><span class="n">construit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">construit</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">construit</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">construit</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">listevide</span><span class="p">()))))</span>
 <span class="n">e1</span><span class="o">=</span><span class="n">premier</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>
@@ -1456,7 +1641,7 @@ l’instruction</p>
 -2
 (5, (-2, (0, None)))
 </code></pre></div>
-<h2 id="partie-b-ecriture-doperations-derivees">&#9999; Partie B : Ecriture d’opérations dérivées<a class="headerlink" href="#partie-b-ecriture-doperations-derivees" title="Permanent link">⚓︎</a></h2>
+<h4 id="partie-b-ecriture-doperations-derivees">&#9999; Partie B : Ecriture d’opérations dérivées<a class="headerlink" href="#partie-b-ecriture-doperations-derivees" title="Permanent link">⚓︎</a></h4>
 <p>On a vu dans le cours qu’il est possible de construire toutes les opérations à partir des 5 opérations
 primivites données ci-dessus.
 Par exemple, pour obtenir le dernier élément d’une liste, on peut implémenter l’opération dernier(L)
@@ -1530,16 +1715,13 @@ d’éléments contenus dans la liste L.
 
 False
 </code></pre></div>
-<h2 id="vii2-une-implementation-avec-le-type-list-de-python">&#9999; VII.2. Une implémentation avec le type list de Python<a class="headerlink" href="#vii2-une-implementation-avec-le-type-list-de-python" title="Permanent link">⚓︎</a></h2>
+<h4 id="une-implementation-avec-le-type-list-de-python">&#9999; Une implémentation avec le type list de Python<a class="headerlink" href="#une-implementation-avec-le-type-list-de-python" title="Permanent link">⚓︎</a></h4>
 <p>Il est possible d’implémenter les 5 opérations définissant le type abstrait Liste en utilisant le type pré-
 défini list de Python. Les fonctions sont très ressemblantes à celles utilisant les couples.<br />
 Cela fait l’objet des activités 3 et 4 qui proposent deux implémentations différentes : 
 - la première avec copie des listes intermédiaires (comme l’implémentation avec les couples) 
 - la seconde avec modification de la liste en place.</p>
-<blockquote style="background-color: #B2BEB5; border-left: 15px solid rgb(0 0 0); margin-left:75px;"> 
-    <span style="font-size:20px; color:black;">  Activité 3 : Une implémentation avec le type list de Python</span>
-    </blockquote>
-
+<h2 id="activite-3-une-implementation-avec-le-type-list-de-python">Activité 3 : Une implémentation avec le type list de Python<a class="headerlink" href="#activite-3-une-implementation-avec-le-type-list-de-python" title="Permanent link">⚓︎</a></h2>
 <p>On veut maintenant implémenter le type abstrait Liste en utilisant le type list de Python.<br />
 <strong>Question 1 :</strong> Utilisez la documentation officielle pour compléter l’implémentation du type Liste avec
 les possibilités offertes par le type list de Python.</p>
@@ -1706,7 +1888,7 @@ Combien de listes intermédiaires sont créées pour construire la liste L2 avec
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "toc.integrate", "header.autohide", "content.code.annotate"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
     
     
       <script src="../assets/javascripts/bundle.5a9542cf.min.js"></script>
