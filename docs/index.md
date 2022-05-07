@@ -3,7 +3,8 @@ Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire af
 Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
 
 !!! info 
-    **Thème en cours** : [NEX : Polynésie 2022](BAC/1-jipo1.md)
+    **Thème en cours** : [NEX : Polynésie 2022](BAC/1-jipo1.md)  
+    Seuls les exercices 1 - 4 et 5 sont corrigés pour l'instant.
 
     
 
