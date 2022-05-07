@@ -154,7 +154,7 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
         emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.arithmatex:  # Formules en LaTeX 
         generic: true
-    - mkdocs_graphviz
+
 
 
 plugins:
