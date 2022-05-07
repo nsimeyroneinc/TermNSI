@@ -215,7 +215,10 @@ DictJoueur1 = {
 
     **3b)**  Résultat de l’exécution de la fonction `construireDict` :  
     ```python
-    {'Toulouse': ['Muret', 'Montauban'], 'Gaillac': ['St Sulpice'], 'Muret': ['Pamiers']}
+    {'Toulouse': ['Castres', 'Castelnaudary'],
+    'Castres': ['Mazamet'],
+    'Castelnaudary': ['Carcassonne'],
+    'Tarbes': ['St Gaudens']}
     ```
     
     La fonction gère la liaison A-B mais pas la liaison B-A. Par exemple, pour la clé “Toulouse “ on retrouve bien “Castelnaudary” dans le tableau alors que pour la clé `“Castelnaudary”`, on ne retrouve pas “Toulouse “ dans le tableau.  
@@ -283,7 +286,7 @@ _Principaux thèmes abordés : bases de données (modèle relationnel, base de d
     **2c)**  
     ```sql
     ATOME (Z : INT, nom : TEXT, Sym : TEXT, L : INT, #C : INT, masse_atom : FLOAT)
-    VALENCE (*Col* : INT, Couche : TEXT)
+    VALENCE (Col : INT, Couche : TEXT)
     ```
 
 !!! fabquestion "Q.3."
@@ -442,7 +445,7 @@ On va créer également des méthodes permettant d’interagir avec l’objet Ya
     mon_Yaourt2 = Yaourt('fraise',24)
     ma_pile = creer_pile()
     empiler(ma_pile, mon_Yaourt1) 
-    empiler(ma_pile, mon_Yaourt 2) 
+    empiler(ma_pile, mon_Yaourt2) 
     print(depiler(ma_pile).GetDuree())
     print(estVide(ma_pile))
     ```
@@ -463,7 +466,10 @@ On va créer également des méthodes permettant d’interagir avec l’objet Ya
     **3c)**
     ```python
     def estVide(p):
-        return len(p)==0
+        if len(p)==0:
+            return True
+        else:
+            return False
     ```
     
     **3d)**  
