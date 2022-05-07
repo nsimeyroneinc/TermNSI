@@ -146,7 +146,12 @@ markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abb
         clickable_checkbox: true    #   et cliquables.
     - pymdownx.tabbed:               # Volets glissants.  === "Mon volet"
         alternate_style: true 
-    - pymdownx.superfences          # Imbrication de blocs.
+    - pymdownx.superfences:
+        custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
     - pymdownx.keys:                # Touches du clavier.  ++ctrl+d++
         separator: "\uff0b"
     - pymdownx.emoji:
