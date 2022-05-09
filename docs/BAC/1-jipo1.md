@@ -341,7 +341,7 @@ d'adresse,
     | 3 | 1 | `10` | lecture  | `"ATT"` | `(1, 10)` | vide |
     | 3 | 2 | `11` | écriture | `"OK"`  | `(1, 10)` | vide |
     | 3 | 3 | `12` | lecture  | `"OK"`  | `(1, 10)` | vide |
-    
+
 Les colonnes **e0** et **e1** du tableau suivant recensent les deux chiffres de l'écriture binaire de l'entier **n** de la première colonne.
 
 | nombre n | écriture binaire de n sur deux bits | e1 | e0 |
@@ -413,8 +413,10 @@ flowchart LR
 
     ```mermaid
     flowchart LR
-        ea(e0)---NON---ET
-        eb(e1)---NON---ET
+        ea(e0)---NON 
+        eb(e1)---NON
+        NON---ET 
+        NON---ET   
         ET---s
         style ea stroke-width:0px,opacity:0
         style eb stroke-width:0px,opacity:0
