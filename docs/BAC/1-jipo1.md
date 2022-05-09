@@ -248,10 +248,10 @@ Si un périphérique ne peut pas effectuer une opération à une adresse, il dem
     | 1 | `11` | lecture  | `"OK"` |
     | 2 | `10` | lecture  | `"ATT"` |
     | 3 | `10` | écriture | `"ATT"` |
-    | 0 | `12` | lecture  |  |
-    | 1 | `10` | lecture  |  |
-    | 2 | `10` | lecture  |  |
-    | 3 | `10` | écriture |  |
+    | 0 | `12` | lecture  |  `"OK"`|
+    | 1 | `10` | lecture  |  `"OK"`|
+    | 2 | `10` | lecture  | `"OK"` |
+    | 3 | `10` | écriture | `"ATT"` |
 
 
 On suppose dans toute la suite que :
@@ -268,7 +268,7 @@ Pour les périphériques 2 et 3, le changement d'adresse n'est effectif que lors
 **2.** On suppose que les périphériques sont sélectionnés à chaque tour dans l'ordre 0 ; 1 ; 2 ; 3. Expliquer ce qu'il se passe pour le périphérique 1.
 
 ??? done "Réponse"
-    TODO
+    Le périphérique 1 ne pourra jamais effectuer sa lecture à l’adresse mémoire 10 puisque juste avant le périphérique 0 aura effectué une écriture à l’adresse mémoire 10.
 
 Les périphériques sont sollicités de la manière suivante lors de quatre tours successifs :
 
@@ -281,12 +281,16 @@ Les périphériques sont sollicités de la manière suivante lors de quatre tour
 **3.a)** Préciser pour chacun de ces tours si le périphérique 0 peut écrire et si le périphérique 1 peut lire.
 
 ??? done "Réponse"
-    TODO
+    
+    - tour 1 : 0 peut écrire ; 1 ne peut pas lire  
+    - tour 2 : 0 ne peut pas écrire ; 1 peut lire  
+    - tour 3 : 0 peut écrire ; 1 ne peut pas lire  
+    - tour 4 : 0 peut écrire ; 1 ne peut pas lire
 
 **3.b)** En déduire la proportion des valeurs écrites par le périphérique 0 qui sont effectivement lues par le périphérique 1.
 
 ??? done "Réponse"
-    TODO
+    0 peut écrire trois fois et 1 peut lire une seule fois, seulement un tiers des valeurs écrites par 0 sont lues par 1, soit 33%
 
 
 On change la méthode d'ordonnancement : on détermine l'ordre des périphériques au cours d'un tour à l'aide de deux listes d'attente `ATTL_L` et `ATT_E` établies au tour précédent.
@@ -322,25 +326,22 @@ d'adresse,
     | 3 | 3 | `12` | lecture  |         |           |      |
 
 ??? done "Réponse"
-    TODO
 
-    | Tour | N° périphérique | Adresse | Opération | Réponse ordonnanceur | `ATT_L` | `ATT_E` |
+   | Tour | N° périphérique | Adresse | Opération | Réponse ordonnanceur | `ATT_L` | `ATT_E` |
     |:---|:---|:---|:---|:---|:---|:---|
     | 1 | 0 | `10` | écriture | `"OK"`  | vide      | vide |
     | 1 | 1 | `10` | lecture  | `"ATT"` | `(1, 10)` | vide |
-    | 1 | 2 | `11` | écriture |         |           |      |
-    | 1 | 3 | `11` | lecture  |         |           |      |
-    | 2 | 1 | `10` | lecture  |         |           | vide |
-    | 2 |   |      |          |         |           |      |
-    | 2 |   |      |          |         |           |      |
-    | 2 |   |      |          |         |           |      |
-    | 3 | 0 | `10` | écriture |         | vide      | vide |
-    | 3 | 1 | `10` | lecture  |         |           | vide |
+    | 1 | 2 | `11` | écriture | `"OK"`  | `(1, 10)` |      |
+    | 1 | 3 | `11` | lecture  | `"ATT"` | `(1, 10)` `(3, 11)` | vide |
+    | 2 | 1 | `10` | lecture  | `"OK"`  | `(3, 11)` | vide |
+    | 2 | 3 | `11` | lecture  | `"OK"`  |   vide    | vide |
+    | 2 | 0 | `10` | lecture  | `"ATT"` |   vide    |`(0, 10)` |
+    | 2 | 2 | `12` | écriture | `"OK"`  |   vide    |`(0, 10)`  |
+    | 3 | 0 | `10` | écriture | `"OK"`  | vide      | vide |
+    | 3 | 1 | `10` | lecture  | `"ATT"` | `(1, 10)` | vide |
     | 3 | 2 | `11` | écriture | `"OK"`  | `(1, 10)` | vide |
-    | 3 | 3 | `12` | lecture  |         |           |      |
-
-
-
+    | 3 | 3 | `12` | lecture  | `"OK"`  | `(1, 10)` | vide |
+    
 Les colonnes **e0** et **e1** du tableau suivant recensent les deux chiffres de l'écriture binaire de l'entier **n** de la première colonne.
 
 | nombre n | écriture binaire de n sur deux bits | e1 | e0 |
@@ -451,27 +452,30 @@ CREATE TABLE Visites (
 **1.a)** Donner une commande d'interrogation en langage SQL permettant d'obtenir l'ensemble des 2-uplets `(adresse IP, nom de la page)` de cette table.
 
 ??? done "Réponse"
-    TODO
 
     ```sql
+    SELECT ip,nompage
+    FROM Visites
     ```
 
 
 **1.b)** Donner une commande en langage SQL permettant d'obtenir l'ensemble des adresses IP ayant interrogé le site, sans doublon.
 
 ??? done "Réponse"
-    TODO
 
     ```sql
+    SELECT DISTINCT ip
+    FROM Visites
     ```
 
 
 **1.c)** Donner une commande en langage SQL permettant d'obtenir la liste des noms des pages visitées par l'adresse IP `192.168.1.91`
 
 ??? done "Réponse"
-    TODO
-
     ```sql
+    SELECT DISTINCT nompage
+    FROM Visites
+    WHERE ip="192.168.1.91"
     ```
 
 
@@ -494,24 +498,26 @@ Les attributs `identifiant` des tables `Visites` et `Pings` partagent les mêmes
 **2.a)** De quelle table l'attribut `identifiant` est-il la clé primaire ?
 
 ??? done "Réponse"
-    TODO
+    l'attribut `identifiant` est la clé primaire de la table `Visistes (id)`
 
 **2.b)** De quelle table l'attribut `identifiant` est-il une clé étrangère ?
 
 ??? done "Réponse"
-    TODO
+    l'attribut `identifiant` est la clé étrangère de la table `Pings`
 
 **2.c)** Par conséquent, quelles vérifications sont automatiquement effectuées par le système de gestion de base de données ?
 
 ??? done "Réponse"
-    TODO
+    Le SGBD va vérifier que l’attribut identifiant est unique pour chaque p-upplet de la table Visites. Le SGBD va aussi vérifier que l’attribut identifiant de la table Pings correspond bien à un attribut identifiant de la table Visites pour chaque p-upplet de la table Pings.
 
 **3.** Le serveur reçoit le doublet `(identifiant, duree)` suivant : `(1534, 105)`. Écrire la commande SQL d'insertion qui permet d'ajouter cet enregistrement à la table `Pings`.
 
 ??? done "Réponse"
-    TODO
-
+    
     ```sql
+    INSERT INTO Pings 
+    (identifiant, duree)
+    VALUES (1534, 105)
     ```
 
 
@@ -520,29 +526,34 @@ On envisage ensuite d'optimiser la table en se contentant d'une seule ligne par 
 **4.a)** Écrire la requête de mise à jour permettant de fixer à 120 la valeur de l'attribut `duree` associée à l'identifiant 1534 dans la table `Pings`.
 
 ??? done "Réponse"
-    TODO
 
     ```sql
+    UPDATE Pings 
+    SET duree = 120 
+    WHERE identifiant = 1534
     ```
 
 **4.b)** Expliquer pourquoi on ne peut pas être certain que les données envoyées par une page web, depuis le navigateur d'un client, via plusieurs requêtes formulées en JavaScript, arrivent au serveur dans l'ordre dans lequel elles ont été émises.
 
 ??? done "Réponse"
-    TODO
+   Nous ne pouvons pas être certains que les données envoyées par une page web, depuis le navigateur d’un client, via plusieurs requêtes formulées en JavaScript, arrivent au serveur dans l’ordre dans lequel elles ont été émises, car les paquets de données (protocole TCP/IP) n’emprunteront pas forcément le même chemin pour aller du client vers le serveur (ou même certains paquets de données pourront se “perdre” et devront être réémis par le client). Les requêtes HTTP étant constitués de paquets de données, il n’est donc pas possible de garantir l’ordre d’arrivée des requêtes HTTP.
 
 
 **4.c)** En déduire qu'il est préférable d'utiliser une requête d'insertion plutôt qu'une requête de mise à jour pour ajouter des données à la table `Pings`.
 
 ??? done "Réponse"
-    TODO
+    Imaginons que le client envoie 2 requêtes HTTP A et B (le client envoie la requête A puis la requête B). Si le serveur, en recevant la requête B tente de mettre à jour l’entrée correspondant à la requête A alors qu’il n’a pas encore reçu la requête A, cela va entrainer une erreur (tente de mettre à jour une entrée qui n’existe pas).
 
 
 **5.** Écrire une requête SQL utilisant le mot-clé `JOIN` et une clause `WHERE`, permettant de trouver les noms de toutes les pages qui ont été consultées plus d'une minute par au moins un utilisateur.
 
 ??? done "Réponse"
-    TODO
 
     ```sql
+    SELECT nompage 
+    FROM Visites 
+    JOIN Pings ON Visites.identifiant = Pings.identifiant 
+    WHERE duree > 60
     ```
 
 
