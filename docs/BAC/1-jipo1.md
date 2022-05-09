@@ -423,6 +423,15 @@ flowchart LR
         style s stroke-width:0px,opacity:0
     ```
 
+```mermaid
+flowchart LR
+    ea(e0)---NON---ET
+    eb(e1)---NON---ET
+    ET---s
+    style ea stroke-width:0px,opacity:0
+    style eb stroke-width:0px,opacity:0
+    style s stroke-width:0px,opacity:0
+```
 
 ## EXERCICE 3 (4 points)
 
