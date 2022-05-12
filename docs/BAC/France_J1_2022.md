@@ -17,7 +17,7 @@
 <br>
 
 
-## Exercice I : 
+## Exercice n°1 : 
 
 **_Cet exercice composé de deux parties A et B, porte sur les structures de données._**
 
