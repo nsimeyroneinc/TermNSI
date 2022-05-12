@@ -213,8 +213,8 @@ On s’intéresse ici à la récupération de données dans une relation.
     WHERE nom = 'Crog';
     ```
 
-??? done "Réponse"
-   La requête renvoie les attributs nom, prenom et naissance des entités de la relation individu dont le nom est ‘Crog’ soit :  ‘Grog’ ‘Daniel’ ‘07-07-1968’
+??? done "Réponse"  
+    La requête renvoie les attributs nom, prenom et naissance des entités de la relation individu dont le nom est ‘Crog’ soit :  ‘Grog’ ‘Daniel’ ‘07-07-1968’
 
 !!! fabquestion "1.b)"  
     Fournir une requête SQL permettant de récupérer le titre et la clé primaire de chaque film dont la date de sortie est strictement supérieure à 2020.
@@ -663,7 +663,7 @@ On souhaite accorder à la base un bonus de 40 points pour chaque joueur particu
     ........ #si le participant réalise un grand nombre de tirs
     ......... #le score de la Base augmente de 40
     ```
-    
+
 
 ??? done "Réponse"  
     ```python
