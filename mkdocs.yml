@@ -26,6 +26,9 @@ nav:
       - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles.md
       - TP 14 - Les Files Enoncé-Corrigé : StructureDonnees/TD14_Files.md
       #- TP 15 - Les Arbres Enoncé-Corrigé : StructureDonnees/TD15_Les_Arbres.md
+      - TP Graphe: Graphe/TD_Graphe.md
+      - TP Graphe Parcours: Graphe/TD_Graphe_Parcours.md
+      - TP Graphe Exercices: Graphe/TD_Graphe_Exercices.md
     
     - T2 - Bases de données :  
       - TP 17 - Les JO Londres 2012 : BasesDonnees/TP17_JO.md
