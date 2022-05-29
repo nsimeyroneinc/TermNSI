@@ -1,0 +1,2240 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>TD - Gestion des Processus - Numériques et Sciences informatiques Terminale</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-header__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numériques et Sciences informatiques Terminale
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TD - Gestion des Processus
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="brown"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-tabs__link">
+        T1 - Struct. de données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../BasesDonnees/TP17_JO/" class="md-tabs__link">
+        T2 - Bases de données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-tabs__link md-tabs__link--active">
+        T3 - Archi. matèrielle
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../diviserregner/TD20_Diviser_pour_Regner_Correction/" class="md-tabs__link">
+        T5 Algo.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../divers/Exercices_Bac/" class="md-tabs__link">
+        BAC 📝
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../epreuve_pratique/" class="md-tabs__link">
+        E.P 💻
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../DM/DM_POO/" class="md-tabs__link">
+        Devoirs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../divers/conseil/" class="md-tabs__link">
+      Divers conseils
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-nav__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Numériques et Sciences informatiques Terminale
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T1 - Struct. de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T1 - Struct. de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T1 - Struct. de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-nav__link">
+        Les dictionnaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD11_Les_Listes/" class="md-nav__link">
+        TP 11 - Les Listes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD11_Corrige/" class="md-nav__link">
+        TP 11 - Les Listes Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD12_ListeChainee_Corrige/" class="md-nav__link">
+        TP 12 - Liste Chainée Enoncé-Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/TD13_Piles/" class="md-nav__link">
+        TP 13 - Les Piles Enoncé-Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/TD14_Files/" class="md-nav__link">
+        TP 14 - Les Files Enoncé-Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Graphe/TD_Graphe/" class="md-nav__link">
+        TP Graphe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Graphe/TD_Graphe_Parcours/" class="md-nav__link">
+        TP Graphe Parcours
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Graphe/TD_Graphe_Exercices/" class="md-nav__link">
+        TP Graphe Exercices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T2 - Bases de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T2 - Bases de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T2 - Bases de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/TP17_JO/" class="md-nav__link">
+        TP 17 - Les JO Londres 2012
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/TD18_Revision_SQL_BAC/" class="md-nav__link">
+        TD 18 - Sujet BAC 2021
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          T3 - Archi. matèrielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T3 - Archi. matèrielle" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          T3 - Archi. matèrielle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-nav__link">
+        TD 19 - Protocole de routage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD_Gestion_Processus/" class="md-nav__link">
+        TD 23 - Gestion des Processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TD - Gestion des Processus
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crypto/crypto/" class="md-nav__link">
+        TD crypto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          T5 Algo.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T5 Algo." data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          T5 Algo.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../diviserregner/TD20_Diviser_pour_Regner_Correction/" class="md-nav__link">
+        TD 20 correction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/Calculabilite_Decidabilite/" class="md-nav__link">
+        TD Calculabilité et Décidabilité
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          BAC 📝
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BAC 📝" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          BAC 📝
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Exercices_Bac/" class="md-nav__link">
+        TD 21 Exercices BAC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Exercice_Bac__2/" class="md-nav__link">
+        TD 22 - Exercices BAC n°2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/Sujet_Libre_2_2021/" class="md-nav__link">
+        Sujet Candidat Libre 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/Sujet_Libre_2_2021_cor/" class="md-nav__link">
+        Sujet Candidat Libre 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/NSI-2021-polynesie-2-sujet-officiel.pdf" class="md-nav__link">
+        Sujet Polynésie 2021
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/Polynesie_sujet2_2021/" class="md-nav__link">
+        Sujet Polynésie 2021 Correction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/BacBlanc_2022_COR/" class="md-nav__link">
+        BAC BLANC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/1-jipo1/" class="md-nav__link">
+        BAC 2022 Polynésie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/France_J1_2022/" class="md-nav__link">
+        BAC 2022 France J1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          E.P 💻
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="E.P 💻" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          E.P 💻
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        Déroulement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        Consigne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/EpreuvePratique/" class="md-nav__link">
+        Sujets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devoirs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DM/DM_POO/" class="md-nav__link">
+        P.O.O
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS%20_Listes_Piles_Files/" class="md-nav__link">
+        DS 30/11/21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_EP/" class="md-nav__link">
+        EP 30/11/21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_14_12_21_arbres/" class="md-nav__link">
+        DS 14/12/21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_14_12_21_arbres_Correction/" class="md-nav__link">
+        DS 14/12/21 - Correction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_03_01_22_correction/" class="md-nav__link">
+        DS 03/01/22 - Correction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        Epreuve GEIPI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/conseil/" class="md-nav__link">
+        Divers conseils
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+
+
+
+
+                
+
+
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr>
+            <th style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            Thème 3 : Architecture matérielle
+            </th>
+        </tr>
+</table>
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr >
+            <th width="25%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:30pt;">
+            23
+            </th>
+            <th  width="75%"; style="text-align:center;border:none;font-size:20pt;">Cours : Gestion des processus - CORRECTION</th>
+        </tr>
+</table>
+
+<p><img alt="" src="../data/en_tete_prog.png" /></p>
+<p><img alt="" src="../data/BO_processus.png" /></p>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">⚓︎</a></h1>
+<p>Dans les années 1970 les ordinateurs personnels étaient incapables d'exécuter plusieurs tâches à la fois : il fallait attendre qu'un programme lancé se termine pour en exécuter un autre.</p>
+<p>Les systèmes d'exploitations récents (GNU/Linux, macOS, iOS, Android, Windows...) permettent d'exécuter des tâches "simultanément". En effet, la plupart du temps, lorsque l'on utilise un ordinateur, plusieurs programmes sont exécutés "en même temps" : par exemple, on peut très bien ouvrir simultanément un navigateur Web, un traitement de texte, un IDE Python, un logiciel de musique (sans parler de tous les programmes exécutés en arrière-plan) ...</p>
+<p>Ces programmes en cours d'exécution s'appellent des <strong>processus</strong>. Une des tâches du système d'exploitation est d'allouer à chacun des processus les ressources dont il a besoin en termes de mémoire, entrées-sorties ou temps d'accès au processeur, et de s'assurer que les processus ne se gênent pas les uns les autres.</p>
+<p>Pourtant, on rappelle qu'un programme n'est qu'une suite d'instructions machine exécutées l'une après l'autre par le processeur et qu'un processeur n'est capable d'exécuter qu'une seule instruction à la fois.</p>
+<p>Pour rappel, voici les étapes d'exécution d'une instruction.</p>
+<ul>
+<li>l'instruction pointée par le pointeur d'instruction est chargée en mémoire  </li>
+<li>Le pointeur d'instruction est incrémenté vers l'adresse suivante  </li>
+<li>l'instruction est décodée  </li>
+<li>l'instruction est exécutée</li>
+</ul>
+<p>Comment est-il alors possible que plusieurs programmes soient exécutés en même temps ? </p>
+<h1 id="processus">Processus<a class="headerlink" href="#processus" title="Permanent link">⚓︎</a></h1>
+<h2 id="quest-ce-quun-processus">Qu'est-ce qu'un <em>processus</em> ?<a class="headerlink" href="#quest-ce-quun-processus" title="Permanent link">⚓︎</a></h2>
+<p>Il ne faut pas confondre <strong>programme</strong> et <strong>processus</strong> :</p>
+<ul>
+<li>Un <strong>programme</strong> est un fichier binaire (on dit aussi un <em>exécutable</em>) contenant des instructions machines que seul le processeur peut comprendre.</li>
+<li>Un <strong>processus</strong> est un <em>programme en cours d'exécution</em>, autrement dit le phénomène dynamique lié à l'exécution d'un programme par l'ordinateur.</li>
+</ul>
+<p>Ainsi, lorsque nous cliquons sur l'icône d'un programme (ou lorsque nous exécutons une instruction dans la console pour lancer un programme), nous provoquons la naissance d'un ou plusieurs processus liés au programme que nous lançons.</p>
+<p>Un processus est donc une <em>instance d'un programme</em> auquel est associé :</p>
+<ul>
+<li>du code</li>
+<li>des données/variables manipulées</li>
+<li>des ressources : processeur, mémoire, périphériques d'entrée/sortie (voir paragraphe suivant)</li>
+</ul>
+<p>Il n'est d'ailleurs pas rare qu'un même programme soit exécuté plusieurs fois sur une machine au même moment en occupant des espaces mémoires différents : par exemple deux documents ouverts avec un traitement de texte, ou trois consoles distinctes... qui correspondent à autant d'instances du même programme et donc à des processus différents. </p>
+<h2 id="observer-les-processus">Observer les processus<a class="headerlink" href="#observer-les-processus" title="Permanent link">⚓︎</a></h2>
+<p>Il est très facile de voir les différents processus s'exécutant sur une machine.</p>
+<p>Sous GNU/Linux, on peut utiliser la commande <code>ps</code> (comme <strong>p</strong>roces<strong>s</strong>, la traduction anglaise de <em>processus</em>) pour afficher les informations sur les processus (sous windows : talklist). En passant des options à cette commande on peut obtenir des choses intéressantes.</p>
+<p>Par exemple, en exécutant dans un terminal la commande <code>ps -aef</code>, on peut visualiser tous les processus en cours sur notre ordinateur :</p>
+<h2 id="creation-dun-processus">Création d'un processus<a class="headerlink" href="#creation-dun-processus" title="Permanent link">⚓︎</a></h2>
+<p>Un processus peut être créé :</p>
+<ul>
+<li>au démarrage du système</li>
+<li>par un autre processus</li>
+<li>par une action d'un utilisateur (lancement d'un programme)</li>
+</ul>
+<p>Sous GNU/Linux, un tout premier processus est créé au démarrage (c'est le processus 0 ou encore <em>Swapper</em>). Ce processus crée un processus souvent appelé <em>init</em> qui est le fils du processus 0. Ensuite, à partir de <em>init</em>, les autres processus nécessaires au fonctionnement du système sont créés. Ces processus créent ensuite eux-mêmes d'autres processus, etc.</p>
+<p>Un processus peut créer un ou plusieurs processus, ce qui aboutit à une structure arborescente comme nous allons le voir maintenant.</p>
+<h2 id="pid-et-ppid">PID et PPID<a class="headerlink" href="#pid-et-ppid" title="Permanent link">⚓︎</a></h2>
+<p>La commande précédente permet de voir que chaque processus est identifié par un numéro : son <strong>PID</strong> (pour <em>Process Identifier</em>). Ce numéro est donné à chaque processus par le système d'exploitation.</p>
+<p>On constate également que chaque processus possède un <strong>PPID</strong> (pour <em>Parent Process Identifier</em>), il s'agit du PID du processus parent, c'est-à-dire celui qui a déclenché la création du processus. En effet, un processus peut créer lui même un ou plusieurs autres processus, appelés <em>processus fils</em>.</p>
+<h2 id="observation-des-processus">Observation des processus⚓︎<a class="headerlink" href="#observation-des-processus" title="Permanent link">⚓︎</a></h2>
+<p>Sous Linux, on peut observer les processus et leur état en ligne de commande.</p>
+<p>Pour tester, cela on peut utiliser : <a href="https://cocalc.com/auth/try">terminal linux en ligne</a></p>
+<p>Voici quelques commandes utiles pour observer les processus :</p>
+<ul>
+<li><code>ps</code>|: elle permet d'afficher la liste des processus en cours. (Pour avoir des informations sur les options taper man ps) Pour lister tous les processus : <code>ps - ef</code>  </li>
+<li><code>top</code> : Pour observer en temps réels les différents processus.(penser à utiliser man top)<br />
+la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
+<li>
+<p><code>kill</code> : elle permet de tuer un processus en lui envoyant un signal de fin. </p>
+<ul>
+<li>15 pour arrêter le processus proprement</li>
+<li>9 pour arrêter immédiatement le processus.  </li>
+</ul>
+<p>exemple d'utilisation : <code>kill -15 7654</code> pour tuer proprement le processus de <code>PID 7564</code></p>
+</li>
+</ul>
+<div class="admonition exo">
+<p class="admonition-title">Exercice</p>
+<p>Dans un nouvel onglet ouvrir : <a href="https://cocalc.com/auth/try">terminal linux en ligne</a></p>
+<ul>
+<li>créer un premier terminal :  </li>
+<li>utiliser les commandes de l'année précédentes : <code>ls, cd, touch, cat</code>  </li>
+<li>pour déterminer le nom d'utilisateur : <code>whoami</code>  </li>
+<li>créer un fichier vide <code>test.py</code> : <code>touch test.py</code>  </li>
+<li>
+<p>éditer le fichier <code>test.py</code> avec la commande : <code>nano test.py</code></p>
+<ul>
+<li>
+<p>y écrire le code suivant : 
+ <code>python
+ for a in range(100000):
+    print(a)</code></p>
+</li>
+<li>
+<p>pour sortir de l'éditeur : Ctrl+X, puis Y, puis Enter pour confirmer le nom  </p>
+</li>
+</ul>
+</li>
+<li>
+<p>lancer le programme avec : <code>python3 test.py</code>  </p>
+</li>
+<li>créer un second fichier <code>p2.py</code> avec le code suivant :<br />
+  <div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="k">pass</span>
+</code></pre></div></li>
+<li>le lancer  </li>
+<li>Il tourne sans fin. Pour l'arrêter : Ctrl+C  </li>
+<li>vérifier la présence dans le dossier des fichiers créés, avec <code>ls</code>  </li>
+<li>ouvrir un second terminal puis :  </li>
+<li>dans ce second terminal lancer python3 sans nom de fichier  </li>
+<li>dans le premier terminal taper <code>ps -ef</code>  </li>
+<li>
+<p>repérer le PID du processus python3 et le tuer avec la commande kill -9 (voir syntaxe au dessus)  </p>
+</li>
+<li>
+<p>ouvrir un troisième terminal </p>
+</li>
+<li>dans ce troisième terminal lancer la commande <code>top</code>  </li>
+<li>
+<p>modifier l'affichage pour faire apparaître le PPID (taper f, puis sélectionner/ déplacer avec les  touches curseur. Revenir à l'affichage avec Esc)  </p>
+</li>
+<li>
+<p>Enfin   ouvrir des terminaux supplémentaires pour en avoir au moins 5 et lancer dans les terminaux :  </p>
+</li>
+<li>
+<p>1 aucun processus  </p>
+</li>
+<li>1 avec nano  </li>
+<li>1 avec python3  </li>
+<li>1 avec python3 lançant p2.py  </li>
+<li>
+<p>1 avec top  </p>
+</li>
+<li>
+<p>observer les processus et essayer de les tuer avec la commande kill à partir du premier terminal  </p>
+</li>
+<li>recommencer en relançant les processus et tuer les processus avec le terminal lançant top(puis commande k)  </li>
+</ul>
+</div>
+<h1 id="gestion-des-processus-et-des-ressources">Gestion des processus et des ressources<a class="headerlink" href="#gestion-des-processus-et-des-ressources" title="Permanent link">⚓︎</a></h1>
+<h2 id="execution-concurrente">Exécution concurrente<a class="headerlink" href="#execution-concurrente" title="Permanent link">⚓︎</a></h2>
+<p>Les systèmes d'exploitation modernes sont capable d'exécuter plusieurs processus "en même temps". En réalité ces processus ne sont pas toujours exécutés "en même temps" mais plutôt "à tour de rôle". On parle d'exécution <em>concurrente</em> car les processus sont en concurrence pour obtenir l'accès au processeur chargé de les exécuter.</p>
+<blockquote>
+<p><strong>Remarque</strong> : Sur un système multiprocesseur, il est possible d'exécuter de manière parallèle plusieurs processus, autant qu'il y a de processeurs. Mais sur un même processeur, un seul processus ne peut être exécuté à la fois.</p>
+</blockquote>
+<p>On peut voir assez facilement cette exécution concurrente. Considérons les deux programmes Python suivants :</p>
+<p><strong><code>progA.py</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;programme A en cours, itération&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># pour simuler un traitement avec des calculs</span>
+</code></pre></div>
+<p><strong><code>progB.py</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;programme B en cours, itération&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># pour simuler un traitement avec des calculs</span>
+</code></pre></div>
+<p>En ouvrant un Terminal, on peut lancer simultanément ces deux programmes avec la commande</p>
+<div class="highlight"><pre><span></span><code>$ python progA.py <span class="p">&amp;</span> python progB.py <span class="p">&amp;</span>
+</code></pre></div>
+<blockquote>
+<p>Le caractère <code>&amp;</code> qui suit une commande permet de lancer l'exécution en arrière plan et de rendre la main au terminal.</p>
+</blockquote>
+<p>Le shell indique alors dans la console les <em>PID</em> des processus correspondant à l'exécution de ces deux programmes (ici 9154 et 9155) puis on constate grâce aux affichages que le système d'exploitation alloue le processeur aux deux programmes <em>à tour de rôle</em> :</p>
+<p><img alt="" src="../data/concurrence1.png" /></p>
+<h2 id="acces-concurrents-aux-ressources">Accès concurrents aux ressources<a class="headerlink" href="#acces-concurrents-aux-ressources" title="Permanent link">⚓︎</a></h2>
+<p>Une <strong>ressource</strong> est une entité dont a besoin un processus pour s'exécuter. Les ressources peuvent être matérielles (processeur, mémoire, périphériques d'entrée/sortie, ...) mais aussi logicielles (variables).</p>
+<p>Les différents processus se partagent les ressources, on parle alors d'<em>accès concurrents aux ressources</em>. Par exemple,</p>
+<ul>
+<li>les processus se partagent tous l'accès à la ressource "processeur"</li>
+<li>un traitement de texte et un IDE Python se partagent la ressource "clavier" ou encore la ressource "disque dur" (si on enregistre les fichiers), ...</li>
+<li>un navigateur et un logiciel de musique se partagent la ressource "carte son", ...</li>
+</ul>
+<p>C'est le système d'exploitation qui est chargé de gérer les processus et les ressources qui leur sont nécessaires, en partageant leur accès au processeur. Nous allons voir comment tout de suite !</p>
+<h2 id="etats-dun-processus">États d'un processus<a class="headerlink" href="#etats-dun-processus" title="Permanent link">⚓︎</a></h2>
+<p>Au cours de son existence, un processus peut se retrouver dans trois états :</p>
+<ul>
+<li>état <strong>élu</strong> : lorsqu'il est en cours d'exécution, c'est-à-dire qu'il obtient l'accès au processeur</li>
+<li>état <strong>prêt</strong> : lorsqu'il attend de pouvoir accéder au processeur</li>
+<li>état <strong>en bloqué</strong> : lorsque le processus est interrompu car il a besoin d'attendre une ressource quelconque (entrée/sortie, allocation mémoire, etc.)</li>
+</ul>
+<p>Il est important de comprendre que le processeur ne peut gérer qu'un seul processus à la fois : le processus <em>élu</em>.</p>
+<p>En pratique, lorsqu'un processus est créé il est dans l'état <em>prêt</em> et attend de pouvoir accéder au processeur (d'être <em>élu</em>). Lorsqu'il est élu, le processus est exécuté par le processeur mais cette exécution peut être interrompue :</p>
+<ul>
+<li>soit pour laisser la main à un autre processus (qui a été élu) : dans ce cas, le processus de départ repasse dans l'état <em>prêt</em> et doit attendre d'être élu pour reprendre son exécution</li>
+<li>soit parce que le processus en cours a besoin d'attendre une ressource : dans ce cas, le processus passe dans l'état <em>bloqué</em>.</li>
+</ul>
+<p>Lorsque le processus bloqué finit par obtenir la ressource attendue, il peut théoriquement reprendre son exécution mais probablement qu'un autre processus a pris sa place et est passé dans l'état élu. Auquel cas, le processus qui vient d'être "débloqué" repasse dans l'état <em>prêt</em> en attendant d'être à nouveau élu.</p>
+<p>Ainsi, l'état d'un processus au cours de sa vie varie entre les états <em>prêt</em>, <em>élu</em> et <em>bloqué</em> comme le résume le schéma suivant :</p>
+<p><img alt="" class="center" src="../data/etats_processus.svg" width="350px" /></p>
+<p>Lorsqu'un processus est interrompu, il doit pouvoir reprendre à l'endroit même où il a été interrompu. Pour cela, le système d'exploitation conserve pour chaque processus créé une zone mémoire (appelée PCB, pour <em>Process Control Bloc</em>, ou bloc de contrôle du processus) dans laquelle sont stockées les informations sur le processus : son PIB, son état, la valeur des registres lors de sa dernière interruption, la zone mémoire allouée par le processus lors de son exécution, les ressources utilisées par le processus (fichiers ouverts, connexions réseaux en cours d'utilisation, etc.).</p>
+<h2 id="ordonnancement">Ordonnancement<a class="headerlink" href="#ordonnancement" title="Permanent link">⚓︎</a></h2>
+<p>C'est le système d'exploitation qui attribue aux processus leurs états <em>élu</em>, <em>prêt</em> et <em>bloqué</em>. Plus précisément, c'est l'<strong>ordonnanceur</strong> (un des composants du système d'exploitation) qui réalise cette tâche appelée <em>ordonnancement des processus</em>.</p>
+<p>L'objectif de l'ordonnanceur est de choisir le processus à exécuter à l'instant <span class="arithmatex">\(t\)</span> (le processus <em>élu</em>) et déterminer le temps durant lequel le processeur lui sera alloué.</p>
+<p><img alt="" class="center" src="../data/ordonnancement.svg" /></p>
+<p>Ce choix est à faire parmi tous les processus qui sont dans l'état <em>prêt</em>, mais lequel sera élu ? et pour combien de temps ? Des algorithmes d'ordonnancement sont utilisés et il en existe plusieurs selon la stratégie utilisée. On en présente quelques-uns ci-dessous.</p>
+<h3 id="ordonnancement-first-come-first-served-fcfs">Ordonnancement First Come First Served (FCFS)<a class="headerlink" href="#ordonnancement-first-come-first-served-fcfs" title="Permanent link">⚓︎</a></h3>
+<p><strong>Principe</strong> : Les processus sont ordonnancés selon leur ordre d'arrivée ("premier arrivé, premier servi" en français)</p>
+<p><strong>Exemple</strong> : Les processus <span class="arithmatex">\(P_1(53)\)</span>, <span class="arithmatex">\(P_2(17)\)</span>, <span class="arithmatex">\(P_3(68)\)</span> et <span class="arithmatex">\(P_4(24)\)</span> arrivent dans cet ordre à <span class="arithmatex">\(t=0\)</span> :</p>
+<blockquote>
+<p>Cela signifie que <span class="arithmatex">\(P_1\)</span>, <span class="arithmatex">\(P_2\)</span>, <span class="arithmatex">\(P_3\)</span> et <span class="arithmatex">\(P_4\)</span> ont besoin de respectivement 53, 17, 68 et 24 unités de temps pour s'exécuter.</p>
+</blockquote>
+<p><img alt="" class="center" src="../data/ordo_fcfs.png" /></p>
+<h3 id="ordonnancement-shortest-job-first-sjf">Ordonnancement Shortest Job First (SJF)<a class="headerlink" href="#ordonnancement-shortest-job-first-sjf" title="Permanent link">⚓︎</a></h3>
+<p><strong>Principe</strong> : Le processus dont le temps d'exécution est le plus court est ordonnancé en premier.</p>
+<p><strong>Exemple</strong> : <span class="arithmatex">\(P_1\)</span>, <span class="arithmatex">\(P_2\)</span>, <span class="arithmatex">\(P_3\)</span> et <span class="arithmatex">\(P_4\)</span> arrivent à <span class="arithmatex">\(t=0\)</span> :</p>
+<p><img alt="" class="center" src="../data/ordo_sjf.png" /></p>
+<h3 id="ordonnancement-shortest-remaining-time-srt">Ordonnancement Shortest Remaining Time (SRT)<a class="headerlink" href="#ordonnancement-shortest-remaining-time-srt" title="Permanent link">⚓︎</a></h3>
+<p><strong>Principe</strong> : Le processus dont le temps d'exécution restant est le plus court parmi ceux qui restent à exécuter est ordonnancé en premier.</p>
+<p><strong>Exemple</strong> : <span class="arithmatex">\(P_3\)</span> et <span class="arithmatex">\(P_4\)</span> arrivent à <span class="arithmatex">\(t=0\)</span> ; <span class="arithmatex">\(P_2\)</span> à <span class="arithmatex">\(t=20\)</span> ; <span class="arithmatex">\(P_1\)</span> à <span class="arithmatex">\(t=50\)</span> :</p>
+<p><img alt="" class="center" src="../data/ordo_srt.png" /></p>
+<h3 id="ordonnancement-temps-partage-round-robin">Ordonnancement temps-partagé (Round-Robin)<a class="headerlink" href="#ordonnancement-temps-partage-round-robin" title="Permanent link">⚓︎</a></h3>
+<p><strong>Principe</strong> : C'est la politique du tourniquet : allocation du processeur par tranche (= quantum <span class="arithmatex">\(q\)</span>) de temps.</p>
+<p><strong>Exemple</strong> : quantum <span class="arithmatex">\(q = 20\)</span> et <span class="arithmatex">\(n = 4\)</span> processus</p>
+<p><img alt="" class="center" src="../data/ordo_rr.png" /></p>
+<p>Dans ce cas, s'il y a <span class="arithmatex">\(n\)</span> processus, chacun d'eux obtient le processeur au bout de <span class="arithmatex">\((n-1)\times q\)</span> unités de temps au plus</p>
+<h3 id="ordonnancement-a-priorites-statiques">Ordonnancement à priorités statiques<a class="headerlink" href="#ordonnancement-a-priorites-statiques" title="Permanent link">⚓︎</a></h3>
+<p><strong>Principe</strong> : Allocation du processeur selon des priorités <em>statiques</em> (= numéros affectés aux processus pour toute la vie de l'application)</p>
+<p><strong>Exemple</strong> : priorités <span class="arithmatex">\((P_1, P_2, P_3, P_4) = (3, 2, 0, 1)\)</span> où la priorité la plus forte est 0 (attention, dans certains systèmes c'est l'inverse : 0 est alors la priorité la plus faible)</p>
+<p><img alt="" class="center" src="../data/ordo_prio.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<h1 id="problemes-lies-a-lacces-concurrent-aux-ressources">Problèmes liés à l'accès concurrent aux ressources<a class="headerlink" href="#problemes-lies-a-lacces-concurrent-aux-ressources" title="Permanent link">⚓︎</a></h1>
+<p>Les processus se partagent souvent une ou plusieurs ressources, et cela peut poser des problèmes.</p>
+<h2 id="problemes-de-synchronisation-illustration-avec-python">Problèmes de synchronisation : illustration avec Python<a class="headerlink" href="#problemes-de-synchronisation-illustration-avec-python" title="Permanent link">⚓︎</a></h2>
+<h3 id="exemple-dune-variable-partagee">Exemple d'une variable partagée<a class="headerlink" href="#exemple-dune-variable-partagee" title="Permanent link">⚓︎</a></h3>
+<p>Prenons l'exemple d'une variable (= ressource logicielle) partagée entre plusieurs processus. Plus précisément, considérons un programme de jeu multi-joueur dans lequel une variable <code>nb_pions</code> représente le nombre de pions disponibles pour tous les joueurs.</p>
+<p>Une fonction <code>prendre_un_pion()</code> permet de prendre un pion dans le tas commun de pions disponibles, s'il reste au moins un pion évidemment.</p>
+<p>On va se mettre dans la situation où il ne reste plus qu'un pion dans le tas commun et on suppose que deux joueurs utilisent la fonction <code>prendre_un_pion()</code>, ce qui conduit à la création de deux processus <code>p1</code> et <code>p2</code>, chacun correspondant à un joueur.</p>
+<p>Avec Python, on peut utiliser le module <code>multiprocessing</code> pour créer des processus. Le programme Python <code>pions.py</code> suivant permet de réaliser la situation de jeu décrite :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Value</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">prendre_un_pion</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>  <span class="c1"># pour simuler un traitement avec des calculs</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> 
+        <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># on décrémente le nombre de pions</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># création de la variable partagée initialisée à 1</span>
+    <span class="n">nb_pions</span> <span class="o">=</span> <span class="n">Value</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># on crée deux processus</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">prendre_un_pion</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">nb_pions</span><span class="p">])</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">prendre_un_pion</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">nb_pions</span><span class="p">])</span>
+    <span class="c1"># on démarre les deux processus </span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="c1"># on attend la fin des deux processus</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nombre final de pions :&quot;</span><span class="p">,</span> <span class="n">nb_pions</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Explications</strong> :</p>
+<ul>
+<li>Le <code>if __name__ = '__main'__:</code> permet de ne créer qu'une seule fois les processus <code>p1</code> et <code>p2</code> qui suivent (c'est nécessaire sous Windows, pas sous GNU/Linux car la création des processus ne se fait pas de la même manière, mais cela reste conseillé ne serait-ce que pour des raisons de compatibilité), on n'en dira pas davantage ici car cela dépasse le niveau de ce cours.</li>
+<li>On a utilisé la classe <code>Process</code> du module <code>multiprocessing</code> pour instancier deux processus <code>p1</code> et <code>p2</code>.<ul>
+<li>L'argument <code>target</code> est le nom de la fonction qui sera exécutée par le processus : ici les deux processus doivent exécuter la même fonction <code>prendre_un_pion()</code></li>
+<li>L'argument <code>args</code> est une liste des arguments passés à la fonction cible : ici il s'agit de la variable <code>nb_pions</code> qui est partagée par les deux processus.</li>
+</ul>
+</li>
+<li>Par défaut, deux processus ne partagent pas de données en mémoire : on ne peut pas donc pas utiliser <code>nb_pions</code> comme une variable globale. Il faut utiliser la classe <code>Value</code> du module <code>multiprocessing</code> pour créer <code>nb_pions</code> dans une mémoire partagée entre les processus. L'argument <code>'i'</code> indique que <code>nb_pions</code> est un entier (signé) et le deuxième argument est la valeur initiale de la variable, ici 1.</li>
+<li>La fonction <code>prendre_un_pion()</code> prend un nombre en paramètre et décrémente sa valeur d'une unité si le nombre est au moins égal à 1.<ul>
+<li>Lors de l'exécution de la fonction par les deux processus, l'argument en question sera l'objet <code>nb_pions</code> de la classe <code>Value</code> et on accède à sa valeur avec l'attribut <code>value</code>.</li>
+<li>On a ajouté une temporisation permettant de simuler d'autres calculs qui pourraient avoir lieu (par exemple, des instructions de mise à jour du nombre de pions des joueurs)</li>
+</ul>
+</li>
+<li>Les dernières lignes permettent de démarrer les deux processus et attendre qu'ils soient terminés pour afficher la valeur finale de <code>nb_pions</code>.</li>
+</ul>
+<p>Si on exécute ce programme, les deux processus <code>p1</code> et <code>p2</code> sont exécutés et on s'attend au comportement suivant (en supposant qu'il ne reste qu'un seule pion dans le tas commun) :</p>
+<ul>
+<li>l'un des deux est élu en premier, par exemple <code>p1</code>, et exécute la fonction <code>prendre_un_pion()</code>, le nombre de pions est égal à 1 donc <code>nb_pions</code> est décrémenté d'une unité et prend donc la valeur 0, le processus <code>p1</code> est terminé ;</li>
+<li>le processus <code>p2</code>, qui était en attente, est ensuite élu, et comme le nombre de pions est désormais égal à 0 rien ne se passe et <code>p2</code> termine.</li>
+</ul>
+<p>Ainsi, le premier joueur a pu prendre le pion restant et le second s'est retrouvé coincé, et la valeur finale de <code>nb_pions</code> vaut 0.</p>
+<p>Et pourtant, il est tout à fait possible que les choses ne se passent pas ainsi ! En effet, en exécutant plusieurs fois le programme <code>pions.py</code> dans un terminal, on obtient parfois une valeur finale égale à 0 et parfois égale à -1 :</p>
+<p><img alt="" class="center" src="../data/pions.png" /></p>
+<p>C'est un résultat très perturbant non ? Expliquons pourquoi !</p>
+<p>Pour cela, on peut ajouter quelques instructions d'affichage pour suivre ce qu'il se passe. On obtient le script <code>pions_v2.py</code> suivant :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Value</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">prendre_un_pion</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">numero_processus</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;début du processus </span><span class="si">{</span><span class="n">numero_processus</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;processus </span><span class="si">{</span><span class="n">numero_processus</span><span class="si">}</span><span class="s2"> : étape A&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>  <span class="c1"># pour simuler un traitement avec des calculs</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;processus </span><span class="si">{</span><span class="n">numero_processus</span><span class="si">}</span><span class="s2"> : étape B&quot;</span><span class="p">)</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> 
+        <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># on décrémente le nombre de pions</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;nombre de pions restants à la fin du processus </span><span class="si">{</span><span class="n">numero_processus</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># création de la variable partagée initialisée à 1</span>
+    <span class="n">nb_pions</span> <span class="o">=</span> <span class="n">Value</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># on crée deux processus</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">prendre_un_pion</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">nb_pions</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">prendre_un_pion</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">nb_pions</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="c1"># on démarre les deux processus </span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="c1"># on attend la fin des deux processus</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nombre final de pions :&quot;</span><span class="p">,</span> <span class="n">nb_pions</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Explications</strong> :</p>
+<ul>
+<li>Lors de la création des processus, on passe un deuxième argument à la fonction <code>prendre_un_pion()</code>, le numéro du processus : 1 pour <code>p1</code> et 2 pour <code>p2</code>.</li>
+<li>Cela permet d'afficher dans cette fonction le numéro du processus à des endroits stratégiques : au début, à l'entrée dans le <code>if</code>, juste avant de décrémenter le nombre de pions et à la fin du processus.</li>
+</ul>
+<p>En exécutant <code>pions_v2.py</code> dans un terminal, on obtient ce genre de choses :</p>
+<p><img alt="" class="center" src="../data/pions_v2.png" /></p>
+<p>Analysons la première exécution du programme.</p>
+<ul>
+<li>le processus <code>p1</code> est élu en premier (affichage de "début du processus 1") mais est de suite interrompu par l'ordonnanceur qui élit <code>p2</code> (affichage de "début du processus 2")</li>
+<li>puis c'est de nouveau le processus <code>p1</code> qui a la main et il rentre dans le <code>if</code> (affichage de "processus 1 : étape A") mais est interrompu à nouveau et l'ordonnanceur donne la main à <code>p2</code> qui rentre aussi dans le <code>if</code> (affichage de "processus 2 : étape A") : en effet, à ce stade le nombre de pions n'a pas encore été décrémenté par <code>p1</code> car il a été interrompu avant l'étape B, et donc <code>p2</code> a pu entrer dans le <code>if</code> puisque la condition <code>nombre.value &gt;= 1</code> est toujours vraie à ce moment là !!</li>
+<li>ensuite le processeur est alloué alternativement à <code>p1</code> et <code>p2</code> (voir les affichages restants) mais le mal est fait puisque les deux processus sont désormais chacun entrés dans le <code>if</code>, ils vont chacun décrémenter le nombre de pions d'une unité et chacun des deux joueurs aura pioché un pion alors qu'il n'y en avait qu'un seul au départ !</li>
+</ul>
+<blockquote>
+<p>Vous remarquerez que la troisième exécution du programme met en évidence le même problème car les deux processus ont chacun pu entrer dans le <code>if</code>, même si l'ordre des instructions exécutées après n'est pas tout à fait le même.</p>
+</blockquote>
+<p>Si on analyse la seconde exécution du programme qui donne le comportement souhaité, on constate que <code>p1</code> a eu suffisamment de temps pour décrémenter le nombre de pions (qui vaut désormais 0) <em>avant</em> que <code>p2</code> ne fasse le test <code>nombre.value &gt;= 1</code> et se rende compte que cette condition est fausse. Dans ce cas, seul le premier joueur a pas pu piocher un pion.</p>
+<p>Heureusement, on peut éviter le problème mis en évidence dans l'exemple précédent.</p>
+<h3 id="comment-eviter-les-problemes-de-synchronisation">Comment éviter les problèmes de synchronisation ?<a class="headerlink" href="#comment-eviter-les-problemes-de-synchronisation" title="Permanent link">⚓︎</a></h3>
+<p>On va utiliser ce qu'on appelle un <strong>verrou</strong> : un verrou est objet partagé entre plusieurs processus mais qui garantit qu'un seul processus accède à une ressource à un instant donné.</p>
+<p>Concrètement, un verrou peut être acquis par les différents processus, et le premier à faire la demande acquiert le verrou. Si le verrou est détenu par un autre processus, alors tout autre processus souhaitant l'obtenir est bloqué jusqu'à ce qu'il soit libéré.</p>
+<p>Le module <code>multiprocessing</code> de Python propose un objet <code>Lock()</code> correpondant à un verrou. Deux méthodes sont utilisées :</p>
+<ul>
+<li>la méthode <code>.acquire()</code> permet de demander le verrou (le processus faisant la demande est bloqué tant qu'il ne l'a pas obtenu)</li>
+<li>la méthode <code>.release()</code> permet de libérer le verrou (il pourra alors être obtenu par un autre processus qui en fait la demande)</li>
+</ul>
+<p>On peut alors régler le problème de l'exemple précédent avec le script <code>pions_v3.py</code> suivant dans lequel on a laissé les affichages pour bien suivre :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Value</span><span class="p">,</span> <span class="n">Lock</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">prendre_un_pion</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">numero_processus</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;début du processus </span><span class="si">{</span><span class="n">numero_processus</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>  <span class="c1"># acquisition du verrou</span>
+    <span class="k">if</span> <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;processus </span><span class="si">{</span><span class="n">numero_processus</span><span class="si">}</span><span class="s2"> : étape A&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;processus </span><span class="si">{</span><span class="n">numero_processus</span><span class="si">}</span><span class="s2"> : étape B&quot;</span><span class="p">)</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> 
+        <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>  <span class="c1"># verrou libéré</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;nombre de pions restants à la fin du processus </span><span class="si">{</span><span class="n">numero_processus</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># création de la variable partagée initialisée à 1</span>
+    <span class="n">nb_pions</span> <span class="o">=</span> <span class="n">Value</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># verrou partagé par les deux processus</span>
+    <span class="n">verrou</span> <span class="o">=</span> <span class="n">Lock</span><span class="p">()</span>
+    <span class="c1"># on crée deux processus</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">prendre_un_pion</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">verrou</span><span class="p">,</span> <span class="n">nb_pions</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">prendre_un_pion</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">verrou</span><span class="p">,</span> <span class="n">nb_pions</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="c1"># on démarre les deux processus </span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="c1"># on attend la fin des deux processus</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nombre final de pions :&quot;</span><span class="p">,</span> <span class="n">nb_pions</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+<p>En exécutant (plusieurs fois) ce script dans un terminal on constate que le nombre final de pions est toujours égal à 0.</p>
+<p><img alt="" src="../data/pions_v3.png" /></p>
+<p>Avant de faire le test du <code>if</code>, le processus essaye d'acquérir le verrou avec <code>v.acquire()</code>. Dès qu'il est acquis, le processus a la garantie qu'il est le seul à pouvoir exécuter le code jusqu'à l'instruction <code>v.release()</code>. Cette portion de code protégée s'appelle une <em>section critique</em>. Cela ne veut pas dire que le processus détenant le verrou ne peut pas être interrompu, mais il ne le sera pas par un processus qui est essaie d'acquérir le même verrou.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">prendre_un_pion</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">numero_processus</span><span class="p">):</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+    <span class="c1"># début section critique</span>
+    <span class="k">if</span> <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> 
+        <span class="n">nombre</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="c1"># fin de la section critique</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+</code></pre></div>
+<p>Si vous analysez l'affichage précédent dans le terminal, on voit d'ailleurs que <code>p1</code> est entré en section critique (affichage "processus 1 : étape A") mais est interrompu, puis c'est <code>p2</code> qui a la main (affichage "début processus 2") mais il va se retrouver bloquer à l'instruction <code>v.acquire()</code> puisque c'est <code>p1</code> qui détient le verrou. Lorsque <code>p1</code> reprendra la main, il pourra exécuter ses instructions jusqu'à <code>v.release()</code> sans être interrompu par <code>p2</code> (alors <code>nb_pions</code> sera décrémenté d'une unité). Lorsque <code>p1</code> libère le verrou, <code>p2</code> pourra alors l'obtenir, exécuter sa section critique et constater que la condition <code>nombre.value &gt;= 1</code> est fausse : le deuxième joueur ne pourra alors pas prendre de pion.</p>
+<p>Nous terminons en voyant que l'utilisation de verrous n'est pas sans risque car elle peut engendrer des problèmes d'interblocage.</p>
+<h2 id="risque-dinterblocage">Risque d'interblocage<a class="headerlink" href="#risque-dinterblocage" title="Permanent link">⚓︎</a></h2>
+<p>Les interblocages (<em>deadlock</em> en anglais) sont des situations de la vie quotidienne. L'exemple classique est celui du carrefour avec priorité à droite où chaque véhicule est bloqué car il doit laisser le passage au véhicule à sa droite.</p>
+<p><img alt="" class="center" src="../data/carrefour.png" /></p>
+<p>En informatique l'<strong>interblocage</strong> peut également se produire lorsque plusieurs processus concurrents s'attendent mutuellement. Ce scénario peut se produire lorsque plusieurs ressources sont partagées par plusieurs processus et l'un d'entre eux possède indéfiniment une ressource nécessaire pour un autre.</p>
+<p>Ce phénomène d'<em>attente circulaire</em>, où chaque processus attend une ressource détenue par un autre processus, peut être provoquée par l'utilisation de <em>plusieurs</em> verrous.</p>
+<p>Considérons le script <code>interblocage.py</code> suivant dans lequel on a créé deux verrous <code>v1</code> et <code>v2</code> utilisés par deux fonctions <code>f1</code> et <code>f2</code> exécutées respectivement par deux processus <code>p1</code> et <code>p2</code>. Le processus <code>p1</code> essaie d'acquérir d'abord <code>v1</code> puis <code>v2</code> tandis que le processus <code>p2</code> essaie de les acquérir dans l'ordre inverse.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Lock</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PID du processus 1:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+        <span class="n">v1</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+        <span class="n">v2</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;processus 1 en cours, itération &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">v2</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+        <span class="n">v1</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PID du processus 2:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+        <span class="n">v2</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+        <span class="n">v1</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;processus 2 en cours, itération &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">v1</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+        <span class="n">v2</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># création de deux verrous</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">Lock</span><span class="p">()</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">Lock</span><span class="p">()</span>
+    <span class="c1"># création de deux processus</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">f1</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">])</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">f2</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">])</span>
+    <span class="c1"># on démarre les deux processus</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="c1"># on attend la fin des deux processus</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</code></pre></div>
+<p>Si on exécute ce programme, il y a de grandes chances de se retrouver bloqué. Par exemple, dans le cas de l'exécution suivante :</p>
+<ul>
+<li>le processus <code>p1</code> est élu : il s'exécute jusqu'à l'acquisition de <code>v1</code> mais avant la tentative d'acquisition de <code>v2</code>, puis est interrompu</li>
+<li>le processus <code>p2</code> est à son tour élu : il s'exécute et acquiert <code>v2</code> qui est toujours libre, puis bloque sur l'acquisition de <code>v1</code> (qui est détenu par <code>p1</code>).</li>
+<li>le processus <code>p1</code> reprend la main et bloque sur l'acquisition de <code>v2</code> (détenu par <code>p2</code>).</li>
+</ul>
+<p>Chaque processus détient un verrou et attend l'autre : ils sont en interblocage et l'attente est infinie.</p>
+<p>On peut lancer (plusieurs fois si nécessaire) le script à partir du terminal et constater que l'interblocage a lieu très souvent.</p>
+<p><img alt="" class="center" src="../data/interblocage.png" /></p>
+<p>Il n'y a alors pas d'autres choix que d'interrompre les processus en interblocage, par exemple avec la commande <code>kill</code>.</p>
+<p>Cependant, ce problème a lieu ici car les deux processus essaie d'acquérir les verrous dans l'ordre contraire. Si l'ordre d'acquisition est le même pour les processus, le problème n'a plus lieu (n'hésitez pas à tester !).</p>
+<p>De manière générale, dans des problèmes complexes les situations d'interblocage sont difficiles à détecter et il se peut très bien que le programme se comporte bien pendant toute une phase de tests mais bloque lors d'une exécution ultérieure puisque l'on ne peut pas prévoir l'ordonnancement des processus.</p>
+<h2 id="simulation-dinterblocage">Simulation d'interblocage⚓︎<a class="headerlink" href="#simulation-dinterblocage" title="Permanent link">⚓︎</a></h2>
+<p>Robosomes créé par Alain BUSSER , Sébastien HOARAU (Voir ici : <a href="https://irem.univ-reunion.fr/spip.php?article1128">Robosomes - IREM de la réunion</a></p>
+<p><img alt="" class="center" src="../data/jeu1logo-2.png" /></p>
+<p>Le jeu robosomes se joue à un seul joueur sur une grille rectangulaire. Chaque case peut être</p>
+<ul>
+<li>soit vide  </li>
+<li>soit couverte par un obstacle fixe (en noir comme aux mots croisés)  </li>
+<li>soit couverte d’un pion pouvant bouger, appelé robot  </li>
+</ul>
+<p>Chaque robot peut être tourné dans l’une des quatre directions cardinales ◀▲▶▼. Les robots peuvent bouger tous en même temps de l’une des façons suivantes :</p>
+<ul>
+<li>G : tous les robots tournent vers leur gauche (de 90°) en même temps  </li>
+<li>D : tous les robots tournent vers leur droite (de 90°) en même temps  </li>
+<li>A : les robots qui peuvent avancer d’une case, le font. Un robot peut avancer d’une case s’il n’y a pas d’obstacle sur cette case et si aucun robot ne s’apprête à aller sur cette case.</li>
+</ul>
+<p>Les cases du bord de la grille sont toutes couvertes d’obstacles fixes, à l’exception de l’une d’entre elles appelée « sortie ». Lorsqu’un robot est sur la case de sortie, tourné vers l’extérieur de la grille, il quitte le jeu et n’est plus soumis aux ordres donnés. Le but du jeu est de faire sortir tous les robots de la grille, en écrivant un mot dans l’alphabet A,G,D, appelé programme et que les robots interpréteront comme décrit ci-dessus.</p>
+<p>Voici quelques exemples :</p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu7.html">Un premier exemple</a> pour se mettre en route.</p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu6.html">Interblocage</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu1.html">Interblocage 1</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu2.html">Interblocage 2</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu3.html">Interblocage 3</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu4.html">Interblocage 4</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu5.html">Interblocage perpétuel ou pas</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu8.html">Interblocage 8</a></p>
+<h1 id="et-pour-les-systemes-multiprocesseurs">Et pour les systèmes multiprocesseurs ?<a class="headerlink" href="#et-pour-les-systemes-multiprocesseurs" title="Permanent link">⚓︎</a></h1>
+<p>Les ordinateurs actuels possèdent généralement plusieurs processeurs, ce qui permet à plusieurs processus d'être exécutés parallèlement : un par processeur. Ce parallélisme permet bien évidemment une plus grande puissance de calcul.</p>
+<p>Pour répartir les différents processus entre les différents processeurs, on distingue deux approches :</p>
+<ul>
+<li>l'approche <em>partitionnée</em> : chaque processeur possède un ordonnanceur particulier et les processus sont répartis entre les différents ordonnanceurs</li>
+<li>l'approche <em>globale</em> : un ordonnanceur global est chargé de déterminer la répartition des processus entre les différents processeurs</li>
+</ul>
+<p>L'ordonnancement des processus des systèmes d'exploitation actuels est bien plus complexe que les quelques algorithmes évoqués dans ce cours, et cela dépasse largement le cadre du programme de NSI. Si vous souhaitez en savoir plus, voici néanmoins une vidéo intéressante (en français) sur l'ordonnancement du noyau Linux : <a href="https://www.youtube.com/watch?v=uCGe5WWd1OI&amp;t=195s&amp;ab_channel=Vitonimal">https://www.youtube.com/watch?v=uCGe5WWd1OI&amp;t=195s&amp;ab_channel=Vitonimal</a>.</p>
+<div style="page-break-after: always;"></div>
+
+<h1 id="bilan">Bilan<a class="headerlink" href="#bilan" title="Permanent link">⚓︎</a></h1>
+<ul>
+<li>Un programme en cours d'exécution s'appelle un <em>processus</em>. Les systèmes d'exploitation récents permettent d'exécuter plusieurs processus simultanément.</li>
+<li>En réalité, ces processus sont exécutés <em>à tour de rôle</em> par le système d'exploitation qui est chargé d'allouer à chacun d'eux les ressources dont il a besoin en termes de mémoire, entrées-sorties ou temps d'accès au processeur, et de s'assurer que les processus ne se gênent pas les uns les autres.</li>
+<li>Au cours de leur vie, les processus varient entre trois états : <em>élu</em> si le processus est exécuté par le processeur, <em>prêt</em> si le processus est prêt à être exécuté, et <em>bloqué</em> si le processus est en attente d'une ressource.</li>
+<li>C'est l'<em>ordonnanceur</em> qui est chargé de définir l'ordre dans lequel les processus doivent être exécutés par le processeur. Ce choix se fait grâce à des algorithmes d'ordonnancement.</li>
+<li>Les processus se partagent les différentes ressources, on parle d'<em>accès concurrent</em> aux ressources. Ce partage des ressources n'est pas sans risque et peut conduire à des problèmes de synchronisation. Ces problèmes peuvent être évités en utilisant un <em>verrou</em>, qui permet à un processus de ne pas être interrompu dans sa section critique par un autre processus demandant le même verrou.</li>
+<li>L'utilisation de plusieurs verrous peut entraîner des <em>interblocages</em>, c'est-à-dire des situations où chaque processus attend une ressource détenue par un autre, conduisant à une attente cyclique infinie. L'ordre d'acquisition des verrous est important mais pas toujours évident à écrire dans le cas de problèmes complexes.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+
+<h1 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h1>
+<h2 id="exercice-1-algorithmes-dordonnancement">Exercice 1 : Algorithmes d'ordonnancement<a class="headerlink" href="#exercice-1-algorithmes-dordonnancement" title="Permanent link">⚓︎</a></h2>
+<p>Soient les différents processus suivants :</p>
+<table>
+<thead>
+<tr>
+<th>Processus</th>
+<th>Date d'arrivée</th>
+<th>Durée de traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(P_1\)</span></td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(P_2\)</span></td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(P_3\)</span></td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(P_4\)</span></td>
+<td>6</td>
+<td>5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(P_5\)</span></td>
+<td>8</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="application-de-plusieurs-algorithmes">Application de plusieurs algorithmes<a class="headerlink" href="#application-de-plusieurs-algorithmes" title="Permanent link">⚓︎</a></h3>
+<p><strong>Q1</strong> : Donnez le diagramme de Gantt pour l'exécution de ces différents processus en utilisant successivement les algorithmes FCFS, RR (quantum = 2 unités de temps) et SRT.</p>
+<h3 id="performances-des-algorithmes-dordonnancement">Performances des algorithmes d'ordonnancement<a class="headerlink" href="#performances-des-algorithmes-dordonnancement" title="Permanent link">⚓︎</a></h3>
+<p>On définit les métriques suivantes :</p>
+<ul>
+<li>le <strong>temps de séjour (ou d'exécution)</strong> (ou de rotation) d'un processus : c'est la différence entre la date de fin d'exécution et la date d'arrivée : <span class="arithmatex">\(T_{\text{sej}} = \text{date fin d'exécution} - \text{date d'arrivée}\)</span></li>
+<li>le <strong>temps d'attente</strong> d'un processus : c'est la différence entre le temps de séjour et la durée du processus : <span class="arithmatex">\(T_{\text{att}} = T_{\text{sej}} - \text{durée du processus}\)</span></li>
+<li>le <strong>rendement</strong> d'un processus : c'est le quotient entre la durée du processus et le temps de séjour : <span class="arithmatex">\(\text{rendement} = \dfrac{\text{durée du processus}}{T_{\text{sej}}}\)</span></li>
+</ul>
+<p><strong>Q2</strong> : Pour chacun des trois algorithmes, calculez le temps de séjour, le temps d'attente et le rendement de chaque processus.</p>
+<p><strong>Q3</strong> : Quel vous semble être le <em>meilleur</em> des trois algorithmes dans notre exemple ? Expliquer.</p>
+<details class="tip">
+<summary>Solution</summary>
+</details>
+<h2 id="exercice-2">Exercice 2<a class="headerlink" href="#exercice-2" title="Permanent link">⚓︎</a></h2>
+<p>cet exercice est issu du sujet 2021 du bac NSI</p>
+<p><strong>Partie A</strong></p>
+<p>Cette partie est un questionnaire à choix multiples (QCM).
+Pour chacune des questions, une seule des quatre réponses est exacte. Le candidat indiquera sur sa copie le numéro de la question et la lettre correspondant à la réponse exacte.
+Aucune justification n’est demandée. Une réponse fausse ou une absence de réponse n’enlève aucun point.</p>
+<p>1) Parmi les commandes ci-dessous, laquelle permet d’afficher les processus en cours d’exécution ?</p>
+<div class="highlight"><pre><span></span><code>    a. dir  
+    b. ps  
+    c. man  
+    d. ls
+</code></pre></div>
+<p>2) Quelle abréviation désigne l’identifiant d’un processus dans un système d’exploitation de type UNIX ? </p>
+<div class="highlight"><pre><span></span><code>    a. PIX  
+    b. SIG  
+    c. PID  
+    d. SID
+</code></pre></div>
+<p>3) Comment s’appelle la gestion du partage du processeur entre différents processus ?</p>
+<div class="highlight"><pre><span></span><code>    a. L’interblocage  
+    b. L’ordonnancement  
+    c. La planification  
+    d. La priorisation
+</code></pre></div>
+<p>4) Quelle commande permet d’interrompre un processus dans un système d’exploitation de type UNIX ?</p>
+<div class="highlight"><pre><span></span><code>    a. stop  
+    b. interrupt  
+    c. end  
+    d. kill
+</code></pre></div>
+<details class="tip">
+<summary>Solution</summary>
+<p>1.b - 2.c - 3.b -4.d</p>
+</details>
+<p><strong>Partie B</strong></p>
+<p>1) Un processeur choisit à chaque cycle d’exécution le processus qui doit être exécuté. Le tableau ci-dessous donne pour trois processus P1, P2, P3 :</p>
+<ul>
+<li>
+<p>la durée d’exécution (en nombre de cycles),</p>
+</li>
+<li>
+<p>l’instant d’arrivée sur le processeur (exprimé en nombre de cycles à partir de 0),</p>
+</li>
+<li>
+<p>le numéro de priorité.</p>
+</li>
+</ul>
+<p>Le numéro de priorité est d’autant plus petit que la priorité est grande. On suppose qu’à chaque instant, c’est le processus qui a le plus petit numéro de priorité qui est exécuté, ce qui peut provoquer la suspension d’un autre processus, lequel reprendra lorsqu’il sera le plus prioritaire.</p>
+<p><img alt="" src="../data/c19e_3.png" /></p>
+<p>Reproduire le tableau ci-dessous sur la copie et indiquer dans chacune des cases le processus exécuté à chaque cycle.</p>
+<p><img alt="" src="../data/c19e_4.png" /></p>
+<details class="tip">
+<summary>Correction</summary>
+<p>P3 - P3 - P2 - P1 - P1 - P1 - P2 - P2 - P3 - P3</p>
+</details>
+<p>2) On suppose maintenant que les trois processus précédents s’exécutent et utilisent une ou plusieurs ressources parmi R1, R2 et R3.
+Parmi les scénarios suivants, lequel provoque un interblocage ? Justifier.</p>
+<p><img alt="" class="center" src="../data/c19e_5.png" width="350px" /></p>
+<details class="tip">
+<summary>Correction</summary>
+<p>Il s’agit du scénario 2 car nous nous retrouvons dans la situation où P1 possède R1 et attend R2 avant de pouvoir continuer et P3 possède R2 et attend R1 avant de pouvoir continuer.</p>
+</details>
+<p><strong>Partie C</strong>  </p>
+<p>Dans cette partie, pour une meilleure lisibilité, des espaces sont placées dans les écritures
+binaires des nombres. Il ne faut pas les prendre en compte dans les calculs.<br />
+Pour chiffrer un message, une méthode, dite du masque jetable, consiste à le combiner avec une
+chaîne de caractères de longueur comparable.<br />
+Une implémentation possible utilise l’opérateur XOR (ou exclusif) dont voici la table de vérité :</p>
+<table>
+<thead>
+<tr>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">a XOR b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>Dans la suite, les nombres écrits en binaire seront précédés du préfixe 0b.</p>
+<p><strong>Q1.</strong> Pour chiffrer un message, on convertit chacun de ses caractères en binaire (à l’aide du format Unicode), et on réalise l’opération XOR bit à bit avec la clé.<br />
+Après conversion en binaire, et avant que l’opération XOR bit à bit avec la clé n’ait été
+effectuée, Alice obtient le message suivant :  </p>
+<p><code>m = 0b 0110 0011 0100 0110</code></p>
+<p><strong>a.</strong> Le message m correspond à deux caractères codés chacun sur 8 bits : déterminer quels sont
+ces caractères. On fournit pour cela la table ci-dessous qui associe à l’écriture hexadécimale
+d’un octet le caractère correspondant (figure 2). Exemple de lecture : le caractère
+correspondant à l’octet codé 4A en hexadécimal est la lettre J.</p>
+<p><img alt="" class="center" src="../data/tableasciiBAC.png" width="350px" /></p>
+<p>Pour chiffrer le message d’Alice, on réalise l’opération XOR bit à bit avec la clé suivante :<br />
+<code>k = 0b 1110 1110 1111 0000</code>  </p>
+<p>Donner l’écriture binaire du message obtenu.</p>
+<details class="tip">
+<summary>Correction</summary>
+<p>0b 1000 1101 1011 0110</p>
+</details>
+<p><strong>Q2.</strong><br />
+<strong>a.</strong> Dresser la table de vérité de l’expression booléenne suivante : </p>
+<p><code>(a XOR b) XOR b</code></p>
+<details class="tip">
+<summary>Correction</summary>
+<table>
+<thead>
+<tr>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">(a xor b) xor b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>b.</strong> Bob connaît la chaîne de caractères utilisée par Alice pour chiffrer le message. Quelle
+opération doit-il réaliser pour déchiffrer son message ?</p>
+<details class="tip">
+<summary>Correction</summary>
+<p>On peut remarquer que (a xor b) xor b permet de retrouver a, donc si a correspond au message non chiffré et a xor b correspond au message chiffré, un (a xor b) xor b permet donc de retrouver le message non chiffré. Si on appelle m le message non chiffré, m’ le message chiffré et k la clé de chiffrement, un m’ xor k permettra de retrouver m</p>
+</details>
+<h2 id="exercice-3">Exercice 3<a class="headerlink" href="#exercice-3" title="Permanent link">⚓︎</a></h2>
+<p>d'après le sujet du bac NSI 2021</p>
+<p><em>Cet exercice porte sur les systèmes d’exploitation : gestion des processus et des ressources.</em>  <br />
+<em>Les parties A et B peuvent être traitées indépendamment</em></p>
+<p><strong>Partie A :</strong> </p>
+<p>Dans un bureau d’architectes, on dispose de certaines ressources qui ne peuvent être utilisées simultanément par plus d’un processus, comme l’imprimante, la table traçante, le modem. Chaque programme, lorsqu’il s’exécute, demande l’allocation des ressources qui lui sont nécessaires. Lorsqu’il a fini de s’exécuter, il libère ses ressources.</p>
+<p><img alt="" src="../data/c19e_2.png" /></p>
+<p>On appelle p1, p2 et p3 les processus associés respectivement aux programmes 1, 2 et 3.</p>
+<p><strong>Q.1.</strong> Justifier qu'une situation d'interblocage peut se produire.</p>
+<details class="tip">
+<summary>Correction</summary>
+<ul>
+<li>Pour passer à l’exécution, le Programme 1 a besoin du modem, mais le modem est déjà utilisé par le Programme 2.  </li>
+<li>Le processus p1 est donc bloqué. </li>
+<li>Pour passer à l’exécution, le Programme 2 a besoin de l’imprimante, mais l’imprimante est déjà utilisée par le Programme 3.  </li>
+<li>Le processus p2 est donc bloqué. </li>
+<li>Pour passer à l’exécution, le Programme 3 a besoin de la table traçante, mais la table traçante est déjà utilisée par le Programme 1.  </li>
+<li>Le processus p3 est donc bloqué. </li>
+<li>Les 3 processus sont bloqués et ne pourront pas libérer les ressources attendues par les autres processus (la libération des ressources se faisant après l’exécution), nous sommes bien en situation d’interblocage.</li>
+</ul>
+</details>
+<p><strong>Q.2.</strong> Modifier l'ordre des instructions du programme 3 pour qu'une telle situation ne puisse pas se produire.</p>
+<details class="tip">
+<summary>Correction</summary>
+<ul>
+<li>Programme 3  </li>
+<li>demander (table traçante)  </li>
+<li>demander (imprimante)  </li>
+<li>exécution  </li>
+<li>libérer (imprimante)  </li>
+<li>libérer (table traçante)bb</li>
+</ul>
+</details>
+<p><strong>Q.3</strong> Supposons que le processus p1 demande la table traçante alors qu'elle est en cours
+d'utilisation par le processus p3. Parmi les états suivants, quel sera l'état du processus p1
+tant que la table traçante n'est pas disponible :<br />
+a) élu<br />
+b) bloqué<br />
+c) prêt<br />
+d) terminé  </p>
+<details class="tip">
+<summary>Correction</summary>
+<p>bloqué</p>
+</details>
+<p><strong>Partie B</strong>  </p>
+<p>Avec une ligne de commande dans un terminal sous Linux, on obtient l'affichage suivant :</p>
+<p><img alt="" src="../data/psBAC.png" /></p>
+<p>La documentation Linux donne la signification des différents champs :</p>
+<ul>
+<li>UID : identifiant utilisateur effectif ;  </li>
+<li>PID : identifiant de processus ;  </li>
+<li>PPID : PID du processus parent ;  </li>
+<li>C : partie entière du pourcentage d'utilisation du processeur par rapport au temps de vie des  processus ;  </li>
+<li>STIME : l'heure de lancement du processus ;  </li>
+<li>TTY : terminal de contrôle  </li>
+<li>TIME : temps d'exécution  </li>
+<li>CMD : nom de la commande du processus  </li>
+</ul>
+<p><strong>Q.1.</strong> Parmi les quatre commandes suivantes, laquelle a permis cet affichage ?<br />
+a) ls -l<br />
+b) ps –ef<br />
+c) cd ..<br />
+d) chmod 741 processus.txt  </p>
+<details class="tip">
+<summary>Correction</summary>
+<p>ps -ef</p>
+</details>
+<p><strong>Q.2.</strong> Quel est l'identifiant du processus parent à l'origine de tous les processus concernant le navigateur Web (chromium-browser) ?</p>
+<details class="tip">
+<summary>Correction</summary>
+<p>L’identifiant du processus parent à l’origine de tous les processus concernant le navigateur Web est 831</p>
+</details>
+<p><strong>Q.3.</strong> Quel est l'identifiant du processus dont le temps d'exécution est le plus long ?</p>
+<details class="tip">
+<summary>Correction</summary>
+<p>L’identifiant du processus dont le temps d’exécution est le plus long est 6211 (00:01:16)</p>
+</details>
+<h2 id="exercice-4">Exercice 4<a class="headerlink" href="#exercice-4" title="Permanent link">⚓︎</a></h2>
+<p>Extrait sujet BAC 2021</p>
+<p><em>Cet exercice porte sur la gestion des processus par un système d’exploitation.</em></p>
+<p><strong>Partie A : Processus</strong>  </p>
+<p>La commande UNIX ps présente un cliché instantané des processus en cours d'exécution.<br />
+Avec l’option −eo pid,ppid,stat,command, cette commande affiche dans l’ordre l’identifiant du processus PID (process identifier), le PPID (parent process identifier), l’état STAT et le nom de la commande à l’origine du processus.  </p>
+<p>Les valeurs du champ STAT indique l’état des processus :<br />
+- R : processus en cours d’exécution<br />
+- S : processus endormi  </p>
+<p>Sur un ordinateur, on exécute la commande ps −eo pid,ppid,stat,command et on obtient un affichage dont on donne ci-dessous un extrait. </p>
+<p><img alt="" class="center" src="../data/extraitBAC.png" width="350px" /></p>
+<p>À l'aide de cet affichage, répondre aux questions ci-dessous.</p>
+<p><strong>Q.1.</strong> Quel est le nom de la première commande exécutée par le système d'exploitation lors
+du démarrage ?</p>
+<details class="tip">
+<summary>Correction</summary>
+<p>La première commande exécutée par le système d’exploitation lors du démarrage est la commande init</p>
+</details>
+<p><strong>Q.2.</strong> Quels sont les identifiants des processus actifs sur cet ordinateur au moment de
+l’appel de la commande ps ? Justifier la réponse.  </p>
+<details class="tip">
+<summary>Correction</summary>
+<p>Les processus actifs sont les processus ayant pour PID 5440 et 5450 (présence de l’indicateur R dans la colonne STAT pour ces 2 processus).</p>
+</details>
+<p><strong>Q.3.</strong> Depuis quelle application a-t-on exécuté la commande ps ?<br />
+Donner les autres commandes qui ont été exécutées à partir de cette application.  </p>
+<details class="tip">
+<summary>Correction</summary>
+<p>La commande ps a été exécutée depuis l’application Bash (car le processus ps a pour PPID 1912 qui correspond au PID de Bash).<br />
+Deux autres processus Bash (PID 2014 et PID 2013) et un processus python programme1.py (PID 5437) ont été lancés depuis le processus Bash de PID 1912</p>
+</details>
+<p><strong>Q.4.</strong> Expliquer l'ordre dans lequel les deux commandes python programme1.py et python programme2.py ont été exécutées.  </p>
+<details class="tip">
+<summary>Correction</summary>
+<p>Le processus python programme1.py a un PID de 5437 alors que le processus python programme2.py a un PID de 5440. python programme1.py a été exécuté avant python programme2.py.</p>
+</details>
+<p><strong>Q.5.</strong> Peut-on prédire que l'une des deux commandes python programme1.py et python programme2.py finira avant l’autre ?</p>
+<details class="tip">
+<summary>Correction</summary>
+<p>Non, aucune prédiction n’est possible.</p>
+</details>
+
+              
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../TD_Gestion_Processus/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TD 23 - Gestion des Processus" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              TD 23 - Gestion des Processus
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../crypto/crypto/" class="md-footer__link md-footer__link--next" aria-label="Suivant: TD crypto" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              TD crypto
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2022 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

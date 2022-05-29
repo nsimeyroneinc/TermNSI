@@ -1,0 +1,1660 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>TD n°23 - gestion des processus - Numériques et Sciences informatiques Terminale</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rappel" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-header__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numériques et Sciences informatiques Terminale
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TD n°23 - gestion des processus
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="brown"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-tabs__link">
+        T1 - Struct. de données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../BasesDonnees/TP17_JO/" class="md-tabs__link">
+        T2 - Bases de données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-tabs__link">
+        T3 - Archi. matèrielle
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../diviserregner/TD20_Diviser_pour_Regner_Correction/" class="md-tabs__link">
+        T5 Algo.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../divers/Exercices_Bac/" class="md-tabs__link">
+        BAC 📝
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../epreuve_pratique/" class="md-tabs__link">
+        E.P 💻
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../DM/DM_POO/" class="md-tabs__link">
+        Devoirs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../divers/conseil/" class="md-tabs__link">
+      Divers conseils
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-nav__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Numériques et Sciences informatiques Terminale
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T1 - Struct. de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T1 - Struct. de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T1 - Struct. de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-nav__link">
+        Les dictionnaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD11_Les_Listes/" class="md-nav__link">
+        TP 11 - Les Listes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD11_Corrige/" class="md-nav__link">
+        TP 11 - Les Listes Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD12_ListeChainee_Corrige/" class="md-nav__link">
+        TP 12 - Liste Chainée Enoncé-Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/TD13_Piles/" class="md-nav__link">
+        TP 13 - Les Piles Enoncé-Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/TD14_Files/" class="md-nav__link">
+        TP 14 - Les Files Enoncé-Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Graphe/TD_Graphe/" class="md-nav__link">
+        TP Graphe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Graphe/TD_Graphe_Parcours/" class="md-nav__link">
+        TP Graphe Parcours
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Graphe/TD_Graphe_Exercices/" class="md-nav__link">
+        TP Graphe Exercices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T2 - Bases de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T2 - Bases de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T2 - Bases de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/TP17_JO/" class="md-nav__link">
+        TP 17 - Les JO Londres 2012
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/TD18_Revision_SQL_BAC/" class="md-nav__link">
+        TD 18 - Sujet BAC 2021
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          T3 - Archi. matèrielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T3 - Archi. matèrielle" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          T3 - Archi. matèrielle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-nav__link">
+        TD 19 - Protocole de routage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD_Gestion_Processus/" class="md-nav__link">
+        TD 23 - Gestion des Processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TD_Gestion_Processus%20copy/" class="md-nav__link">
+        TD - Gestion des Processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crypto/crypto/" class="md-nav__link">
+        TD crypto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          T5 Algo.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T5 Algo." data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          T5 Algo.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../diviserregner/TD20_Diviser_pour_Regner_Correction/" class="md-nav__link">
+        TD 20 correction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/Calculabilite_Decidabilite/" class="md-nav__link">
+        TD Calculabilité et Décidabilité
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          BAC 📝
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BAC 📝" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          BAC 📝
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Exercices_Bac/" class="md-nav__link">
+        TD 21 Exercices BAC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Exercice_Bac__2/" class="md-nav__link">
+        TD 22 - Exercices BAC n°2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/Sujet_Libre_2_2021/" class="md-nav__link">
+        Sujet Candidat Libre 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/Sujet_Libre_2_2021_cor/" class="md-nav__link">
+        Sujet Candidat Libre 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/NSI-2021-polynesie-2-sujet-officiel.pdf" class="md-nav__link">
+        Sujet Polynésie 2021
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/Polynesie_sujet2_2021/" class="md-nav__link">
+        Sujet Polynésie 2021 Correction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/BacBlanc_2022_COR/" class="md-nav__link">
+        BAC BLANC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/1-jipo1/" class="md-nav__link">
+        BAC 2022 Polynésie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/France_J1_2022/" class="md-nav__link">
+        BAC 2022 France J1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          E.P 💻
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="E.P 💻" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          E.P 💻
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        Déroulement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        Consigne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/EpreuvePratique/" class="md-nav__link">
+        Sujets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devoirs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DM/DM_POO/" class="md-nav__link">
+        P.O.O
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS%20_Listes_Piles_Files/" class="md-nav__link">
+        DS 30/11/21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_EP/" class="md-nav__link">
+        EP 30/11/21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_14_12_21_arbres/" class="md-nav__link">
+        DS 14/12/21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_14_12_21_arbres_Correction/" class="md-nav__link">
+        DS 14/12/21 - Correction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_03_01_22_correction/" class="md-nav__link">
+        DS 03/01/22 - Correction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        Epreuve GEIPI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/conseil/" class="md-nav__link">
+        Divers conseils
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+
+
+
+
+                
+
+
+  <h1>TD n°23 - gestion des processus</h1>
+
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr>
+            <th style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            Thème 3 : Architecture matérielle
+            </th>
+        </tr>
+</table>
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:50pt;">
+            23
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Cours : Gestion des processus</th>
+        </tr>
+</table>
+
+<p><img alt="" src="../data/en_tete_prog.png" /></p>
+<p><img alt="" src="../data/BO_processus.png" /></p>
+<h2 id="rappel">Rappel⚓︎<a class="headerlink" href="#rappel" title="Permanent link">⚓︎</a></h2>
+<p>Un microprocesseur ne comprend que le langage machine. À chaque code d'instruction correspond un circuit électronique afin de pouvoir exécuter l'instruction.</p>
+<p>Pour rappel, voici les étapes d'exécution d'une instruction.</p>
+<ul>
+<li>l'instruction pointée par le pointeur d'instruction est chargée en mémoire  </li>
+<li>Le pointeur d'instruction est incrémenté vers l'adresse suivante  </li>
+<li>l'instruction est décodée  </li>
+<li>l'instruction est exécutée</li>
+</ul>
+<h2 id="gestion-des-processus-ordonnanceur">Gestion des processus - ordonnanceur⚓︎<a class="headerlink" href="#gestion-des-processus-ordonnanceur" title="Permanent link">⚓︎</a></h2>
+<p>Lors de l'exécution d'un programme, celui ci est d'abord chargé en mémoire. Le pointeur d'instruction pointe alors vers la première instruction. Puis l'enchaînement des étapes décrites précédemment s'effectue.</p>
+<p>Si tel était réellement le cas, une fois un programme lancé, il faudrait attendre qu'il soit terminé pour pouvoir en lancer un autre. L'enchaînement précédent est correct, mais il faut en plus ajouter le principe des interruptions.</p>
+<p>Une interruption est un signal, qui comme son nom l'indique, a pour objectif d'interrompre le cours normal d'un programme afin d'exécuter une tâche particulière.</p>
+<p>Le gestionnaire d'interruption reçoit plusieurs arguments, en particulier :</p>
+<ul>
+<li>un code lui permettant de reconnaître le signale de l'interruption et ce qui en est à l'origine.  </li>
+<li>une copie des valeurs des registres.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<p>Voici quelques interruptions matérielles :</p>
+<ul>
+<li>un disque dur informe qu'il a fini d'écrire des données,  </li>
+<li>une carte réseau informe qu'elle a reçoit des données,  </li>
+<li>le clavier informe que des combinaisons de touches ont été appuyées.  </li>
+<li>l'horloge interne envoie régulièrement un signal.</li>
+</ul>
+</div>
+<p>Cet envoi régulier de signaux de l'horloge, va permettre de gérer plusieurs programmes "simultanément".</p>
+<h2 id="processus-concurrents">Processus concurrents⚓︎<a class="headerlink" href="#processus-concurrents" title="Permanent link">⚓︎</a></h2>
+<div class="admonition voc">
+<p class="admonition-title">Vocabulaire</p>
+<p>Voici quelques mots de vocabulaire :</p>
+<ul>
+<li>Exécutable : fichier binaire, directement exécutable par le processeur.  </li>
+<li>Programme : Suite d'instructions qui peut éventuellement être exécuté.  </li>
+<li>Processus : Programme en cours d'exécution. C'est une instance d'un programme qui est recopié en mémoire vive. Il est identifié par un numéro unique par le système d'exploitation.  </li>
+</ul>
+<p>Il est caractérisé par :</p>
+<ul>
+<li>l'ensemble de la mémoire qui lui est allouée (binaire, données manipulées, données de la pile .)  </li>
+<li>l'ensemble des ressources utilisées (fichiers, connexions réseau, matériel...)  </li>
+<li>les valeurs stockées dans tous les registres du processeur  </li>
+</ul>
+<p>Un même programme peut être exécuté plusieurs fois, chacun dans un processus propre.</p>
+<ul>
+<li><strong>Exécution concurrente</strong> : deux processus s'exécutent de manière concurrente lorsque sur un même processeur, l'exécution de l'un est entrecoupée par l'exécution de l'autre.  </li>
+<li><strong>Exécution parallèle</strong> : deux processus s'exécutent de manière parallèle, s'ils s'exécutent simultanément. Cela implique la présence de plusieurs cœurs.</li>
+</ul>
+</div>
+<p>Afin de gérer les différents processus en cours, le système d'exploitation possède un gestionnaire de processus appelé ordonnanceur.</p>
+<p>Son rôle est :</p>
+<ul>
+<li>gérer la récupération du contexte d'exécution de chaque processus. Faire une sauvegarde du contexte du processus qui va être interrompu ou recharger une sauvegarde d'un contexte du processus qui va poursuivre son exécution.  </li>
+<li>gérer l'ordre dans lequel vont s'exécuter les différents processus.  </li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemple typique</p>
+<p>On considère qu'un éditeur de texte, un logiciel de lecture musicale, un navigateur web et d'autres applications sont en action.</p>
+<ul>
+<li>L'éditeur de texte est en cours d'exécution.  </li>
+<li>Un signal de l'horloge est envoyé et provoque une interruption.  </li>
+<li>L'ordonnanceur réagit à ce signal. Il reçoit le contexte d'exécution du processus correspondant à l'éditeur de texte en action.  </li>
+<li>L'ordonnanceur stocke dans un endroit de la mémoire le contexte d'exécution.  </li>
+<li>Il choisit de donner la main au logiciel de lecture musicale.  </li>
+<li>Il restaure le contexte d'exécution et donc entre autre, la valeur du pointeur d'instruction qui pointe vers la prochaine instruction à exécuter dans le lecteur musical.  </li>
+<li>L'ordonnanceur rend la main. La prochaine instruction qui sera exécutée, sera donc celle du lecteur musical.  </li>
+<li>Le lecteur musical poursuit son exécution.  </li>
+<li>Un signal de l'horloge est envoyé et provoque une interruption.  </li>
+<li>etc.</li>
+</ul>
+</div>
+<div class="admonition voc">
+<p class="admonition-title">État d'un processus</p>
+<p>Durant son exécution, un processus passe par plusieurs états :</p>
+<ul>
+<li>Nouveau : Au lancement d'un programme, est créé un nouveau processus auquel est affecté un numéro PID  </li>
+<li>Prêt/Élu : Le processus est prêt à être exécuté/poursuivre son exécution.  </li>
+<li>En exécution : Le processus exécute une suite d'instructions.  </li>
+<li>Bloqué/En attente : Le processus est en attente de ressources (typiquement des E/S de données : clavier, lecture de fichiers...). Il ne peut pas poursuivre son exécution tant que ces ressources ne sont pas fournies.  </li>
+<li>Terminé : Le processus a terminé son exécution. Il faut alors libérer la mémoire utilisée et les ressources utilisées.  </li>
+</ul>
+<p>On peut résumer le cycle d'un processus avec le schéma suivant : 
+<img alt="" src="../data/cycleProcessus.svg" /></p>
+<p>fig schéma cycle des états d'un processus</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Remarque</p>
+<p>En fonction de l'attente d'une ressource ou pas, après le stade exécution, un processus repasse à l'état :</p>
+<ul>
+<li>prêt : s'il n'attend aucune ressource, mais seulement que le processeur lui accorde du temps  </li>
+<li>bloqué : s'il est en attente d'une ressource  </li>
+</ul>
+<p>De plus quel que soit son état, il peut aller vers l'état Terminé en raison d'une situation anormale (erreur dans le programme, erreur matérielle...)</p>
+</div>
+<h2 id="observation-des-processus">Observation des processus⚓︎<a class="headerlink" href="#observation-des-processus" title="Permanent link">⚓︎</a></h2>
+<p>Sous Linux, on peut observer les processus et leur état en ligne de commande.</p>
+<p>Pour tester, cela on peut utiliser : <a href="https://cocalc.com/auth/try">terminal linux en ligne</a></p>
+<p>Voici quelques commandes utiles pour observer les processus :</p>
+<ul>
+<li><code>ps</code>|: elle permet d'afficher la liste des processus en cours. (Pour avoir des informations sur les options taper man ps) Pour lister tous les processus : <code>ps - ef</code>  </li>
+<li><code>top</code> : Pour observer en temps réels les différents processus.(penser à utiliser man top)<br />
+la commande <code>f</code> permet de gérer les colonnes affichées.  </li>
+<li>
+<p><code>kill</code> : elle permet de tuer un processus en lui envoyant un signal de fin. </p>
+<ul>
+<li>15 pour arrêter le processus proprement</li>
+<li>9 pour arrêter immédiatement le processus.  </li>
+</ul>
+<p>exemple d'utilisation : <code>kill -15 7654</code> pour tuer proprement le processus de <code>PID 7564</code></p>
+</li>
+</ul>
+<div class="admonition exo">
+<p class="admonition-title">Exercice</p>
+<p>Dans un nouvel onglet ouvrir : <a href="https://cocalc.com/auth/try">terminal linux en ligne</a></p>
+<ul>
+<li>créer un premier terminal :  </li>
+<li>utiliser les commandes de l'année précédentes : <code>ls, cd, touch, cat</code>  </li>
+<li>pour déterminer le nom d'utilisateur : <code>whoami</code>  </li>
+<li>créer un fichier vide <code>test.py</code> : <code>touch test.py</code>  </li>
+<li>
+<p>éditer le fichier <code>test.py</code> avec la commande : <code>nano test.py</code></p>
+<ul>
+<li>
+<p>y écrire le code suivant : 
+ <code>python
+ for a in range(100000):
+    print(a)</code></p>
+</li>
+<li>
+<p>pour sortir de l'éditeur : Ctrl+X, puis Y, puis Enter pour confirmer le nom  </p>
+</li>
+</ul>
+</li>
+<li>
+<p>lancer le programme avec : <code>python3 test.py</code>  </p>
+</li>
+<li>créer un second fichier <code>p2.py</code> avec le code suivant :<br />
+  <div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="k">pass</span>
+</code></pre></div></li>
+<li>le lancer  </li>
+<li>Il tourne sans fin. Pour l'arrêter : Ctrl+C  </li>
+<li>vérifier la présence dans le dossier des fichiers créés, avec <code>ls</code>  </li>
+<li>ouvrir un second terminal puis :  </li>
+<li>dans ce second terminal lancer python3 sans nom de fichier  </li>
+<li>dans le premier terminal taper <code>ps -ef</code>  </li>
+<li>
+<p>repérer le PID du processus python3 et le tuer avec la commande kill -9 (voir syntaxe au dessus)  </p>
+</li>
+<li>
+<p>ouvrir un troisième terminal </p>
+</li>
+<li>dans ce troisième terminal lancer la commande <code>top</code>  </li>
+<li>
+<p>modifier l'affichage pour faire apparaître le PPID (taper f, puis sélectionner/ déplacer avec les  touches curseur. Revenir à l'affichage avec Esc)  </p>
+</li>
+<li>
+<p>Enfin   ouvrir des terminaux supplémentaires pour en avoir au moins 5 et lancer dans les terminaux :  </p>
+</li>
+<li>
+<p>1 aucun processus  </p>
+</li>
+<li>1 avec nano  </li>
+<li>1 avec python3  </li>
+<li>1 avec python3 lançant p2.py  </li>
+<li>
+<p>1 avec top  </p>
+</li>
+<li>
+<p>observer les processus et essayer de les tuer avec la commande kill à partir du premier terminal  </p>
+</li>
+<li>recommencer en relançant les processus et tuer les processus avec le terminal lançant top(puis commande k)  </li>
+</ul>
+</div>
+<h2 id="algorithmes-dordonnancement">Algorithmes d'ordonnancement⚓︎<a class="headerlink" href="#algorithmes-dordonnancement" title="Permanent link">⚓︎</a></h2>
+<p>Il existe plusieurs algorithmes d'ordonnancement. En voici quelques exemples :</p>
+<ul>
+<li>FCFS (First Come First Serve) :<br />
+    Les différents processus sont stockés dans une file. Le premier processus s'exécute jusqu'à ce qu'il soit dans l'état bloqué. Il est alors mis à la fin de la file d'attente.</li>
+<li>
+<p>SJF (Shortest Job First) :<br />
+    Le processus avec le temps supposé le plus court est prioritaire.
+    Si on considère un processus p1 de temps d'exécution t1, un processus p2 de temps d'exécution t2, un processus p3 de temps d'exécution t3. Si les processus sont exécutés les un après les autres alors p1 est terminé au bout de t1, p2 au bout de t1+t2 et p3 au bout de t1+t2+t3. Le temps cumulé pour l'ensemble des processus est alors 3t1+2t2+t3. Pour le minimiser, il faut que : t1&lt;t2&lt;t3.</p>
+</li>
+<li>
+<p>Round Robin (ou Algorithme en tourniquet) : Chaque processus se voit attribuer un même temps d'exécution à tour de rôle.</p>
+</li>
+</ul>
+<h2 id="interblocage-deadlock">Interblocage (deadlock)⚓︎<a class="headerlink" href="#interblocage-deadlock" title="Permanent link">⚓︎</a></h2>
+<p>Lorsque tous les processus utilisent des ressources indépendantes, tout se passe pour le mieux. Mais que se passe-t-il, si un processus utilise une ressource dépendante de ou requise par un autre processus.</p>
+<p>On considère les deux programmes suivants :</p>
+<ul>
+<li>Un programme enregistrer_son qui enregistre via le micro. Ce programme demande l'accès à la carte son et enregistre le son sur la sortie standard, puis libère la carte son.  </li>
+<li>Un deuxième programme jouer_son joue le son qui arrive sur son entrée standard. Ce programme demande l'accès à la carte son, joue ce qui arrive sur son entrée standard, puis libère la carte son.  </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Remarque</p>
+<p>L'entrée standard correspond généralement à la suite des caractères entrée au clavier. Elle peut être redéfinie. Dans le cadre de la carte son, cela revient à envoyer une suite d'octets correspondant au son à jouer.<br />
+La sortie standard est généralement la console. Elle peut, elle aussi, être redirigée vers une autre destination (fichier, écran, entrée d'un autre programme...)</p>
+</div>
+<p>Imaginons la situation suivante :<br />
+On dirige la sortie standard du programme enregistrer_son vers un fichier son.mp3. Une fois l'enregistrement terminé, ce fichier est ensuite envoyé sur l'entrée de jouer_son.</p>
+<div class="admonition note">
+<p class="admonition-title">Remarque</p>
+<p>Sous linux les commandes ressembleraient à :<br />
+<div class="highlight"><pre><span></span><code>$ enregistrer_son &gt; fichier.son
+$ cat fichier.son &gt; jouer_son
+</code></pre></div></p>
+<p>rappel : la commande <code>cat</code> permet d'envoyer sur la sortie standard le contenu d'un fichier.</p>
+</div>
+<p>Ici tout se passe bien. Il y a d'abord l'enregistrement du son dans un fichier, puis il y lecture du fichier. La carte son est acquise pour utilisation, d'abord par le programme enregistrer_son, puis , une fois que celui-ci l'a libérée, par le programme jouer_son.</p>
+<p>Imaginons maintenant la situation suivante :</p>
+<p>Maintenant on lance les deux programmes de telle façon que la sortie du premier soit envoyée sur l'entrée du second.</p>
+<div class="admonition note">
+<p class="admonition-title">Remarque</p>
+<p>Sous linux les commandes ressembleraient à :</p>
+<div class="highlight"><pre><span></span><code>$ enregistrer_son &gt; jouer_son
+</code></pre></div>
+</div>
+<p>Le processus p1 créé pour <code>enregistrer_son</code> requiert l'utilisation de la carte son pour accéder aux données lues par le micro.
+Le processus p2 créé pour <code>jouer_son requiert</code> également l'utilisation de la carte son. Mais la carte est monopolisée par p1. Le processus p2 est donc bloqué et mis en attente.<br />
+Le processus p1 continue à enregistrer, jusqu'à ce que la mémoire tampon soit pleine. En effet celle-ci n'est pas vidée, car le processus p2 ne peut pas y accéder. Le processus p1 ne peut alors plus enregistrer. Il est également bloqué. Ce phénomène est appelé interblocage(ou deadlock).</p>
+<p>C'est typiquement le problème de 4 voitures à un carrefour sans priorité particutlière. Devant laisser la priorité à droite, aucune voiture ne peut avancer.</p>
+<p><img alt="fig interblocage voiture" src="../data/interblocageVoiture.svg" /></p>
+<p>Cette situation d'interblocage a été théorisée par l'informaticien Edward Coffman (1934-) qui a énoncé quatre conditions (appelées <strong>conditions de Coffman</strong>) menant à l'interblocage :</p>
+<ul>
+<li>Exclusion mutuelle : au moins une des ressources du système doit être en accès exclusif.  </li>
+<li>Rétention des ressources : un processus détient au moins une ressource et requiert une autre ressource détenue par un autre processus  </li>
+<li>Non-préemption : Seul le détenteur d'une ressource peut la libérer.  </li>
+<li>Attente circulaire : Chaque processus attend une ressource détenue par un autre processus. P_1 attend une ressource détenue par P_2 qui à son tour attend une ressource détenue par P_3 etc... qui attend une ressource détenue par P_1 ce qui clos la boucle.  </li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<p>Dans l'exemple précédent :</p>
+<ul>
+<li>Exclusion mutuelle : La carte son est en accès exclusif par le processus p1  </li>
+<li>Rétention des ressources : le processus p1 détient l'accès à la carte son et veut écrire sur sa sortie standard qui est saturée(elle n'est donc plus accessible).  </li>
+<li>Non-préemption : Seul p1 peut libérer la carte son, p2 ne peut pas la prend l'accès de force.  </li>
+<li>Attente circulaire : p1 attend que sa sortie soit accessible (c'est à dire que le tampon mémoire soit lue), alors qu'elle est bloquée par p2 qui attend d'avoir l'accès à la carte son elle-même détenue par p1. D'où la boucle d'attente.  </li>
+</ul>
+</div>
+<h2 id="simulation-dinterblocage">Simulation d'interblocage⚓︎<a class="headerlink" href="#simulation-dinterblocage" title="Permanent link">⚓︎</a></h2>
+<p>Robosomes créé par Alain BUSSER , Sébastien HOARAU (Voir ici : <a href="https://irem.univ-reunion.fr/spip.php?article1128">Robosomes - IREM de la réunion</a></p>
+<p><img alt="" class="center" src="../data/jeu1logo-2.png" /></p>
+<p>Le jeu robosomes se joue à un seul joueur sur une grille rectangulaire. Chaque case peut être</p>
+<ul>
+<li>soit vide  </li>
+<li>soit couverte par un obstacle fixe (en noir comme aux mots croisés)  </li>
+<li>soit couverte d’un pion pouvant bouger, appelé robot  </li>
+</ul>
+<p>Chaque robot peut être tourné dans l’une des quatre directions cardinales ◀▲▶▼. Les robots peuvent bouger tous en même temps de l’une des façons suivantes :</p>
+<ul>
+<li>G : tous les robots tournent vers leur gauche (de 90°) en même temps  </li>
+<li>D : tous les robots tournent vers leur droite (de 90°) en même temps  </li>
+<li>A : les robots qui peuvent avancer d’une case, le font. Un robot peut avancer d’une case s’il n’y a pas d’obstacle sur cette case et si aucun robot ne s’apprête à aller sur cette case.</li>
+</ul>
+<p>Les cases du bord de la grille sont toutes couvertes d’obstacles fixes, à l’exception de l’une d’entre elles appelée « sortie ». Lorsqu’un robot est sur la case de sortie, tourné vers l’extérieur de la grille, il quitte le jeu et n’est plus soumis aux ordres donnés. Le but du jeu est de faire sortir tous les robots de la grille, en écrivant un mot dans l’alphabet A,G,D, appelé programme et que les robots interpréteront comme décrit ci-dessus.</p>
+<p>Voici quelques exemples :</p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu7.html">Un premier exemple</a> pour se mettre en route.</p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu6.html">Interblocage</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu1.html">Interblocage 1</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu2.html">Interblocage 2</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu3.html">Interblocage 3</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu4.html">Interblocage 4</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu5.html">Interblocage perpétuel ou pas</a></p>
+<p><a href="https://irem.univ-reunion.fr/IMG/html/jeu8.html">Interblocage 8</a></p>
+
+              
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2022 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

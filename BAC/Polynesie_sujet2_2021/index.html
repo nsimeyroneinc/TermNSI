@@ -1,0 +1,2032 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>Sujet Polynésie 2021 Correction - Numériques et Sciences informatiques Terminale</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercice-1" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-header__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numériques et Sciences informatiques Terminale
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sujet Polynésie 2021 Correction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="brown"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-tabs__link">
+        T1 - Struct. de données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../BasesDonnees/TP17_JO/" class="md-tabs__link">
+        T2 - Bases de données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-tabs__link">
+        T3 - Archi. matèrielle
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../diviserregner/TD20_Diviser_pour_Regner_Correction/" class="md-tabs__link">
+        T5 Algo.
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../divers/Exercices_Bac/" class="md-tabs__link md-tabs__link--active">
+        BAC 📝
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../epreuve_pratique/" class="md-tabs__link">
+        E.P 💻
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../DM/DM_POO/" class="md-tabs__link">
+        Devoirs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../divers/conseil/" class="md-tabs__link">
+      Divers conseils
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Numériques et Sciences informatiques Terminale" class="md-nav__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Numériques et Sciences informatiques Terminale
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T1 - Struct. de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T1 - Struct. de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T1 - Struct. de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-nav__link">
+        Les dictionnaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD11_Les_Listes/" class="md-nav__link">
+        TP 11 - Les Listes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD11_Corrige/" class="md-nav__link">
+        TP 11 - Les Listes Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD12_ListeChainee_Corrige/" class="md-nav__link">
+        TP 12 - Liste Chainée Enoncé-Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/TD13_Piles/" class="md-nav__link">
+        TP 13 - Les Piles Enoncé-Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/TD14_Files/" class="md-nav__link">
+        TP 14 - Les Files Enoncé-Corrigé
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Graphe/TD_Graphe/" class="md-nav__link">
+        TP Graphe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Graphe/TD_Graphe_Parcours/" class="md-nav__link">
+        TP Graphe Parcours
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Graphe/TD_Graphe_Exercices/" class="md-nav__link">
+        TP Graphe Exercices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T2 - Bases de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T2 - Bases de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T2 - Bases de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/TP17_JO/" class="md-nav__link">
+        TP 17 - Les JO Londres 2012
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/TD18_Revision_SQL_BAC/" class="md-nav__link">
+        TD 18 - Sujet BAC 2021
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          T3 - Archi. matèrielle
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T3 - Archi. matèrielle" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          T3 - Archi. matèrielle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reseaux/TD19_Routage_Correction/" class="md-nav__link">
+        TD 19 - Protocole de routage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Processus/TD_Gestion_Processus/" class="md-nav__link">
+        TD 23 - Gestion des Processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Processus/TD_Gestion_Processus%20copy/" class="md-nav__link">
+        TD - Gestion des Processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crypto/crypto/" class="md-nav__link">
+        TD crypto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          T5 Algo.
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T5 Algo." data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          T5 Algo.
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../diviserregner/TD20_Diviser_pour_Regner_Correction/" class="md-nav__link">
+        TD 20 correction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/Calculabilite_Decidabilite/" class="md-nav__link">
+        TD Calculabilité et Décidabilité
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          BAC 📝
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="BAC 📝" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          BAC 📝
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Exercices_Bac/" class="md-nav__link">
+        TD 21 Exercices BAC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Exercice_Bac__2/" class="md-nav__link">
+        TD 22 - Exercices BAC n°2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sujet_Libre_2_2021/" class="md-nav__link">
+        Sujet Candidat Libre 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sujet_Libre_2_2021_cor/" class="md-nav__link">
+        Sujet Candidat Libre 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NSI-2021-polynesie-2-sujet-officiel.pdf" class="md-nav__link">
+        Sujet Polynésie 2021
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sujet Polynésie 2021 Correction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Sujet Polynésie 2021 Correction
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-1" class="md-nav__link">
+    Exercice 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-a" class="md-nav__link">
+    Partie A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-b" class="md-nav__link">
+    Partie B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-c" class="md-nav__link">
+    Partie C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-d" class="md-nav__link">
+    partie D
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-2" class="md-nav__link">
+    Exercice 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-a_1" class="md-nav__link">
+    Partie A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-b_1" class="md-nav__link">
+    Partie B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-c_1" class="md-nav__link">
+    Partie C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-d_1" class="md-nav__link">
+    Partie D
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-3" class="md-nav__link">
+    Exercice 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-a_2" class="md-nav__link">
+    Partie A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-b_2" class="md-nav__link">
+    Partie B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-c_2" class="md-nav__link">
+    Partie C
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-4" class="md-nav__link">
+    Exercice 4
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-a_3" class="md-nav__link">
+    Partie A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-b_3" class="md-nav__link">
+    Partie B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-c_3" class="md-nav__link">
+    Partie C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-d_2" class="md-nav__link">
+    Partie D
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-5" class="md-nav__link">
+    Exercice 5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-a_4" class="md-nav__link">
+    Partie A
+  </a>
+  
+    <nav class="md-nav" aria-label="Partie A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-b_4" class="md-nav__link">
+    Partie B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-c_4" class="md-nav__link">
+    Partie C
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BacBlanc_2022_COR/" class="md-nav__link">
+        BAC BLANC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-jipo1/" class="md-nav__link">
+        BAC 2022 Polynésie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../France_J1_2022/" class="md-nav__link">
+        BAC 2022 France J1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          E.P 💻
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="E.P 💻" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          E.P 💻
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        Déroulement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        Consigne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/EpreuvePratique/" class="md-nav__link">
+        Sujets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Devoirs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devoirs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Devoirs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DM/DM_POO/" class="md-nav__link">
+        P.O.O
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS%20_Listes_Piles_Files/" class="md-nav__link">
+        DS 30/11/21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_EP/" class="md-nav__link">
+        EP 30/11/21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_14_12_21_arbres/" class="md-nav__link">
+        DS 14/12/21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_14_12_21_arbres_Correction/" class="md-nav__link">
+        DS 14/12/21 - Correction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devoirs/DS_03_01_22_correction/" class="md-nav__link">
+        DS 03/01/22 - Correction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        Epreuve GEIPI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/conseil/" class="md-nav__link">
+        Divers conseils
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+
+
+
+
+                
+
+
+  <h1>Sujet Polynésie 2021 Correction</h1>
+
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr>
+            <th style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            Thème  : Sujet écrit BAC
+            </th>
+        </tr>
+</table>
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr >
+            <th width="25%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:30pt;">
+            BAC
+            </th>
+            <th  width="75%"; style="text-align:center;border:none;font-size:20pt;">Polynésie 2021 - Sujet 2</th>
+        </tr>
+</table>
+
+<h2 id="exercice-1">Exercice 1<a class="headerlink" href="#exercice-1" title="Permanent link">⚓︎</a></h2>
+<h3 id="partie-a">Partie A<a class="headerlink" href="#partie-a" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p>8<br />
+[8, 7, 18, 16, 12, 9, 17, 3]</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2`</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+</code></pre></div>
+<p>ou</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>
+<p>ou</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>
+</div>
+<h3 id="partie-b">Partie B<a class="headerlink" href="#partie-b" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<div class="highlight"><pre><span></span><code>def tri_insertion(liste):
+    &quot;&quot;&quot;trie par insertion la liste en paramètre &quot;&quot;&quot;
+    for indice_courant in range(1, len(liste)):
+        element_a_inserer = liste[indice_courant]
+        i = indice_courant - 1
+        while i &gt;= 0 and liste[i] &gt; element_a_inserer:
+            liste[i+1] = liste[i]
+            i = i - 1
+        liste[i + 1] = element_a_inserer
+</code></pre></div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<p><code>[7, 8, 18, 14, 12, 9, 17, 3]</code></p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<p><code>[7, 8, 14, 18, 12, 9, 17, 3]</code></p>
+</div>
+<h3 id="partie-c">Partie C<a class="headerlink" href="#partie-c" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p>récursif : à l'étape (3) l'algorithme de tri fusion s'appelle lui-même.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<ol>
+<li>Comparer les cartes du haut des 2 tas.  </li>
+<li>Placer la carte de valeur plus faible dans la main.  </li>
+<li>Recommencer l'étape 1 jusqu'à épuisement des tas.  </li>
+<li>On pose ensuite le dernier tas restant.  </li>
+</ol>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span>
+<span class="k">def</span> <span class="nf">tri_fusion</span> <span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">i_debut</span><span class="p">,</span> <span class="n">i_fin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; trie par fusion la liste en paramètre depuis i_debut jusqu&#39;à i_fin &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">i_debut</span> <span class="o">&lt;</span> <span class="n">i_fin</span><span class="p">:</span>
+        <span class="n">i_partage</span> <span class="o">=</span> <span class="n">floor</span><span class="p">((</span><span class="n">i_debut</span> <span class="o">+</span> <span class="n">i_fin</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># milieu pour diviser le tableau en deux moitiés </span>
+        <span class="n">tri_fusion</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">i_debut</span><span class="p">,</span> <span class="n">i_partage</span><span class="p">)</span>  <span class="c1"># Appel tri_fusion pour 1ère moitié du tableau </span>
+        <span class="n">tri_fusion</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">i_partage</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i_fin</span><span class="p">)</span> <span class="c1"># Appel tri_fusion pour 2ème moitié du tableau</span>
+        <span class="n">fusionner</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">i_debut</span><span class="p">,</span> <span class="n">i_partage</span><span class="p">,</span> <span class="n">i_fin</span><span class="p">)</span> <span class="c1"># Fusion des deux moitiés triées</span>
+</code></pre></div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q4</p>
+<p>permet d'importer la fonction floor() du module math utilisée à la ligne 7</p>
+</div>
+<h3 id="partie-d">partie D<a class="headerlink" href="#partie-d" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p>tri par fusion : à chaque étape, le tri se fait par fusion de 2 tas déjà triés</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<ul>
+<li>tri par insertion : <span class="arithmatex">\(O(n²)\)</span>  </li>
+<li>tri par fusion : <span class="arithmatex">\(O(n.\log_2 n)\)</span></li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<ul>
+<li>Le tri par insertion utilise 2 boucles imbriquées, soit dans le pire des cas  <span class="arithmatex">\(\dfrac{1/2} n(n+1)\)</span> opérations.  </li>
+<li>Le tri par fusion, divise la liste à trier par 2 pour chaque itérations, soit  <span class="arithmatex">\(\log_2 n\)</span> opérations. répeter <span class="arithmatex">\(n\)</span> fois.</li>
+</ul>
+</div>
+<h2 id="exercice-2">Exercice 2<a class="headerlink" href="#exercice-2" title="Permanent link">⚓︎</a></h2>
+<h3 id="partie-a_1">Partie A<a class="headerlink" href="#partie-a_1" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<ul>
+<li>Clients : IdClient  </li>
+<li>Articles : IdArticle  </li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<ul>
+<li>Email : VARCHAR(50), chaîne de 50 caractères  </li>
+<li>Quantity : INT, entier signé  </li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Commandes</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">IdCmdINT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">IdClientINT</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Date</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">AdresseLivraisonVARCHAR</span><span class="p">(</span><span class="mi">90</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="n">PaiementValideBOOLEAN</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">LivraisonFaiteBOOLEAN</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">IdClient</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Clients</span><span class="w"> </span><span class="p">(</span><span class="n">IdClient</span><span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="partie-b_1">Partie B<a class="headerlink" href="#partie-b_1" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p>La méthode POST fait passer les informations à envoyer dans le corps de la requête HTTP et ne figurent pas dans l'adresse URL du serveur, contrairement à la méthode GET.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<p>Le protocole HTTPS est chiffré de bout en bout ce qui est indispensable pour assurer la confidentialité des transactions bancaires.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<p>Afin d'assurer la cohérence des données en vue de leur traitement ultérieur. Ex : envoi d'un mailing.</p>
+</div>
+<h3 id="partie-c_1">Partie C<a class="headerlink" href="#partie-c_1" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">IdArticle</span><span class="p">,</span><span class="w"> </span><span class="n">Libelle</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Articles</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">PrixEnCentimes</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1500</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<p>La requête sélectionne tous les identifiants et les mèls des clients, ainsi que les identifiants et les adresses de livraison de leurs commandes pour des paiements qui n'ont pas été validés.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Articles</span><span class="p">.</span><span class="n">Libelle</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Articles</span><span class="p">,</span><span class="w"> </span><span class="n">ArticlesCommande</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ArticlesCommande</span><span class="p">.</span><span class="n">IdCmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1345</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">ArticlesCommande</span><span class="p">.</span><span class="n">IdArticle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Articles</span><span class="p">.</span><span class="n">IdArticle</span><span class="w"></span>
+<span class="n">ORBER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Articles</span><span class="p">.</span><span class="n">Libelle</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q4</p>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Articles</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Imperméable&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Cet imperméable se replie en forme de pochette.&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">999</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="partie-d_1">Partie D<a class="headerlink" href="#partie-d_1" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<hr />
+<p>Articles                          Clients          <br />
+IdArticle        INT              IdClient           INT
+Libelle          VARCHAR(50)      Nom                VARCHAR(50)
+Description      VARCHAR(90)      Prenom             VARCHAR(50)
+PrixEnCentimes   INT              Email              VARCHAR(50)
+Stock            INT              AdresseLivraison   VARCHAR(90)</p>
+<hr />
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<p>Il ne faut pas décrémenter stock de 1 mais de la quantité commandée : Stock ← Stock -- Quantité</p>
+</div>
+<h2 id="exercice-3">Exercice 3<a class="headerlink" href="#exercice-3" title="Permanent link">⚓︎</a></h2>
+<h3 id="partie-a_2">Partie A<a class="headerlink" href="#partie-a_2" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<ul>
+<li>Racine : 5  </li>
+<li>Fils gauche : 2  </li>
+<li>Fils droit : 7</li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<p>Noeuds : [5, 2]</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<p><img alt="" src="data/PolynesieQ3.png" /></p>
+</div>
+<h3 id="partie-b_2">Partie B<a class="headerlink" href="#partie-b_2" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p><strong>init</strong> initialise les attributs de l'objet lors de l'instanciation de la classe.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<p>L'élément à insérer est ignoré.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<div class="highlight"><pre><span></span><code><span class="n">arbre</span> <span class="o">=</span> <span class="n">ABR</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  
+<span class="n">arbre</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  
+<span class="n">arbre</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  
+<span class="n">arbre</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>  
+<span class="n">arbre</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<h3 id="partie-c_2">Partie C<a class="headerlink" href="#partie-c_2" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p>Parcours infixe</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<p>La complexité est de l'ordre du tri par fusion ~ O(nln<sub>2</sub>n)<br />
+Alors que les complexités des tris par sélection et insertion sont ~ O(n²)</p>
+</div>
+<h2 id="exercice-4">Exercice 4<a class="headerlink" href="#exercice-4" title="Permanent link">⚓︎</a></h2>
+<h3 id="partie-a_3">Partie A<a class="headerlink" href="#partie-a_3" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p>Le réseau fonctionne sur le principe de la commutation de paquets. TCP découpe le message en paquets (datagrammes). Ces paquets sont routés par IP grâce aux en-têtes qui encapsulent le message.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2a</p>
+<ul>
+<li>Le sommets représentent le nom des routeurs.  </li>
+<li>Les arêtes représentent les connexions entre les routeurs.</li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2b</p>
+<p>RIP utilise le nombre de sauts entre les routeurs.</p>
+</div>
+<h3 id="partie-b_3">Partie B<a class="headerlink" href="#partie-b_3" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p>L'interblocage se produit lorsque des processus concurrents s'attendent mutuellement.<br />
+Exemple d'interblocage : le processus <em>P1</em> utilise la ressource <em>R2</em> qui est attendue par le processus <em>P2</em> qui utilise la ressource <em>R1</em>, attendue par <em>P1</em>.  </p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<ul>
+<li>Utilisation de mutex.  </li>
+<li>Algorithme du Banquier.  </li>
+</ul>
+</div>
+<h3 id="partie-c_3">Partie C<a class="headerlink" href="#partie-c_3" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<ul>
+<li>IP : UC. Registre qui contient l'adresse mémoire de l'instruction  en cours d'exécution ou prochainement exécutée. Une fois l'instruction chargée, il est automatiquement incrémenté pour pointer l'instruction suivante.  </li>
+<li>IR : UC. Registre qui contient l'instruction en cours d'exécution ou de décodage.</li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q4</p>
+<ul>
+<li>Mémoire morte : mémoire non volatile dont le contenu est fixé lors de leur fabrication, qui peut être lue plusieurs fois et qui n'est
+pas prévue pour être modifiée.  </li>
+<li>Mémoire vive : mémoire volatile dans laquelle des données peuvent être écrites, lues et modifiées.</li>
+</ul>
+<p>Un microcontrôleur exécute un programme dès qu\'il est mis sous tension. Ce programme ne doit pas être modifié par un simple utilisateur.</p>
+</div>
+<h3 id="partie-d_2">Partie D<a class="headerlink" href="#partie-d_2" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p>Chaque microprocesseur peut effectuer une tâche spécialiser pour augmenter la rapidité du traitement.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<p>La vitesse des différents composants (CPU, RAM, circuits d'entrées/sorties, ...) évolue en fonction de la technologie. Cette évolution n'est pas la même pour tous les composants.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<p>La miniaturisation permet d'avoir des fonctions avancées de taille réduite, facile à intégrer physiquement dans des systèmes dits embarqués.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q4</p>
+<p>La puissance de calcul est généralement plus faible qu'avec une architecture classique.</p>
+</div>
+<h2 id="exercice-5">Exercice 5<a class="headerlink" href="#exercice-5" title="Permanent link">⚓︎</a></h2>
+<h2 id="partie-a_4">Partie A<a class="headerlink" href="#partie-a_4" title="Permanent link">⚓︎</a></h2>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<ul>
+<li>Relation Films : IdFilm </li>
+<li>Relation Abonnés : IdAbonne</li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<ul>
+<li>IdFilm : entier non signé  </li>
+<li>Description : chaîne de 150 caractères  </li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<ul>
+<li>clef primaire : IdCpt  </li>
+<li>clef étrangère : IdAbonne  </li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q4</p>
+<p>Il faut créer une Relation Acteurs dont le schéma relationnel est le suivant :
+<div class="highlight"><pre><span></span><code><span class="n">Acteurs</span><span class="p">(</span><span class="o">*</span><span class="n">IdActeur</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">Nom</span><span class="p">,</span><span class="w"> </span><span class="n">Prenom</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+<ul>
+<li>La clef primaire est souligné.</li>
+<li>Les attributs Nom et Prenom doivent être de type VARCHAR(20)</li>
+<li>Il faut définir une clef unique sur le couple (Nom, Prenom) pour éviter les doublons.</li>
+</ul>
+<p>Et une relation ActeursPrincipaux dont le schéma relationnel est le suivant :</p>
+<div class="highlight"><pre><span></span><code><span class="n">ActeursPrincipaux</span><span class="p">(</span><span class="o">#</span><span class="n">IdActeur</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="n">IdFilm</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+</div>
+<ul>
+<li>Les clef étrangères commencent par # et référencent respectivement les relations Acteurs et Films.</li>
+</ul>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q5</p>
+<ul>
+<li>Il faut rajouter un Attribut DateNaissance de type DATE à la relation Clients.</li>
+<li>Et ajouter un attribut AgeMinimum de type INT à la relation Films.</li>
+</ul>
+</div>
+<h3 id="partie-b_4">Partie B<a class="headerlink" href="#partie-b_4" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">IdCpt</span><span class="p">,</span><span class="w"> </span><span class="n">Pseudo</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">ComptesAbonnes</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">IdAbonne</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">237</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<p>Calcule la moyenne du nombre d'étoiles attribué au film dont l'identifiant est 1542</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q3</p>
+<p>Sélectionne, par ordre décroissant en nombre d'étoiles, les identifiants, les titres des films et les nombres d'étoiles attribués par le compte abonné n° 508</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q4</p>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">ComptesAbonnes</span><span class="w"> </span>
+<span class="k">SET</span><span class="w"> </span><span class="n">pseudo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Champion&#39;</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">IdAbonne</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">508</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="partie-c_4">Partie C<a class="headerlink" href="#partie-c_4" title="Permanent link">⚓︎</a></h3>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q1</p>
+<p>La fonction calcule, dans une liste de films non vide, la moyenne des écarts des notes attribuées à chaque film par deux comptes d'abonnés.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Q2</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">conseilsFilms</span><span class="p">(</span><span class="n">IdCpt</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="n">conseils</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">liste_films</span> <span class="o">=</span> <span class="n">podiumCompte</span><span class="p">(</span><span class="n">IdCpt</span><span class="p">)</span>
+    <span class="n">liste_spectateurs</span> <span class="o">=</span> <span class="n">spectateurs</span><span class="p">(</span><span class="n">liste_films</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">spectateur</span> <span class="ow">in</span> <span class="n">liste_spectateurs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">distance</span><span class="p">(</span><span class="n">IdCpt</span><span class="p">,</span> <span class="n">spectateur</span><span class="p">,</span> <span class="n">liste_films</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">film_preferes</span> <span class="o">=</span> <span class="n">podiumCompte</span><span class="p">(</span><span class="n">spectateur</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">film_preferes</span><span class="p">):</span>
+                    <span class="n">conseils</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">film_preferes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">conseils</span>
+</code></pre></div>
+</div>
+
+              
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../NSI-2021-polynesie-2-sujet-officiel.pdf" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Sujet Polynésie 2021" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Sujet Polynésie 2021
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../BacBlanc_2022_COR/" class="md-footer__link md-footer__link--next" aria-label="Suivant: BAC BLANC" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              BAC BLANC
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2022 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "toc.integrate", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
