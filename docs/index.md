@@ -2,9 +2,12 @@ Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire af
 
 Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
 
+
 !!! info 
-    **Thème en cours** : [NEW : France - Jour 1 - 2022](BAC/France_J1_2022.md)  
-    Tous les exercices sont corrigés.
+    **Thème en cours** :  
+    - [Calculabilité et Décidabilité](Programmation/Calculabilite_Decidabilite.md)  
+    - [Graphe](Graphe/TD_Graphe.md) 
+
 
     
 
