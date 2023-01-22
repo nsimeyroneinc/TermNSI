@@ -48,20 +48,7 @@ nav:
       - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
       - TD Calculabilité et Décidabilité : Programmation/Calculabilite_Decidabilite.md
     
-    - BAC 📝:
-      - TD 21 Exercices BAC : divers/Exercices_Bac.md
-      - TD 22 - Exercices BAC n°2 : divers/Exercice_Bac__2.md
-      - Sujet Candidat Libre 2: BAC/Sujet_Libre_2_2021.md
-      - Sujet Candidat Libre 2: BAC/Sujet_Libre_2_2021_cor.md
-      - Sujet Polynésie 2021 : BAC/NSI-2021-polynesie-2-sujet-officiel.pdf
-      - Sujet Polynésie 2021 Correction : BAC/Polynesie_sujet2_2021.md
-      - BAC BLANC: BAC/BacBlanc_2022_COR.md
-      - BAC 2022 Polynésie: BAC/1-jipo1.md
-      - BAC 2022 France J1: BAC/France_J1_2022.md
-      #- TD 22 Exercices BAC 2 : divers/Exercice_Bac_2_Correction.md
-    #- Retour 1ère :
-    #  - TD : Revision1ere/TD_Glouton.md
-    #BAC 
+
     
     - E.P 💻: 
       - Déroulement : epreuve_pratique.md
