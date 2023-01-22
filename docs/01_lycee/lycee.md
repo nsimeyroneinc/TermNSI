@@ -1,7 +1,3 @@
----
-author: Nicolas Revéret
-title: Lycée
----
 
 # :school: Base de donnée d'un lycée
 
