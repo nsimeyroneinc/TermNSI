@@ -74,7 +74,7 @@ nav:
         - 'World': '51_world/world.md'
         - 'Netflix': '52_netflix/netflix.md'
     - '💡 Memento SQL': 'memento_sql.md'
-    - '👍🏽 Crédits': 'credits.md'
+
 
 extra_css:
   - css/extra.css

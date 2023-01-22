@@ -1,0 +1,1969 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Exercices sur les bases de données">
+      
+      
+        <meta name="author" content="N. Revéret">
+      
+      
+        <link rel="canonical" href="https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/1-jipo1/">
+      
+      <link rel="icon" href="../../favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>2022, Polynésie - Exercices sur les bases de données</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+<script src="https://e-nsi.forge.aeif.fr/exercices_bdd//js/sqlite_ide.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css"><link rel="stylesheet" href="https://e-nsi.forge.aeif.fr/exercices_bdd//css/sqlite_ide.css"><script>path="https://e-nsi.forge.aeif.fr/exercices_bdd/"</script>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2022-polynesie" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Exercices sur les bases de données" class="md-header__button md-logo" aria-label="Exercices sur les bases de données" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Exercices sur les bases de données
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2022, Polynésie
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Passer au mode nuit"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Passer au mode nuit" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Passer au mode jour"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Passer au mode jour" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Exercices sur les bases de données" class="md-nav__button md-logo" aria-label="Exercices sur les bases de données" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    Exercices sur les bases de données
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        🏡 Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          🔨 Création et insertion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🔨 Création et insertion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          🔨 Création et insertion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_lycee/lycee/" class="md-nav__link">
+        Lycée
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_imdb/imdb/" class="md-nav__link">
+        Séries
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          🐭 Requêtes simples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🐭 Requêtes simples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          🐭 Requêtes simples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../31_prenoms/prenoms/" class="md-nav__link">
+        Prénoms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../32_ramens/ramens/" class="md-nav__link">
+        Ramens
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          🐈 Requêtes sur plusieurs tables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🐈 Requêtes sur plusieurs tables" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          🐈 Requêtes sur plusieurs tables
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../41_films/films/" class="md-nav__link">
+        Films
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../42_cars/cars/" class="md-nav__link">
+        Voitures
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          🐯 Exemples complets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🐯 Exemples complets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          🐯 Exemples complets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../51_world/world/" class="md-nav__link">
+        World
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../52_netflix/netflix/" class="md-nav__link">
+        Netflix
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memento_sql/" class="md-nav__link">
+        💡 Memento SQL
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="2022-polynesie">2022, Polynésie<a class="headerlink" href="#2022-polynesie" title="Permanent link">⚓︎</a></h1>
+<p>BACCALAURÉAT GÉNÉRAL, NSI, 2022, Polynésie</p>
+<p>Durée de l'épreuve : 3 heures 30<br />
+L'usage de la calculatrice avec mode examen actif est autorisé.<br />
+L'usage de la calculatrice sans mémoire, « type collège » est autorisé.</p>
+<p>Le candidat traite au choix 3 exercices parmi les 5 exercices
+proposés.</p>
+<div class="admonition warning">
+<p class="admonition-title">Sujet non officiel</p>
+<p>Ce n'est pas le sujet officiel, quelques modifications mineures ont été apportées.</p>
+<p>Le sujet d'origine est disponible en <a href="../JIPO1.pdf">téléchargement</a>.</p>
+</div>
+<h2 id="exercice-1-4-points">EXERCICE 1 (4 points)<a class="headerlink" href="#exercice-1-4-points" title="Permanent link">⚓︎</a></h2>
+<blockquote>
+<p>Cet exercice traite du thème « programmation », et principalement de la récursivité.</p>
+</blockquote>
+<p>On rappelle qu'une chaine de caractères peut être représentée en Python par un texte entre guillemets <code>""</code> et que :</p>
+<ul>
+<li>la fonction <code>len</code> renvoie la longueur de la chaine de caractères passée en
+paramètre ;</li>
+<li>si une variable <code>ch</code> désigne une chaine de caractères, alors <code>ch[0]</code> renvoie son premier caractère, <code>ch[1]</code> le deuxième, etc ;</li>
+<li>l'opérateur <code>+</code> permet de concaténer deux chaines de caractères.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemples</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">texte</span> <span class="o">=</span> <span class="s2">&quot;bricot&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">texte</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&quot;b&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">texte</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&quot;r&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="n">texte</span>
+<span class="go">&quot;abricot&quot;</span>
+</code></pre></div>
+</div>
+<p>On s'intéresse dans cet exercice à la construction de chaines de caractères suivant certaines règles de construction.</p>
+<div class="admonition info">
+<p class="admonition-title">Règle A</p>
+<p>Une chaine est construite suivant la règle A dans les deux cas suivants :</p>
+<ul>
+<li>soit elle est égale à <code>"a"</code> ;</li>
+<li>soit elle est de la forme <code>"a" + chaine + "a"</code>, où <code>chaine</code> est une chaine de caractères construite suivant la règle A.</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Règle B</p>
+<p>Une chaine est construite suivant la règle B dans les deux cas suivants :</p>
+<ul>
+<li>soit elle est de la forme <code>"b" + chaine + "b"</code>, où <code>chaine</code> est une chaine de caractères construite suivant la règle A ;</li>
+<li>soit elle est de la forme <code>"b" + chaine + "b"</code>, où <code>chaine</code> est une chaine de caractères construite suivant la règle B.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Fonction <code>choice</code> du module <code>random</code></p>
+<p>On a reproduit ci-dessous l'aide de la fonction <code>choice</code> du module <code>random</code>.</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+<span class="go">Help on method choice in module random:</span>
+<span class="go">choice(seq) method of random.Random instance</span>
+<span class="go">Choose a random element from a non-empty sequence.</span>
+</code></pre></div>
+</div>
+<p>La fonction <code>A</code> ci-dessous renvoie une chaine de caractères construite suivant la règle A, en choisissant aléatoirement entre les deux cas de figure de cette règle.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">A</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="n">A</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;a&quot;</span>
+</code></pre></div>
+<p><strong>1.a)</strong> Cette fonction est-elle récursive ? Justifier.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>La fonction <code>A</code> s'appelle elle-même, donc <code>A</code> est une fonction récursive.</p>
+</details>
+<p><strong>1.b)</strong> La fonction <code>choice([True, False])</code> peut renvoyer <code>False</code> un très grand
+nombre de fois consécutives. Expliquer pourquoi ce cas de figure amènerait à
+une erreur d'exécution.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Si <code>choice([True, False])</code> renvoie <code>False</code> consécutivement un nombre de fois supérieur à la limite de profondeur de récursion autorisée (1000 par défaut avec Python), dans ce cas une erreur d'exécution se produit.</p>
+<div class="admonition danger">
+<p class="admonition-title">Pour aller plus loin</p>
+<p>On pourrait modifier cette limite à <span class="arithmatex">\(10^6\)</span> avec le code suivant</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<p>Dans la suite, on considère une deuxième version de la fonction <code>A</code>. À présent, la fonction prend en paramètre un entier <code>n</code> tel que,</p>
+<ul>
+<li>si la valeur de <code>n</code> est négative ou nulle, la fonction renvoie <code>"a"</code> ;</li>
+<li>si la valeur de <code>n</code> est strictement positive, elle renvoie une chaine de caractères construite suivant la règle A avec un <code>n</code> décrémenté de 1, en choisissant aléatoirement entre les deux cas de figure de cette règle.</li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="o">...</span> <span class="ow">or</span> <span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="s2">&quot;a&quot;</span>
+</code></pre></div>
+<p><strong>2.a)</strong> Recopier sur la copie et compléter aux emplacements des points de
+suspension <code>...</code> le code de cette nouvelle fonction <code>A</code>.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="n">A</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;a&quot;</span>
+</code></pre></div>
+</details>
+<p><strong>2.b)</strong> Justifier le fait qu'un appel de la forme <code>A(n)</code> avec <code>n</code> un nombre entier positif inférieur à 50, termine toujours.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Pour <span class="arithmatex">\(n &gt; 0\)</span>, l'appel à <code>A(n)</code> provoque ou bien un arrêt de la fonction, ou bien un appel récursif avec le paramètre <code>n - 1</code>.</p>
+<p>Un appel à <code>A(50)</code> pourrait provoquer dans le pire des cas 50 appels récursifs pour arriver à <code>A(0)</code> qui termine, ou alors terminer avant !</p>
+</details>
+<p>On donne ci-après le code de la fonction récursive B qui prend en paramètre un entier <code>n</code> et qui renvoie une chaine de caractères construite suivant la règle B.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">B</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="s2">&quot;b&quot;</span> <span class="o">+</span> <span class="n">A</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;b&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;b&quot;</span> <span class="o">+</span> <span class="n">B</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;b&quot;</span>
+</code></pre></div>
+<p>On admet que :</p>
+<ul>
+<li>les appels <code>A(-1)</code> et <code>A(0)</code> renvoient la chaine <code>"a"</code> ;</li>
+<li>l'appel <code>A(1)</code> renvoie la chaine <code>"a"</code> ou la chaine <code>"aaa"</code> ;</li>
+<li>l'appel <code>A(2)</code> renvoie la chaine <code>"a"</code>, la chaine <code>"aaa"</code> ou la chaine <code>"aaaaa"</code>.</li>
+</ul>
+<p><strong>3.</strong> Donner toutes les chaines possibles renvoyées par les appels <code>B(0)</code>, <code>B(1)</code> et <code>B(2)</code>.</p>
+<details class="done">
+<summary>Réponse</summary>
+<ul>
+<li><code>B(0)</code> renvoie <code>"bab"</code></li>
+<li><code>B(1)</code> renvoie <code>"bab"</code> ou <code>"bbabb"</code>.</li>
+<li><code>B(2)</code> renvoie <code>"bab"</code>, <code>"baaab"</code>, <code>"bbabb"</code> ou <code>"bbbabbb"</code>.</li>
+</ul>
+</details>
+<p>On suppose maintenant qu'on dispose d'une fonction <code>raccourcir</code> qui prend comme paramètre une chaine de caractères de longueur supérieure ou égale à 2, et renvoie la chaine de caractères obtenue à partir de la chaine initiale en lui ôtant le premier et le dernier caractère.</p>
+<div class="admonition example">
+<p class="admonition-title">Par exemple :</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">raccourcir</span><span class="p">(</span><span class="s2">&quot;abricot&quot;</span><span class="p">)</span>
+<span class="go">&quot;brico&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raccourcir</span><span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">)</span>
+<span class="go">&quot;&quot;</span>
+</code></pre></div>
+</div>
+<p><strong>4.a)</strong> Recopier sur la copie et compléter les points de suspension <code>...</code> du code de la fonction <code>regle_A</code> ci-dessous pour qu'elle renvoie <code>True</code> si la chaine passée en paramètre est construite suivant la règle A, et <code>False</code> sinon.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">regle_A</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chaine</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span> <span class="ow">and</span> <span class="n">chaine</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span> <span class="ow">and</span> <span class="n">regle_A</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">chaine</span> <span class="o">==</span> <span class="o">...</span>
+</code></pre></div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">regle_A</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chaine</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span> <span class="ow">and</span> <span class="n">chaine</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span> <span class="ow">and</span> <span class="n">regle_A</span><span class="p">(</span><span class="n">raccourcir</span><span class="p">(</span><span class="n">chaine</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">chaine</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span>
+</code></pre></div>
+</details>
+<p><strong>4.b)</strong> Écrire le code d'une fonction <code>regle_B</code>, prenant en paramètre une chaine de caractères et renvoyant <code>True</code> si la chaine est construite suivant la règle B, et <code>False</code> sinon.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">regle_B</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chaine</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span> <span class="ow">and</span> <span class="n">chaine</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span> <span class="ow">and</span> <span class="p">(</span>
+            <span class="n">regle_A</span><span class="p">(</span><span class="n">chaine</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="ow">or</span> <span class="n">regle_B</span><span class="p">(</span><span class="n">raccourcir</span><span class="p">(</span><span class="n">chaine</span><span class="p">))</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+</details>
+<h2 id="exercice-2-4-points">EXERCICE 2 (4 points)<a class="headerlink" href="#exercice-2-4-points" title="Permanent link">⚓︎</a></h2>
+<blockquote>
+<p>Cet exercice traite du thème « architecture matérielle », et principalement d'ordonnancement et d'expressions booléennes.</p>
+</blockquote>
+<p>Un système est composé de 4 périphériques, numérotés de 0 à 3, et d'une mémoire, reliés entre eux par un bus auquel est également connecté un dispositif ordonnanceur. À l'aide d'un signal spécifique envoyé sur le bus, l'ordonnanceur sollicite à tour de rôle les périphériques pour qu'ils indiquent le type d'opération (lecture ou écriture) qu'ils souhaitent effectuer, et l'adresse mémoire concernée.</p>
+<p>Un tour a lieu quand les 4 périphériques ont été sollicités. <strong>Au début d'un nouveau tour, on considère que toutes les adresses sont disponibles en lecture et écriture.</strong></p>
+<p>Si un périphérique demande l'écriture à une adresse mémoire <strong>à laquelle on n'a pas encore accédé</strong> pendant le tour, l'ordonnanceur répond <code>"OK"</code> et l'écriture a lieu. Si on a déjà demandé la lecture ou l'écriture à cette adresse, l'ordonnanceur répond <code>"ATT"</code> et l'opération n'a pas lieu.</p>
+<p>Si un périphérique demande la lecture à une adresse à laquelle on n'a pas encore accédé en écriture pendant le tour, l'ordonnanceur répond <code>"OK"</code> et la lecture a lieu. Plusieurs lectures peuvent avoir donc lieu pendant le même tour à la même adresse.</p>
+<p>Si un périphérique demande la lecture à une adresse à laquelle on a déjà accédé en écriture, l'ordonnanceur répond <code>"ATT"</code> et la lecture n'a pas lieu.</p>
+<p>Ainsi, pendant un tour, une adresse peut être utilisée soit une seule fois en écriture, soit autant de fois qu'on veut en lecture, soit pas utilisée.</p>
+<p>Si un périphérique ne peut pas effectuer une opération à une adresse, il demande la même opération à la même adresse au tour suivant.</p>
+<p><strong>1.</strong> Le tableau donné en annexe 1 indique, sur chaque ligne, le périphérique sélectionné, l'adresse à laquelle il souhaite accéder et l'opération à effectuer sur cette adresse. Compléter dans la dernière colonne de cette annexe, à rendre avec la copie, la réponse donnée par l'ordonnanceur pour chaque opération.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Annexe 1</p>
+<table>
+<thead>
+<tr>
+<th align="left">N° périphérique</th>
+<th align="left">Adresse</th>
+<th align="left">Opération</th>
+<th align="left">Réponse de l'ordonnanceur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"OK"</code></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left"><code>11</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"OK"</code></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"ATT"</code></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"ATT"</code></td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left"><code>12</code></td>
+<td align="left">lecture</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>TODO</p>
+<table>
+<thead>
+<tr>
+<th align="left">N° périphérique</th>
+<th align="left">Adresse</th>
+<th align="left">Opération</th>
+<th align="left">Réponse de l'ordonnanceur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"OK"</code></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left"><code>11</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"OK"</code></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"ATT"</code></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"ATT"</code></td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left"><code>12</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"OK"</code></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"OK"</code></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"OK"</code></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"ATT"</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>On suppose dans toute la suite que :</p>
+<ul>
+<li>le périphérique 0 écrit systématiquement à l'adresse 10 ;</li>
+<li>le périphérique 1 lit systématiquement à l'adresse 10 ;</li>
+<li>le périphérique 2 écrit alternativement aux adresses 11 et 12 ;</li>
+<li>le périphérique 3 lit alternativement aux adresses 11 et 12 ;</li>
+</ul>
+<p>Pour les périphériques 2 et 3, le changement d'adresse n'est effectif que lorsque l'opération et réalisée.</p>
+<p><strong>2.</strong> On suppose que les périphériques sont sélectionnés à chaque tour dans l'ordre 0 ; 1 ; 2 ; 3. Expliquer ce qu'il se passe pour le périphérique 1.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Le périphérique 1 ne pourra jamais effectuer sa lecture à l’adresse mémoire 10 puisque juste avant le périphérique 0 aura effectué une écriture à l’adresse mémoire 10.</p>
+</details>
+<p>Les périphériques sont sollicités de la manière suivante lors de quatre tours successifs :</p>
+<ul>
+<li>au premier tour, ils sont sollicités dans l'ordre 0 ; 1 ; 2 ; 3 ;</li>
+<li>au deuxième tour, dans l'ordre 1 ; 2 ; 3 ; 0 ;</li>
+<li>au troisième tour, 2 ; 3 ; 0 ; 1 ;</li>
+<li>puis 3 ; 0 ; 1 ; 2 au dernier tour.</li>
+<li>Et on recommence...</li>
+</ul>
+<p><strong>3.a)</strong> Préciser pour chacun de ces tours si le périphérique 0 peut écrire et si le périphérique 1 peut lire.</p>
+<details class="done">
+<summary>Réponse</summary>
+<ul>
+<li>tour 1 : 0 peut écrire ; 1 ne peut pas lire  </li>
+<li>tour 2 : 0 ne peut pas écrire ; 1 peut lire  </li>
+<li>tour 3 : 0 peut écrire ; 1 ne peut pas lire  </li>
+<li>tour 4 : 0 peut écrire ; 1 ne peut pas lire</li>
+</ul>
+</details>
+<p><strong>3.b)</strong> En déduire la proportion des valeurs écrites par le périphérique 0 qui sont effectivement lues par le périphérique 1.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>0 peut écrire trois fois et 1 peut lire une seule fois, seulement un tiers des valeurs écrites par 0 sont lues par 1, soit 33%</p>
+</details>
+<p>On change la méthode d'ordonnancement : on détermine l'ordre des périphériques au cours d'un tour à l'aide de deux listes d'attente <code>ATTL_L</code> et <code>ATT_E</code> établies au tour précédent.</p>
+<p>Au cours d'un tour, on place dans la liste <code>ATT_L</code> toutes les opérations de lecture mises en attente, et dans la liste d'attente <code>ATT_E</code> toutes les opérations d'écriture mises en attente.</p>
+<p>Au début du tour suivant, on établit l'ordre d'interrogation des périphériques en procédant ainsi :</p>
+<ul>
+<li>on interroge ceux présents dans la liste <code>ATT_L</code>, par ordre croissant d'adresse,</li>
+<li>on interroge ensuite ceux présents dans la liste <code>ATT_E</code>, par ordre croissant
+d'adresse,</li>
+<li>puis on interroge les périphériques restants, par ordre croissant d'adresse.</li>
+</ul>
+<p><strong>4.</strong> Compléter et rendre avec la copie le tableau fourni en annexe 2, en utilisant l'ordonnancement décrit ci-dessus, sur 3 tours.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Annexe 2</p>
+<table>
+<thead>
+<tr>
+<th align="left">Tour</th>
+<th align="left">N° périphérique</th>
+<th align="left">Adresse</th>
+<th align="left">Opération</th>
+<th align="left">Réponse ordonnanceur</th>
+<th align="left"><code>ATT_L</code></th>
+<th align="left"><code>ATT_E</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left">vide</td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"ATT"</code></td>
+<td align="left"><code>(1, 10)</code></td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left"><code>11</code></td>
+<td align="left">écriture</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">3</td>
+<td align="left"><code>11</code></td>
+<td align="left">lecture</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">0</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"></td>
+<td align="left">vide</td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">2</td>
+<td align="left"><code>11</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left"><code>(1, 10)</code></td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">3</td>
+<td align="left"><code>12</code></td>
+<td align="left">lecture</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+</details>
+<table>
+<thead>
+<tr>
+<th align="left">Tour</th>
+<th align="left">N° périphérique</th>
+<th align="left">Adresse</th>
+<th align="left">Opération</th>
+<th align="left">Réponse ordonnanceur</th>
+<th align="left"><code>ATT_L</code></th>
+<th align="left"><code>ATT_E</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left">vide</td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"ATT"</code></td>
+<td align="left"><code>(1, 10)</code></td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left"><code>11</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left"><code>(1, 10)</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">3</td>
+<td align="left"><code>11</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"ATT"</code></td>
+<td align="left"><code>(1, 10)</code> <code>(3, 11)</code></td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left"><code>(3, 11)</code></td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">3</td>
+<td align="left"><code>11</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left">vide</td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">0</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"ATT"</code></td>
+<td align="left">vide</td>
+<td align="left"><code>(0, 10)</code></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">2</td>
+<td align="left"><code>12</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left">vide</td>
+<td align="left"><code>(0, 10)</code></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">0</td>
+<td align="left"><code>10</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left">vide</td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left"><code>10</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"ATT"</code></td>
+<td align="left"><code>(1, 10)</code></td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">2</td>
+<td align="left"><code>11</code></td>
+<td align="left">écriture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left"><code>(1, 10)</code></td>
+<td align="left">vide</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">3</td>
+<td align="left"><code>12</code></td>
+<td align="left">lecture</td>
+<td align="left"><code>"OK"</code></td>
+<td align="left"><code>(1, 10)</code></td>
+<td align="left">vide</td>
+</tr>
+</tbody>
+</table>
+<p>Les colonnes <strong>e0</strong> et <strong>e1</strong> du tableau suivant recensent les deux chiffres de l'écriture binaire de l'entier <strong>n</strong> de la première colonne.</p>
+<table>
+<thead>
+<tr>
+<th align="center">nombre n</th>
+<th align="center">écriture binaire de n sur deux bits</th>
+<th align="center">e1</th>
+<th align="center">e0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">00</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">01</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">10</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">11</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>L'ordonnanceur attribue à deux signaux sur le bus de données les valeurs de <strong>e0</strong> et <strong>e1</strong> associées au numéro du circuit qu'il veut sélectionner. On souhaite construire à l'aide des portes ET, OU et NON un circuit pour chaque périphérique.<br />
+Chacun des quatre circuits à construire prend en entrée deux signaux <strong>e0</strong> et <strong>e1</strong>, le signal de sortie <strong>s</strong> valant 1 uniquement lorsque les niveaux de <strong>e0</strong> et <strong>e1</strong> correspondent aux bits de l'écriture en binaire du numéro du périphérique correspondant.</p>
+<p>Par exemple, le circuit ci-dessous réalise la sélection du périphérique 3. En effet, le signal <strong>s</strong> vaut 1 si et seulement si <strong>e0</strong> et <strong>e1</strong> valent tous les deux 1.</p>
+<pre class="mermaid"><code>flowchart LR
+    e0---ET
+    e1---ET
+    ET---s
+    style e0 stroke-width:0px,opacity:0
+    style e1 stroke-width:0px,opacity:0
+    style s stroke-width:0px,opacity:0</code></pre>
+<p><strong>5.a)</strong> Recopier sur la copie et indiquer dans le circuit ci-dessous les entrées <strong>e0</strong> et <strong>e1</strong> de façon à ce que ce circuit sélectionne le périphérique 1.</p>
+<pre class="mermaid"><code>flowchart LR
+    ea( )---NON---ET
+    eb( )----ET
+    ET---s
+    style ea stroke-width:0px,opacity:0
+    style eb stroke-width:0px,opacity:0
+    style s stroke-width:0px,opacity:0</code></pre>
+<details class="done">
+<summary>Réponse</summary>
+<pre class="mermaid"><code>flowchart LR
+    ea(e1)---NON---ET
+    eb(e0)----ET
+    ET---s
+    style ea stroke-width:0px,opacity:0
+    style eb stroke-width:0px,opacity:0
+    style s stroke-width:0px,opacity:0</code></pre>
+</details>
+<p><strong>5.b)</strong> Dessiner un circuit constitué d'une porte ET et d'une porte NON, qui sélectionne le périphérique 2.</p>
+<details class="done">
+<summary>Réponse</summary>
+<pre class="mermaid"><code>flowchart LR
+    ea(e1)----ET
+    eb(e0)---NON---ET
+    ET---s
+    style ea stroke-width:0px,opacity:0
+    style eb stroke-width:0px,opacity:0
+    style s stroke-width:0px,opacity:0</code></pre>
+</details>
+<p><strong>5.c)</strong> Dessiner un circuit permettant de sélectionner le périphérique 0.</p>
+<details class="done">
+<summary>Réponse</summary>
+<pre class="mermaid"><code>flowchart LR
+    ea(e0)---NON 
+    eb(e1)---NON
+    NON---ET 
+    NON---ET   
+    ET---s
+    style ea stroke-width:0px,opacity:0
+    style eb stroke-width:0px,opacity:0
+    style s stroke-width:0px,opacity:0</code></pre>
+</details>
+<pre class="mermaid"><code>flowchart LR
+    ea(e0)---NON---ET
+    eb(e1)---NON---ET
+    ET---s
+    style ea stroke-width:0px,opacity:0
+    style eb stroke-width:0px,opacity:0
+    style s stroke-width:0px,opacity:0</code></pre>
+<h2 id="exercice-3-4-points">EXERCICE 3 (4 points)<a class="headerlink" href="#exercice-3-4-points" title="Permanent link">⚓︎</a></h2>
+<blockquote>
+<p>Cet exercice traite du thème « base de données », et principalement du modèle relationnel et du langage SQL.</p>
+</blockquote>
+<p>L'énoncé de cet exercice peut utiliser les mots du langage SQL suivants :</p>
+<p><code>CREATE TABLE, SELECT, FROM, WHERE, JOIN ON, INSERT INTO, VALUES, UPDATE, SET, DELETE, COUNT, DISTINCT, AND, OR, AS, ORDER BY, ASC, DESC</code></p>
+<p>Un site web recueille des données de navigation dans une base de données afin d'étudier les profils de ses visiteurs.<br />
+Chaque requête d'interrogation d'une page de ce site est enregistrée dans une première table dénommée <strong>Visites</strong> sous la forme d'un 5-uplet : <code>(identifiant, adresse IP, date et heure de visite, nom de la page, navigateur)</code>.</p>
+<p>Le chargement de la page <code>index.html</code> par <code>192.168.1.91</code> le 12 juillet 1998 à 22 h 48 aura par exemple été enregistré de la façon suivante :</p>
+<p><code>(1534, "192.168.1.91", "1998-07-12 22:48:00", "index.html", "Internet explorer 4.1")</code>.</p>
+<p>La commande SQL ayant permis de créer cette table est la suivante :</p>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Visites</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">identifiant</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ip</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+<span class="w">    </span><span class="n">dateheure</span><span class="w"> </span><span class="n">DATETIME</span><span class="p">,</span>
+<span class="w">    </span><span class="n">nompage</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">navigateur</span><span class="w"> </span><span class="nb">TEXT</span>
+<span class="p">);</span>
+</code></pre></div>
+<p><strong>1.a)</strong> Donner une commande d'interrogation en langage SQL permettant d'obtenir l'ensemble des 2-uplets <code>(adresse IP, nom de la page)</code> de cette table.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">ip</span><span class="p">,</span><span class="n">nompage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Visites</span>
+</code></pre></div>
+</details>
+<p><strong>1.b)</strong> Donner une commande en langage SQL permettant d'obtenir l'ensemble des adresses IP ayant interrogé le site, sans doublon.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">ip</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Visites</span>
+</code></pre></div>
+</details>
+<p><strong>1.c)</strong> Donner une commande en langage SQL permettant d'obtenir la liste des noms des pages visitées par l'adresse IP <code>192.168.1.91</code></p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">nompage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Visites</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ip</span><span class="o">=</span><span class="ss">&quot;192.168.1.91&quot;</span>
+</code></pre></div>
+</details>
+<p>Ce site web met en place, sur chacune de ses pages, un programme en JavaScript qui envoie au serveur, à intervalle régulier de 15 secondes, le temps en secondes de présence sur la page. Ces envois contiennent tous la valeur de <code>identifiant</code> correspondant au chargement initial de la page.<br />
+Par exemple, si le visiteur du 12 juillet 1998 est resté 65 secondes sur la page, celle-ci a envoyé au serveur les 4 doublets <code>(1534, 15)</code>, <code>(1534, 30)</code>, <code>(1534, 45)</code> et <code>(1534, 60)</code>.</p>
+<p>Ces données sont enregistrées dans une table nommée <code>Pings</code> créée avec la commande ci-dessous :</p>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Pings</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">identifiant</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">duree</span><span class="w"> </span><span class="nb">INTEGER</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>En plus de l'inscription d'une ligne dans la table <code>Visites</code>, chaque chargement d'une nouvelle page provoque l'insertion d'une ligne dans la table <code>Pings</code> comprenant l'identifiant de ce chargement et une durée de 0.</p>
+<p>Les attributs <code>identifiant</code> des tables <code>Visites</code> et <code>Pings</code> partagent les mêmes valeurs.</p>
+<p><strong>2.a)</strong> De quelle table l'attribut <code>identifiant</code> est-il la clé primaire ?</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>l'attribut <code>identifiant</code> est la clé primaire de la table <code>Visistes (id)</code></p>
+</details>
+<p><strong>2.b)</strong> De quelle table l'attribut <code>identifiant</code> est-il une clé étrangère ?</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>l'attribut <code>identifiant</code> est la clé étrangère de la table <code>Pings</code></p>
+</details>
+<p><strong>2.c)</strong> Par conséquent, quelles vérifications sont automatiquement effectuées par le système de gestion de base de données ?</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Le SGBD va vérifier que l’attribut identifiant est unique pour chaque p-upplet de la table Visites. Le SGBD va aussi vérifier que l’attribut identifiant de la table Pings correspond bien à un attribut identifiant de la table Visites pour chaque p-upplet de la table Pings.</p>
+</details>
+<p><strong>3.</strong> Le serveur reçoit le doublet <code>(identifiant, duree)</code> suivant : <code>(1534, 105)</code>. Écrire la commande SQL d'insertion qui permet d'ajouter cet enregistrement à la table <code>Pings</code>.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Pings</span><span class="w"> </span>
+<span class="p">(</span><span class="n">identifiant</span><span class="p">,</span><span class="w"> </span><span class="n">duree</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1534</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>On envisage ensuite d'optimiser la table en se contentant d'une seule ligne par identifiant dans la table <code>Pings</code> : les valeurs de l'attribut <code>duree</code> devraient alors être mises à jour à chaque réception d'un nouveau doublet <code>(identifiant, duree)</code>.</p>
+<p><strong>4.a)</strong> Écrire la requête de mise à jour permettant de fixer à 120 la valeur de l'attribut <code>duree</code> associée à l'identifiant 1534 dans la table <code>Pings</code>.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">Pings</span><span class="w"> </span>
+<span class="k">SET</span><span class="w"> </span><span class="n">duree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">identifiant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1534</span>
+</code></pre></div>
+</details>
+<p><strong>4.b)</strong> Expliquer pourquoi on ne peut pas être certain que les données envoyées par une page web, depuis le navigateur d'un client, via plusieurs requêtes formulées en JavaScript, arrivent au serveur dans l'ordre dans lequel elles ont été émises.</p>
+<details class="done">
+<summary>Réponse</summary>
+</details>
+<p>Nous ne pouvons pas être certains que les données envoyées par une page web, depuis le navigateur d’un client, via plusieurs requêtes formulées en JavaScript, arrivent au serveur dans l’ordre dans lequel elles ont été émises, car les paquets de données (protocole TCP/IP) n’emprunteront pas forcément le même chemin pour aller du client vers le serveur (ou même certains paquets de données pourront se “perdre” et devront être réémis par le client). Les requêtes HTTP étant constitués de paquets de données, il n’est donc pas possible de garantir l’ordre d’arrivée des requêtes HTTP.</p>
+<p><strong>4.c)</strong> En déduire qu'il est préférable d'utiliser une requête d'insertion plutôt qu'une requête de mise à jour pour ajouter des données à la table <code>Pings</code>.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Imaginons que le client envoie 2 requêtes HTTP A et B (le client envoie la requête A puis la requête B). Si le serveur, en recevant la requête B tente de mettre à jour l’entrée correspondant à la requête A alors qu’il n’a pas encore reçu la requête A, cela va entrainer une erreur (tente de mettre à jour une entrée qui n’existe pas).</p>
+</details>
+<p><strong>5.</strong> Écrire une requête SQL utilisant le mot-clé <code>JOIN</code> et une clause <code>WHERE</code>, permettant de trouver les noms de toutes les pages qui ont été consultées plus d'une minute par au moins un utilisateur.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nompage</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Visites</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Pings</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Visites</span><span class="p">.</span><span class="n">identifiant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pings</span><span class="p">.</span><span class="n">identifiant</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">duree</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">60</span>
+</code></pre></div>
+</details>
+<h2 id="exercice-4-4-points">EXERCICE 4 (4 points)<a class="headerlink" href="#exercice-4-4-points" title="Permanent link">⚓︎</a></h2>
+<blockquote>
+<p>Cet exercice traite du thème « structures de données », et principalement des piles.</p>
+</blockquote>
+<p>La classe <code>Pile</code> utilisée dans cet exercice est implémentée en utilisant des listes Python et propose quatre éléments d'interface :</p>
+<ul>
+<li>Un constructeur qui permet de créer une pile vide, représentée par <code>[]</code> ;</li>
+<li>La méthode <code>est_vide()</code> qui renvoie <code>True</code> si l'objet est une pile ne contenant aucun élément, et <code>False</code> sinon ;</li>
+<li>La méthode <code>empiler</code> qui prend un objet quelconque en paramètre et ajoute cet objet au sommet de la pile. Dans la représentation de la pile dans la console, cet objet apparait à droite des autres éléments de la pile ;</li>
+<li>La méthode <code>depiler</code> qui renvoie l'objet présent au sommet de la pile et le retire de la pile.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemples :</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span>
+<span class="go">[2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span>
+<span class="go">[2, 3, 50]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+<span class="go">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span>
+<span class="go">[2, 3]</span>
+</code></pre></div>
+</div>
+<p>La méthode <code>est_triee</code> ci-dessous renvoie <code>True</code> si, en dépilant tous les éléments, ils sont traités dans l'ordre croissant, et <code>False</code> sinon.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">est_triee</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="n">e1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="n">e2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">e1</span> <span class="o">...</span> <span class="n">e2</span> <span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">e1</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>1.</strong> Recopier sur la copie les lignes 6 et 8 en complétant les points de suspension.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">est_triee</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="n">e1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="n">e2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">e1</span> <span class="o">&gt;</span> <span class="n">e2</span> <span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">e1</span> <span class="o">=</span> <span class="n">e2</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>On crée dans la console la pile <code>A</code> représentée par <code>[1, 2, 3, 4]</code>.</p>
+<p><strong>2.a)</strong> Donner la valeur renvoyée par l'appel <code>A.est_triee()</code>.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>La valeur <span class="arithmatex">\(4\)</span> est d'abord dépilée, puis <span class="arithmatex">\(3\)</span>. L'ordre n'est pas croissant, ainsi <code>A.est_triee()</code> renvoie <code>False</code>.</p>
+</details>
+<p><strong>2.b)</strong> Donner le contenu de la pile <code>A</code> après l'exécution de cette instruction.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p><code>A</code> sera représenté par <code>[1, 2]</code>.</p>
+</details>
+<p>On souhaite maintenant écrire le code d'une méthode <code>depile_max</code> d'une pile non vide ne contenant que des nombres entiers et renvoyant le plus grand élément de cette pile en le retirant de la pile.</p>
+<p>Après l'exécution de <code>p.depile_max()</code>, le nombre d'éléments de la pile <code>p</code> diminue donc de 1.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">depile_max</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">(),</span> <span class="s2">&quot;Pile vide&quot;</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+    <span class="n">maxi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="n">elt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">maxi</span> <span class="o">&lt;</span> <span class="n">elt</span><span class="p">:</span>
+            <span class="n">q</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">maxi</span><span class="p">)</span>
+            <span class="n">maxi</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="o">...</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">depiler</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">maxi</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>3.</strong> Recopier sur la copie les lignes 9 et 11 en complétant les points de suspension.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">depile_max</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">(),</span> <span class="s2">&quot;Pile vide&quot;</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+    <span class="n">maxi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="n">elt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">maxi</span> <span class="o">&lt;</span> <span class="n">elt</span><span class="p">:</span>
+            <span class="n">q</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">maxi</span><span class="p">)</span>
+            <span class="n">maxi</span> <span class="o">=</span> <span class="n">elt</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="n">q</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">elt</span><span class="p">)</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">depiler</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">maxi</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>On crée la pile <code>B</code> représentée par <code>[9, -7, 8, 12, 4]</code> et on effectue l'appel <code>B.depile_max()</code>.</p>
+<p><strong>4.a)</strong> Donner le contenu des piles <code>B</code> et <code>q</code> à la fin de chaque itération de la boucle <code class="highlight"><span class="k">while</span></code> de la ligne 5.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Initialisation</label><label for="__tabbed_1_2">Fin du tour 1</label><label for="__tabbed_1_3">Fin du tour 2</label><label for="__tabbed_1_4">Fin du tour 3</label><label for="__tabbed_1_5">Fin du tour 4</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><code>B</code> contient <code>[9, -7, 8, 12]</code> ;</li>
+<li><code>q</code> est vide ;</li>
+<li><code>maxi</code> est égal à <code>4</code>.</li>
+</ul>
+<p>Juste avant le premier tour de boucle</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><code>B</code> contient <code>[9, -7, 8]</code> ;</li>
+<li><code>q</code> contient <code>[4]</code> ;</li>
+<li><code>maxi</code> est égal à <code>12</code>.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><code>B</code> contient <code>[9, -7]</code> ;</li>
+<li><code>q</code> contient <code>[4, 8]</code> ;</li>
+<li><code>maxi</code> est égal à <code>12</code>.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><code>B</code> contient <code>[9]</code> ;</li>
+<li><code>q</code> contient <code>[4, 8, -7]</code> ;</li>
+<li><code>maxi</code> est égal à <code>12</code>.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><code>B</code> est vide ;</li>
+<li><code>q</code> contient <code>[4, 8, -7, 9]</code> ;</li>
+<li><code>maxi</code> est égal à <code>12</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+</details>
+<p><strong>4.b)</strong> Donner le contenu des piles <code>B</code> et <code>q</code> avant l'exécution de la ligne 14.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>La dernière boucle renverse la pile <code>q</code> dans la pile <code>B</code>, ainsi, à la ligne 14 :</p>
+<ul>
+<li><code>q</code> est vide ;</li>
+<li><code>B</code> contient <code>[9, -7, 8, 4]</code>.</li>
+</ul>
+</details>
+<p><strong>4.c)</strong> Donner un exemple de pile qui montre que l'ordre des éléments restants n'est pas préservé après l'exécution de <code>depile_max</code>.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Avec une pile <code>B</code> qui contient <code>[3, 1, 2]</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Initialisation</label><label for="__tabbed_2_2">Fin du tour 1</label><label for="__tabbed_2_3">Fin du tour 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><code>B</code> contient <code>[3, 1]</code> ;</li>
+<li><code>q</code> est vide ;</li>
+<li><code>maxi</code> est égal à <code>2</code>.</li>
+</ul>
+<p>Juste avant le premier tour de boucle</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><code>B</code> contient <code>[3]</code> ;</li>
+<li><code>q</code> contient <code>[1]</code> ;</li>
+<li><code>maxi</code> est égal à <code>2</code>.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><code>B</code> est vide ;</li>
+<li><code>q</code> contient <code>[1, 2]</code> ;</li>
+<li><code>maxi</code> est égal à <code>3</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+<p>La dernière boucle renverse la pile <code>q</code> dans la pile <code>B</code>, ainsi, à la ligne 14 :</p>
+<ul>
+<li><code>q</code> est vide ;</li>
+<li><code>B</code> contient <code>[2, 1]</code>.</li>
+</ul>
+<p>Sans <code>3</code> dans la pile <code>B</code> initiale, on a dans l'ordre <code>[1, 2]</code> ce qui est différent de <code>[2, 1]</code> obtenu ici avec <code>depile_max</code>.</p>
+<p>On a ainsi un exemple où l'ordre des éléments restants n'est pas préservé après l'exécution de <code>depile_max</code>.</p>
+</details>
+<p>On donne le code de la méthode <code>traiter</code> :</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">traiter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="n">q</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">depile_max</span><span class="p">())</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">depiler</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>5.a)</strong> Donner les contenus successifs des piles <code>B</code> et <code>q</code></p>
+<ul>
+<li>avant la ligne 3,</li>
+<li>avant la ligne 5,</li>
+<li>à la fin de l'exécution de la fonction <code>traiter</code> lorsque la fonction <code>traiter</code> est appelée avec la pile <code>B</code> contenant <code>[1, 6, 4, 3, 7, 2]</code>.</li>
+</ul>
+<details class="done">
+<summary>Réponse</summary>
+<p>Avec <code>B = [1, 6, 4, 3, 7, 2]</code>, un appel <code>B.traiter()</code> conduit successivement à :</p>
+<ul>
+<li>Avant la ligne 3,<ul>
+<li><code>B</code> contient <code>[1, 6, 4, 3, 7, 2]</code> ;</li>
+<li><code>q</code> est vide.</li>
+</ul>
+</li>
+<li>Avant la ligne 5,<ul>
+<li><code>B</code> est vide ;</li>
+<li><code>q</code> contient <code>[7, 6, 4, 3, 2, 1]</code></li>
+</ul>
+</li>
+<li>À la fin,<ul>
+<li><code>B</code> contient <code>[1, 2, 3, 4, 6, 7]</code></li>
+<li><code>q</code> est vide.</li>
+</ul>
+</li>
+</ul>
+</details>
+<p><strong>5.b)</strong> Expliquer le traitement effectué par cette méthode.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Ce traitement est un tri de la pile. On construit d'abord <code>q</code> comme la pile des éléments de <code>self</code> dans l'ordre décroissant. On renverse ensuite la pile, qui se retrouve comme si on avait empilé les éléments de <code>self</code> dans l'ordre croissant.</p>
+</details>
+<h2 id="exercice-5-4-points">EXERCICE 5 (4 points)<a class="headerlink" href="#exercice-5-4-points" title="Permanent link">⚓︎</a></h2>
+<blockquote>
+<p>Cet exercice traite du thème « algorithmique », et principalement des algorithmes sur les arbres binaires.</p>
+</blockquote>
+<p>On manipule ici les arbres binaires avec trois fonctions :</p>
+<ul>
+<li><code>est_vide(A)</code> renvoie <code>True</code> si l'arbre binaire <code>A</code> est vide, <code>False</code> s'il ne l'est pas ;</li>
+<li><code>sous_arbre_gauche(A)</code> renvoie le sous-arbre à gauche de l'arbre binaire <code>A</code> ;</li>
+<li><code>sous_arbre_droite(A)</code> renvoie le sous-arbre à droite de l'arbre binaire <code>A</code>.</li>
+</ul>
+<p>L'arbre binaire renvoyé par les fonctions <code>sous_arbre_gauche</code> et <code>sous_arbre_droite</code> peut éventuellement être l'arbre vide.</p>
+<p>On définit la hauteur d'un arbre binaire non vide de la façon suivante :</p>
+<ul>
+<li>si ses sous-arbres à gauche et à droite sont vides, sa hauteur est <span class="arithmatex">\(0\)</span> ;</li>
+<li>si l'un des deux au moins est non vide, alors sa hauteur est égale à <span class="arithmatex">\(1 + M\)</span>, où <span class="arithmatex">\(M\)</span> est la plus grande des hauteurs de ses sous-arbres (à gauche et à droite) non vides.</li>
+</ul>
+<p><strong>1.a)</strong> Donner la hauteur de l'arbre ci-dessous.</p>
+<pre class="mermaid"><code>graph TD
+    N0( ) --&gt; N2( )
+    N0   --&gt; N1( )
+    N2  --&gt; N5( )
+    N2  --&gt; N6( )
+    linkStyle 3 stroke-width:0px;
+    style N6 opacity:0;</code></pre>
+<details class="done">
+<summary>Réponse</summary>
+<p>Avec cette définition, la hauteur de cet arbre binaire est 2.</p>
+</details>
+<p><strong>1.b)</strong> Dessiner sur la copie un arbre binaire de hauteur <span class="arithmatex">\(4\)</span>.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Avec cette définition, voici un arbre binaire de hauteur <span class="arithmatex">\(4\)</span>.</p>
+<pre class="mermaid"><code>graph TD
+    N0( ) --&gt; N1( )
+    N0   --&gt; N2( )
+    N1  --&gt; N3( )
+    N1  --&gt; N4( )
+    N2  --&gt; N5( )
+    N2  --&gt; N6( )
+    N4  --&gt; N7( )
+    N4  --&gt; N8( )
+    N7  --&gt; N9( )
+    N7  --&gt; N10( )
+    linkStyle 7 stroke-width:0px;
+    style N8 opacity:0;
+    linkStyle 4 stroke-width:0px;
+    style N5 opacity:0;</code></pre>
+</details>
+<p>La hauteur d'un arbre est calculée par l'algorithme récursif suivant :</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Pseudo Code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>Algorithme hauteur(A) :
+    test d&#39;assertion : A est supposé non vide
+    si sous_arbre_gauche(A) vide et sous_arbre_droite(A) vide :
+        renvoyer 0
+    sinon, si sous_arbre_gauche(A) vide :
+        renvoyer 1 + hauteur(sous_arbre_droite(A))
+    sinon, si ... :
+        renvoyer ...
+    sinon:
+        renvoyer 1 + max(
+            hauteur(sous_arbre_gauche(A)),
+            hauteur(sous_arbre_droite(A))
+        )
+</code></pre></div></td></tr></table></div>
+<p><strong>2.</strong> Recopier sur la copie les lignes 7 et 8 en complétant les points de suspension.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Pseudo Code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>Algorithme hauteur(A) :
+    test d&#39;assertion : A est supposé non vide
+    si sous_arbre_gauche(A) vide et sous_arbre_droite(A) vide :
+        renvoyer 0
+    sinon, si sous_arbre_gauche(A) vide :
+        renvoyer 1 + hauteur(sous_arbre_droite(A))
+    sinon, si sous_arbre_droite(A) vide :
+        renvoyer 1 + hauteur(sous_arbre_gauche(A))
+    sinon:
+        renvoyer 1 + max(
+            hauteur(sous_arbre_gauche(A)),
+            hauteur(sous_arbre_droite(A))
+        )
+</code></pre></div></td></tr></table></div>
+<div class="admonition danger">
+<p class="admonition-title">Pour aller plus loin</p>
+<p>Si on définit la hauteur d'un arbre binaire vide égale à 0, (celle d'un arbre réduit à un seul nœud égal à 1), on a un algorithme bien plus simple, et qui traite tous les cas :</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Pseudo Code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Algorithme hauteur(A) :
+    si A vide :
+        renvoyer 0
+    sinon:
+        renvoyer 1 + max(
+            hauteur(sous_arbre_gauche(A)),
+            hauteur(sous_arbre_droite(A))
+        )
+</code></pre></div></td></tr></table></div>
+</div>
+</details>
+<p>On considère un arbre binaire <code>R</code> dont on note <code>G</code> le sous-arbre à gauche et <code>D</code> le
+sous-arbre à droite. On suppose que <code>R</code> est de hauteur <span class="arithmatex">\(4\)</span> et <code>G</code> de hauteur <span class="arithmatex">\(2\)</span>.</p>
+<p><strong>3.a)</strong> Justifier le fait que <code>D</code> n'est pas l'arbre vide et déterminer sa hauteur.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Si <code>D</code> est égal à l'arbre vide, alors la hauteur de <code>R</code> est égale à <code>1 + hauteur(G)</code> qui est égal à <span class="arithmatex">\(1+2=3\)</span>, or <code>R</code> est de hauteur <span class="arithmatex">\(4\)</span>. Contradiction.</p>
+<p>Ainsi <code>D</code> n'est pas l'arbre vide.</p>
+<p>Dans ce cas <code>1 + max(hauteur(G), hauteur(D))</code> est égal à <span class="arithmatex">\(4\)</span>. D'où</p>
+<ul>
+<li><code>1 + max(2, hauteur(D))</code> est égal à <span class="arithmatex">\(4\)</span>.</li>
+<li><code>max(2, hauteur(D))</code> est égal à <span class="arithmatex">\(3\)</span>.</li>
+<li><code>hauteur(D)</code> est égal à <span class="arithmatex">\(3\)</span>.</li>
+</ul>
+</details>
+<p><strong>3.b)</strong> Illustrer cette situation par un dessin.</p>
+<details class="done">
+<summary>Réponse</summary>
+<ul>
+<li>Cet arbre est de hauteur <span class="arithmatex">\(4\)</span>,</li>
+<li>son sous arbre à gauche est de hauteur <span class="arithmatex">\(2\)</span>,</li>
+<li>son sous arbre à droite est de hauteur <span class="arithmatex">\(3\)</span>.</li>
+</ul>
+<pre class="mermaid"><code>graph TD
+    N0( ) --&gt; N1( )
+    N0   --&gt; N2( )
+    N1  --&gt; N3( )
+    N1  --&gt; N4( )
+    N2  --&gt; N5( )
+    N2  --&gt; N6( )
+    N4  --&gt; N7( )
+    N4  --&gt; N8( )
+    N6  --&gt; N9( )
+    N6  --&gt; N10( )
+    N9  --&gt; N11( )
+    N9  --&gt; N12( )
+    linkStyle 7 stroke-width:0px;
+    style N8 opacity:0;
+    linkStyle 4 stroke-width:0px;
+    style N5 opacity:0;</code></pre>
+</details>
+<p>Soit un arbre binaire non vide de hauteur <code>h</code>. On note <code>n</code> le nombre de nœuds de cet arbre. On admet que <span class="arithmatex">\(h + 1 \leqslant n \leqslant 2^{h+1} - 1\)</span>.</p>
+<p><strong>4.a)</strong> Vérifier ces inégalités sur l'arbre binaire de la question <strong>1.a)</strong>.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Dans la question <strong>1.a)</strong>, l'arbre binaire possède <span class="arithmatex">\(n = 4\)</span> nœuds et a une hauteur <span class="arithmatex">\(h = 2\)</span>.</p>
+<p>On a bien <span class="arithmatex">\(2 + 1 \leqslant 4 \leqslant 2^{2+1}\)</span> qui s'écrit aussi <span class="arithmatex">\(3 \leqslant 4 \leqslant 8\)</span></p>
+</details>
+<p><strong>4.b)</strong> Expliquer comment construire un arbre binaire de hauteur <code>h</code> quelconque ayant <code>h+1</code> nœuds.</p>
+<details class="done">
+<summary>Réponse</summary>
+<p>Il <strong>suffit</strong>, par exemple, de construire un arbre binaire où pour chaque nœud, soit le sous arbre à gauche est vide, soit celui à droite.</p>
+<ul>
+<li>Cela peut être toujours celui à gauche qui est vide, on parle alors d'arbre peigne à droite.</li>
+<li>Cela peut être toujours celui à droite qui est vide, on parle alors d'arbre peigne à gauche.</li>
+</ul>
+</details>
+<p><strong>4.c)</strong> Expliquer comment construire un arbre binaire de hauteur <code>h</code> quelconque ayant <span class="arithmatex">\(2^{h+1} - 1\)</span> nœuds.</p>
+<blockquote>
+<p><em>Indication</em> : <span class="arithmatex">\(2^{h+1} - 1 = 1+2+4+...+2^h\)</span>.</p>
+</blockquote>
+<details class="done">
+<summary>Réponse</summary>
+<p>Il <strong>faut</strong>, dans ce cas, construire un arbre binaire complet ; les sous-arbres vides sont tous à la même profondeur.</p>
+</details>
+<details class="danger">
+<summary>Pour aller plus loin</summary>
+<p>Avec l'autre définition de la hauteur, l'inégalité s'écrit <span class="arithmatex">\(h \leqslant n \leqslant 2^h - 1\)</span>, et elle est encore valable pour l'arbre binaire vide. C'est plus simple et général.</p>
+</details>
+<p>L'objectif de la fin de l'exercice est d'écrire le code d'une fonction <code>fabrique(h, n)</code> qui prend comme paramètres deux nombres entiers positifs <code>h</code> et <code>n</code> tels que <span class="arithmatex">\(h + 1 &lt; n &lt; 2^{h+1} - 1\)</span>, et qui renvoie un arbre binaire de hauteur <code>h</code> à <code>n</code> nœuds.</p>
+<p>Pour cela, on utilise les deux fonctions suivantes :</p>
+<ul>
+<li><code>arbre_vide()</code>, qui renvoie un arbre vide ;</li>
+<li><code>arbre(gauche, droite)</code> qui renvoie l'arbre de fils à gauche <code>gauche</code> et de fils
+à droite <code>droite</code>.</li>
+</ul>
+<p><strong>5.</strong> Recopier sur la copie l'arbre binaire ci-dessous et numéroter ses nœuds de 1 en 1 en commençant à 1, en effectuant un parcours en profondeur préfixe.</p>
+<pre class="mermaid"><code>graph TD
+    N0( ) --&gt; N2( )
+    N0   --&gt; N1( )
+    N1 --&gt; N3( )
+    N1 --&gt; N4( )
+    N2  --&gt; N5( )
+    N2  --&gt; N6( )
+    linkStyle 5 stroke-width:0px;
+    style N6 opacity:0;
+    N3 --&gt; N7( )
+    N3 --&gt; N8( )
+    N4 --&gt; N9( )
+    N4 --&gt; N10( )</code></pre>
+<details class="done">
+<summary>Réponse</summary>
+<pre class="mermaid"><code>graph TD
+    N0(1) --&gt; N2(9)
+    N0   --&gt; N1(2)
+    N1 --&gt; N3(3)
+    N1 --&gt; N4(6)
+    N2  --&gt; N5(10)
+    N2  --&gt; N6( )
+    linkStyle 5 stroke-width:0px;
+    style N6 opacity:0;
+    N3 --&gt; N7(4)
+    N3 --&gt; N8(5)
+    N4 --&gt; N9(7)
+    N4 --&gt; N10(8)</code></pre>
+</details>
+<p>La fonction <code>fabrique</code> ci-dessous a pour but de répondre au problème posé. Pour cela, la fonction <code>annexe</code> utilise la valeur de <code>n</code>, qu'elle peut modifier et renvoie un arbre
+binaire de hauteur <code>hauteur_max</code> dont le nombre de nœuds est égal à la valeur de <code>n</code> au
+moment de son appel.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fabrique</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">annexe</span><span class="p">(</span><span class="n">hauteur_max</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">arbre_vide</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">hauteur_max</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="o">...</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">gauche</span> <span class="o">=</span> <span class="n">annexe</span><span class="p">(</span><span class="n">hauteur_max</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">droite</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="k">return</span> <span class="n">arbre</span><span class="p">(</span><span class="n">gauche</span><span class="p">,</span> <span class="n">droite</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">annexe</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>6.</strong> Recopier sur la copie les lignes 7 et 11 en complétant les points de suspension.</p>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fabrique</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">annexe</span><span class="p">(</span><span class="n">hauteur_max</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">arbre_vide</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">hauteur_max</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">arbre</span><span class="p">(</span><span class="n">arbre_vide</span><span class="p">(),</span> <span class="n">arbre_vide</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">gauche</span> <span class="o">=</span> <span class="n">annexe</span><span class="p">(</span><span class="n">hauteur_max</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">droite</span> <span class="o">=</span> <span class="n">arbre_vide</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">arbre</span><span class="p">(</span><span class="n">gauche</span><span class="p">,</span> <span class="n">droite</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">annexe</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+Exercices sur le langage SQL rédigés par N. Revéret. Partage ou adaptation possible selon
+ les conditions de la licence <a
+href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+target="_blank" rel="license noopener noreferrer"
+style="display:inline-block;">CC BY-NC-SA 4.0<img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top", "toc.integrate", "header.autohide"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../js/sortTable.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../js/tablesort/tablesort.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.date.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.dotsep.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.filesize.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.monthname.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.number.min.js"></script>
+      
+    
+    
+  </body>
+</html>

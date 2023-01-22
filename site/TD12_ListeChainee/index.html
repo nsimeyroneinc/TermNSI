@@ -1,5 +1,3 @@
-<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
-
 
 <!doctype html>
 <html lang="fr" class="no-js">
@@ -8,39 +6,49 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Cours et TD de l'année en cours">
+        <meta name="description" content="Exercices sur les bases de données">
       
       
-        <meta name="author" content="Michael Meyroneinc-condy">
+        <meta name="author" content="N. Revéret">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+        <link rel="canonical" href="https://e-nsi.forge.aeif.fr/exercices_bdd/TD12_ListeChainee/">
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>TD12 ListeChainee - Numériques et Sciences informatiques Terminale</title>
+        <title>TD12 ListeChainee - Exercices sur les bases de données</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+<script src="https://e-nsi.forge.aeif.fr/exercices_bdd//js/sqlite_ide.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css"><link rel="stylesheet" href="https://e-nsi.forge.aeif.fr/exercices_bdd//css/sqlite_ide.css"><script>path="https://e-nsi.forge.aeif.fr/exercices_bdd/"</script>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50e68009.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
         
       
+      
+
     
     
     
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../css/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -53,7 +61,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
   
     
     
@@ -79,20 +87,19 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href=".." title="Numériques et Sciences informatiques Terminale" class="md-header__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
+    <a href=".." title="Exercices sur les bases de données" class="md-header__button md-logo" aria-label="Exercices sur les bases de données" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Numériques et Sciences informatiques Terminale
+            Exercices sur les bases de données
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -109,19 +116,21 @@
         
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
           
-            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Passer au mode nuit"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Passer au mode nuit" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
             </label>
           
         
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="brown"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
           
-            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Passer au mode jour"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Passer au mode jour" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
             </label>
           
         
@@ -130,7 +139,7 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -138,13 +147,13 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -172,167 +181,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
-      Accueil
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-tabs__link">
-        T1 - Struct. de données
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../BasesDonnees/TP17_JO/" class="md-tabs__link">
-        T2 - Bases de données
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../Reseaux/TD19_Routage_Correction/" class="md-tabs__link">
-        T3 - Archi. matèrielle
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../diviserregner/TD20_Diviser_pour_Regner_Correction/" class="md-tabs__link">
-        T5 Algo.
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../divers/Exercices_Bac/" class="md-tabs__link">
-        BAC 📝
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../epreuve_pratique/" class="md-tabs__link">
-        E.P 💻
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../DM/DM_POO/" class="md-tabs__link">
-        Devoirs
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../divers/sujet0_geipi.pdf" class="md-tabs__link">
-        Divers
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="../divers/conseil/" class="md-tabs__link">
-      Divers conseils
-    </a>
-  </li>
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -345,18 +193,17 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Numériques et Sciences informatiques Terminale" class="md-nav__button md-logo" aria-label="Numériques et Sciences informatiques Terminale" data-md-component="logo">
+    <a href=".." title="Exercices sur les bases de données" class="md-nav__button md-logo" aria-label="Exercices sur les bases de données" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../logo.png" alt="logo">
 
     </a>
-    Numériques et Sciences informatiques Terminale
+    Exercices sur les bases de données
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -370,7 +217,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Accueil
+        🏡 Accueil
       </a>
     </li>
   
@@ -391,30 +238,16 @@
       
       
       
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
       
         <label class="md-nav__link" for="__nav_2">
-          T1 - Struct. de données
+          🔨 Création et insertion
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="T1 - Struct. de données" data-md-level="1">
+      <nav class="md-nav" aria-label="🔨 Création et insertion" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          T1 - Struct. de données
+          🔨 Création et insertion
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -424,8 +257,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../StructureDonnees/TP07_Dictionnaires_Corrige/" class="md-nav__link">
-        TD 7 - Les dictionnaires
+      <a href="../01_lycee/lycee/" class="md-nav__link">
+        Lycée
       </a>
     </li>
   
@@ -438,64 +271,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../TD11_Les_Listes/" class="md-nav__link">
-        TP 11 - Les Listes
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../TD11_Corrige/" class="md-nav__link">
-        TP 11 - Les Listes Corrigé
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../TD12_ListeChainee_Corrige/" class="md-nav__link">
-        TP 12 - Liste Chainée Enoncé-Corrigé
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../StructureDonnees/TD13_Piles/" class="md-nav__link">
-        TP 13 - Les Piles Enoncé-Corrigé
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../StructureDonnees/TD14_Files/" class="md-nav__link">
-        TP 14 - Les Files Enoncé-Corrigé
+      <a href="../02_imdb/imdb/" class="md-nav__link">
+        Séries
       </a>
     </li>
   
@@ -523,22 +300,16 @@
       
       
       
-        
-          
-        
-          
-        
-      
       
         <label class="md-nav__link" for="__nav_3">
-          T2 - Bases de données
+          🐭 Requêtes simples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="T2 - Bases de données" data-md-level="1">
+      <nav class="md-nav" aria-label="🐭 Requêtes simples" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          T2 - Bases de données
+          🐭 Requêtes simples
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -548,8 +319,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../BasesDonnees/TP17_JO/" class="md-nav__link">
-        TP 17 - Les JO Londres 2012
+      <a href="../31_prenoms/prenoms/" class="md-nav__link">
+        Prénoms
       </a>
     </li>
   
@@ -562,8 +333,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../BasesDonnees/TD18_Revision_SQL_BAC/" class="md-nav__link">
-        TD 18 - Sujet BAC 2021
+      <a href="../32_ramens/ramens/" class="md-nav__link">
+        Ramens
       </a>
     </li>
   
@@ -591,26 +362,16 @@
       
       
       
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
       
         <label class="md-nav__link" for="__nav_4">
-          T3 - Archi. matèrielle
+          🐈 Requêtes sur plusieurs tables
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="T3 - Archi. matèrielle" data-md-level="1">
+      <nav class="md-nav" aria-label="🐈 Requêtes sur plusieurs tables" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          T3 - Archi. matèrielle
+          🐈 Requêtes sur plusieurs tables
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -620,8 +381,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reseaux/TD19_Routage_Correction/" class="md-nav__link">
-        TD 19 - Protocole de routage
+      <a href="../41_films/films/" class="md-nav__link">
+        Films
       </a>
     </li>
   
@@ -634,36 +395,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Processus/TD_Gestion_Processus/" class="md-nav__link">
-        TD 23 - Gestion des Processus
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Processus/TD_Gestion_Processus%20copy/" class="md-nav__link">
-        TD - Gestion des Processus
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../crypto/crypto/" class="md-nav__link">
-        TD crypto
+      <a href="../42_cars/cars/" class="md-nav__link">
+        Voitures
       </a>
     </li>
   
@@ -691,26 +424,16 @@
       
       
       
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
       
         <label class="md-nav__link" for="__nav_5">
-          T5 Algo.
+          🐯 Exemples complets
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="T5 Algo." data-md-level="1">
+      <nav class="md-nav" aria-label="🐯 Exemples complets" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          T5 Algo.
+          🐯 Exemples complets
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -720,8 +443,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../diviserregner/TD20_Diviser_pour_Regner_Correction/" class="md-nav__link">
-        TD 20 correction
+      <a href="../51_world/world/" class="md-nav__link">
+        World
       </a>
     </li>
   
@@ -734,404 +457,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Graphe/TD_Graphe/" class="md-nav__link">
-        TD Graphe
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Graphe/TD_Graphe_Exercices/" class="md-nav__link">
-        TD Graphe - Exercices
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Graphe/TD_Graphe_Parcours/" class="md-nav__link">
-        TD Graphe - Parcours
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_6">
-          BAC 📝
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="BAC 📝" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          BAC 📝
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../divers/Exercices_Bac/" class="md-nav__link">
-        TD 21 Exercices BAC
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../divers/Exercice_Bac__2/" class="md-nav__link">
-        TD 22 - Exercices BAC n°2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BAC/Sujet_Libre_2_2021/" class="md-nav__link">
-        Sujet Candidat Libre 2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BAC/Sujet_Libre_2_2021_cor/" class="md-nav__link">
-        Sujet Candidat Libre 2
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_7">
-          E.P 💻
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="E.P 💻" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
-          E.P 💻
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../epreuve_pratique/" class="md-nav__link">
-        Déroulement
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../divers/Consigne_EP/" class="md-nav__link">
-        Consigne
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../divers/EpreuvePratique/" class="md-nav__link">
-        Sujets
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
-      
-      
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_8">
-          Devoirs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Devoirs" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
-          <span class="md-nav__icon md-icon"></span>
-          Devoirs
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../DM/DM_POO/" class="md-nav__link">
-        P.O.O
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Devoirs/DS%20_Listes_Piles_Files/" class="md-nav__link">
-        DS 30/11/21
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Devoirs/DS_EP/" class="md-nav__link">
-        EP 30/11/21
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Devoirs/DS_14_12_21_arbres/" class="md-nav__link">
-        DS 14/12/21
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Devoirs/DS_14_12_21_arbres_Correction/" class="md-nav__link">
-        DS 14/12/21 - Correction
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Devoirs/DS_03_01_22_correction/" class="md-nav__link">
-        DS 03/01/22 - Correction
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
-      
-      
-      
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_9">
-          Divers
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Divers" data-md-level="1">
-        <label class="md-nav__title" for="__nav_9">
-          <span class="md-nav__icon md-icon"></span>
-          Divers
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../divers/sujet0_geipi.pdf" class="md-nav__link">
-        Epreuve GEIPI
+      <a href="../52_netflix/netflix/" class="md-nav__link">
+        Netflix
       </a>
     </li>
   
@@ -1152,8 +479,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../divers/conseil/" class="md-nav__link">
-        Divers conseils
+      <a href="../memento_sql/" class="md-nav__link">
+        💡 Memento SQL
       </a>
     </li>
   
@@ -1166,34 +493,13 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="TD12_ListeChainee.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
-              
-
-
-
-
-
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
+
 
 <table  style="background-color: #5D8AA8; width:100%;color:white;">
     <thead>
@@ -1234,13 +540,13 @@
 <li><em>valeur</em> qui est la valeur de la cellule  </li>
 <li><em>suivante</em> qui est une référence vers la cellule suivante.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Cellule</span><span class="p">:</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Cellule</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeur</span><span class="p">,</span> <span class="n">suivante</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">=</span> <span class="n">valeur</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">suivante</span> <span class="o">=</span> <span class="n">suivante</span>
 </code></pre></div>
 <p>On peut alors créer une chaîne et accéder à ses éléments en consultant la valeur d'une cellule, ou la valeur de la suivante, etc.</p>
-<div class="highlight"><pre><span></span><code><span class="n">chaine1</span> <span class="o">=</span> <span class="n">Cellule</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Cellule</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Cellule</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">)))</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">chaine1</span> <span class="o">=</span> <span class="n">Cellule</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Cellule</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Cellule</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;premier élément :&quot;</span><span class="p">,</span> <span class="n">chaine1</span><span class="o">.</span><span class="n">valeur</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;deuxième élément :&quot;</span><span class="p">,</span> <span class="n">chaine1</span><span class="o">.</span><span class="n">suivante</span><span class="o">.</span><span class="n">valeur</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;troisième élément :&quot;</span><span class="p">,</span> <span class="n">chaine1</span><span class="o">.</span><span class="n">suivante</span><span class="o">.</span><span class="n">suivante</span><span class="o">.</span><span class="n">valeur</span><span class="p">)</span>
@@ -1254,7 +560,7 @@
 <div class="admonition example">
 <p class="admonition-title"><strong>Question 1</strong></p>
 <p>Construisez une liste appelée <code>chaine</code> correspondant au schéma donné dans l'introduction.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># à compléter</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># à compléter</span>
 </code></pre></div>
 </div>
 <blockquote>
@@ -1264,7 +570,7 @@
 <h2 id="longueur-dune-chaine">Longueur d'une chaine<a class="headerlink" href="#longueur-dune-chaine" title="Permanent link">⚓︎</a></h2>
 <p>Pour déterminer la longueur d'une chaine, il suffit de parcourir chaque cellule, jusqu'à trouver une cellule dont l'attribut <code>suivante</code> pointe vers <code>None</code>. Si la chaine vaut <code>None</code> au départ, elle représente une liste vide qui a pour longueur 0.</p>
 <p>On peut définir la fonction <code>longueur</code> qui calcule la longueur d'une chaine :</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">longueur</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">longueur</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">courante</span> <span class="o">=</span> <span class="n">chaine</span>  <span class="c1"># la cellule courante pointe vers chaine qui pointe vers la première cellule ou None</span>
     <span class="k">while</span> <span class="n">courante</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># tant que la cellule courante ne pointe par vers None</span>
@@ -1279,14 +585,14 @@
 <div class="admonition example">
 <p class="admonition-title"><strong>Question 2</strong></p>
 <p>Vérifiez la longueur renvoyée pour la chaîne <code>chaine</code> (question 1).</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># à compléter</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># à compléter</span>
 </code></pre></div>
 </div>
 <div class="admonition example">
 <p class="admonition-title"><strong>Question 3</strong></p>
 <p>Proposez une version récursive de la fonction <code>longueur</code> (<em>puis vérifiez</em>)</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="c1"># VERSION RECURSIVE</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># VERSION RECURSIVE</span>
 <span class="c1"># à compléter</span>
 </code></pre></div>
 <h2 id="elements-dune-chaine">Eléments d'une chaine<a class="headerlink" href="#elements-dune-chaine" title="Permanent link">⚓︎</a></h2>
@@ -1295,16 +601,16 @@
 <p class="admonition-title"><strong>Question 4</strong></p>
 <p>Ecrivez une fonction <code>affiche(chaine)</code> qui affiche tous les éléments d'une chaine (non vide).</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="c1"># à compléter</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># à compléter</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title"><strong>Question 5</strong></p>
 <p>Ecrivez une fonction <code>liste_elements(chaine)</code> qui renvoie la liste (au sens <code>list</code> de Python) des éléments d'une chaîne.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">liste_elements</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Renvoie une list Python contenant tous les éléments de la liste chaînée L</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">liste_elements</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Renvoie une list Python contenant tous les éléments de la liste chaînée L</span>
 
 <span class="sd">    &gt;&gt;&gt; liste_elements(Cellule(1, Cellule(2, Cellule(3, None))))</span>
 <span class="sd">    [1, 2, 3]</span>
@@ -1316,10 +622,10 @@
 
     <span class="c1"># à compléter</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">doctest</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">doctest</span>
 <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span> <span class="c1"># verbose = True pour plus de détails</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>TestResults(failed=0, attempted=0)
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>TestResults(failed=0, attempted=0)
 </code></pre></div>
 <h2 id="acces-au-i-eme-element-dune-chaine">Accès au i-ème élément d'une chaine<a class="headerlink" href="#acces-au-i-eme-element-dune-chaine" title="Permanent link">⚓︎</a></h2>
 <p>On souhaite maintenant écrire une fonction <code>ieme_element(chaine, i)</code> permettant de renvoyer le <code>i</code>-ème élément de la <code>chaine</code>. <strong>Préconditions</strong> : <code>chaine</code> est non vide (au moins une cellule) et <code>i</code> est compris entre 0 et <code>longueur(chaine)-1</code>.</p>
@@ -1327,9 +633,9 @@
 <p class="admonition-title"><strong>Question 6</strong></p>
 <p>Proposez une fonction qui convient. <em>On peut trouver le i-ème élément avec une boucle ou par récursivité. Voir si besoin les anciens chapitres.</em></p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="c1"># à compléter</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># à compléter</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># VERSION ITERATIVE AVEC UNE BOUCLE WHILE</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># VERSION ITERATIVE AVEC UNE BOUCLE WHILE</span>
 </code></pre></div>
 <h1 id="la-classe-listechainee">La classe <code>ListeChainee</code><a class="headerlink" href="#la-classe-listechainee" title="Permanent link">⚓︎</a></h1>
 <p>La classe <code>Cellule</code> ne permet pas d'implémenter à elle seule le type abstrait <em>liste</em> car rien n'est prévu pour représenter une liste vide. On va utiliser cette classe pour créer une classe <code>ListeChainee</code> qui implémente ce type abstrait. Il suffira de faire pointer la liste vers le premier élément de la chaîne (de cellules) ou vers <code>None</code> pour la liste vide.</p>
@@ -1357,29 +663,29 @@
 <p class="admonition-title"><strong>Question 7</strong></p>
 <p>Etudiez attentivement l'implémentation proposée.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ListeChainee</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Manipulation de listes chaînées&quot;&quot;&quot;</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">ListeChainee</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manipulation de listes chaînées&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialise une liste vide.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise une liste vide.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">ajouter_en_tete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Insère e en tête de liste en créant une nouvelle cellule&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Insère e en tête de liste en créant une nouvelle cellule&quot;&quot;&quot;</span>
         <span class="n">nouvelle_cellule</span> <span class="o">=</span> <span class="n">Cellule</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="n">nouvelle_cellule</span>
 
     <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renvoie True si la liste est vide, False sinon&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie True si la liste est vide, False sinon&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="ow">is</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">premier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renvoie le premier élément de la liste (sa tête) si cette dernière est non vide&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie le premier élément de la liste (sa tête) si cette dernière est non vide&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">premier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;une liste vide n&#39;a pas de tête&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">valeur</span>
 
     <span class="k">def</span> <span class="nf">reste</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renvoie le reste de la liste (sa queue) si cette dernière est non vide.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie le reste de la liste (sa queue) si cette dernière est non vide.&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;une liste vide n&#39;a pas de queue&quot;</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">ListeChainee</span><span class="p">()</span>
         <span class="n">r</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suivante</span>
@@ -1399,7 +705,7 @@
 </li>
 </ul>
 <p>On peut créer une liste vide, puis lui ajouter des éléments en tête. On accède aux différents éléments grâce aux méthodes <code>premier</code> et <code>reste</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">L</span> <span class="o">=</span> <span class="n">ListeChainee</span><span class="p">()</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">L</span> <span class="o">=</span> <span class="n">ListeChainee</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">est_vide</span><span class="p">())</span>
 <span class="n">L</span><span class="o">.</span><span class="n">ajouter_en_tete</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">est_vide</span><span class="p">())</span>
@@ -1415,7 +721,7 @@
 <h2 id="ajout-de-quelques-methodes">Ajout de quelques méthodes<a class="headerlink" href="#ajout-de-quelques-methodes" title="Permanent link">⚓︎</a></h2>
 <p>On souhaite maintenant utiliser les fonctions <code>longueur</code>, <code>liste_elements</code> et <code>ieme_element</code> pour définir trois nouvelles méthodes à notre classe <code>ListeChainee</code>.</p>
 <p>Pour ajouter une <em>méthode</em> <code>taille</code> à la classe, il suffit d'appeler notre <em>fonction</em> <code>longueur</code> écrite précédemment :</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">longueur</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
@@ -1426,29 +732,29 @@
 <p>En utilisant les fonctions <code>ieme_element</code> et <code>liste_elements</code> et en vous inspirant de la méthode <code>taille(self)</code>, écrivez les méthodes <code>lire(self, i)</code> et <code>__repr__(self)</code> qui permettent respectivement de renvoyer le <code>i</code>-ème élément d'un objet <code>ListeChainee</code> et de représenter un objet <code>ListeChainee</code> comme une <code>list</code> Python. </p>
 </div>
 <p><strong>Attention</strong> : la méthode spéciale <code>__repr__</code> doit renvoyer une chaîne de caractères, il faut penser à utiliser la fonction <code>str</code> pour convertir la <code>list</code> Python.</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ListeChainee</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Manipulation de listes chaînées&quot;&quot;&quot;</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">ListeChainee</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manipulation de listes chaînées&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialise une liste vide.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise une liste vide.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">ajouter_en_tete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Insère e en tête de liste en créant une nouvelle cellule&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Insère e en tête de liste en créant une nouvelle cellule&quot;&quot;&quot;</span>
         <span class="n">nouvelle_cellule</span> <span class="o">=</span> <span class="n">Cellule</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="n">nouvelle_cellule</span>
 
     <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renvoie True si la liste est vide, False sinon&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie True si la liste est vide, False sinon&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="ow">is</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">premier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renvoie le premier élément de la liste (sa tête) si cette dernière est non vide&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie le premier élément de la liste (sa tête) si cette dernière est non vide&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">premier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;une liste vide n&#39;a pas de tête&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">valeur</span>
 
     <span class="k">def</span> <span class="nf">reste</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renvoie le reste de la liste (sa queue) si cette dernière est non vide.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie le reste de la liste (sa queue) si cette dernière est non vide.&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;une liste vide n&#39;a pas de queue&quot;</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">ListeChainee</span><span class="p">()</span>
         <span class="n">r</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suivante</span>
@@ -1464,7 +770,7 @@
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># compléter</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># ESSAIS</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># ESSAIS</span>
 <span class="n">L</span> <span class="o">=</span> <span class="n">ListeChainee</span><span class="p">()</span>
 <span class="n">L</span><span class="o">.</span><span class="n">ajouter_en_tete</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
 <span class="n">L</span><span class="o">.</span><span class="n">ajouter_en_tete</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span>
@@ -1487,7 +793,7 @@
 <p class="admonition-title"><strong>Question 9</strong></p>
 <p>Remplacez les méthodes <code>taille</code> et <code>lire</code> par les méthodes <code>__len__</code> et <code>__getitem__</code>. Vérifiez ensuite si tout fonctionne comme avec des <code>list</code> Python.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="c1"># à compléter</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># à compléter</span>
 </code></pre></div>
 <h2 id="supprimer-en-tete-et-ajouter-en-queue">Supprimer en tête et ajouter en queue<a class="headerlink" href="#supprimer-en-tete-et-ajouter-en-queue" title="Permanent link">⚓︎</a></h2>
 <p>Nous terminons par l'écriture de deux méthodes qui peuvent se révéler utiles (pour la suite de l'année). Il s'agit des méthodes :</p>
@@ -1509,33 +815,33 @@
 <p class="admonition-title"><strong>Question 12</strong></p>
 <p>Ajoutez ces deux méthodes dans la classe <code>Liste</code> (l'ajout en queue est beaucoup plus difficile).</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="c1"># à compléter</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># à compléter</span>
 
 <span class="k">class</span> <span class="nc">ListeChainee</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Manipulation de listes chaînées&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manipulation de listes chaînées&quot;&quot;&quot;</span>
 
     <span class="c1"># ---------- OPERATIONS PRIMITIVES ------------------</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialise une liste vide.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise une liste vide.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">ajouter_en_tete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Insère e en tête de liste en créant une nouvelle cellule&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Insère e en tête de liste en créant une nouvelle cellule&quot;&quot;&quot;</span>
         <span class="n">nouvelle_cellule</span> <span class="o">=</span> <span class="n">Cellule</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="n">nouvelle_cellule</span>
 
     <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renvoie True si la liste est vide, False sinon&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie True si la liste est vide, False sinon&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="ow">is</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">premier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renvoie le premier élément de la liste (sa tête) si cette dernière est non vide&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie le premier élément de la liste (sa tête) si cette dernière est non vide&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">premier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;une liste vide n&#39;a pas de tête&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">valeur</span>
 
     <span class="k">def</span> <span class="nf">reste</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renvoie le reste de la liste (sa queue) si cette dernière est non vide.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie le reste de la liste (sa queue) si cette dernière est non vide.&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;une liste vide n&#39;a pas de queue&quot;</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">ListeChainee</span><span class="p">()</span>
         <span class="n">r</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suivante</span>
@@ -1543,7 +849,7 @@
 
     <span class="c1"># ---------- AUTRES OPERATIONS ------------------</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># ESSAIS</span>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># ESSAIS</span>
 
 <span class="n">L</span> <span class="o">=</span> <span class="n">ListeChainee</span><span class="p">()</span>
 <span class="n">L</span><span class="o">.</span><span class="n">ajouter_en_tete</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
@@ -1582,57 +888,19 @@
 </ul>
 <p>On se rapprocherait ainsi du type <code>list</code> de Python mais il faut garder en tête que le coût de certaines opérations n'est pas forcément le même : rapide en fin de liste mais coûteux en début pour les <code>list</code> Python, alors que c'est le contraire pour les listes chaînées de notre classe <code>ListeChainee</code>.</p>
 
-              
-
-<style>
-    .jp-RenderedHTMLCommon p {
-        font-size: 0.8rem;
-        line-height: 1.6;
-    }
-
-    .jp-RenderedHTMLCommon li {
-        font-size: .8rem;
-        line-height: 1.6;
-    }
-
-    .jp-RenderedHTMLCommon h1 {
-        margin: 0 0 1.25em;
-        color: var(--md-default-fg-color--light);
-        font-weight: 300;
-        font-size: 2em;
-        line-height: 1.3;
-        letter-spacing: -0.01em;
-    }
-
-    .jp-RenderedHTMLCommon h2 {
-        margin: 1.6em 0 .64em;
-        font-weight: 300;
-        font-size: 1.965em;
-        line-height: 1.4;
-        letter-spacing: -0.01em;
-    }
-
-    .jp-RenderedHTMLCommon h3 {
-        margin: 1.6em 0 .8em;
-        font-weight: 400;
-        font-size: 1.57em;
-        line-height: 1.5;
-        letter-spacing: -0.01em;
-    }
-
-    .jp-RenderedHTMLCommon hr {
-        border: none;
-    }
-</style>
 
 
 
-            </article>
-          </div>
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Retour en haut de la page
           </a>
         
@@ -1645,7 +913,21 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      2022 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+Exercices sur le langage SQL rédigés par N. Revéret. Partage ou adaptation possible selon
+ les conditions de la licence <a
+href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+target="_blank" rel="license noopener noreferrer"
+style="display:inline-block;">CC BY-NC-SA 4.0<img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+
     </div>
   
   
@@ -1664,15 +946,29 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.top", "toc.integrate", "header.autohide"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
-        <script src="../javascripts/config.js"></script>
+        <script src="../js/sortTable.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
+        <script src="../js/tablesort/tablesort.min.js"></script>
+      
+        <script src="../js/tablesort/sorts/tablesort.date.min.js"></script>
+      
+        <script src="../js/tablesort/sorts/tablesort.dotsep.min.js"></script>
+      
+        <script src="../js/tablesort/sorts/tablesort.filesize.min.js"></script>
+      
+        <script src="../js/tablesort/sorts/tablesort.monthname.min.js"></script>
+      
+        <script src="../js/tablesort/sorts/tablesort.number.min.js"></script>
+      
+    
     
   </body>
 </html>

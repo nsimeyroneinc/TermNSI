@@ -1,0 +1,1436 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Exercices sur les bases de données">
+      
+      
+        <meta name="author" content="N. Revéret">
+      
+      
+        <link rel="canonical" href="https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/France_J1_2022/">
+      
+      <link rel="icon" href="../../favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>France J1 2022 - Exercices sur les bases de données</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+<script src="https://e-nsi.forge.aeif.fr/exercices_bdd//js/sqlite_ide.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css"><link rel="stylesheet" href="https://e-nsi.forge.aeif.fr/exercices_bdd//css/sqlite_ide.css"><script>path="https://e-nsi.forge.aeif.fr/exercices_bdd/"</script>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Exercices sur les bases de données" class="md-header__button md-logo" aria-label="Exercices sur les bases de données" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Exercices sur les bases de données
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              France J1 2022
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Passer au mode nuit"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Passer au mode nuit" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Passer au mode jour"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Passer au mode jour" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Exercices sur les bases de données" class="md-nav__button md-logo" aria-label="Exercices sur les bases de données" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    Exercices sur les bases de données
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        🏡 Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          🔨 Création et insertion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🔨 Création et insertion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          🔨 Création et insertion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_lycee/lycee/" class="md-nav__link">
+        Lycée
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_imdb/imdb/" class="md-nav__link">
+        Séries
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          🐭 Requêtes simples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🐭 Requêtes simples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          🐭 Requêtes simples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../31_prenoms/prenoms/" class="md-nav__link">
+        Prénoms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../32_ramens/ramens/" class="md-nav__link">
+        Ramens
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          🐈 Requêtes sur plusieurs tables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🐈 Requêtes sur plusieurs tables" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          🐈 Requêtes sur plusieurs tables
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../41_films/films/" class="md-nav__link">
+        Films
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../42_cars/cars/" class="md-nav__link">
+        Voitures
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          🐯 Exemples complets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🐯 Exemples complets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          🐯 Exemples complets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../51_world/world/" class="md-nav__link">
+        World
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../52_netflix/netflix/" class="md-nav__link">
+        Netflix
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memento_sql/" class="md-nav__link">
+        💡 Memento SQL
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>France J1 2022</h1>
+
+<table  class="greenTable">
+        <tr>
+            <th>
+            Thème  : Epreuve Ecrite BAC
+            </th>
+        </tr>
+</table>
+<p><br></p>
+<table  class="greenTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            BAC
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">France J1 2022</th>
+        </tr>
+</table>
+<p><br></p>
+<h2 id="exercice-n1">Exercice n°1 :<a class="headerlink" href="#exercice-n1" title="Permanent link">⚓︎</a></h2>
+<p><strong><em>Cet exercice composé de deux parties A et B, porte sur les structures de données.</em></strong></p>
+<p><strong>Partie A : Expression correctement parenthésée</strong></p>
+<p>On veut déterminer si une expression arithmétique est correctement parenthésée.<br />
+Pour chaque parenthèse fermante ")" correspond une parenthèse précédemment ouverte "(".<br />
+Exemples :</p>
+<ul>
+<li>L’expression arithmétique "(2 + 3) × (18/(4 + 2))" est correctement parenthésée.  </li>
+<li>L’expression arithmétique "(2 + 3) × (18/(4 + 2" est non correctement parenthésée.  </li>
+</ul>
+<p>Pour simplifier les expressions arithmétiques, on enregistre, dans une structure de données, uniquement les parenthèses dans leur ordre d’apparition. On appelle expression simplifiée cette structure. </p>
+<p><img alt="" src="../data/France_J1_Ex1_1.png" /></p>
+<div class="admonition fabquestion">
+<p class="admonition-title">1)</p>
+<p>Indiquer si la phrase « les éléments sont maintenant retirés (pour être lus) de cette structure de données dans le même ordre qu’ils y ont été ajoutés lors de l’enregistrement » décrit le comportement d’une file ou d’une pile. Justifier.  </p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>La  phrase  décrit  le  comportement  d’une <strong>file</strong>  puisque  le premier élément entré est aussi le premier élément qui sera lu <strong>(first in first out)</strong>.  </p>
+</details>
+<p>Pour vérifier le parenthésage, on peut utiliser une variable controleur qui : 
+- est un nombre entier égal à 0 en début d’analyse de l’expression simplifiée ;<br />
+- augmente de 1 si l’on rencontre une parenthèse ouvrante "(" ;<br />
+- diminue de 1 si l’on rencontre une parenthèse fermante ")".  </p>
+<p>Exemple : On considère l’ expression simplifiée A : "( )( ( ) )"<br />
+Lors de l’analyse de l’expression A, controleur (initialement égal à 0) prend successivement pour valeur 1, 0, 1, 2, 1, 0. Le parenthésage est correct.  </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">2)</p>
+<p>Écrire, pour chacune des 2 expressions simplifiées B et C suivantes, les valeurs successives prises par la variable controleur lors de leur analyse.<br />
+Expression simplifiée B : " ((( )( )"<br />
+Expression simplifiée C : "(( )))("  </p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<ul>
+<li>Pour   l’expression   B,   la   variable   contrôleur   prend successivement les valeurs: 1, 2, 3, 2, 3, 2  </li>
+<li>Pour  l’expression  C,  la  variable  contrôleur  prend successivement les valeurs: 1, 2, 1, 0, -1, 0  </li>
+</ul>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">3)</p>
+<p>L’expression simplifiée B précédente est mal parenthésée (parenthèses fermantes manquantes) car le controleur est différent de zéro en fin d’analyse.<br />
+L’expression simplifiée C précédente est également mal parenthésée (parenthèse fermante sans parenthèse ouvrante) car le controleur prend une valeur négative pendant l’analyse.<br />
+Recopier et compléter uniquement les lignes 13 et 16 du code ci-dessous pour que la fonction parenthesage_correct réponde à sa description.</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parenthesage_correct</span><span class="p">(</span><span class="n">expression</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; fonction retournant True si l&#39;expression arithmétique </span>
+<span class="sd">    simplifiée (str) est correctement parenthésée, False</span>
+<span class="sd">    sinon.</span>
+<span class="sd">    Condition: expression ne contient que des parenthèses</span>
+<span class="sd">    ouvrantes et fermantes&#39;&#39;&#39;</span>
+    <span class="n">controleur</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">parenthese</span> <span class="ow">in</span> <span class="n">expression</span><span class="p">:</span> <span class="c1">#pour chaque parenthèse</span>
+        <span class="k">if</span> <span class="n">parenthese</span> <span class="o">==</span> <span class="s1">&#39;(&#39;</span><span class="p">:</span>
+            <span class="n">controleur</span> <span class="o">=</span> <span class="n">controleur</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span><span class="c1"># parenthese == &#39;)&#39;</span>
+            <span class="n">controleur</span> <span class="o">=</span> <span class="n">controleur</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">controleur</span> <span class="o">...</span><span class="p">:</span> <span class="c1"># test 1 (à recopier et compléter)</span>
+                <span class="c1">#parenthèse fermante sans parenthèse ouvrante</span>
+                <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">controleur</span> <span class="o">...</span> <span class="p">:</span> <span class="c1"># test 2 (à recopier et compléter)</span>
+        <span class="k">return</span> <span class="kc">True</span> <span class="c1">#le parenthésage est correct</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="c1">#parenthèse(s) fermante(s) manquante(s)</span>
+</code></pre></div></td></tr></table></div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>    <span class="k">if</span> <span class="n">controleur</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="c1">#parenthèsage fermante sans parenthèse ouvrante</span>
+        <span class="k">return</span> <span class="kc">False</span>
+<span class="k">if</span> <span class="n">controleur</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</code></pre></div>
+</details>
+<p><strong>Partie B : Texte correctement balisé</strong></p>
+<p>On peut faire l’analogie entre le texte simplifié des fichiers HTML (uniquement constitué de balises ouvrantes <code>&lt;nom&gt;</code> et fermantes <code>&lt;/nom&gt;</code>) et les expressions parenthésées :<br />
+Par exemple, l’expression HTML simplifiée :<br />
+<code>"&lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;"</code> est correctement balisée. 
+On ne tiendra pas compte dans cette partie des balises ne comportant pas de fermeture comme <code>&lt;br&gt;</code> ou <code>&lt;img&gt;</code>.</p>
+<p>Afin de vérifier qu’une expression HTML simplifiée est correctement balisée, on peut utiliser une pile (initialement vide) selon l’algorithme suivant : </p>
+<p>On parcourt successivement chaque balise de l’expression :<br />
+- lorsque l’on rencontre une balise ouvrante, on l’empile ;<br />
+- lorsque l’on rencontre une balise fermante :<br />
+- si la pile est vide, alors l’analyse s’arrête : le balisage est incorrect , 
+- sinon, on dépile et on vérifie que les deux balises (la balise fermante rencontrée et la balise ouvrante dépilée) correspondent (c’est-à-dire ont le même  nom) si ce n’est pas le cas, l’analyse s’arrête (balisage incorrect).  </p>
+<p>Exemple : État de la pile lors du déroulement de cet algorithme pour l’expression simplifiée <code>"&lt;p&gt;&lt;em&gt;&lt;/p&gt;&lt;/em&gt;"</code> qui n’est pas correctement balisée.</p>
+<p><img alt="" src="../data/France_J1_2022_Ex2_1.png" /></p>
+<p>Cette question traite de l’état de la pile lors du déroulement de l’algorithme.   </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">4.a)</p>
+<p>Représenter la pile à chaque étape du déroulement de cet algorithme pour l’expression <code>"&lt;p&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;"</code> (balisage correct).  </p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<ul>
+<li><code>&lt;p&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Pile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Balise ouvrante, on empile <code>&lt;em&gt;&lt;/em&gt;&lt;/p&gt;</code>  :  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Pile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;p&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>balise ouvrante, on empile <code>&lt;/em&gt;&lt;/p&gt;</code>  :    </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Pile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;em&gt;</code></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;p&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>balise fermante, on dépile <code>&lt;em&gt;&lt;/em&gt;&lt;/p&gt;</code> :  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Pile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;p&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>balise fermante, on dépile <code>&lt;p&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;</code>  : </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Pile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">4.b)</p>
+<p>Indiquer quelle condition simple (sur le contenu de la pile) permet alors de dire que le balisage est correct lorsque toute l’expression HTML simplifiée a été entièrement parcourue, sans que l’analyse ne s’arrête.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Comme décrit dans le a., à la fin du parcours de l’expression si l’analyse ne s’est pas arrêtée et si la pile est vide alors le balisage est correct.</p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">5)</p>
+<p>Une expression HTML correctement balisée contient 12 balises.<br />
+Indiquer le nombre d’éléments que pourrait contenir au maximum la pile lors de son analyse.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Si une expression correctement balisée contient 12 balises, c’est qu’elle contient 6 balises ouvrantes et 6 balises fermantes. Le nombre d’éléments que pourraient contenir lapile au maximum correspond au cas où l’expression est d’abord composée des 6 balises ouvrantes suivies des 6 balises fermantes. Cela signifie, si l’on suit l’algorithme donné dans l’énoncé que les 6 balises ouvrantes vont être d’abord empilées avant d’être dépilées. Dans ce cas, la pile contiendra au maximum 6 éléments.</p>
+</details>
+<h2 id="exercice-n2">Exercice n°2 :<a class="headerlink" href="#exercice-n2" title="Permanent link">⚓︎</a></h2>
+<p><strong><em>Cet exercice porte sur les bases de données.</em></strong></p>
+<p>On pourra utiliser les mots clés SQL suivants : 
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="p">,</span><span class="w"> </span><span class="k">FROM</span><span class="p">,</span><span class="w"> </span><span class="k">WHERE</span><span class="p">,</span><span class="w"> </span><span class="k">JOIN</span><span class="p">,</span><span class="w"> </span><span class="k">ON</span><span class="p">,</span><span class="w"> </span><span class="k">INSERT</span><span class="p">,</span><span class="w"> </span><span class="k">INTO</span><span class="p">,</span><span class="w"> </span><span class="k">VALUES</span><span class="p">,</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="k">SET</span><span class="p">,</span><span class="w"> </span><span class="k">AND</span><span class="p">.</span>
+</code></pre></div>
+Nous allons étudier une base de données traitant du cinéma dont voici le schéma relationnel qui comporte 3 relations :<br />
+- la relation <code>individu (id_ind, nom, prenom, naissance)</code><br />
+- la relation <code>realisation (id_rea, titre, annee, type)</code><br />
+- la relation <code>emploi (id_emp, description, #id_ind, #id_rea)</code>  </p>
+<p>Les clés primaires sont soulignées et les clés étrangères sont précédées d’un <code>#</code>.<br />
+Ainsi <code>emploi.id_ind</code> est une clé étrangère faisant référence à <code>individu.id_ind</code>.<br />
+Voici un extrait des tables <code>individu</code> et <code>realisation</code> :  </p>
+<p><img alt="" src="../data/France_J1_2022_Ex3_1.png" /></p>
+<p>On s’intéresse ici à la récupération de données dans une relation.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">1.a)</p>
+<p>Écrire ce que renvoie la requête ci-dessous :<br />
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="n">naissance</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">individu</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Crog&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>La requête renvoie les attributs nom, prenom et naissance des entités de la relation individu dont le nom est ‘Crog’ soit :  ‘Grog’ ‘Daniel’ ‘07-07-1968’</p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">1.b)</p>
+<p>Fournir une requête SQL permettant de récupérer le titre et la clé primaire de chaque film dont la date de sortie est strictement supérieure à 2020.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="n">id_rea</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">realisation</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">annee</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2020</span><span class="w"> </span><span class="p">;</span>
+</code></pre></div>
+</details>
+<p>Cette question traite de la modification de relations.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">2.a)</p>
+<p>Dire s’il faut utiliser la requête 1 ou la requête 2 proposées ci-dessous pour modifier la date de naissance de Daniel Crog. Justifier votre réponse en expliquant pourquoi la requête refusée ne pourra pas fonctionner.  </p>
+<ul>
+<li>
+<p>Requête 1<br />
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">individu</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">naissance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;02-03-1968&#39;</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id_ind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">688</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Crog&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">prenom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Daniel&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Requête 2<br />
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">individu</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">688</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Crog&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Daniel&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;02-03-1968&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+</ul>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Il faut utiliser la requête 1 pour modifier la date de naissance de Daniel Grog.<br />
+En effet, la requête 2 entrainerait une erreur dans la mesure où l’entité de la relation individu qui a pour clé primaire <code>id_ind = 688</code> existe déjà donc il est impossible d’en créer une autre, la clé primaire est unique.</p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">2.b)</p>
+<p>Expliquer si la relation individu peut accepter (ou pas) deux individus portant le même nom, le même prénom et la même date de naissance.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>C’est possible dans la mesure où seule la clé primaire <code>id_ind</code> doit être unique. Donc la relation pourrait très bien contenir une deuxième entité avec les mêmes nom, prénom et date de naissance mais avec une clé primaire <code>id_ind</code> différente.</p>
+</details>
+<p>Cette question porte sur la notion de clés étrangères.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">3.a)</p>
+<p>Recopier sur votre copie les demandes ci-dessous, dans leur intégralité, et les compléter correctement pour qu’elles ajoutent dans la relation emploi les rôles de Daniel Crog en tant que James Bond dans le film nommé ‘Casino Impérial’ puis dans le film ‘Ciel tombant’.
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">emploi</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5400</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Acteur(James Bond)&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">emploi</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5401</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Acteur(James Bond)&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">);</span>
+</code></pre></div></p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">emploi</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5400</span><span class="p">,</span><span class="err">’</span><span class="n">Acteur</span><span class="p">(</span><span class="n">James</span><span class="w"> </span><span class="n">Bond</span><span class="p">)</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="mi">688</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">emploi</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5401</span><span class="p">,</span><span class="err">’</span><span class="n">Acteur</span><span class="p">(</span><span class="n">James</span><span class="w"> </span><span class="n">Bond</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="mi">688</span><span class="p">,</span><span class="w"> </span><span class="mi">325</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+</code></pre></div>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">3.b)</p>
+<p>On désire rajouter un nouvel emploi de Daniel Crog en tant que James Bond dans le film 'Docteur Yes'.<br />
+Expliquer si l’on doit d’abord créer l’enregistrement du film dans la relation realisation ou si l’on doit d’abord créer le rôle dans la relation emploi.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Pour pouvoir ajouter une nouvelle entité dans la table <code>emploi</code>, il faut que les clés étrangères de cette nouvelle entité <code>Id_ind</code> et <code>id_rea</code> existent déjà comme clés primaires dans les tables <code>individu</code> et <code>réalisation</code>.<br />
+Or la clé primaire du film ‘Docteur Yes’ n’existe pas encore dans la table <code>réalisation</code> puisque le film n’a pas encore été créé dans cette table.<br />
+Il <strong>faut donc commencer par créer</strong> l’entité ‘Docteur Yes’ de ce film dans la table <code>réalisation</code> et ensuite seulement, il sera possible de créer l’entité demandée dans la table <code>emploi</code>.</p>
+</details>
+<p>Cette question traite des jointures.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">4.a)</p>
+<p>Recopier sur votre copie la requête SQL ci-dessous, dans son intégralité, et la compléter de façon à ce qu’elle renvoie le nom de l’acteur, le titre du film et l’année de sortie du film, à partir de tous les enregistrements de la relation emploi pour lesquels la description de l’emploi est 'Acteur(James  Bond)'. 
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="p">...</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">emploi</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">individu</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">...</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">realisation</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">...</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">emploi</span><span class="p">.</span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Acteur(James Bond)&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">individu</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">realisation</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">realisation</span><span class="p">.</span><span class="n">annee</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">emploi</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">individu</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">individu</span><span class="p">.</span><span class="n">id_ind</span><span class="o">=</span><span class="n">emploi</span><span class="p">.</span><span class="n">id_ind</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">realisation</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">realisation</span><span class="p">.</span><span class="n">id_rea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emploi</span><span class="p">.</span><span class="n">id_rea</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">emploi</span><span class="p">.</span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">‘</span><span class="n">Acteur</span><span class="p">(</span><span class="n">James</span><span class="w"> </span><span class="n">Bond</span><span class="p">)</span><span class="err">’</span><span class="w"> </span><span class="p">;</span>
+</code></pre></div>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">4.b)</p>
+<p>Fournir une requête SQL permettant de trouver toutes les descriptions des emplois de Denis Johnson (Denis est son prénom et Johnson est son nom).<br />
+On veillera à n’afficher que la description des emplois et non les films associés à ces emplois.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emploi</span><span class="p">.</span><span class="n">description</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">emploi</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">individu</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">individu</span><span class="p">.</span><span class="n">id_ind</span><span class="o">=</span><span class="n">emploi</span><span class="p">.</span><span class="n">id_ind</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">individu</span><span class="p">.</span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">‘</span><span class="n">Johnson</span><span class="err">’</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">individu</span><span class="p">.</span><span class="n">prenom</span><span class="w"> </span><span class="o">=</span><span class="err">‘</span><span class="n">Denis</span><span class="err">’</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<h2 id="exercice-n3">Exercice n°3 :<a class="headerlink" href="#exercice-n3" title="Permanent link">⚓︎</a></h2>
+<p><strong><em>Cet exercice porte sur les représentations binaires et les protocoles de routage.</em></strong></p>
+<p>Une adresse IPv4 est représentée sous la forme de 4 nombres séparés par des
+points. Chacun de ces 4 nombres peut être représenté sur un octet.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">1.a)</p>
+<p>Donner en écriture décimale l’adresse IPv4 correspondant à l’écriture binaire :<br />
+11000000.10101000.10000000.10000011</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<ul>
+<li>11000000 = 192 en base 10  </li>
+<li>10101000 = 168  </li>
+<li>10000000 = 128  </li>
+<li>10000011 = 131<br />
+L’adresse est donc 192.168.128.131</li>
+</ul>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">1.b)</p>
+<p>Tous les ordinateurs du réseau A ont une adresse IPv4 de la forme : <br />
+192.168.128.<code>_ _ _</code>, où seul le dernier octet (représenté par <code>_ _ _</code> ) diffère.<br />
+Donner le nombre d’adresses différentes possibles du réseau A</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Sur un octet il est possible d’avoir <span class="arithmatex">\(2^6=256\)</span> valeurs allant de 0 à 255 sachant que deux valeurs 0 et 255 sont réservées, il reste alors 254 valeurs à attribuer.  </p>
+</details>
+<p>On rappelle que le protocole RIP cherche à minimiser le nombre de routeurs traversés (qui correspond à la métrique). On donne les tables de routage d’un réseau informatique composé de 5 routeurs (appelés A, B, C, D et E), chacun associé directement à un réseau du même nom obtenues avec le protocole RIP : </p>
+<p><img alt="" src="../data/France_J1_2022_Ex4_1.png" /></p>
+<div class="admonition fabquestion">
+<p class="admonition-title">2.a)</p>
+<p>Donner la liste des routeurs avec lesquels le routeur A est directement relié</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Les routeurs connectés à A sont à un saut, donc d’après la table : </p>
+<ul>
+<li>B,C et D sont directement reliès à A</li>
+</ul>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">2.b)</p>
+<p>Représenter graphiquement et de manière sommaire les 5 routeurs ainsi que les liaisons existantes entre ceux-ci.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p><img alt="" src="../data/France_2022_J1_Reseaux.png" /></p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">3.)</p>
+<p>Le protocole OSPF est un protocole de routage qui cherche à minimiser la somme des métriques des liaisons entre routeurs.<br />
+Dans le protocole de routage OSPF le débit des liaisons entre routeurs agit sur la métrique via la relation : <span class="arithmatex">\(métrique = \dfrac{10^8}{débit}\)</span> dans laquelle le débit est exprimé en bit par seconde (bps).<br />
+On rappelle qu’un kbps est égal à 10 bps et qu’un Mbps est égal à 10 bps.<br />
+Recopier sur votre copie et compléter le tableau suivant : </p>
+<table>
+<thead>
+<tr>
+<th align="center">Débit</th>
+<th align="center">100 kbps</th>
+<th align="center">500 kbps</th>
+<th align="center"><strong>?</strong></th>
+<th align="center">100 Mbps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Métrique associéé</td>
+<td align="center">1000</td>
+<td align="center"><strong>?</strong></td>
+<td align="center">10</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<table>
+<thead>
+<tr>
+<th align="center">Débit</th>
+<th align="center">100 kbps</th>
+<th align="center">500 kbps</th>
+<th align="center"><strong>10 Mbps</strong></th>
+<th align="center">100 Mbps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Métrique associéé</td>
+<td align="center">1000</td>
+<td align="center"><strong>200</strong></td>
+<td align="center">10</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>Voici la représentation d’un réseau et la table de routage incomplète du routeur F
+obtenue avec le protocole OSPF :</p>
+<p><img alt="" src="../data/France_J1_2022_Ex4_2.png" /></p>
+<p>Les nombres présents sur les liaisons représentent les coûts des routes avec le protocole OSPF.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">4.a)</p>
+<p>Indiquer le chemin emprunté par un message d’un ordinateur du réseau F à destination d’un ordinateur du réseau I.<br />
+Justifier votre réponse.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Le chemin le plus court en tenant compte de la métrique est :   </p>
+<p>F→ H → J → K → I pour une métrique de 13 </p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">4.b)</p>
+<p>Recopier et compléter la table de routage du routeur F.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<table>
+<thead>
+<tr>
+<th align="center">Destination</th>
+<th align="center">Métrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">F</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">I</td>
+<td align="center">13</td>
+</tr>
+<tr>
+<td align="center">J</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="center">K</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td align="center">11</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">4.c)</p>
+<p>Citer une unique panne qui suffirait à ce que toutes les données des échanges de tout autre réseau à destination du réseau F transitent par le routeur G.<br />
+Expliquer en détail votre réponse.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Tous les échanges à dezstination de F passent par G si on coupe la liaison entre F et H de métrique 5.<br />
+En effet en enlevant la connexion F-H tous les chemins les plus courts passent par G-F de métrique 10. L’autre possibilité est de passer par F-I de métrique 20 qui allonge trop le chemin par rapport aux autres liaisons.</p>
+</details>
+<h2 id="exercice-n-4">Exercice n° 4<a class="headerlink" href="#exercice-n-4" title="Permanent link">⚓︎</a></h2>
+<p><strong><em>Cet exercice, composé de deux parties A et B, porte sur le parcours des arbres binaires, le principe “diviser pour régner” et la récursivité.</em></strong></p>
+<p>Cet exercice, composé de deux parties A et B, porte sur le parcours des arbres binaires, le principe “diviser pour régner” et la récursivité.<br />
+Cet exercice traite du calcul de la somme d’un arbre binaire. Cette somme consiste à additionner toutes les valeurs numériques contenues dans les nœuds de l’arbre.<br />
+L’arbre utilisé dans les parties A et B est le suivant :  </p>
+<p><img alt="" src="../data/France_J1_Ex4_3.png" /></p>
+<p><strong>Partie A : Parcours d'un arbre</strong>  </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">1.)</p>
+<p>Donner la somme de l’arbre précédent. Justifier la réponse en explicitant le calcul qui a permis de l’obtenir.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p><span class="arithmatex">\(3+6+2+7+4+9+1 = 32\)</span> utilisation d’un parcours en largeur d'abord.<br />
+Autre possibilité : En utilisant les sous-arbres de gauche et de droite <span class="arithmatex">\(3 + (6 +(7+4))+(2+(9+1)) = 3+(6+11)+(2+10)=3+17+12=32\)</span></p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">2.)</p>
+<p>Indiquer la lettre correspondante aux noms ‘racine’, ‘feuille’, ‘nœud’, ‘SAG’ (Sous Arbre Gauche) et ‘SAD’ (Sous Arbre Droit). Chaque lettre A, B, C, D et E devra être utilisée une seule fois.</p>
+<p><img alt="" src="../data/France_J1_Ex4_4.png" /></p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<ul>
+<li>A : racine ;  </li>
+<li>B : Nœud ;  </li>
+<li>C : Feuille ;  </li>
+<li>D : Sous-arbre gauche ;  </li>
+<li>E : Sous arbre droit.  </li>
+</ul>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">3.)</p>
+<p>Parmi les quatre propositions A, B, C et D ci-dessous, donnant un parcours en largeur d’abord de l’arbre, une seule est correcte. Indiquer laquelle.  </p>
+<ul>
+<li>Proposition A : 7 - 6 - 4 - 3 - 9 - 2 - 1  </li>
+<li>Proposition B : 3 - 6 - 7 - 4 - 2 - 9 - 1  </li>
+<li>Proposition C : 3 - 6 - 2 - 7 - 4 - 9 - 1  </li>
+<li>Proposition D : 7 - 4 - 6 - 9 - 1 - 2 – 3  </li>
+</ul>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Le <strong>parcours en largeur d'abord</strong> correspond à la <strong>proposition C</strong></p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">4.)</p>
+<p>Écrire en langage Python la fonction somme qui prend en paramètre une liste de nombres et qui renvoie la somme de ses éléments.<br />
+Exemple : somme([1, 2, 3, 4]) est égale à 10.  </p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+<span class="n">somme</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+    <span class="n">somme</span><span class="o">+=</span><span class="n">nombre</span>
+<span class="k">return</span> <span class="n">somme</span>
+</code></pre></div>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">5.)</p>
+<p>La fonction <code>parcourir(arbre)</code> pourrait se traduire en langage naturel par : 
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>parcourir(A):
+    L = liste_vide
+    F = file_vide
+    enfiler A dans F
+    Tant que F n’est pas vide
+        défiler S de F
+        ajouter la valeur de la racine de S dans L
+        Pour chaque sous arbre SA non vide de S
+            enfiler SA dans F
+    renvoyer L
+</code></pre></div></p>
+<p>Donner le type de parcours obtenu grâce à la fonction parcourir.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Le parcours obtenu avec fonction parcourir est un parcours en largeur d'abord;</p>
+</details>
+<p><strong>Partie B : Méthode 'diviser pour régner'</strong></p>
+<div class="admonition fabquestion">
+<p class="admonition-title">6.)</p>
+<p>Parmi les quatre propositions A,B, C et D ci-dessous, indiquer la seule proposition correcte.<br />
+En informatique, le principe diviser pour régner signifie :  </p>
+<ul>
+<li>Proposition A : diviser une fonction en deux fonctions plus petites  </li>
+<li>Proposition B : utiliser plusieurs modules  </li>
+<li>Proposition C : séparer les informations en fonction de leur types </li>
+<li>Proposition D : diviser un problème en deux problèmes plus petits et indépendants  </li>
+</ul>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Proposition D :<br />
+le principe diviser pour régner signifie : diviser un problème en deux problèmes plus petits et indépendants.</p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">7.)</p>
+<p>L’arbre présenté dans le problème peut être décomposé en racine et sous arbres :  </p>
+<p><img alt="" src="../data/Frrance_J1_Ex4_5.png" /></p>
+<p>Indiquer dans l’esprit de ‘diviser pour régner’ l’égalité donnant la somme d’un arbre en fonction de la somme des sous arbres et de la valeur numérique de la racine.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Somme</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">=</span> <span class="n">Valeur</span><span class="p">(</span><span class="n">racine</span><span class="p">)</span><span class="o">+</span> <span class="n">Somme</span><span class="p">(</span><span class="n">SAG</span><span class="p">)</span><span class="o">+</span> <span class="n">Somme</span><span class="p">(</span><span class="n">SAD</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">8.)</p>
+<p>Écrire en langage Python une fonction récursive <code>calcul_somme(arbre)</code>.<br />
+Cette fonction calcule la somme de l’arbre passé en paramètre.<br />
+Les fonctions suivantes sont disponibles :  </p>
+<ul>
+<li><code>est_vide(arbre)</code> : renvoie True si arbre est vide et renvoie False sinon ;  </li>
+<li><code>valeur_racine(arbre)</code> : renvoie la valeur numérique de la racine de arbre ;  </li>
+<li><code>arbre_gauche(arbre)</code> : renvoie le sous arbre gauche de arbre ;  </li>
+<li><code>arbre_droit(arbre)</code> : renvoie le sous arbre droit de arbre.</li>
+</ul>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">calcul_somme</span><span class="p">(</span><span class="n">arbre</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">arbre</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">valeur_racine</span><span class="p">(</span><span class="n">arbre</span><span class="p">)</span><span class="o">+</span><span class="n">calcul_somme</span><span class="p">(</span><span class="n">arbre_gauche</span><span class="p">(</span><span class="n">arbre</span><span class="p">))</span><span class="o">+</span><span class="n">calcul_somme</span><span class="p">(</span><span class="n">droit</span><span class="p">(</span><span class="n">arbre</span><span class="p">))</span>
+</code></pre></div>
+</details>
+<h2 id="exercice-n5">Exercice n°5 :<a class="headerlink" href="#exercice-n5" title="Permanent link">⚓︎</a></h2>
+<p><strong><em>Cet exercice porte sur la Programmation Orientée Objet.</em></strong>  </p>
+<p>Les participants à un jeu de LaserGame sont répartis en équipes et s’affrontent dans
+ce jeu de tir, revêtus d’une veste à capteurs et munis d’une arme factice émettant
+des infrarouges.
+Les ordinateurs embarqués dans ces vestes utilisent la programmation orientée objet
+pour modéliser les joueurs. La classe Joueur est définie comme suit :</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Joueur</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pseudo</span><span class="p">,</span> <span class="n">identifiant</span><span class="p">,</span> <span class="n">equipe</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;constructeur&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pseudo</span> <span class="o">=</span> <span class="n">pseudo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">equipe</span> <span class="o">=</span> <span class="n">equipe</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">identifiant</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nb_de_tirs_emis</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">liste_id_tirs_recus</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">est_actif</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">tire</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;méthode déclenchée par l&#39;appui sur la gachette&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_actif</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nb_de_tirs_emis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_de_tirs_emis</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">est_determine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;methode qui renvoie True si le joueur réalise un grand nombre de tirs&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_de_tirs_emis</span> <span class="o">&gt;</span> <span class="mi">500</span>
+
+    <span class="k">def</span> <span class="nf">subit_un_tir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_recu</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;méthode déclenchée par les capteurs de la veste&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_actif</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">est_actif</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">liste_id_tirs_recus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">id_recu</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition fabquestion">
+<p class="admonition-title">1.)</p>
+<p>Parmi les instructions suivantes, recopier celle qui permet de déclarer un objet joueur1, instance de la classe Joueur, correspondant à un joueur dont le pseudo est “Sniper”, dont l’identifiant est 319 et qui est intégré à l’équipe “A”: </p>
+<ul>
+<li>Instruction 1 : <code>joueur1 = ["Sniper", 319, "A"]</code>  </li>
+<li>Instruction 2 : <code>joueur1 = new Joueur["Sniper", 319, "A"]</code>  </li>
+<li>Instruction 3 : <code>joueur1 = Joueur("Sniper", 319, "A")</code>  </li>
+<li>Instruction 4 : <code>joueur1 = Joueur{"pseudo":"Sniper", "id":319, "equipe":"A"}</code></li>
+</ul>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>L’instruction 3 est la bonne façon de déclarer un objet.<br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">joueur1</span> <span class="o">=</span> <span class="n">Joueur</span><span class="p">(</span><span class="s2">&quot;Sniper&quot;</span><span class="p">,</span><span class="mi">319</span><span class="p">,</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</details>
+<p>La méthode subit_un_tir réalise les actions suivantes :<br />
+Lorsqu'un joueur actif subit un tir capté par sa veste, l'identifiant du tireur est ajouté à l'attribut <code>liste_id_tirs_recus</code> et l'attribut est_actif prend la valeur False (le joueur est désactivé). Il doit alors revenir à son camp de base pour être de nouveau actif.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">2.a)</p>
+<p>Écrire la méthode <code>redevenir_actif</code> qui rend à nouveau le joueur actif uniquement s’il était précédemment désactivé.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">redevenir_actif</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_actif</span> <span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">est_actif</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">2.b)</p>
+<p>Écrire la méthode <code>nb_de_tirs_recus</code> qui renvoie le nombre de tirs reçus par un joueur en utilisant son attribut <code>liste_id_tirs_recus</code>.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">nb_de_tirs_recus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">liste_id_tirs_recus</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>Lorsque la partie est terminée, les participants rejoignent leur camp de base respectif où un ordinateur, qui utilise la classe Base, récupère les données.  </p>
+<p>La classe Base est définie par :<br />
+- ses attributs :<br />
+    - <code>equipe</code> : nom de l’équipe (str). Par exemple, “A” ,<br />
+    - <code>liste_des_id_de_l_equipe</code> qui correspond à la liste (list) des identifiants connus des joueurs de l’équipe,<br />
+    - <code>score</code> : score (int) de l’équipe, dont la valeur initiale est 1000 ;</p>
+<ul>
+<li>ses méthodes : <ul>
+<li><code>est_un_id_allie</code> qui renvoie True si l’identifiant passé en paramètre est un identifiant d’un joueur de l’équipe, False sinon,  </li>
+<li><code>incremente_score</code> qui fait varier l’attribut score du nombre passé en paramètre,  </li>
+<li><code>collecte_information</code> qui récupère les statistiques d’un participant passé en paramètre (instance de la classe Joueur) pour calculer le score de l’équipe .  </li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collecte_information</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">participant</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">participant</span><span class="o">.</span><span class="n">equipe</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">equipe</span> <span class="p">:</span> <span class="c1"># test 1</span>
+        <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">participant</span><span class="o">.</span><span class="n">liste_id_tirs_recus</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_un_id_allie</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span> <span class="c1"># test 2</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">incremente_score</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">incremente_score</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition fabquestion">
+<p class="admonition-title">3.a)</p>
+<p>Indiquer le numéro du test (test 1 ou test 2) qui permet de vérifier qu’en fin de partie un participant égaré n’a pas rejoint par erreur la base adverse.</p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Le test 1 vérifie l’appartenance d’un joueur à l’équipe</p>
+</details>
+<div class="admonition fabquestion">
+<p class="admonition-title">3.b)</p>
+<p>Décrire comment varie quantitativement le score de la base lorsqu’un joueur de cette équipe a été touché par le tir d’un coéquipier.  </p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Le test 2 vérifie si l’identifiant d’un joueur présent dans la liste des tirs est un coéquipier ou un joueur de l’équipe adverse.   </p>
+<ul>
+<li>Si le joueur a été touché par un coéquipier le score de l’équipe baisse de 20  </li>
+<li>si le joueur a été touché par un adverse le score baisse de 10.</li>
+</ul>
+</details>
+<p>On souhaite accorder à la base un bonus de 40 points pour chaque joueur particulièrement déterminé (qui réalise un grand nombre de tirs).</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">4.)</p>
+<p>Recopier et compléter, en utilisant les méthodes des classes Joueur et Base, les 2 lignes de codes suivantes qu’il faut ajouter à la fin de la méthode collecte_information : <br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">........</span> <span class="c1">#si le participant réalise un grand nombre de tirs</span>
+<span class="o">.........</span> <span class="c1">#le score de la Base augmente de 40</span>
+</code></pre></div></p>
+</div>
+<details class="done">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">if</span> <span class="n">participant</span><span class="o">.</span><span class="n">est_determine</span><span class="p">():</span> <span class="c1"># si le participant réalise un grand nombre de tirs  </span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">incremente_score</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="c1"># le score de la base augmente de 40</span>
+</code></pre></div>
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+Exercices sur le langage SQL rédigés par N. Revéret. Partage ou adaptation possible selon
+ les conditions de la licence <a
+href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+target="_blank" rel="license noopener noreferrer"
+style="display:inline-block;">CC BY-NC-SA 4.0<img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top", "toc.integrate", "header.autohide"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../js/sortTable.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../js/tablesort/tablesort.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.date.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.dotsep.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.filesize.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.monthname.min.js"></script>
+      
+        <script src="../../js/tablesort/sorts/tablesort.number.min.js"></script>
+      
+    
+    
+  </body>
+</html>

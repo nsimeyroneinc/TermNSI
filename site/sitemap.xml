@@ -1,293 +1,358 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/TD11_Corrige/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/TD11_Les_Listes/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/TD12_ListeChainee/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/TD12_ListeChainee_Corrige/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/epreuve_pratique/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/memento_sql/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/01_lycee/lycee/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/02_imdb/imdb/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/31_prenoms/prenoms/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/32_ramens/ramens/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/41_films/films/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/42_cars/cars/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/51_world/world/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/52_netflix/netflix/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/1-jipo1/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/BacBlanc_2022_COR/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/France_J1_2022/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/France_Remplacement_Sept_2021_Cor/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/Polynesie_sujet2_2021/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/Sujet_0/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/Sujet_2021_01/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/Sujet_2021_01bis/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/Sujet_Libre_2_2021/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BAC/Sujet_Libre_2_2021_cor/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BasesDonnees/TD18_Revision_SQL_BAC/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/BasesDonnees/TP17_JO/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/DM/DM_POO/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Devoirs/DS%20_Listes_Piles_Files/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Devoirs/DS_03_01_22/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Devoirs/DS_03_01_22_correction/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Devoirs/DS_14_12_21_arbres/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Devoirs/DS_14_12_21_arbres_Correction/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Devoirs/DS_25_01_22/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Devoirs/DS_EP/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Graphe/TD_Graphe/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Graphe/TD_Graphe_Exercices/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Graphe/TD_Graphe_Parcours/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Processus/Gestion_Processus/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Processus/Gestion_Processus_C/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Processus/Gestion_Processus_Cours/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Processus/TD_Gestion_Processus%20copy/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Processus/TD_Gestion_Processus/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Processus/TD_Gestion_Processus_Correction/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Processus/TD_Gestion_Processus_Diapo/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Programmation/Calculabilite_Decidabilite/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Reseaux/02_Exercices/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Reseaux/TD19_Routage/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Reseaux/TD19_Routage_Correction/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Reseaux/TD19_Routage_Diapo/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Reseaux/cours/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/Revision1ere/TD_Glouton/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/StructureDonnees/Revision_Arbres/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/StructureDonnees/TD13_Piles/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/StructureDonnees/TD13_Piles_Corrige/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/StructureDonnees/TD14_Files/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/StructureDonnees/TP07_Dictionnaires_Corrige/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-04-04</lastmod>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/crypto/crypto/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/Consigne_EP/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/EP_2022/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/EpreuvePratique/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/Exercice_Bac_2_Correction/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/Exercice_Bac__2/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/Exercices_Bac/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/Exercices_Bac_Correction/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/bns22/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/conseil/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/divers/ep/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/diviserregner/TD20_Diviser_pour_Regner/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/diviserregner/TD20_Diviser_pour_Regner_Correction/</loc>
+         <lastmod>2023-01-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://e-nsi.forge.aeif.fr/exercices_bdd/diviserregner/TD20_Diviser_pour_Regner_Diapo/</loc>
+         <lastmod>2023-01-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

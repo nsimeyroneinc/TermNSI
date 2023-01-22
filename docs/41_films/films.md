@@ -39,7 +39,7 @@ Cette base est téléchargeable au format *sqlite* [ici](films.db). La source es
 1. Combien de films sont présents dans la base ?
     
     !!! note "Votre réponse"
-        {{ sqlide titre="SQL" base="41_films/films.db" espace="films" }}
+        {{ sqlide titre="SQL" base="41_films/films.db" espace="films"}}
 
     ??? done "Réponse"
 

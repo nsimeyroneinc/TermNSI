@@ -10,15 +10,15 @@
 
 /*Ajout de Sébastien HOARO pour avoir une taille de police normale dans les admonotions  */
 .md-typeset .admonition {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 
 .md-typeset details {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .md-typeset .collapsible {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 /*
 :root{
