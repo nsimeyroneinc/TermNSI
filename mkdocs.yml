@@ -5,11 +5,10 @@
 site_author: "Michael Meyroneinc-condy" 
 copyright: 2022 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> 
 site_url: https://nsimeyroneinc.github.io/TermNSI/
-site_name: "Exercices sur les bases de données"
+site_name: "Révision sur les bases de données SQL"
 
-# repo_url: https://forge.aeif.fr/nreveret/exercices_bdd
 # edit_uri: tree/main/docs
-site_description: Exercices sur les bases de données
+site_description: Révision sur les bases de données SQL
 
 docs_dir: docs
 
