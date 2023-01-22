@@ -10,71 +10,22 @@ site_url:
 # Structure des dossiers :
 docs_dir: docs
 
-# Menu de navigation
-nav: 
-    - Accueil : index.md
-    #- Test : Notebook.ipynb
-
-    #Struct. de données
-    - T1 - Struct. de données :  
-      - Les dictionnaires : StructureDonnees/TP07_Dictionnaires_Corrige.md
-      - TP 11 - Les Listes : TD11_Les_Listes.md
-      - TP 11 - Les Listes Corrigé : TD11_Corrige.md
-     # - TP 12 - Liste Chainée : TD12_ListeChainee.md
-      - TP 12 - Liste Chainée Enoncé-Corrigé : TD12_ListeChainee_Corrige.md
-     # - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles_Corrige.md
-      - TP 13 - Les Piles Enoncé-Corrigé : StructureDonnees/TD13_Piles.md
-      - TP 14 - Les Files Enoncé-Corrigé : StructureDonnees/TD14_Files.md
-      #- TP 15 - Les Arbres Enoncé-Corrigé : StructureDonnees/TD15_Les_Arbres.md
-      - TP Graphe: Graphe/TD_Graphe.md
-      - TP Graphe Parcours: Graphe/TD_Graphe_Parcours.md
-      - TP Graphe Exercices: Graphe/TD_Graphe_Exercices.md
-    
-    - T2 - Bases de données :  
-      - TP 17 - Les JO Londres 2012 : BasesDonnees/TP17_JO.md
-      - TD 18 - Sujet BAC 2021 : BasesDonnees/TD18_Revision_SQL_BAC.md
-    
-    - T3 - Archi. matèrielle :
-      #- TD 19 - Protocole de routage : Reseaux/TD19_Routage.md
-      - TD 19 - Protocole de routage : Reseaux/TD19_Routage_Correction.md
-      - TD 23 - Gestion des Processus: Processus/TD_Gestion_Processus.md
-      #- TD - Gestion des Processus: Processus/Gestion_Processus_Cours.md
-      - TD - Gestion des Processus: Processus/TD_Gestion_Processus copy.md
-      #- TD 16 - Protocole de routage : Reseaux/cours.md
-      #- TD 17 : Reseaux/02_Exercices.md
-      - TD crypto : crypto/crypto.md
-    - T5 Algo. : 
-      #- TD 20 : diviserregner/TD20_Diviser_pour_Regner.md
-      - TD 20 correction : diviserregner/TD20_Diviser_pour_Regner_Correction.md
-      - TD Calculabilité et Décidabilité : Programmation/Calculabilite_Decidabilite.md
-    
-
-    
-    - E.P 💻: 
-      - Déroulement : epreuve_pratique.md
-      - Consigne : divers/Consigne_EP.md
-      - Sujets : divers/EpreuvePratique.md
-      #- EP 2022 : BAC/EP_2022.md
-  
-    #Devoirs
-    - Devoirs :
-      - P.O.O : DM/DM_POO.md
-      - DS 30/11/21 : Devoirs/DS _Listes_Piles_Files.md
-      - EP 30/11/21 : Devoirs/DS_EP.md
-      #- Révision : StructureDonnees/Revision_Arbres.md
-      - DS 14/12/21 : Devoirs/DS_14_12_21_arbres.md
-      - DS 14/12/21 - Correction : Devoirs/DS_14_12_21_arbres_Correction.md
-      - DS 03/01/22 - Correction : Devoirs/DS_03_01_22_correction.md
-      #- DS Routage : Devoirs/DS_25_01_22.md
-      #- DS Routage Correction : Devoirs/DS_25_01_22_Routage_Correction.md
-
-
-    - Divers :
-    #  - TP Perseverance : divers/Perseverance.md
-      - Epreuve GEIPI : divers/sujet0_geipi.pdf
-    - Divers conseils : divers/conseil.md
-    # Référencer vos autres pages ci-dessus...
-    
+nav:
+    - '🏡 Accueil': 'index.md'
+    - '🔨 Création et insertion':
+        - 'Lycée': '01_lycee/lycee.md'
+        - 'Séries': '02_imdb/imdb.md'
+    - '🐭 Requêtes simples':
+        - 'Prénoms': '31_prenoms/prenoms.md'
+        - 'Ramens': '32_ramens/ramens.md'
+    - '🐈 Requêtes sur plusieurs tables':
+        - 'Films': '41_films/films.md'
+        - 'Voitures': '42_cars/cars.md'
+    - '🐯 Exemples complets':
+        - 'World': '51_world/world.md'
+        - 'Netflix': '52_netflix/netflix.md'
+    - '💡 Memento SQL': 'memento_sql.md'
+    - '👍🏽 Crédits': 'credits.md'
 
 
 # Définition du thème https://squidfunk.github.io/mkdocs-material/creating-your-site/
@@ -162,7 +113,9 @@ plugins:
       execute: False
       include_source: True
   - macros
-  - awesome-pages
+  - sqlite-console
+  - awesome-pages:
+        collapse_single_pages: true
 
 
   #- page-to-pdf : 
@@ -195,8 +148,14 @@ plugins:
 
 
 extra_javascript:
-  - javascripts/config.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/sortTable.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - js/tablesort/tablesort.min.js
+  - js/tablesort/sorts/tablesort.date.min.js
+  - js/tablesort/sorts/tablesort.dotsep.min.js
+  - js/tablesort/sorts/tablesort.filesize.min.js
+  - js/tablesort/sorts/tablesort.monthname.min.js
+  - js/tablesort/sorts/tablesort.number.min.js
 
 extra_css:
-  - stylesheets/extra.css
+  - css/extra.css

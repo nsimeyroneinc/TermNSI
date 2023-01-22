@@ -1,8 +1,3 @@
----
-author: Nicolas Revéret
-title: Prénoms en France
----
-
 # :baby: Les prénoms en France au XX-ème siècle
 
 On considère dans ce sujet la base de données `prenoms`. Cette base ne comporte qu'une table,  `naissances`, qui contient des informations décrivant des prénoms des enfants nés en France au XX-ième siècle.
