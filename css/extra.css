@@ -1,0 +1,50 @@
+button.sqlbutton {
+    background: rgb(68, 138, 255);
+    color: #eee;
+    font-weight: 200;
+    border-radius: 10px;
+    border: solid 1px rgb(68, 138, 255);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px;
+    margin-right: 0px;
+    float: right;
+}
+
+button.sqlbutton:hover {
+    background: rgba(68, 138, 255, 0.9);
+}
+
+
+.sqltable {
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.sqltable th, .sqltable td {
+    padding: 15px;
+}
+
+.sqltable th {
+    text-align: left;
+}
+
+.sqltable thead th {
+    background-color: #448aff66;
+    font-weight: bold;
+}
+
+.sqltable tbody tr:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+}
+
+.sqltable td {
+    position: relative;
+}
+
+.sqltable tbody td:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+    font-weight: bold;
+}

@@ -1,0 +1,82 @@
+
+Table "brands" {
+  "brand_id" INTEGER [PK]
+  "brand_name" VARCHAR(50) [not null]
+
+}
+
+Table "parts" {
+  "part_id" INTEGER [PK]
+  "part_name" VARCHAR(100) [not null]
+  "manufacture_start_date" DATE [not null]
+  "manufacture_end_date" DATE
+  "part_recall" INTEGER [default: 0]
+}
+
+Table "options" {
+  "option_set_id" INTEGER [pk]
+  "model_id" INTEGER
+  "engine_id" INTEGER [not null]
+  "transmission_id" INTEGER [not null]
+  "chassis_id" INTEGER [not null]
+  "premium_sound_id" INTEGER
+  "color" VARCHAR(30) [not null]
+  "option_set_price" INTEGER [not null]
+  }
+
+Table "models" {
+  "model_id" INTEGER [pk]
+  "model_name" VARCHAR(50) [not null]
+  "model_base_price" INTEGER [not null]
+  "brand_id" INTEGER [not null]
+  }
+
+Table "customers" {
+  "customer_id" INTEGER [pk]
+  "first_name" VARCHAR(50) [not null]
+  "last_name" VARCHAR(50) [not null]
+  "gender" STRING
+  "household_income" INTEGER
+  "birthdate" DATE [not null]
+  "phone_number" INTEGER [not null]
+  "email" VARCHAR(128)
+  }
+
+Table "ownerships" {
+  "customer_id" INTEGER [not null]
+  "vin" INTEGER [not null]
+  "purchase_date" DATE [not null]
+  "purchase_price" INTEGER [not null]
+  "warantee_expire_date" DATE
+
+Indexes {
+  (customer_id, vin) [pk]
+}
+}
+
+Table "cars" {
+  "vin" INTEGER [pk]
+  "model_id" INTEGER [not null]
+  "option_set_id" INTEGER [not null]
+  "manufactured_date" DATE [not null]
+  }
+
+Ref:"parts"."part_id" < "options"."premium_sound_id"
+
+Ref:"parts"."part_id" < "options"."chassis_id"
+
+Ref:"parts"."part_id" < "options"."transmission_id"
+
+Ref:"parts"."part_id" < "options"."engine_id"
+
+Ref:"models"."model_id" < "options"."model_id"
+
+Ref:"brands"."brand_id" < "models"."brand_id"
+
+Ref:"customers"."customer_id" < "ownerships"."customer_id"
+
+Ref:"cars"."vin" < "ownerships"."vin"
+
+Ref:"options"."option_set_id" < "cars"."option_set_id"
+
+Ref:"models"."model_id" < "cars"."model_id"
