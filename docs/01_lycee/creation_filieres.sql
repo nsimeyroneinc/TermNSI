@@ -1,0 +1,4 @@
+CREATE TABLE filieres (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   filiere TEXT
+)

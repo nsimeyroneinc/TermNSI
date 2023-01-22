@@ -1,0 +1,65 @@
+/// https://dbdiagram.io/d
+
+Table "artistes" {
+  "idArtiste" int(11) [pk, not null]
+  "nom" varchar(30) [not null]
+  "prenom" varchar(30) [not null]
+  "anneeNaiss" int(11) [default: NULL]
+}
+
+Table "films" {
+  "idFilm" int(11) [pk, not null]
+  "titre" varchar(80) [not null]
+  "annee" int(11) [not null]
+  "idRealisateur" int(11) [default: NULL]
+  "genre" varchar(20) [not null]
+  "resume" text
+  "codePays" varchar(4) [default: NULL]
+}
+
+Table "internautes" {
+  "email" varchar(40) [pk, not null]
+  "nom" varchar(30) [not null]
+  "prenom" varchar(30) [not null]
+  "codePays" varchar(4) [default: NULL]
+}
+
+Table "notes" {
+  "idFilm" int(11) [not null]
+  "email" varchar(40) [not null]
+  "note" int(11) [not null]
+
+Indexes {
+  (idFilm, email) [pk]
+}
+}
+
+Table "pays" {
+  "code" varchar(4) [pk, not null]
+  "nom" varchar(30) [not null, default: "Inconnu"]
+  "langue" varchar(30) [not null]
+}
+
+Table "roles" {
+  "idFilm" int(11) [not null]
+  "idActeur" int(11) [not null]
+  "nomRole" varchar(255) [default: NULL]
+
+Indexes {
+  (idActeur, idFilm) [pk]
+}
+}
+
+Ref:"artistes"."idArtiste" < "films"."idRealisateur"
+
+Ref:"pays"."code" < "films"."codePays"
+
+Ref:"pays"."code" < "internautes"."codePays"
+
+Ref:"films"."idFilm" < "roles"."idFilm"
+
+Ref:"films"."idFilm" < "notes"."idFilm"
+
+Ref:"internautes"."email" < "notes"."email"
+
+Ref:"artistes"."idArtiste" < "roles"."idActeur"

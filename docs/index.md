@@ -1,55 +1,23 @@
-Ce site est dédié aux élèves de Terminales NSI du Lycée Murat à Issoire afin de retrouver les divers TP & TD travaillés en claase.  
 
-Les notebooks sont corrigés et les cellules peuvent être copiées pour être testées dans vos notebooks Capytale.
+# Exercices sur les bases de données
 
+Ce site propose différents exercices sur les bases de donnée et le langage `SQL`.
 
-!!! info 
-    **Thème en cours** :  
-    - [Calculabilité et Décidabilité](Programmation/Calculabilite_Decidabilite.md)  
-    - [Graphe](Graphe/TD_Graphe.md) 
+Vous y trouverez différents exercices sur les thèmes suivants :
 
+* 🔨 [Création de base de données et insertion de valeurs](01_lycee/lycee.md) (hors du programme NSI mais néanmoins intéressant),
 
-    
+* 🐭 [Requêtes sur une seule table](31_prenoms/prenoms.md),
 
-!!! info  "Epreuve BAC 2022 - Report"
-    Les épreuves de spécialité reportées à la mi-mai se dérouleront en effet conformément au programme d’examen prévu pour mars.  
-    Ces épreuves de spécialité comporteront des aménagements de leurs sujets, qui garantiront toujours un choix au candidat, que ce soit entre des questions ou entre des exercices. Il sera ainsi assuré de traiter un sujet sollicitant des contenus d’enseignement qu’il aura étudiés et travaillés. Les deux jours précédant ces épreuves seront consacrés, dans les établissements, aux révisions des examens, les élèves de terminale n’ayant que leurs cours de spécialité.
+* 🐈 [Requêtes sur plusieurs tables](41_films/films.md),
 
-    - Les **épreuves écrites** de NSI auront lieu le mercredi 11 mai de 14h à 17h30.  
-    - Les **épreuves pratiques** auront lieu le Jeudi 2 Juin de 8h à 13h.
-
-## Notions à l'épreuve écrite de Mars 2022 : 
-
-### &#10145; Thème : Structure de données  
-
-🗹 Structure de données abstraites( file) : interface et implémentation  
-🗹 Programmation orientée objet  
-🗹 Structures linéaires : Listes, Piles, Files  
-🗹 Arbres
-
-### &#10145; Thème : Base de données  
-
-🗹 Modèle relationnel, clé,schéma relationnel  
-🗹 Base de données relationnelle et SGBD.  
-🗹 Langage SQL  
-
-### &#10145; Thème : Architectures matérielles, système d’exploitation et réseaux(ARSE)  
-
-🗹 Gestion des processus et des ressources par un système d’exploitation  
-🗹 Protocoles de routage  
-□ Composants intégrés d’un système sur puce
-
-### &#10145; Thème : Langage de programmation(LP)  
-	
-🗹 Récursivité  
-🗹 Modularité
-	
-🗹 Mise au point des programmes. Gestion des bugs.
+* 🐯 [Exemples complets](51_world/world.md).
 
 
-### &#10145; Thème : Algorithmique(A)
+Le site n'a pas vocation à être un cours sur les bases de données ni sur le langage `SQL`. Il propose simplement des exercices de rédaction d'instructions `SQL` dans le cadre du programme de la [spécialité NSI](https://eduscol.education.fr/document/30010/download).
 
-🗹 Algorithmes sur les arbres binaires et sur les arbres binaires de recherche.
+Notez que dans chaque section sauf la dernière, le premier exercice proposé présente les nouvelles instructions `SQL` utilisées.
 
-🗹 Méthode « diviser pour régner »
-	
+La dernière section propose des exercices reprenant l'ensemble des instructions présentées dans les précédentes.
+
+Les commandes de base de `SQL` sont rappelées dans le [:bulb: memento `SQL`](memento_sql.md).
