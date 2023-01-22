@@ -1,5 +1,4 @@
 ---
-author: Nicolas Revéret
 title: Voitures
 ---
 
