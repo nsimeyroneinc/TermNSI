@@ -1,8 +1,8 @@
 # Fichier de configuration du site à personnaliser
 
 # Informations du site 
-site_name: Numériques et Sciences informatiques Terminale
-site_description: Cours et TD de l'année en cours
+site_name: "Exercices sur les bases de données"
+site_description: Exercices sur les bases de données
 site_author: "Michael Meyroneinc-condy" 
 copyright: 2022 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a> 
 site_url: 
@@ -30,80 +30,80 @@ nav:
 
 # Définition du thème https://squidfunk.github.io/mkdocs-material/creating-your-site/
 theme:
+    # custom_dir: my_theme_customizations/
+
     name: material
-    custom_dir: overrides
-    font: false  # RGPD ; pas de fonte Google
-    language: fr # français
-    
-
-    palette: # Palettes de couleurs jour/nuit, cf : https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
-      - scheme: default # nom du thème clair
-        primary: indigo # couleur primaire des titres, des liens, ..., à prendre dans la liste
-        accent: indigo # couleur d'accentuation au survol des boutons, desliens, ..., à prendre dans la liste
-        toggle: # définition du bouton pour switcher de palette
-          icon: material/weather-sunny # apparence
-          name: Basculer en mode sombre # message
-      - scheme: slate # nom du thème sombre
-        primary: brown
-        accent: brown
+    font: false                     # RGPD ; pas de fonte Google
+    language: fr                    # français
+    favicon: favicon.png            # favicon perso
+    logo: logo.png                  # logo perso
+    palette:                        # Palettes de couleurs jour/nuit
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        primary: light-blue
+        accent: light-blue
         toggle:
-          icon: material/weather-night
-          name: Basculer en mode clair
-
+            icon: material/weather-sunny
+            name: Passer au mode nuit
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: blue
+        accent: blue
+        toggle:
+            icon: material/weather-night
+            name: Passer au mode jour
     features:
         - navigation.instant
-        - navigation.tabs
-        - navigation.expand
+        # - navigation.tabs
         - navigation.top
-        - navigation.sections
-        - navigation.indexes
-        - navigation.tracking
         - toc.integrate
         - header.autohide
-        - content.code.annotate
-     
 
 
-markdown_extensions: # https://squidfunk.github.io/mkdocs-material/reference/abbreviations/
-    # extensions de la bibliothèque markdown standard
-    - abbr                          # infobulles sur abbréviations 
-    - meta                          # Métadonnées
+markdown_extensions:
+    - meta
+    - abbr
     - def_list                      # Les listes de définition.
     - attr_list                     # Un peu de CSS et des attributs HTML.
-    - md_in_html                    # Pour écrire en MarkDown dans des balises HTML https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#markdown-in-html
     - footnotes                     # Notes[^1] de bas de page.  [^1]: ma note.
     - admonition                    # Blocs colorés  !!! info "ma remarque"
-    - toc: # Table des matières
-        permalink: ⚓︎
-        toc_depth: 3
-    # extensions de python-markdown https://facelessuser.github.io/pymdown-extensions/
     - pymdownx.details              #   qui peuvent se plier/déplier.
     - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
     - pymdownx.mark                 # Passage ==surligné==.
     - pymdownx.tilde                # Passage ~~barré~~ ou en ~indice~.
-    - pymdownx.highlight            # Coloration syntaxique du code
+    - pymdownx.highlight:           # Coloration syntaxique du code
+        auto_title: true
+        auto_title_map:
+            "Python": "🐍 Script Python"
+            "Python Console Session": "🐍 Console Python"
+            "Text Only": "📋 Texte"
+            "E-mail": "📥 Entrée"
+            "Text Output": "📤 Sortie"
+            "SQL": "🗂️ Requête SQL"
     - pymdownx.inlinehilite         # pour  `#!python  <python en ligne>`
     - pymdownx.snippets             # Inclusion de fichiers externe.
     - pymdownx.tasklist:            # Cases à cocher  - [ ]  et - [x]
         custom_checkbox:    false   #   avec cases d'origine
         clickable_checkbox: true    #   et cliquables.
-    - pymdownx.tabbed:               # Volets glissants.  === "Mon volet"
+    - pymdownx.tabbed:              # Volets glissants.  === "Mon volet"
         alternate_style: true 
-    - pymdownx.superfences:
-        custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-
     - pymdownx.keys:                # Touches du clavier.  ++ctrl+d++
         separator: "\uff0b"
-    - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
+    - pymdownx.emoji:               # Émojis  :boom:
+        emoji_index:     !!python/name:materialx.emoji.twemoji
         emoji_generator: !!python/name:materialx.emoji.to_svg
-    - pymdownx.arithmatex:  # Formules en LaTeX 
+    - pymdownx.superfences:
+    - pymdownx.arithmatex:
         generic: true
-
-
+    - toc:
+        permalink: ⚓︎
+        toc_depth: 1
+    
+    - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
 
@@ -116,35 +116,6 @@ plugins:
   - sqlite-console
   - awesome-pages:
         collapse_single_pages: true
-
-
-  #- page-to-pdf : 
-  #    disable: False
-  #    disableOnServe: True
-  #    displayHeaderFooter: True
-  #    printBackground: True
-  #    scale : 1.0
-  #    landscape : False
-  #    margin: {'top': '0.75cm', 'bottom': '0.75cm', 'right': '0.5cm','left': '0.5cm'}
-  #    headerTemplate: '<header style="width:100%;heigth:45px;font-size:10px;font-weight:600;color:white;background:#87A96B;margin-top:-20px;padding:10px;padding-bottom:0;-webkit-print-color-adjust: exact">
- #                      <span style="display:inline-block;vertical-align:middle;margin-top:-4px;margin-left:10px;">N.S.I : Terminale 2021 - 2022</span>
- #                     </header>'
- #     footerTemplate: '<footer style="position:relative;width:100%;font-size:8px;color:#3B444B;margin:10px 20px;-webkit-print-color-adjust: exact">
- #                       <span>M.Meyroneinc-Condy | CCBY | 2021</span>
- #                       <span class="page" style="position:absolute;bottom:0;right:0;">
- #                        <span class="pageNumber"></span>/<span class="totalPages"></span>
- #                       </span>'
-  #   headerTemplate : 
-  #      title
-  #      date
-  #      pageNumber
-  #      totalPages
-  #    footerTemplate : True
-  #      pageNumber
-  #      totalPages
-      
-
-
 
 
 extra_javascript:
